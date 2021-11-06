@@ -43,7 +43,7 @@ ___
     ___
 
     - [___CineAR Play___](https://play.cine.ar/bienvenida/)
-        ![Captura](/Capturas/Captura.PNG)
+        ![Captura](/Capturas/capturaFar.PNG)
         ```
         Menu Desplegable
 ___
