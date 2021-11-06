@@ -16,8 +16,7 @@ ___
 
 	 - __Milton Franco Mourão__
         ```
-        Diseñador Multimedial, Productor Audiovisual, Músico, 24 años.
-        6 años en el mundo de la programacion, me desarrollo en la parte del Front End.
+        
     ___
     - __Matías Juaquín__
 
@@ -36,16 +35,7 @@ ___
 ___
 
 + ## ___Referentes___
-    - [___Netflix___](https://www.netflix.com/ar/)
-        ![Test](https://imgur.com/gallery/RCqWM9F)
-        ```
-        Detalle de la pelicula
-    ___
 
-    - [___CineAR Play___](https://play.cine.ar/bienvenida/)
-        ![Captura](/Capturas/capturaFar.PNG)
-        ```
-        Menu Desplegable
 ___
 
 
