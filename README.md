@@ -1,3 +1,4 @@
+
 # Fashion Sale
 + ## ___Acerca de___
     ```
@@ -16,8 +17,8 @@ ___
 
 	 - __Milton Franco Mourão__
         ```
-        Nacido en Argentina, 21 años, con un gran interés por el diseño y la
-	programación. Experiencia en HTML, CSS y Javascript.
+        Nacido en Argentina, 21 años, con un gran interés por el diseño y la	programación. 
+        Experiencia en HTML, CSS y Javascript.
     ___
     - __Matías Juaquín__
 
