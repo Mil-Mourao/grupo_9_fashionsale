@@ -16,7 +16,8 @@ ___
 
 	 - __Milton Franco Mourão__
         ```
-        
+        Nacido en Argentina, 21 años, con un gran interés por el diseño y la
+	programación. Experiencia en HTML, CSS y Javascript.
     ___
     - __Matías Juaquín__
 
@@ -31,7 +32,7 @@ ___
         ```
         Soy de Apóstoles, Misiones, capital de la yerba mate. 
         Tengo 32 años, estoy dando mis primeros pasos en el mundo de la programación. 
-        Con muchas ganas de aprender las ultimas tendencias en programación web. TEST
+        Con muchas ganas de aprender las ultimas tendencias en programación web.
 ___
 
 + ## ___Referentes___
