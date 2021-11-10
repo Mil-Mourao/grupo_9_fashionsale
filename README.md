@@ -17,7 +17,7 @@ ___
 
 	 - __Milton Franco Mourão__
         ```
-        Nacido en Argentina, 21 años, con un gran interés por el diseño y la	programación. 
+        Nacido en Argentina, 21 años, con un gran interés por el diseño y la programación. 
         Experiencia en HTML, CSS y Javascript.
     ___
     - __Matías Juaquín__
@@ -36,7 +36,10 @@ ___
         Con muchas ganas de aprender las ultimas tendencias en programación web.
 ___
 
-+ ## ___Referentes___
++ ## ___Referencias___
+	+ 	Página de inicio, Adidas:
+		![adidas.com.ar](/Capturas/capturaAdidas.png "Página de inicio de Adidas")
+		https://www.adidas.com.ar/ropa-hombre
 ___
 
 
