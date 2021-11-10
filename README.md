@@ -9,9 +9,9 @@
     Adultos jóvenes con un interés en comprar ropa con una estética juvenil, simple y cómoda.
 
 + ## ___Caracteristicas Principales___
-    1. 
-    2. 
-    3. 
+    1. Minimalista
+    2. Estética
+    3. Accesible
 ___
 + ## ___Integrantes___
 
@@ -37,7 +37,6 @@ ___
 ___
 
 + ## ___Referentes___
-
 ___
 
 
