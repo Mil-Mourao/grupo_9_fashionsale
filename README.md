@@ -11,7 +11,7 @@
 + ## ___Caracteristicas Principales___
     1. Minimalista
     2. Estética
-    3. Accesible
+    3. Asequible
 ___
 + ## ___Integrantes___
 
