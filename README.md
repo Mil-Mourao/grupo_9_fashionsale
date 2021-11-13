@@ -49,8 +49,8 @@ ___
 
 + ## ___Wireframes___
 	+	Shoping Cart:
-		![tiendamia.com/ar](/Capturas/carrito tiendamia.jpg "Ejemplo de shopping cart")
-		https://tiendamia.com/ar/		
+		![tiendamia.com/ar](/Capturas/tiendamia.jpg "Ejemplo de shopping cart")
+		https://www.tiendamia.com/ar/		
 ___
 
 
