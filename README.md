@@ -43,14 +43,16 @@ ___
 		
 	+	Productos destacados, Reebok:
 		![reebok.com.ar](/Capturas/capturaRee.png "Destacados para Hombres")
-		https://www.reebok.com.ar/hombre			
+		https://www.reebok.com.ar/hombre
+		
+	+	Shoping Cart:
+		![tiendamia.com/ar](/Capturas/tiendamia.jpg "Ejemplo de shopping cart")
+		https://www.tiendamia.com/ar/
 ___
 
 
 + ## ___Wireframes___
-	+	Shoping Cart:
-		![tiendamia.com/ar](/Capturas/tiendamia.jpg "Ejemplo de shopping cart")
-		https://www.tiendamia.com/ar/		
+			
 ___
 
 
