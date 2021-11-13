@@ -52,7 +52,10 @@ ___
     
 ___
 + ## ___Tipografia___
-
+| Estilo Tipográfico | Autor/a | Modelo | Uso|
+| ------ | ------ | ------ | ------ |
+| Serif | [Lora](https://fonts.google.com/specimen/Lora?preview.text=Fashion%20Sale&preview.text_type=custom#standard-styles) | Medium 500 italic | Títulos - Subtítulos
+| Sans-Serif | [Vincent Connare](https://www.cufonfonts.com/font/trebuchet-ms-2) | Trebuchet MS | Descripciones - Detalles
 ___
 + ## ___Logo___
 
