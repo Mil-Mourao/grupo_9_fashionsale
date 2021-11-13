@@ -38,7 +38,7 @@ ___
 
 + ## ___Referencias___
 	+ 	Página de inicio, Adidas:
-		-https://www.adidas.com.ar/ropa-hombre		
+	-	https://www.adidas.com.ar/ropa-hombre		
 		![adidas.com.ar](/Capturas/capturaAdidas.png "Página de inicio de Adidas")
 		
 	+	Productos destacados, Reebok:
