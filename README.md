@@ -38,11 +38,11 @@ ___
 
 + ## ___Referencias___
 	+ 	Página de inicio, Adidas:
-		>https://www.adidas.com.ar/ropa-hombre		
+	>	https://www.adidas.com.ar/ropa-hombre		
 		![adidas.com.ar](/Capturas/capturaAdidas.png "Página de inicio de Adidas")
 		
 	+	Productos destacados, Reebok:
-		>https://www.reebok.com.ar/hombre	
+	>	https://www.reebok.com.ar/hombre	
 		![reebok.com.ar](/Capturas/capturaRee.png "Destacados para Hombres")
 				
 ___
