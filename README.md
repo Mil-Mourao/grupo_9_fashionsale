@@ -38,10 +38,12 @@ ___
 
 + ## ___Referencias___
 	+ 	Página de inicio, Adidas:
+	 	Es una pagina intuitiva y amigable para el usuario.
 		![adidas.com.ar](/Capturas/capturaAdidas.png "Página de inicio de Adidas")
 		https://www.adidas.com.ar/ropa-hombre		
 		
 	+	Productos destacados, Reebok:
+		Utiliza una paleta de colores clara haciendo que resalten más lo vistoso de los productos, y la calidad de imagen de sus prendas son muy buenas.
 		![reebok.com.ar](/Capturas/capturaRee.png "Destacados para Hombres")
 		https://www.reebok.com.ar/hombre
 		
