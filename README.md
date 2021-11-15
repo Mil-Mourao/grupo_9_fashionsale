@@ -38,20 +38,16 @@ ___
 
 + ## ___Referencias___
 	+ 	Página de inicio, Adidas:
-		```
-	 	Es una pagina intuitiva y amigable para el usuario.
-		
+	 	Es una pagina intuitiva y amigable para el usuario.	
 		![adidas.com.ar](/Capturas/capturaAdidas.png "Página de inicio de Adidas")
 		https://www.adidas.com.ar/ropa-hombre		
 		
 	+	Productos destacados, Reebok:
-		```
-		Utiliza una paleta de colores clara haciendo que resalten más lo vistoso de los productos, y la calidad de imagen de sus prendas son muy buenas.
+		Utiliza una paleta de colores clara haciendo que resalten más los productos, y la calidad de imagen de sus prendas son muy buenas.
 		![reebok.com.ar](/Capturas/capturaRee.png "Destacados para Hombres")
 		https://www.reebok.com.ar/hombre
 		
 	+	Shoping Cart:
-		```
 		Nos gusto mucho la presentación del carrito para finalizar la compra de esta página, ya que es muy claro y el detalle de compra conciso pero a la ves muy 			completo.
 		![tiendamia.com/ar](/Capturas/tiendamia.jpg "Ejemplo de shopping cart")
 		https://www.tiendamia.com/ar/
