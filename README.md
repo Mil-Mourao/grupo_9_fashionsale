@@ -38,8 +38,9 @@ ___
 
 + ## ___Referencias___
 	+ 	Página de inicio, Adidas:
-		
+		```
 	 	Es una pagina intuitiva y amigable para el usuario.
+		
 		![adidas.com.ar](/Capturas/capturaAdidas.png "Página de inicio de Adidas")
 		https://www.adidas.com.ar/ropa-hombre		
 		
