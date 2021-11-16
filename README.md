@@ -2,7 +2,8 @@
 # Fashion Sale
 + ## ___Acerca de___
     ```
-    La idea de desarrollar un marketplace como Fashion Sale es apuntar, a mejorar la experiencia del usuario a la hora comprar ropa online; ofreciendo productos de distintas marcas en un solo lugar. 
+    La idea de desarrollar un marketplace como Fashion Sale es apuntar, a mejorar la experiencia del usuario a la hora comprar ropa online.
+    Ofreciendo productos de distintas marcas en un solo lugar. 
     
 + ## ___Publico Objetivo___
     ```
