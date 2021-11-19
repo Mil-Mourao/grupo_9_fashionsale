@@ -2,7 +2,8 @@
 # Fashion Sale
 + ## ___Acerca de___
     ```
-    La idea de desarrollar un marketplace como Fashion Sale es apuntar, a mejorar la experiencia del usuario a la hora comprar ropa online.
+    La idea de desarrollar un marketplace como Fashion Sale es apuntar a mejorar la experiencia del usuario 
+    a la hora comprar ropa online.
     Ofreciendo productos de distintas marcas en un solo lugar. 
     
 + ## ___Publico Objetivo___
@@ -66,8 +67,8 @@ ___
 + ## ___Tipografia___
 | Estilo Tipográfico | Autor/a | Nombre | Uso|
 | ------ | ------ | ------ | ------ |
-| Serif | [Lora](https://fonts.google.com/specimen/Lora?preview.text=Fashion%20Sale&preview.text_type=custom#standard-styles) | Medium 500 italic | Títulos - Subtítulos
-| Sans-Serif | [Vincent Connare](https://www.cufonfonts.com/font/trebuchet-ms-2) | Trebuchet MS | Descripciones - Detalles
+| Serif | Cyreal | [Lora](https://fonts.google.com/specimen/Lora?preview.text=Fashion%20Sale&preview.text_type=custom#standard-styles) | Títulos - Subtítulos
+| Sans-Serif | Vincent Connare | [Trebuchet MS](https://www.cufonfonts.com/font/trebuchet-ms-2) | Descripciones - Detalles
 ___
 + ## ___Logo___
 
