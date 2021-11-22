@@ -62,7 +62,13 @@ ___
 
 
 + ## ___Paleta de colores___
-    
+    - __Basado en la siguiente:__ [___Link___](https://stock.adobe.com/search?creator_id=205434516&filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Avideo%5D=1&filters%5Bcontent_type%3Atemplate%5D=1&filters%5Bcontent_type%3A3d%5D=1&filters%5Bis_editorial%5D=all&filters%5Bcontent_type%3Aimage%5D=1&order=relevance&safe_search=1&k=beige&search_page=1&search_type=usertyped&acp=&aco=beige&get_facets=0&asset_id=288287697)
+    - ![Paleta Final](/Capturas/Paleta.jpeg "Paleta utilizada")
+        1. `#e63946`
+        2. `#f1faee`
+        3. `#a8dadc`
+        4. `#457b9d`
+        5. `#1d3557`
 ___
 + ## ___Tipografia___
 | Estilo Tipográfico | Autor/a | Nombre | Uso|
