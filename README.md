@@ -78,7 +78,10 @@ ___
 | Sans-Serif | Vincent Connare | [Trebuchet MS](https://www.cufonfonts.com/font/trebuchet-ms-2) | Descripciones - Detalles
 ___
 + ## ___Logo___
-
++	![Logo completo en fondo normal](/Capturas/Logo/logoFull.jpg "Logo completo en fondo normal")
++	![Logo arriba, texto abajo en fondo normal](/Capturas/Logo/logoArribaAbajo.jpg "Logo arriba, texto abajo en fondo normal")
++	![Logo completo en fondo normal](/Capturas/Logo/logoSolo.jpg "Logo solo en fondo normal")
++	![Logo completo en fondo normal](/Capturas/Logo/logoTextoSolo.jpg "Texto solo en fondo normal")
 
 # ***Gracias por leer hasta acá***
 ___
