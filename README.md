@@ -53,6 +53,11 @@ ___
 		Nos gusto mucho la presentación del carrito para finalizar la compra de esta página, ya que es muy claro y el detalle de compra conciso pero a la ves muy 			completo.
 		![tiendamia.com/ar](/Capturas/tiendamia.jpg "Ejemplo de shopping cart")
 		https://www.tiendamia.com/ar/
+		
+	+	Carrito superpuesto:
+		Nos parece positivo el uso de un carrito al que el usuario pueda acceder de manera rápida y dar un seguimiento a lo que están comprando, antes de finalizar la 			compra.
+		![https://www.qilai-ba.com/](/Capturas/capturaCarrito.png "Ejemplo de carrito superpuesto.")
+		https://www.qilai-ba.com/
 ___
 
 
