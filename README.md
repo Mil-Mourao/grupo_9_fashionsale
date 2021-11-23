@@ -57,7 +57,8 @@ ___
 
 
 + ## ___Wireframes___
-			
+	- __Wireframe:__ [___Link___](https://xd.adobe.com/view/3e668787-43be-4e60-9604-5be764681a59-6b35/?hints=off)
+	- __Boceto:__ [___Link___](https://xd.adobe.com/view/263a3b43-61f1-4b4b-a2f7-a2b94382f731-7369/?hints=off)
 ___
 
 
