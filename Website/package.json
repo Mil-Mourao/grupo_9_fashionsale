@@ -1,0 +1,19 @@
+{
+  "name": "mercadoliebre_mourao_milton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js -e js,mjs,JSON,html,css"
+  },
+  "keywords": [],
+  "author": "Milton",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
