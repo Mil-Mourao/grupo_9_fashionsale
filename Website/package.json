@@ -1,5 +1,5 @@
 {
-  "name": "mercadoliebre_mourao_milton",
+  "name": "grupo9_fashionsale",
   "version": "1.0.0",
   "description": "",
   "main": "src/app.js",
@@ -8,7 +8,7 @@
     "start": "nodemon src/app.js -e js,mjs,JSON,html,css"
   },
   "keywords": [],
-  "author": "Milton",
+  "author": "Milton Franco Mourão, Bernardo Arrechea Bröndsted y Matías Juaquín",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"

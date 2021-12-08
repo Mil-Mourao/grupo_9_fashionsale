@@ -1,0 +1,24 @@
+#navbar-content,
+#navbar-login,
+#navbar-Compra {
+  display: none;
+}
+
+header {
+  background-color: #a69c94;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  border: solid 10px #403831;
+  color: #403831;
+  font-family: Lora;
+  font-size: 2rem;
+}
+
+i {
+  color: #403831;
+  font-size: 1.3rem;
+}
