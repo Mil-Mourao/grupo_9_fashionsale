@@ -22,3 +22,44 @@ i {
   color: #403831;
   font-size: 1.3rem;
 }
+
+fieldset {
+  border: none;
+  outline: none;
+  display: flex;
+  flex-wrap: none;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburgesa {
+    display: none;
+  }
+
+  #navbar-content {
+    display: block;
+  }
+
+  #navbar-content a {
+    text-decoration: none;
+    color: black;
+    font-family: roboto;
+    padding: 1rem;
+    font-weight: 500;
+  }
+
+  #barra {
+    width: 20vw;
+    height: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    justify-content: space-around;
+  }
+
+  #navbar-content a {
+    font-size: 1.2rem;
+  }
+
+}
