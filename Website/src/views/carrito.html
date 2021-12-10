@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  
+    <link rel="stylesheet" href="/css/general.css" />
+    <link rel="stylesheet" href="/css/carrito.css" />
+
+  <title>Fashion Sale</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Mi Carrito</h2>
+        </section>
+        <section>
+            <ul id="col-header">
+                <li id="cl-product">Producto</li>
+                <li id="cl-quantity">Cantidad</li>
+                <li>Eliminar</li>
+                <li>Valor Unitario</li>
+                <li>Total</li>
+            </ul>
+            <ul id="items">
+                <li>
+                    <section>
+                        <picture>
+                            <img src="" alt="Producto">
+                        </picture>
+                        <article>
+                            <h3>Producto</h3>
+                            <ul>
+                                <li>Talle: M</li>
+                                <li>Color: Rosa</li>
+                                <li>Descripción:</li>
+                            </ul>
+                        </article>
+                        <form action="/">
+                            <fieldset>
+                                <button type="button">-</button>
+                                <input type="number" name="cantidad" id="cantidad" min="1" max="10" value="1">
+                                <button type="button">+</button>
+                            </fieldset>
+                        </form>
+                        <form action="">
+                            <button type="button">Eliminar</button>
+                        </form>
+                        <article>
+                            <p>$8.000,00</p>
+                        </article>
+                        <article>
+                            <p>$8.000,00</p>
+                        </article>
+                    </section>
+                </li>
+            </ul>
+
+            <article>
+                <form action="/" method="post">
+                    <fieldset>
+                        <button type="submit">Finalizar Compra</button>
+                    </fieldset>
+                </form>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

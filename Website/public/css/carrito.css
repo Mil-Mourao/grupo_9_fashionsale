@@ -1,0 +1,19 @@
+#col-header{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 10px 5px;
+    padding: 10px 5px;
+    
+}
+
+#cl-product{
+    flex-basis: 25%;
+    text-align: center;
+    background-color: hsl(1, 30%, 45%);
+}
+
+#items{
+    display: flex;
+    
+}
