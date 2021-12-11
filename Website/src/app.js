@@ -12,3 +12,4 @@ app.get("/", (req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html
 app.get("/register", (req,res)=> res.sendFile(path.resolve(__dirname,"views","register.html")))
 app.get("/login", (req,res)=> res.sendFile(path.resolve(__dirname,"views","login.html")))
 app.get("/carrito", (req,res)=> res.sendFile(path.resolve(__dirname,"views","carrito.html")))
+app.get("/product", (req,res)=> res.sendFile(path.resolve(__dirname,"views","product.html")))
