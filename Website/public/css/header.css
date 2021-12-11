@@ -27,7 +27,7 @@ fieldset {
   border: none;
   outline: none;
   display: flex;
-  flex-wrap: none;
+  flex-wrap: nowrap;
 }
 
 @media screen and (min-width: 768px) {
