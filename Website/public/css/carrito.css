@@ -1,10 +1,11 @@
+/* Estilos Main */
 main{
     font-family: 'Trebuchet MS';
 }
 
 .main_section{
     margin: 5px;
-    padding: 5px; 
+    padding: 0 5px; 
 }
 
 ul{
@@ -12,24 +13,20 @@ ul{
 }
 
 main section h2{
-    margin: 5px 15px;
+    margin: 10px 15px;
+    font-family: Lora;
+    text-shadow: -1px 2px 0px rgba(166, 156, 148, 0.45);
+    font-size: 2rem;
 }
 
+/* Estilos encabezados-listas */
 #col-header{
-    display: none;
-    justify-content: space-between;
-    margin: 10px 5px;
-    padding: 10px 5px;
-     
+    display: none; 
+    font-size: 1rem;    
 }
 
-#cl-product{
-    flex-basis: 25%;
-    text-align: center;
-    padding: 1px;
-    background-color: hsl(1, 30%, 45%);
-    border: solid 1px black;
-}
+
+/* Estilos  UL - LI para cada artículo */
 
 #items{
     display: flex;
@@ -41,17 +38,19 @@ main section h2{
 
 #items > li:first-child{
     border-top: solid 1px #a69c94;
+    padding-top: 15px;
 }
 
 .item-border{
-    border-bottom: solid 1px #a69c94;
     padding: 5px 0;
     margin: 5px 0;
+    border-bottom: solid 1px #a69c94;
 }
 
 .item_product{
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
     justify-content: space-between;
 }
 
@@ -62,6 +61,7 @@ main section h2{
 .product{  
     display: flex;
     flex-basis: 100%;
+    text-align: left;
 }
 
 .item_product img{
@@ -91,6 +91,10 @@ main section h2{
     padding: 0 15px;
 }
 
+.quantity-form fieldset{
+    display: block;
+}
+
 .quantity-form i{
     font-size: 1rem;
     margin: 0px 5px;
@@ -101,6 +105,9 @@ main section h2{
 .quantity-form input{
     text-align: center;
     width: 35px;
+    height: 25px;
+    background-color: transparent;
+    border: solid 1px rgba(166, 156, 148, 0.5);
 }
 
 .delete-form{
@@ -112,7 +119,7 @@ main section h2{
     text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 }
 
-.price-unit{
+.price-unit, .price-total{
     font-size: 1rem;
     margin: 5px;
     padding: 0 15px;
@@ -122,6 +129,8 @@ main section h2{
 .main_section button{
     background-color: transparent;
 }
+
+/* Estilos btn finalizar compra y suma total*/
 
 #btn-compra article{
     display: flex;
@@ -137,11 +146,141 @@ main section h2{
 }
 
 #btn-compra button{
-    font-size: 0.8rem;
+    font-size: 1rem;
     background-color: #a69c94;
     margin: 5px 15px;
     padding: 5px 0px;
     width: 50%;
     border-radius: 5px;
     text-shadow: 0px 0px 1px rgba(0,0,0,0.3);
+}
+
+@media screen and (min-width: 768px){
+
+    #col-header{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 5px;
+        padding: 10px 5px;
+        font-size: 1rem;
+        align-items: center;
+    }
+    
+    #cl-product{
+        flex-basis: 60vw;
+        text-align: center;
+    }
+
+    #cl-quantity{
+        flex-grow: 1;
+        flex-basis: 16vw;
+        text-align: center;
+    }
+ 
+    #cl-delete{
+        flex-grow: 1;
+        flex-basis: 15vw;
+        text-align: center;
+    }
+
+    #cl-price, #cl-total{
+        flex-grow: 1;
+        flex-basis: 15vw;
+        text-align: center;
+    }
+
+
+    .item_product{
+        align-items: center;
+    }
+
+    .product{
+        flex-basis: 45%;
+        padding: 0.5rem;
+        margin: 0 0.25rem;
+    }
+
+    .quantity-form{ 
+        flex-grow: 1;
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+    .quantity-form i{
+        font-size: 1.2rem;
+        margin: 0px 5px;
+        text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+    }
+    
+    
+    .quantity-form input{
+        text-align: center;
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .delete-form{
+        flex-grow: 1;
+        flex-basis: 5px;
+        margin: 0 0.25rem;
+    }
+
+    .price-unit{
+        flex-grow: 1;
+
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+    .price-total{
+        flex-grow: 1;
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+
+    .description{
+        margin-left: 10px;
+    }
+
+    .price-total{
+        display: block;
+    }
+
+    #btn-compra{
+        margin: 5px 20px;
+    }
+
+    #btn-compra article{
+        justify-content: flex-end;
+        font-size: 1.2rem;
+        gap: 98px;
+    }
+
+    #btn-compra fieldset{
+        text-align: right;
+    }
+
+    #btn-compra button{
+        margin: 0;
+        padding: 8px 0;  
+        width: 280px;
+    }
+
+    @media screen and (min-width: 1200px){
+        .main_section{
+            margin: 0 14rem;
+        }
+
+        #col-header, .item_product, .item-border{
+            max-width: 1200px;
+        }
+
+        main section h2{
+            margin: 1rem 10rem;
+        }
+
+    }
+        
 }
