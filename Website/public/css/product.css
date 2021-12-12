@@ -1,0 +1,91 @@
+* {
+  font-family: roboto;
+}
+
+body {
+  background-color: #f2e5d5;
+}
+
+.no-show {
+  display: none;
+}
+
+#volver {
+  color: black;
+  text-decoration: none;
+  font-family: roboto;
+  display: none;
+}
+
+.pic-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.small-pic {
+  width: 10vw;
+  height: auto;
+}
+
+#focus-pic {
+  width: 100vw;
+}
+
+#producto {
+  border: 1px solid #403831;
+}
+
+#desc-title {
+  font-size: 2rem;
+  margin: 0 1rem;
+  font-family: Lora;
+}
+
+#desc-prize {
+  margin: 0.2rem 1rem;
+  font-family: Lora;
+}
+
+#cuotas {
+  margin: 0.5rem 1.2rem;
+}
+
+#size-qty-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0.4rem;
+}
+
+legend {
+  margin: 0.5rem 0;
+}
+
+#talle {
+  width: 45vw;
+  background: transparent;
+}
+
+#qty {
+  width: 45vw;
+  background: transparent;
+}
+
+#submit {
+  margin: 0.5rem 1rem;
+  padding: 0.2rem;
+  width: 90vw;
+  background-color: #d9c9ba;
+  border: none;
+  outline: none;
+}
+
+#desc-bottom {
+  margin: 0.5rem;
+}
+
+#desc-bottom p {
+    margin: .8rem;
+}

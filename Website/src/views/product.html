@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/general.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/product.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <title>Fashion Sale</title>
@@ -78,7 +78,106 @@
         </form>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <section>
+        <article>
+          <a href="/" id="volver">Volver al listado</a>
+        </article>
+      </section>
+      <section id="producto">
+        <article class="pic-list">
+          <picture class="small-pic">
+            <img
+              class="small-pic"
+              src="/images/camperaWaveChica.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture class="small-pic">
+            <img
+              class="small-pic"
+              src="/images/camperaWaveHombre.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture class="small-pic">
+            <img
+              class="small-pic"
+              src="/images/camperaWaveHombre2.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture class="small-pic">
+            <img
+              class="small-pic"
+              src="/images/camperaWaveEspaldaHombre.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture class="small-pic">
+            <img
+              class="small-pic"
+              src="/images/camperaWaveChica2.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+        </article>
+        <article class="main-pic">
+          <picture>
+            <img id="focus-pic" src="/images/camperaWave.jpg" alt="" />
+          </picture>
+        </article>
+        <section class="description">
+          <article id="desc-top">
+            <h1 id="desc-title">Campera Wave</h1>
+            <h2 id="desc-prize">$8.400</h2>
+          </article>
+          <article id="cuotas">
+            <p>12 cuotas de $1.050</p>
+            <p>6 cuotas de $1.400</p>
+          </article>
+          <article id="size-qty">
+            <form action="get" id="size-qty-form">
+              <fieldset>
+                <legend>Talle</legend>
+                <label for="size" class="no-show">Talle</label>
+                <select name="size" id="talle">
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                  <legend>Cantidad</legend>
+                  <label for="qty" class="no-show">Cantidad</label>
+                  <button>-</button>
+                  <input type="number" name="qty" id="qty">
+                  <button>+</button>
+              </fieldset>
+              <fieldset >
+                  <legend class="no-show">Agregar al Carrito</legend>
+                  <label for="add-to-cart" class="no-show">Agregar al Carrito</label>
+                  <button type="submit" id="submit">Agregar al Carrito</button>
+              </fieldset>
+            </form>
+          </article>
+          <article id="desc-bottom">
+              <h3>Descripción</h3>
+              <p>Campera estampada. Textil crepe de microfibra mate. Bolsillos laterales. Cierre metálico central.</p>
+              <p>Talle modelo mujer: XS/S</p>
+              <p>Talle modelo hombre: M/L</p>
+          </article>
+        </section>
+      </section>
+    </main>
     <footer>
       <section class="footer-Top">
         <section>
