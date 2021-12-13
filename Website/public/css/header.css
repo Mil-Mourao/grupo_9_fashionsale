@@ -7,15 +7,25 @@
 header {
   background-color: #a69c94;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
-
+/* 
 #logo {
   border: solid 10px #403831;
   color: #403831;
   font-family: Lora;
   font-size: 2rem;
+} */
+
+.logo-desktop {
+  display: none;
+}
+
+#logo {
+  width: 20vw;
+  max-width: 3rem;
+  margin-left: .5rem;
 }
 
 i {
