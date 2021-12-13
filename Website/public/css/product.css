@@ -1,14 +1,18 @@
 * {
   font-family: roboto;
+  overflow-x: hidden;
 }
 
 body {
   background-color: #f2e5d5;
-  overflow-x: hidden;
 }
 
 .no-show {
   display: none;
+}
+
+i {
+  overflow-x: visible;
 }
 
 #volver {
@@ -31,7 +35,7 @@ body {
 }
 
 #focus-pic {
-  width: 100vw;
+  width: 99vw;
 }
 
 #producto {
@@ -89,5 +93,5 @@ legend {
 }
 
 #desc-bottom p {
-    margin: .8rem;
+  margin: 0.8rem;
 }
