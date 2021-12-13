@@ -19,8 +19,12 @@
   </head>
   <body>
     <header>
-      <!-- logo -->
-      <span id="logo">Fs</span>
+      <picture class="logo-desktop">
+        <img src="/images/logo/logoDesktop.png" alt="" />
+      </picture>
+      <picture class="logo-simple">
+        <img src="/images/logo/logoSimple.png" alt="" id="logo" />
+      </picture>
       <i class="fa-solid fa-bars"></i>
       <nav id="navbar-content">
         <a href="">Hombre</a>
@@ -75,7 +79,9 @@
     </header>
     <main>
       <section>
-        <!-- banner -->
+        <picture>
+          <img src="/img/Splash/Splash-1.jpg" alt="" srcset="">
+        </picture>
       </section>
       <section>
         <section class="items-home">
@@ -122,38 +128,52 @@
     </main>
     <footer>
       <section class="footer-Top">
-        <article>
-          <i class="fa-solid fa-truck"></i>
-          <p>Envíos gratis a partir de $20.000</p>
-        </article>
+        <section>
+          <article class="footer-Top-art">
+            <i class="fa-solid fa-truck"></i>
+            <p>Envíos gratis a partir de $20.000</p>
+          </article>
+        </section>
+        <section>
+          <article class="footer-Top-art">
+            <i class="fa-brands fa-instagram"></i>
+            <p>Instagram</p>
+          </article>
+        </section>
+        <section>
+          <article class="footer-Top-art">
+            <i class="fa-solid fa-credit-card"></i>
+            <p>6 cuotas fijas</p>
+          </article>
+        </section>
       </section>
-      <section>
-        <article>
-          <i class="fa-brands fa-instagram"></i>
-          <p>Instagram</p>
-        </article>
-      </section>
-      <section>
-        <article>
-          <i class="fa-solid fa-credit-card"></i>
-          <p>6 cuotas fijas</p>
-        </article>
-      </section>
+
       <section class="footer-Bottom">
-        <article>
+        <article class="footer-Form">
           <form action="/" method="get">
             <legend>Newsletter</legend>
             <label for="news"
-              >Suscribite al newsletter para saber cuando hay ofertas</label>
+              >Suscribite al newsletter para saber cuando hay ofertas</label
+            >
             <input type="email" name="news" id="news" />
           </form>
         </article>
-        <article>
-            <p>Copyright Fashion Sale - 2021 <i class="fa-solid fa-copyright"></i></p>
-        </article>
-        <article>
-            <p>Para reclamos haga click <a href="http://" target="_blank" rel="noopener noreferrer">aqui</a></p>
-        </article>
+        <section id="copy-and-recl">
+          <article>
+            <p id="copy">
+              Copyright Fashion Sale - 2021
+              <i class="fa-solid fa-copyright"></i>
+            </p>
+          </article>
+          <article>
+            <p id="reclamos">
+              Para reclamos haga click
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >aqui</a
+              >
+            </p>
+          </article>
+        </section>
       </section>
     </footer>
   </body>

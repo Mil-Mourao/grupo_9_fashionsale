@@ -10,13 +10,6 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-/* 
-#logo {
-  border: solid 10px #403831;
-  color: #403831;
-  font-family: Lora;
-  font-size: 2rem;
-} */
 
 .logo-desktop {
   display: none;
@@ -31,6 +24,10 @@ header {
 i {
   color: #403831;
   font-size: 1.3rem;
+}
+
+.searchButton {
+  font-size: 1rem;
 }
 
 fieldset {
@@ -72,4 +69,7 @@ fieldset {
     font-size: 1.2rem;
   }
 
+  .fa-bars {
+    display: none;
+  }
 }
