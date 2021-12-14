@@ -6,14 +6,9 @@
 
 /* esto es el fondo*/
 #register{
-    /*background-image: url("/images/");
-    */
-    background-color: blueviolet;
+    background-image: url("/img/registerFondo.jpg");
     width: 100vw;
-    min-height: 100vh;
-    display: flex;
     justify-content: flex-end;
-    padding: 5rem;
 }
 
 /* esto es el formulario*/
@@ -26,7 +21,11 @@
     font-family: Roboto;
     display: flex;
     flex-wrap: wrap;
-}
+    }
+
+    .form-register fieldset{
+        display: flex;
+    }
 
 /* esto son los datos*/
 .controls{
@@ -43,6 +42,7 @@
 .form-register h3{
     text-align: center;
     font-weight: 700;
+    font-family: roboto;
 }
 
 /* boton de facebook*/
@@ -61,9 +61,9 @@
 #access_google{
     background: red;
     border-radius: 20px;
-    width: 65%;
-    padding: 5px;
-    margin-bottom: 5px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom:10px;
     font-size: 16px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
