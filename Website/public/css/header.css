@@ -62,7 +62,23 @@ fieldset {
 
 @media screen and (min-width: 1200px) {
   header {
-    justify-content: space-around;
+    justify-content: space-evenly;
+  }
+
+  nav {
+    overflow-y: hidden;
+  }
+
+  .logo-simple {
+    display: none;
+  }
+  
+  .logo-desktop {
+    display: inline-block;
+  }
+
+  #logo-big {
+    max-width: 200px;
   }
 
   #navbar-content a {
