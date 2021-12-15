@@ -7,6 +7,11 @@ body {
   background-color: #f2e5d5;
 }
 
+main {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
 .no-show {
   display: none;
 }
@@ -35,7 +40,7 @@ i {
 }
 
 #focus-pic {
-  width: 99vw;
+  width: 100vw;
 }
 
 #producto {
@@ -63,6 +68,7 @@ i {
   justify-content: space-between;
   padding: 0 0.4rem;
   max-width: 100vw;
+  align-items: center;
 }
 
 legend {
@@ -72,11 +78,13 @@ legend {
 #talle {
   width: 45vw;
   background: transparent;
+  border: solid 1px #403831;
 }
 
 #qty {
   width: 45vw;
   background: transparent;
+  border: solid 1px #403831;
 }
 
 #submit {
@@ -86,6 +94,8 @@ legend {
   background-color: #d9c9ba;
   border: none;
   outline: none;
+  border: solid 1px #403831;
+  color: black;
 }
 
 #desc-bottom {
@@ -94,4 +104,48 @@ legend {
 
 #desc-bottom p {
   margin: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .pic-list {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  #producto {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px #403831;
+    padding: 10px;
+  }
+
+  #desc-title {
+    border-bottom: solid 1px #403831;
+  }
+
+  #focus-pic {
+    max-width: 40vw;
+    margin-left: 10px;
+  }
+
+  .description {
+    width: 40vw;
+  }
+
+  #size-qty-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #talle {
+    width: 30vw;
+  }
+
+  #qty {
+    width: 30vw;
+  }
+
+  #submit {
+    width: 30vw;
+  }
 }

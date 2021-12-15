@@ -20,11 +20,11 @@
   <body>
     <header>
       <picture class="logo-desktop">
-          <img src="/img/logo/logoDesktop.png" alt="">
+        <img src="/img/logo/logoDesktop.png" alt="" id="logo-big"/>
       </picture>
       <picture class="logo-simple">
-        <img src="/img/logo/logoSimple.png" alt="" id="logo">
-    </picture>
+        <img src="/img/logo/logoSimple.svg" alt="" id="logo" />
+      </picture>
       <i class="fa-solid fa-bars hamburgesa"></i>
       <nav id="navbar-content">
         <a href="">Hombre</a>
@@ -87,7 +87,7 @@
       </section>
       <section id="producto">
         <article class="pic-list">
-          <picture class="small-pic">
+          <picture>
             <img
               class="small-pic"
               src="/img/camperaWaveChica.jpg"
@@ -95,7 +95,7 @@
               srcset=""
             />
           </picture>
-          <picture class="small-pic">
+          <picture>
             <img
               class="small-pic"
               src="/img/camperaWaveHombre.jpg"
@@ -103,7 +103,7 @@
               srcset=""
             />
           </picture>
-          <picture class="small-pic">
+          <picture>
             <img
               class="small-pic"
               src="/img/camperaWaveHombre2.jpg"
@@ -111,7 +111,7 @@
               srcset=""
             />
           </picture>
-          <picture class="small-pic">
+          <picture>
             <img
               class="small-pic"
               src="/img/camperaWaveEspaldaHombre.jpg"
@@ -119,7 +119,7 @@
               srcset=""
             />
           </picture>
-          <picture class="small-pic">
+          <picture>
             <img
               class="small-pic"
               src="/img/camperaWaveChica2.jpg"
@@ -157,24 +157,30 @@
                 </select>
               </fieldset>
               <fieldset>
-                  <legend>Cantidad</legend>
-                  <label for="qty" class="no-show">Cantidad</label>
-                  <button>-</button>
-                  <input type="number" name="qty" id="qty">
-                  <button>+</button>
+                <legend>Cantidad</legend>
+                <label for="qty" class="no-show">Cantidad</label>
+                <button>-</button>
+                <input type="number" name="qty" id="qty" min="1" max="10"
+                value="1"/>
+                <button>+</button>
               </fieldset>
-              <fieldset >
-                  <legend class="no-show">Agregar al Carrito</legend>
-                  <label for="add-to-cart" class="no-show">Agregar al Carrito</label>
-                  <button type="submit" id="submit">Agregar al Carrito</button>
+              <fieldset>
+                <legend class="no-show">Agregar al Carrito</legend>
+                <label for="add-to-cart" class="no-show"
+                  >Agregar al Carrito</label
+                >
+                <button type="submit" id="submit">Agregar al Carrito</button>
               </fieldset>
             </form>
           </article>
           <article id="desc-bottom">
-              <h3>Descripción</h3>
-              <p>Campera estampada. Textil crepe de microfibra mate. Bolsillos laterales. Cierre metálico central.</p>
-              <p>Talle modelo mujer: XS/S</p>
-              <p>Talle modelo hombre: M/L</p>
+            <h3>Descripción</h3>
+            <p>
+              Campera estampada. Textil crepe de microfibra mate. Bolsillos
+              laterales. Cierre metálico central.
+            </p>
+            <p>Talle modelo mujer: XS/S</p>
+            <p>Talle modelo hombre: M/L</p>
           </article>
         </section>
       </section>

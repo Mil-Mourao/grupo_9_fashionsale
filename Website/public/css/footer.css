@@ -38,6 +38,7 @@ footer {
   display: block;
   margin: 0 auto;
   width: 75vw;
+  max-width: 500px;
   background: transparent;
   border: 1px solid white;
 }
@@ -51,6 +52,7 @@ footer {
 #reclamos {
   display: block;
   margin: 0 auto;
+  font-size: .8rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -83,5 +85,13 @@ footer {
 @media screen and (min-width: 1200px) {
     body {
         margin: 0 auto;
+    }
+
+    .footer-Form input {
+      max-width: 700px;
+    }
+
+    .fa-truck, .fa-instagram, .fa-credit-card {
+      font-size: 2rem;
     }
 }
