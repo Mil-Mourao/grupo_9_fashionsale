@@ -14,25 +14,31 @@
 /* esto es el formulario*/
 .form-register{
     background: #F2E5D5;
-    border-radius: 10px;;
     border-radius: 20px;
     width: 25vw;
     height: 80vh;
     font-family: Roboto;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative;
+    top: 70%;
+    left: 70%;
     }
 
     .form-register fieldset{
         display: flex;
+        justify-content: center;
+        font-size: 25px;
     }
 
 /* esto son los datos*/
 .controls{
     border-radius: 20px;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
     font-size: 16px;
     font-family: Roboto;
     display: flex;
@@ -44,6 +50,7 @@
     text-align: center;
     font-weight: 700;
     font-family: roboto;
+    margin-top: 6rem;
 }
 
 /* boton de facebook*/
@@ -53,11 +60,12 @@
     border-radius: 20px;
     width: 100%;
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* boton de google*/
@@ -67,11 +75,144 @@
     border-radius: 20px;
     width: 100%;
     padding: 5px;
-    margin-bottom:10px;
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
+    justify-content: center;
 }
 
+/* boton de continuar*/
+.button{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 5px;
+}
+
+/* esto es la linea*/
+.contenedor{
+    border-top: 1px gray solid;
+    padding-top: 10px;
+}
+
+#logo{
+    width: 20vw;
+    max-width: 3rem;
+    margin-left: 5rem;
+}
+
+.logo-simple{
+    display: none;
+}
+
+/*mobile*/
+@media (max-width: 760px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    #register{
+        background-color: #F2E5D5;
+        flex-direction: column;
+    }
+    
+    
+    /* esto es el formulario*/
+    .form-register{
+        background: #F2E5D5;
+        height: 80vh;
+        font-family: Roboto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+        .form-register fieldset{
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+        }
+    
+    /* esto son los datos*/
+    .controls{
+        border-radius: 20px;
+        padding: 15px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-family: Roboto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    /* esto es el titulo*/
+    .form-register h3{
+        text-align: center;
+        font-weight: 700;
+        font-family: roboto;
+        margin-top: 6rem;
+    }
+    
+    /* boton de facebook*/
+#access_facebook{
+    background: blue;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* boton de google*/
+#access_google{
+    background: red;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+}
+    
+    /* boton de continuar*/
+    .button{
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 5px;
+    }
+    
+    /* esto es la linea*/
+    .contenedor{
+        border-top: 1px gray solid;
+        padding-top: 10px;
+    }
+    
+    #logo{
+        width: 20vw;
+        max-width: 3rem;
+        margin-left: 5rem;
+    }
+    
+    .logo-simple{
+        display: none;
+    }
+}
