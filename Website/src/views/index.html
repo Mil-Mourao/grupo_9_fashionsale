@@ -15,17 +15,18 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <title>Fashion Sale</title>
   </head>
   <body>
     <header>
       <picture class="logo-desktop">
-        <img src="/images/logo/logoDesktop.png" alt="" />
+        <img src="/img/logo/logoDesktop.png" alt="" id="logo-big"/>
       </picture>
       <picture class="logo-simple">
-        <img src="/images/logo/logoSimple.png" alt="" id="logo" />
+        <img src="/img/logo/logoSimple.svg" alt="" id="logo" />
       </picture>
-      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars hamburgesa"></i>
       <nav id="navbar-content">
         <a href="">Hombre</a>
         <a href="">Mujer</a>
@@ -34,13 +35,17 @@
         <a href="">Acerca</a>
       </nav>
       <nav id="searchBar">
-        <form action="">
-          <input type="text" name="barra" id="barra" />
-        </form>
+        <fieldset>
+          <form action="">
+            <input type="text" name="barra" id="barra" />
+          </form>
+          <button>
+            <i class="fa-solid fa-magnifying-glass searchButton"></i>
+          </button>
+        </fieldset>
       </nav>
       <i class="fa-solid fa-user"></i>
       <nav id="navbar-login">
-        <!-- logo -->
         <form action="/" method="post">
           <fieldset>
             <legend>Iniciar Sesión</legend>
@@ -70,60 +75,128 @@
       </nav>
       <i class="fa-solid fa-cart-shopping"></i>
       <nav id="navbar-Compra">
-        <!-- logo -->
-        <!-- items -->
         <form action="">
           <button>Finalizar Compra</button>
         </form>
       </nav>
     </header>
     <main>
-      <section>
+      <section id="banner">
         <picture>
           <img src="/img/Splash/Splash-1.jpg" alt="" srcset="">
         </picture>
       </section>
-      <section>
-        <section class="items-home">
+      <h2>Ofertas</h2>
+      <section class="main_section">
           <article>
-            <!-- 1 -->
+            <picture>
+              <img src="/img/Productos/buzo.jpg" alt="Buzo blanco">
+            </picture>
+            <ul>
+              <li>Buzo North Face</li>
+              <li>$7.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 2 -->
+            <picture>
+              <img src="/img/Productos/Saco_WeAre.jpg" alt="Sacos">
+            </picture>
+            <ul>
+              <li>Saco "We Are"</li>
+              <li>$15.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 3 -->
+            <picture>
+              <img src="/img/Productos/camperaDeJean.jpg" alt="Campera de Jean">
+            </picture>
+            <ul>
+              <li>Campera de Jean "Jacques"</li>
+              <li>$13.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 4 -->
-          </article>
-        </section>
-        <section class="items-home">
-          <article>
-            <!-- 1 -->
-          </article>
-          <article>
-            <!-- 2 -->
+            <picture>
+              <img src="/img/Productos/pilotoLightsred.jpg" alt="Piloto transparente rosado">
+            </picture>
+            <ul>
+              <li>Piloto "Lights"</li>
+              <li>$6.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 3 -->
+            <picture>
+              <img src="/img/Productos/camperaWaveEspaladaHombre.jpg" alt="Campera Waves">
+            </picture>
+            <ul>
+              <li>Campera "Waves"</li>
+              <li>$8.400</li>
+            </ul>       
           </article>
           <article>
-            <!-- 4 -->
+            <picture>
+              <img src="/img/Productos/camisa.jpg" alt="Camisa Hawaiiana">
+            </picture>
+            <ul>
+              <li>Camisa Hawaiiana</li>
+              <li>$1.800</li>
+            </ul>       
           </article>
           <article>
-            <!-- 5 -->
+            <picture>
+              <img src="/img/Productos/lana.jpeg" alt="Poluveres de lana">
+            </picture>
+            <ul>
+              <li>Pulover de lana</li>
+              <li>$5.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 6 -->
+            <picture>
+              <img src="/img/Productos/jeans.jpeg" alt="Jeans colores varios">
+            </picture>
+            <ul>
+              <li>Jeans</li>
+              <li>$8.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 7 -->
+            <picture>
+              <img src="/img/Productos/camisa2.jpg" alt="Camisa de Jean Azul Marino">
+            </picture>
+            <ul>
+              <li>Camisa de Jean</li>
+              <li>$5.000</li>
+            </ul>       
           </article>
           <article>
-            <!-- 8 -->
+            <picture>
+              <img src="/img/Productos/collar.jpeg" alt="Collar de Amatista">
+            </picture>
+            <ul>
+              <li>Collar de Amatista</li>
+              <li>$2.500</li>
+            </ul>       
           </article>
-        </section>
+          <article>
+            <picture>
+              <img src="/img/Productos/mochila.jpeg" alt="Mochila de Cuero">
+            </picture>
+            <ul>
+              <li>Mochila de Cuero</li>
+              <li>$1.200</li>
+            </ul>       
+          </article>
+          <article>
+            <picture>
+              <img src="/img/Productos/camisaJean.jpg" alt="Camisa de Jean Azul Clarito">
+            </picture>
+            <ul>
+              <li>Camisa de Jean</li>
+              <li>$5.000</li>
+            </ul>       
+          </article>
+
       </section>
     </main>
     <footer>
