@@ -149,3 +149,27 @@ legend {
     width: 30vw;
   }
 }
+
+@media (min-width: 1200px) {
+  #size-qty-form {
+    display: flex;
+    flex-direction: row;
+    max-width: 550px;
+  }
+
+  #talle {
+    width: 90vw;
+    max-width: 250px;
+  }
+
+  #qty {
+    width: 90vw;
+    max-width: 250px;
+  }
+
+  #submit {
+    width: 90vw;
+    max-width: 540px;
+    margin: 10px auto;
+  }
+}
