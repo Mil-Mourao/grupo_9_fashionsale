@@ -8,10 +8,15 @@ main h2{
     margin: 5px 10px;    
 }
 
+body {
+    overflow-x: hidden;
+}
 .main_section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 
 .main_section article{
