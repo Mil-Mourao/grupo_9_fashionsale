@@ -108,14 +108,11 @@
 /*tablet*/
 @media screen and (min-width: 768px) {
 
-  body {
-    background: url("/img/registerFondo.jpg");
-    background-size: cover;
-  }
-
-  #register{
+    #register{
     display: flex;
     justify-content: flex-end;
+    background: url("/img/registerFondo.jpg");
+    background-size: cover;
   }
   .form-register {
     background: #f2e5d5;
@@ -186,9 +183,3 @@
  
 }
 
-@media screen and (min-width: 1200px) {
-  body {
-    background: url("/img/registerFondo.jpg") no-repeat;
-    background-size: 100%;
-  }
-}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,11 +12,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/css/general.css" />
+    <link rel="stylesheet" href="/css/product.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet" href="/css/register.css" />
     <title>Fashion Sale</title>
-    <title>Formulario Registro</title>
   </head>
   <body>
     <header>
@@ -88,54 +87,110 @@
         </form>
       </nav>
     </header>
-    <main id="register">
-      <section class="form-register">
+    <main>
+      <section>
         <article>
-          <picture class="logo-form">
-            <img src="/img/logo/logoSimple.svg" alt="" id="logo-form-top" />
+          <a href="/" id="volver">Volver al listado</a>
+        </article>
+      </section>
+      <section id="producto">
+        <article class="pic-list">
+          <picture>
+            <img
+              class="small-pic"
+              src="/img/camperaWaveChica.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture>
+            <img
+              class="small-pic"
+              src="/img/camperaWaveHombre.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture>
+            <img
+              class="small-pic"
+              src="/img/camperaWaveHombre2.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture>
+            <img
+              class="small-pic"
+              src="/img/camperaWaveEspaldaHombre.jpg"
+              alt=""
+              srcset=""
+            />
+          </picture>
+          <picture>
+            <img
+              class="small-pic"
+              src="/img/camperaWaveChica2.jpg"
+              alt=""
+              srcset=""
+            />
           </picture>
         </article>
-        <h3 id="form-title">¡Bienvenid@ a fashion sale!</h3>
-        <form action="" method="post" id="form">
-          <fieldset>
-            <input
-              class="controls"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              class="controls"
-              type="password"
-              name="clave"
-              id="clave"
-              placeholder="Contraseña"
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              class="controls"
-              type="password"
-              name="confirmacion"
-              id="confirmacion"
-              placeholder="Confirmar Contraseña"
-            />
-          </fieldset>
-          <fieldset>
-            <button class="button" type="submit">Continuar</button>
-          </fieldset>
-          <article>
-          <fieldset>
-            <input type="button" id="access_google" value="Google" />
-          </fieldset>
-          <fieldset>
-            <input type="button" id="access_facebook" value="Facebook" />
-          </fieldset>
+        <article class="main-pic">
+          <picture>
+            <img id="focus-pic" src="/img/camperaWave.jpg" alt="" />
+          </picture>
+        </article>
+        <section class="description">
+          <article id="desc-top">
+            <h1 id="desc-title">Campera Wave</h1>
+            <h2 id="desc-prize">$8.400</h2>
           </article>
-        </form>
+          <article id="cuotas">
+            <p>12 cuotas de $1.050</p>
+            <p>6 cuotas de $1.400</p>
+          </article>
+          <article id="size-qty">
+            <form action="get" id="size-qty-form">
+              <fieldset>
+                <legend>Talle</legend>
+                <label for="size" class="no-show">Talle</label>
+                <select name="size" id="talle">
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend>Cantidad</legend>
+                <label for="qty" class="no-show">Cantidad</label>
+                <button>-</button>
+                <input type="number" name="qty" id="qty" min="1" max="10"
+                value="1"/>
+                <button>+</button>
+              </fieldset>
+              <fieldset>
+                <legend class="no-show">Agregar al Carrito</legend>
+                <label for="add-to-cart" class="no-show"
+                  >Agregar al Carrito</label
+                >
+                <button type="submit" id="submit">Agregar al Carrito</button>
+              </fieldset>
+            </form>
+          </article>
+          <article id="desc-bottom">
+            <h3>Descripción</h3>
+            <p>
+              Campera estampada. Textil crepe de microfibra mate. Bolsillos
+              laterales. Cierre metálico central.
+            </p>
+            <p>Talle modelo mujer: XS/S</p>
+            <p>Talle modelo hombre: M/L</p>
+          </article>
+        </section>
       </section>
     </main>
     <footer>
