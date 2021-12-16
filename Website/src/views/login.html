@@ -21,80 +21,88 @@
   </head>
   <body>
     <header>
-      <picture class="logo-desktop">
-        <img src="/img/logo/logoDesktop.png" alt="" id="logo-big" />
-      </picture>
-      <picture class="logo-simple">
-        <img src="/img/logo/logoSimple.svg" alt="" id="logo" />
-      </picture>
-      <i class="fa-solid fa-bars hamburgesa"></i>
-      <nav id="navbar-content">
-        <a href="">Hombre</a>
-        <a href="">Mujer</a>
-        <a href="">Genderless</a>
-        <a href="">Accesorios</a>
-        <a href="">Acerca</a>
-      </nav>
-      <nav id="searchBar">
-        <fieldset>
-          <form action="">
-            <input type="text" name="barra" id="barra" />
+        <picture class="logo-desktop">
+          <a href="/">
+            <img src="/img/logo/logoDesktop.png" alt="" id="logo-big"/>
+          </a>
+        </picture>
+        <picture class="logo-simple">
+          <a href="/">
+            <img src="/img/logo/logoSimple.svg" alt="" id="logo" />
+          </a>
+        </picture>
+        <i class="fa-solid fa-bars hamburgesa"></i>
+        <nav id="navbar-content">
+          <a href="">Hombre</a>
+          <a href="">Mujer</a>
+          <a href="">Genderless</a>
+          <a href="">Accesorios</a>
+          <a href="">Acerca</a>
+        </nav>
+        <nav id="searchBar">
+          <fieldset>
+            <form action="">
+              <input type="text" name="barra" id="barra" />
+            </form>
+            <button>
+              <i class="fa-solid fa-magnifying-glass searchButton"></i>
+            </button>
+          </fieldset>
+        </nav>
+        <a href="/login">
+          <i class="fa-solid fa-user"></i>
+        </a>
+        <nav id="navbar-login">
+          <form action="/" method="post">
+            <fieldset>
+              <legend>Iniciar Sesión</legend>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </fieldset>
+            <fieldset>
+              <legend>Iniciar Sesión</legend>
+              <label for="email">Contraseña</label>
+              <input type="pass" name="pass" id="pass" />
+            </fieldset>
+            <fieldset>
+              <button type="submit">Iniciar Sesión</button>
+              <button>Registrarse</button>
+            </fieldset>
+            <fieldset>
+              <label for="remember"
+                ><input
+                  type="checkbox"
+                  name="remember"
+                  id="remember"
+                />Recuerdame</label
+              >
+            </fieldset>
           </form>
-          <button>
-            <i class="fa-solid fa-magnifying-glass searchButton"></i>
-          </button>
-        </fieldset>
-      </nav>
-      <i class="fa-solid fa-user"></i>
-      <nav id="navbar-login">
-        <form action="/" method="post">
-          <fieldset>
-            <legend>Iniciar Sesión</legend>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
-          </fieldset>
-          <fieldset>
-            <legend>Iniciar Sesión</legend>
-            <label for="email">Contraseña</label>
-            <input type="pass" name="pass" id="pass" />
-          </fieldset>
-          <fieldset>
-            <button type="submit">Iniciar Sesión</button>
-            <button>Registrarse</button>
-          </fieldset>
-          <fieldset>
-            <label for="remember"
-              ><input
-                type="checkbox"
-                name="remember"
-                id="remember"
-              />Recuerdame</label
-            >
-          </fieldset>
-        </form>
-        <a href="">Olvidé mi contraseña</a>
-      </nav>
-      <i class="fa-solid fa-cart-shopping"></i>
-      <nav id="navbar-Compra">
-        <form action="">
-          <button>Finalizar Compra</button>
-        </form>
-      </nav>
-    </header>
+          <a href="">Olvidé mi contraseña</a>
+        </nav>
+        <a href="/carrito">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <nav id="navbar-Compra">
+          <form action="">
+            <button>Finalizar Compra</button>
+          </form>
+        </nav>
+      </header>
     <main>
-      <section>
+      <section >
         <article id="login-form-complete">
           <h1>Login</h1>
           <form action="/" method="post" id="login-form">
             <fieldset>
               <legend class="no-show">Iniciar Sesión</legend>
               <label for="email" class="no-show">Email</label>
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" placeholder="email"/>
             </fieldset>
             <fieldset>
               <legend class="no-show">Iniciar Sesión</legend>
-              <label class="no-show" for="email">Contraseña</label>
-              <input type="pass" name="pass" id="pass" />
+              <label class="no-show" for="pass">Contraseña</label>
+              <input type="pass" name="pass" id="pass" placeholder="contraseña"/>
             </fieldset>
             <fieldset>
               <button type="submit" id="login-button">Iniciar Sesión</button>
@@ -114,6 +122,7 @@
           </form>
         </article>
       </section>
+      </header>
     </main>
     <footer>
       <section class="footer-Top">
