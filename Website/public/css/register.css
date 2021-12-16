@@ -6,8 +6,9 @@
 
 /* esto es el formulario*/
 .form-register {
-  background: transparent;
+  background: #f2e5d5;
   font-family: Roboto;
+  padding-top: 1px;
 }
 
 .form-register fieldset {
@@ -18,50 +19,73 @@
   width: 100vw;
 }
 
+#form-title {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* esto son los datos*/
 .controls {
   border-radius: 20px;
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: 10px 5px;
+  margin: 5px 0;
   font-size: 1rem;
-  font-family: Roboto;
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
 }
+
 
 /* boton de facebook*/
 #access_facebook {
-  background: #1778f2;
-  color: white;
   border-radius: 20px;
-  width: 80vw;
-  padding: 1rem;
-  margin: 0.1rem;
+  padding: 10px 5px;
+  margin: 3px 0;
   font-size: 1rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+  background: #1778f2;
+  color: white;  
 }
 
 /* boton de google*/
+#form article{
+  border-top: solid 2px rgba(150, 137, 137, 0.5);
+  margin: 20px 0;
+}
+
+#form fieldset #access_google{
+  margin-top: 20px;
+}
+
 #access_google {
   background: #ea4335;
-  color: white;
   border-radius: 20px;
-  width: 80vw;
-  padding: 1rem;
-  margin: 0.1rem;
+  padding: 10px 5px;
+  margin: 3px 0;
   font-size: 1rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+  color: white;  
 }
 
 /* boton de continuar*/
 .button {
   border-radius: 20px;
-  width: 80vw;
-  padding: 1rem;
-  margin: 0.1rem;
+  padding: 10px 5px;
+  margin: 3px 0;
+  background-color: #a69c94;
+  font-weight: 900;
   font-size: 1rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
 }
 
 /* esto es la linea*/
@@ -70,47 +94,37 @@
   padding-top: 10px;
 }
 
-h3 {
-  text-align: center;
-  padding-bottom: 0.3rem;
-}
-
 .logo-form {
   width: 100vw;
 }
 
 #logo-form-top {
-  max-width: 30px;
-  margin: 0 auto;
+  max-width: 60px;
+  max-height: 70px;
+  margin: 5px auto;
+  display: block;
 }
 
 /*tablet*/
 @media screen and (min-width: 768px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
   body {
-    background-image: url("/img/registerFondo.jpg");
+    background: url("/img/registerFondo.jpg");
     background-size: cover;
   }
 
+  #register{
+    display: flex;
+    justify-content: flex-end;
+  }
   .form-register {
     background: #f2e5d5;
     border-radius: 20px;
-    width: 40vw;
-    height: 80vh;
+    width: 350px;
+    height: 480px;   
     font-family: Roboto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    position: relative;
-    top: 55%;
-    left: 55%;
+    margin: 20px 40px;
+      
   }
 
   /* .form-register fieldset {
@@ -124,21 +138,16 @@ h3 {
   }
 
   /* esto son los datos*/
-  .controls {
-    font-size: 1rem;
-    font-family: Roboto;
-    width: 35vw;
-  }
-
+ 
   /* esto es el titulo*/
   #form-title {
     text-align: center;
+    padding-bottom: 0.3rem;
     font-weight: 700;
-    font-family: roboto;
-    margin: 1rem;
+    font-family: 'Trebuchet MS', sans-serif;
   }
 
-  /* boton de facebook*/
+  /* boton de facebook
   #access_facebook {
     background: blue;
     color: white;
@@ -149,8 +158,9 @@ h3 {
     font-size: 16px;
     font-family: "Trebuchet MS", sans-serif;
   }
+  */
 
-  /* boton de google*/
+  /* boton de google*
   #access_google {
     background: red;
     color: white;
@@ -161,8 +171,8 @@ h3 {
     font-family: "Trebuchet MS", sans-serif;
     margin-top: 20px;
   }
-
-  /* boton de continuar*/
+/
+  /* boton de continuar
   .button {
     border-radius: 20px;
     width: 100%;
@@ -171,14 +181,14 @@ h3 {
     font-family: "Trebuchet MS", sans-serif;
     margin-top: 20px;
   }
-
+*/
   /* esto es la linea*/
-  .contenedor {
-    border-top: 1px gray solid;
-    padding-top: 10px;
-  }
+ 
 }
 
-@media screen and (min-width: 768px) {
-    
+@media screen and (min-width: 1200px) {
+  body {
+    background: url("/img/registerFondo.jpg") no-repeat;
+    background-size: 100%;
+  }
 }
