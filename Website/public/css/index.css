@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 main h2{
     font-size: 2rem;
     font-family: 'Trebuchet MS';
