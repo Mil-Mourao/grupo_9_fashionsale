@@ -1,5 +1,185 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* esto es el formulario*/
+.form-register {
+  background: #f2e5d5;
+  font-family: Roboto;
+  padding-top: 1px;
+}
+
+.form-register fieldset {
+  font-size: 1.6rem;
+}
+
+.logo-form {
+  width: 100vw;
+}
+
+#form-title {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-weight: 700;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* esto son los datos*/
+.controls {
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 5px 0;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+}
+
+
+/* boton de facebook*/
+#access_facebook {
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 3px 0;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+  background: #1778f2;
+  color: white;  
+}
+
+/* boton de google*/
+#form article{
+  border-top: solid 2px rgba(150, 137, 137, 0.5);
+  margin: 20px 0;
+}
+
+#form fieldset #access_google{
+  margin-top: 20px;
+}
+
+#access_google {
+  background: #ea4335;
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 3px 0;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+  color: white;  
+}
+
+/* boton de continuar*/
+.button {
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 3px 0;
+  background-color: #a69c94;
+  font-weight: 900;
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 280px;
+}
+
+/* esto es la linea*/
+.contenedor {
+  border-top: 1px gray solid;
+  padding-top: 10px;
+}
+
+.logo-form {
+  width: 100vw;
+}
+
+#logo-form-top {
+  max-width: 60px;
+  max-height: 70px;
+  margin: 5px auto;
+  display: block;
+}
+
+/*tablet*/
+@media screen and (min-width: 768px) {
+
+    #register{
+    display: flex;
+    justify-content: flex-end;
+    background: url("/img/registerFondo.jpg");
+    background-size: cover;
+  }
+  .form-register {
+    background: #f2e5d5;
+    border-radius: 20px;
+    width: 350px;
+    height: 480px;   
+    font-family: Roboto;
+    margin: 20px 40px;
+      
+  }
+
+  /* .form-register fieldset {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+  } */
+
+  #form {
+      padding: 1rem;
+  }
+
+  /* esto son los datos*/
+ 
+  /* esto es el titulo*/
+  #form-title {
+    text-align: center;
+    padding-bottom: 0.3rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+
+  /* boton de facebook
+  #access_facebook {
+    background: blue;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-family: "Trebuchet MS", sans-serif;
+  }
+  */
+
+  /* boton de google*
+  #access_google {
+    background: red;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    font-family: "Trebuchet MS", sans-serif;
+    margin-top: 20px;
+  }
+/
+  /* boton de continuar
+  .button {
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    font-family: "Trebuchet MS", sans-serif;
+    margin-top: 20px;
+  }
+*/
+  /* esto es la linea*/
+ 
+}
+

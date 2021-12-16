@@ -1,0 +1,175 @@
+* {
+  font-family: roboto;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f2e5d5;
+}
+
+main {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.no-show {
+  display: none;
+}
+
+i {
+  overflow-x: visible;
+}
+
+#volver {
+  color: black;
+  text-decoration: none;
+  font-family: roboto;
+  display: none;
+}
+
+.pic-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.small-pic {
+  width: 10vw;
+  height: auto;
+}
+
+#focus-pic {
+  width: 100vw;
+}
+
+#producto {
+  border: 1px solid #403831;
+}
+
+#desc-title {
+  font-size: 2rem;
+  margin: 0 1rem;
+  font-family: Lora;
+}
+
+#desc-prize {
+  margin: 0.2rem 1rem;
+  font-family: Lora;
+}
+
+#cuotas {
+  margin: 0.5rem 1.2rem;
+}
+
+#size-qty-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0.4rem;
+  max-width: 100vw;
+  align-items: center;
+}
+
+legend {
+  margin: 0.5rem 0;
+}
+
+#talle {
+  width: 45vw;
+  background: transparent;
+  border: solid 1px #403831;
+}
+
+#qty {
+  width: 45vw;
+  background: transparent;
+  border: solid 1px #403831;
+}
+
+#submit {
+  margin: 0.5rem 1rem;
+  padding: 0.2rem;
+  width: 90vw;
+  background-color: #d9c9ba;
+  border: none;
+  outline: none;
+  border: solid 1px #403831;
+  color: black;
+}
+
+#desc-bottom {
+  margin: 0.5rem;
+}
+
+#desc-bottom p {
+  margin: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .pic-list {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  #producto {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px #403831;
+    padding: 10px;
+  }
+
+  #desc-title {
+    border-bottom: solid 1px #403831;
+  }
+
+  #focus-pic {
+    max-width: 40vw;
+    margin-left: 10px;
+  }
+
+  .description {
+    width: 40vw;
+  }
+
+  #size-qty-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #talle {
+    width: 30vw;
+  }
+
+  #qty {
+    width: 30vw;
+  }
+
+  #submit {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  #size-qty-form {
+    display: flex;
+    flex-direction: row;
+    max-width: 550px;
+  }
+
+  #talle {
+    width: 90vw;
+    max-width: 250px;
+  }
+
+  #qty {
+    width: 90vw;
+    max-width: 250px;
+  }
+
+  #submit {
+    width: 90vw;
+    max-width: 540px;
+    margin: 10px auto;
+  }
+}
