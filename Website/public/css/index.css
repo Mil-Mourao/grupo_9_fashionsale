@@ -12,12 +12,17 @@ main h2{
 
 .main_section article{
     padding: 10px 0;
+    transition: transform 0.2s ease-in;
 }
 
 .main_section article img{
     width: 255px;
     height: 240px;
     box-shadow: 3px -2px 7px #a69c94;
+}
+
+.main_section article:hover{
+    transform: scale(1.02);
 }
 
 .main_section ul{
