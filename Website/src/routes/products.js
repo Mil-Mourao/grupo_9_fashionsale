@@ -1,8 +1,14 @@
 const express = require('express');
-const users = require('../controllers/users');
+const products = require('../controllers/products');
 const router = express.Router();
 
-router.get('/', users.login)
-router.get('/register', users.register)
+router.get("/", products.list);
+
+router.get('/create', products.create);
+
+router.get('/:id', products.detail);
+
+router.get('/modify/:id ', products.modify);
+
 
 module.exports = router;
