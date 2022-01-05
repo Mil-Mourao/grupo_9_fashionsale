@@ -1,4 +1,4 @@
-const {all,create} = require('../models/product')
+const {all,create} = require('../models/products')
 const products = require('../modules/products');
 const controller = {
     list: (req,res) => res.render('products/list', {css:'list',list: products}),

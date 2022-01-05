@@ -8,8 +8,12 @@ app.use(express.static(publicPath))
 
 app.listen(app.get('port'),() => console.log('running on port http://localhost:' + app.get('port')))
 
+app.use(require('./routes/main'))
+
+app.use('/users', require('./routes/users'))
+
+app.use('/products',require('./routes/products'))
+
 app.get("/", (req,res)=> res.sendFile(path.resolve(__dirname,"views","index.html")))
-app.get("/register", (req,res)=> res.sendFile(path.resolve(__dirname,"views","register.html")))
-app.get("/login", (req,res)=> res.sendFile(path.resolve(__dirname,"views","login.html")))
-app.get("/carrito", (req,res)=> res.sendFile(path.resolve(__dirname,"views","productCart.html")))
+app.get("/users", (req,res)=> res.sendFile(path.resolve(__dirname,"views","login.html")))
 app.get("/product", (req,res)=> res.sendFile(path.resolve(__dirname,"views","productDetail.html")))
