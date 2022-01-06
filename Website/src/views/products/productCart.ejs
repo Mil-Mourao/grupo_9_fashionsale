@@ -17,11 +17,15 @@
 <body>
   <header>
     <picture class="logo-desktop">
-        <img src="/img/logo/logoDesktop.svg" alt="">
+      <a href="/">
+        <img src="/img/logo/logoDesktop.png" alt="" id="logo-big"/>
+      </a>
     </picture>
     <picture class="logo-simple">
-      <img src="/img/logo/logoSimple.svg" alt="" id="logo">
-  </picture>
+      <a href="/">
+        <img src="/img/logo/logoSimple.svg" alt="" id="logo" />
+      </a>
+    </picture>
     <i class="fa-solid fa-bars hamburgesa"></i>
     <nav id="navbar-content">
       <a href="">Hombre</a>
@@ -40,7 +44,9 @@
         </button>
       </fieldset>
     </nav>
-    <i class="fa-solid fa-user"></i>
+    <a href="/login">
+      <i class="fa-solid fa-user"></i>
+    </a>
     <nav id="navbar-login">
       <form action="/" method="post">
         <fieldset>
@@ -69,7 +75,9 @@
       </form>
       <a href="">Olvidé mi contraseña</a>
     </nav>
-    <i class="fa-solid fa-cart-shopping"></i>
+    <a href="/carrito">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </a>
     <nav id="navbar-Compra">
       <form action="">
         <button>Finalizar Compra</button>
@@ -127,7 +135,7 @@
                     <section class="item_product">
                         <article class="product">
                             <picture>
-                                <img src="/img/prod2.jpg" alt="camperas">
+                                <img src="/img/piloto.jpg" alt="camperas">
                             </picture>
                             <article class="description">
                                 <h3>Piloto "Lights"</h3>
@@ -173,55 +181,55 @@
         </section>
     </main>
     <footer>
-        <section class="footer-Top">
-          <section>
-            <article class="footer-Top-art">
-              <i class="fa-solid fa-truck"></i>
-              <p>Envíos gratis a partir de $20.000</p>
-            </article>
-          </section>
-          <section>
-            <article class="footer-Top-art">
-              <i class="fa-brands fa-instagram"></i>
-              <p>Instagram</p>
-            </article>
-          </section>
-          <section>
-            <article class="footer-Top-art">
-              <i class="fa-solid fa-credit-card"></i>
-              <p>6 cuotas fijas</p>
-            </article>
-          </section>
-        </section>
-  
-        <section class="footer-Bottom">
-          <article class="footer-Form">
-            <form action="/" method="get">
-              <legend>Newsletter</legend>
-              <label for="news"
-                >Suscribite al newsletter para saber cuando hay ofertas</label
-              >
-              <input type="email" name="news" id="news" />
-            </form>
+      <section class="footer-Top">
+        <section>
+          <article class="footer-Top-art">
+            <i class="fa-solid fa-truck"></i>
+            <p>Envíos gratis a partir de $20.000</p>
           </article>
-          <section id="copy-and-recl">
-            <article>
-              <p id="copy">
-                Copyright Fashion Sale - 2021
-                <i class="fa-solid fa-copyright"></i>
-              </p>
-            </article>
-            <article>
-              <p id="reclamos">
-                Para reclamos haga click
-                <a href="http://" target="_blank" rel="noopener noreferrer"
-                  >aqui</a
-                >
-              </p>
-            </article>
-          </section>
         </section>
-      </footer>
+        <section>
+          <article class="footer-Top-art">
+            <i class="fa-brands fa-instagram"></i>
+            <p>Instagram</p>
+          </article>
+        </section>
+        <section>
+          <article class="footer-Top-art">
+            <i class="fa-solid fa-credit-card"></i>
+            <p>6 cuotas fijas</p>
+          </article>
+        </section>
+      </section>
+
+      <section class="footer-Bottom">
+        <article class="footer-Form">
+          <form action="/" method="get">
+            <legend>Newsletter</legend>
+            <label for="news"
+              >Suscribite al newsletter para saber cuando hay ofertas</label
+            >
+            <input type="email" name="news" id="news" />
+          </form>
+        </article>
+        <section id="copy-and-recl">
+          <article>
+            <p id="copy">
+              Copyright Fashion Sale - 2021
+              <i class="fa-solid fa-copyright"></i>
+            </p>
+          </article>
+          <article>
+            <p id="reclamos">
+              Para reclamos haga click
+              <a href="http://" target="_blank" rel="noopener noreferrer"
+                >aqui</a
+              >
+            </p>
+          </article>
+        </section>
+      </section>
+    </footer>
 </body>
 
 </html>
