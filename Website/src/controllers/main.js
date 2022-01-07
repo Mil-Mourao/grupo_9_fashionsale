@@ -2,7 +2,7 @@
 const controller = {
     index: (req,res) => res.render('index', {css:'index'}),
     about: (req,res) => res.render('about', {css:'about'}),
-    carrito: (req,res) => res.render('carrito', {css:'carrito'}),
+    carrito: (req,res) => res.render('productCart', {css:'carrito'}),
 }
 module.exports = controller
 
