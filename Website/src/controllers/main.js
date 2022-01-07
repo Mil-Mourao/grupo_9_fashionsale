@@ -1,6 +1,6 @@
 
 const controller = {
-    index: (req,res) => res.render('index', {css:'index'}),
+    index: (req,res) => res.render('index', {css:'index', title: "Home"}),
     about: (req,res) => res.render('about', {css:'about'}),
     carrito: (req,res) => res.render('carrito', {css:'carrito'}),
 }
