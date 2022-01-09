@@ -37,8 +37,8 @@ fieldset {
   flex-wrap: nowrap;
 }
 
-@media screen and (min-width: 768px) {
-  .hamburgesa {
+@media (min-width: 768px) {
+  .hamburguesa {
     display: none;
   }
 
