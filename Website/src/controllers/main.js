@@ -1,8 +1,8 @@
 
 const controller = {
-    index: (req,res) => res.render('index', {styles:['index','general','header','footer'], title: "Home"}),
+    index: (req,res) => res.render('index', {styles:['index'], title: "Home"}),
     about: (req,res) => res.render('about', {css:'about'}),
-    cart: (req,res) => res.render('productCart', {styles:['carrito','general','header','footer'], title: "Mi carrito"}),
+    cart: (req,res) => res.render('productCart', {styles:['carrito'], title: "Mi carrito"}),
 }
 module.exports = controller
 
