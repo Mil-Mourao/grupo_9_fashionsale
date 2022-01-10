@@ -1,106 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %> 
-<body>
-  <%- include('./partials/header') %> 
-  
-    <main>
-        <section>
-            <h2>Carrito</h2>
-        </section>
-        <section class="main_section">
-            <ul id="col-header">
-                <li id="cl-product">Producto</li>
-                <li id="cl-quantity">Cantidad</li>
-                <li id="cl-delete">Eliminar</li>
-                <li id="cl-price">Valor Unitario</li>
-                <li id="cl-total">Total</li>
-            </ul>
-            <ul id="items">
-                <li class="item-border">
-                    <section class="item_product">
-                        <article class="product">
-                            <picture>
-                                <img src="/img/prod1.jpg" alt="camperas">
-                            </picture>
-                            <article class="description">
-                                <h3>Campera "Wave"</h3>
-                                <ul>
-                                    <li>Talle: M</li>
-                                    <li>Color: Celeste/Negro</li>
-                                    <li>Tipo: Poliester</li>
-                                </ul>
-                            </article>          
-                               
-                        </article>
-                        <form action="/" class="quantity-form">
-                            <fieldset>
-                                <button type="button"><i class="fas fa-minus"></i></button>
-                                <input type="number" name="cantidad" id="cantidad" min="1" max="10" value="1">
-                                <button type="button"><i class="fas fa-plus"></i></button>
-                            </fieldset>
-                        </form>
-                        <form action="/" class="delete-form">
-                            <button type="button"><i class="fas fa-trash-alt"></i></button>
-                        </form>
-                        <article class="price-unit">
-                            <p>$8.000</p>
-                        </article>
-                        <article class="price-total">
-                            <p>$8.000</p>
-                        </article>
-                    </section>
-                </li>
-                <li class="item-border">
-                    <section class="item_product">
-                        <article class="product">
-                            <picture>
-                                <img src="/img/piloto.jpg" alt="camperas">
-                            </picture>
-                            <article class="description">
-                                <h3>Piloto "Lights"</h3>
-                                <ul>
-                                    <li>Talle: L</li>
-                                    <li>Color: Rosado</li>
-                                    <li>Tipo: Poliester</li>
-                                </ul>
-                            </article>          
-                               
-                        </article>
-                        <form action="/" class="quantity-form">
-                            <fieldset>
-                                <button type="button"><i class="fas fa-minus"></i></button>
-                                <input type="number" name="cantidad" id="cantidad" min="1" max="10" value="1">
-                                <button type="button"><i class="fas fa-plus"></i></button>
-                            </fieldset>
-                        </form>
-                        <form action="/" class="delete-form">
-                            <button type="button"><i class="fas fa-trash-alt"></i></button>
-                        </form>
-                        <article class="price-unit">
-                            <p>$8.000</p>
-                        </article>
-                        <article class="price-total">
-                            <p>$8.000</p>
-                        </article>
-                    </section>
-                </li>
-            </ul>
+<%- include('./partials/head') %>
 
-            <section id="btn-compra">
-                <article>
-                  <p>Compra Total</p>
-                  <p>$16.000</p>
-                </article>
-                <form action="/" method="post">
-                    <fieldset>
-                        <button type="button">Finalizar Compra</button>
-                    </fieldset>
-                </form>
-            </section>
-        </section>
-    </main>
-    <%- include('./partials/footer') %> 
-</body>
+    <body>
+        <%- include('./partials/header') %>
+
+            <main>
+                <section>
+                    <h2>Carrito</h2>
+                </section>
+                <section class="main_section">
+                    <ul id="col-header">
+                        <li id="cl-product">Producto</li>
+                        <li id="cl-quantity">Cantidad</li>
+                        <li id="cl-delete">Eliminar</li>
+                        <li id="cl-price">Valor Unitario</li>
+                        <li id="cl-total">Total</li>
+                    </ul>
+                    <ul id="items">
+                        <li class="item-border">
+                            <section class="item_product">
+                                <article class="product">
+                                    <picture>
+                                        <img src="/img/prod1.jpg" alt="camperas">
+                                    </picture>
+                                    <article class="description">
+                                        <h3>Campera "Wave"</h3>
+                                        <ul>
+                                            <li>Talle: M</li>
+                                            <li>Color: Celeste/Negro</li>
+                                            <li>Tipo: Poliester</li>
+                                        </ul>
+                                    </article>
+
+                                </article>
+                                <form action="/" class="quantity-form">
+                                    <fieldset>
+                                        <button type="button"><i class="fas fa-minus"></i></button>
+                                        <input type="number" name="cantidad" id="cantidad" min="1" max="10" value="1">
+                                        <button type="button"><i class="fas fa-plus"></i></button>
+                                    </fieldset>
+                                </form>
+                                <form action="/" class="delete-form">
+                                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                                <article class="price-unit">
+                                    <p>$8.000</p>
+                                </article>
+                                <article class="price-total">
+                                    <p>$8.000</p>
+                                </article>
+                            </section>
+                        </li>
+                        <li class="item-border">
+                            <section class="item_product">
+                                <article class="product">
+                                    <picture>
+                                        <img src="/img/piloto.jpg" alt="camperas">
+                                    </picture>
+                                    <article class="description">
+                                        <h3>Piloto "Lights"</h3>
+                                        <ul>
+                                            <li>Talle: L</li>
+                                            <li>Color: Rosado</li>
+                                            <li>Tipo: Poliester</li>
+                                        </ul>
+                                    </article>
+
+                                </article>
+                                <form action="/" class="quantity-form">
+                                    <fieldset>
+                                        <button type="button"><i class="fas fa-minus"></i></button>
+                                        <input type="number" name="cantidad" id="cantidad" min="1" max="10" value="1">
+                                        <button type="button"><i class="fas fa-plus"></i></button>
+                                    </fieldset>
+                                </form>
+                                <form action="/" class="delete-form">
+                                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                                <article class="price-unit">
+                                    <p>$8.000</p>
+                                </article>
+                                <article class="price-total">
+                                    <p>$8.000</p>
+                                </article>
+                            </section>
+                        </li>
+                    </ul>
+
+                    <section id="btn-compra">
+                        <article>
+                            <p>Compra Total</p>
+                            <p>$16.000</p>
+                        </article>
+                        
+                        <form action="/" method="post" class="pagos">
+                            <fieldset class="opt">
+                              <label for="mercadopago">
+                              <input type="radio" name="pago" value="mercado pago" class="tarjetas">
+                                   <picture><img src="/img/mercado-pago.jpg" alt=""></picture>
+                               </label>
+                               <label for="mercadopago">
+                                <input type="radio" name="pago" value="mercado pago" class="tarjetas">
+                                     <picture><img src="/img/visamaster.jpg" alt=""></picture>
+                                 </label>
+                            </fieldset>
+                        </form>
+                    
+                        <form action="/" method="post">
+                            <fieldset class="btnCompra">
+                                <button type="button">Finalizar Compra</button>
+                            </fieldset>
+                        </form>
+
+                    </section>
+                </section>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
 </html>
