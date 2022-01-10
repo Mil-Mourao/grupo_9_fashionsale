@@ -2,7 +2,7 @@
 //const products = require('../modules/products');
 const controller = {
     list: (req,res) => res.render('products/list', {css:'list',list: products}),
-    detail: (req,res) => res.render('products/detail', {css:'detail'}),
+    detail: (req,res) => res.render('products/productDetail', {styles: ['product'], title: 'Detalle de producto'}),
     create: (req, res) => res.render('products/create',{css:'create'}),
     modify: (req,res) => res.render('products/modify',{css:'modify'}),
 }
