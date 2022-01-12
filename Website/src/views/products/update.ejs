@@ -1,0 +1,16 @@
+<form action="/products/<%= product.id %>?m=PUT" method="post">
+    <label for="name">
+        <input type="text" name="name" id="name" placeholder="Name" value="<%= product.name %> ">
+    </label>
+    <label for="price">
+        <input type="number" name="price" id="price" placeholder="Price" min="0" value="<%= product.price %>">
+    </label>
+    <label for="ofert">
+        <input type="checkbox" name="ofert" id="ofert" <%= product.ofert ? 'checked' : null %> >
+        <i class="fas fa-percentage"></i>
+    </label>
+    <fieldset>
+        <button type="submit">Update</button>
+    </fieldset>
+</form>
+</main>

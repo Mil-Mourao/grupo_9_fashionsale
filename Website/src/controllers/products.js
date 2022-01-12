@@ -3,8 +3,21 @@
 const controller = {
     list: (req,res) => res.render('products/list', {css:'list',list: products}),
     detail: (req,res) => res.render('products/productDetail', {styles: ['product'], title: 'Detalle de producto'}),
-    create: (req, res) => res.render('products/create',{css:'create'}),
-    modify: (req,res) => res.render('products/modify',{css:'modify'}),
+    create: (req, res) => res.render('products/create',{title:'crear producto'}),
+    save: (req,res) => {
+        req.body.file = req.files;
+        let created = products.create(req.body);
+        return res.redirect("/products/" + created.id)
+    },
+    update:(req,res) => res.render("products/update", {
+        styles: ["products/create"],
+        title: "actualizar",
+        products: products.search("id", req.params.id)
+    }),
+    modify: (req,res) => {
+        let update = products.update(req.params.id, req.body);
+        return res.redirect("/products/" + update.id)
+    }
 }
 module.exports = controller
 /*
@@ -18,4 +31,5 @@ create: (req, res) => res.render('products/create',{
     styles: ['products/create'],
     title: 'Nuevo Producto',
 }),
+ modify: (req,res) => res.render('products/modify',{css:'modify'}),
 */
