@@ -7,18 +7,91 @@
 header {
   background-color: #a69c94;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
+.logo-desktop {
+  display: none;
+}
+
 #logo {
-  border: solid 10px #403831;
-  color: #403831;
-  font-family: Lora;
-  font-size: 2rem;
+  width: 20vw;
+  max-width: 3rem;
+  margin-left: .5rem;
 }
 
 i {
   color: #403831;
   font-size: 1.3rem;
+}
+
+#barra{
+  height: 20px;
+}
+
+.searchButton {
+  font-size: 1rem;
+  padding: 0 0.15rem;
+}
+
+fieldset {
+  border: none;
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 768px) {
+  
+  .hamburgesa {
+    color: transparent;
+  }
+
+  #navbar-content {
+    display: block;
+  }
+
+  #navbar-content a {
+    text-decoration: none;
+    color: black;
+    font-family: roboto;
+    padding: 1rem 0.5rem;
+    font-weight: 500;
+  }
+
+  #barra {
+    width: 20vw;
+    height: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    justify-content: space-evenly;
+  }
+
+  nav {
+    overflow-y: hidden;
+  }
+
+  .logo-simple {
+    display: none;
+  }
+  
+  .logo-desktop {
+    display: inline-block;
+  }
+
+  #logo-big {
+    max-width: 200px;
+  }
+
+  #navbar-content a {
+    font-size: 1.2rem;
+  }
+
+  .fa-bars {
+    display: none;
+  }
 }
