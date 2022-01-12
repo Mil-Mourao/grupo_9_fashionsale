@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %> 
+  <body>
+    <%- include('../partials/header') %> 
+    <main id="register">
+      <section class="form-register">
+        <article>
+          <picture class="logo-form">
+            <img src="/img/logo/logoSimple.svg" alt="" id="logo-form-top" />
+          </picture>
+        </article>
+        <h3 id="form-title">¡Bienvenid@ a fashion sale!</h3>
+        <form action="" method="post" id="form">
+          <fieldset>
+            <input
+              class="controls"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              class="controls"
+              type="password"
+              name="clave"
+              id="clave"
+              placeholder="Contraseña"
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              class="controls"
+              type="password"
+              name="confirmacion"
+              id="confirmacion"
+              placeholder="Confirmar Contraseña"
+            />
+          </fieldset>
+          <fieldset>
+            <button class="button" type="submit">Continuar</button>
+          </fieldset>
+          <article>
+          <fieldset>
+            <input type="button" id="access_google" value="Google" />
+          </fieldset>
+          <fieldset>
+            <input type="button" id="access_facebook" value="Facebook" />
+          </fieldset>
+          </article>
+        </form>
+      </section>
+    </main>
+    <%- include('../partials/footer') %> 
+  </body>
+</html>
