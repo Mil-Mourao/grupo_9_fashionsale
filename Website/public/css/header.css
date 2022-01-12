@@ -26,13 +26,8 @@ i {
   font-size: 1.3rem;
 }
 
-#barra{
-  height: 20px;
-}
-
 .searchButton {
   font-size: 1rem;
-  padding: 0 0.15rem;
 }
 
 fieldset {
@@ -42,10 +37,9 @@ fieldset {
   flex-wrap: nowrap;
 }
 
-@media (min-width: 768px) {
-  
+@media screen and (min-width: 768px) {
   .hamburgesa {
-    color: transparent;
+    display: none;
   }
 
   #navbar-content {
