@@ -88,6 +88,6 @@ ___
 +	![Logo completo en fondo normal](/Capturas/Logo/logoSolo.jpg "Logo solo en fondo normal")
 +	![Logo completo en fondo normal](/Capturas/Logo/logoTextoSolo.jpg "Texto solo en fondo normal")
 
-# ***Link del tablero en ___Trello__ [___Link___](https://trello.com/b/7pQhEUBU/fashion-sale)***
+# ***Link del tablero en [___Trello___](https://trello.com/b/7pQhEUBU/fashion-sale)***
 
 
