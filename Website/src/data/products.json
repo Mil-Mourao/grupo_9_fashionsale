@@ -1,7 +1,34 @@
 [
-    {
-        "name": "Algo",
+    {   
+        "id": 1,
+        "name": "North Face",
+        "desc": "Buzo",
+        "price": "3500",
+        "ofert": true,
+        "img": "buzo.jpg"
+    },
+    {   
+        "id": 2,
+        "name": "Hawaiiana",
+        "desc": "Camisa",
+        "price": "1800",
+        "ofert": false,
+        "img": "camisa.jpg"
+    },
+    {   
+        "id": 3,
+        "name": "de jean",
+        "desc": "Camisa",
         "price": "2000",
-        "ofert": true
+        "ofert": true,
+        "img": "camisaJean.jpg"
+    },
+    {   
+        "id": 4,
+        "name": "Lights",
+        "desc": "Piloto",
+        "price": "3150",
+        "ofert": false,
+        "img": "pilotoLightsred.jpg"
     }
 ]

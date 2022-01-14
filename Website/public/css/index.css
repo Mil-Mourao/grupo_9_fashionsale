@@ -26,8 +26,9 @@ body {
     box-shadow: 3px -2px 7px #a69c94;
 }
 
-.main_section article:hover{
-    transform: scale(1.02);
+.main_section article img:hover{
+    transform: translateY(-12px);
+    box-shadow: 0 0 15px 5px #db9c68;
 }
 
 .main_section ul{
@@ -36,6 +37,21 @@ body {
     padding: 2px 5px;
     font-family: 'Trebuchet MS';
 }
+.main_section ul article li:nth-child(1){
+   text-decoration: line-through;
+   flex-basis: 60px;
+}
+
+.main_section ul article{
+    display: flex;
+    
+}
+.main_section ul article li:nth-child(2){
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+ }
+
+
+
 
 @media screen and (min-width: 768px) {
     

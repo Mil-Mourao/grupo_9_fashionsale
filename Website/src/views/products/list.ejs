@@ -5,52 +5,25 @@
     <%- include('../partials/header') %> 
     <main>
         <main>
-            <h2>Productos</h2>
+            <h2>Listado de productos</h2>
             <section class="main_section">
-                <article>
-                  <picture>
-                   <a href="/products/productDetail">
-                    <img src="/img/Productos/buzo.jpg" alt="Buzo blanco">
-                  </a>
-                  </picture>
-                  <ul>
-                    <li>Buzo North Face</li>
-                    <li>$7.000</li>
-                  </ul>       
-                </article>
-                <article>
-                  <picture>
-                    <a href="./products/productDetail">
-                    <img src="/img/Productos/Saco_WeAre.jpg" alt="Sacos">
+                <% if (locals.products) { %>                    
+                <% products.forEach(element => { %>   
+                    <article>
+                    <picture>
+                    <a href="/products/<%= element.id %> ">
+                        <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
                     </a>
-                  </picture>
-                  <ul>
-                    <li>Saco "We Are"</li>
-                    <li>$15.000</li>
-                  </ul>       
-                </article>
-                <article>
-                  <picture>
-                      <a href="./products/productDetail">
-                      <img src="/img/Productos/camperaDeJean.jpg" alt="Campera de Jean">
-                      </a>
-                  </picture>
-                  <ul>
-                    <li>Campera de Jean "Jacques"</li>
-                    <li>$13.000</li>
-                  </ul>       
-                </article>
-                <article>
-                  <picture>
-                    <a href="/products/productDetail">
-                      <img src="/img/Productos/pilotoLightsred.jpg" alt="Piloto transparente rosado">
-                    </a>
-                  </picture>
-                  <ul>
-                    <li>Piloto "Lights"</li>
-                    <li>$6.000</li>
-                  </ul>       
-                </article>
+                    </picture>
+                    <ul>
+                        <li><span><%= element.desc %> </span> <%= element.name %> </li>
+                        <li>$<%= element.price %> </li>
+                    </ul>       
+                    </article>
+                <% }) %>
+                <% } else {%>
+                    <h2>No hay productos cargados</h2>
+                <% } %> 
             </section>
           </main>
     </main>
