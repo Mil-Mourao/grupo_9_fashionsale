@@ -20,12 +20,16 @@
     box-sizing: border-box;
     border: none;
     outline: none;
+    overflow-x: hidden;
   }
 
 body {
     background-color: #F2E5D5;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 #banner img{
     max-width: 100vw;
