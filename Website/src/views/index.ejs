@@ -1,151 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/head') %> 
+<%- include('./partials/head') %>
+
   <body>
-    <%- include('./partials/header') %> 
-    <main>
-      <section id="banner">
-        <picture>
-          <img src="/img/Splash/Splash-1.jpg" alt="" srcset="">
-        </picture>
-      </section>
-      <h2>Ofertas</h2>
-      <section class="main_section">
-          <article>
-            <picture>
-             <a href="/products/productDetail">
-              <img src="/img/Productos/buzo.jpg" alt="Buzo blanco">
-            </a>
-            </picture>
-            <ul>
-              <li>Buzo North Face</li>
-              <li>$7.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="./products/productDetail">
-              <img src="/img/Productos/Saco_WeAre.jpg" alt="Sacos">
-              </a>
-            </picture>
-            <ul>
-              <li>Saco "We Are"</li>
-              <li>$15.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-                <a href="./products/productDetail">
-                <img src="/img/Productos/camperaDeJean.jpg" alt="Campera de Jean">
-                </a>
-            </picture>
-            <ul>
-              <li>Campera de Jean "Jacques"</li>
-              <li>$13.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail">
-                <img src="/img/Productos/pilotoLightsred.jpg" alt="Piloto transparente rosado">
-              </a>
-            </picture>
-            <ul>
-              <li>Piloto "Lights"</li>
-              <li>$6.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail">
-                <img src="/img/Productos/camperaWaveEspaladaHombre.jpg" alt="Campera Waves">
-              </a>
-            </picture>
-            <ul>
-              <li>Campera "Waves"</li>
-              <li>$8.400</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail"> 
-               <img src="/img/Productos/camisa.jpg" alt="Camisa Hawaiiana">
-              </a>
-            </picture>
-            <ul>
-              <li>Camisa Hawaiiana</li>
-              <li>$1.800</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail"> 
-               <img src="/img/Productos/lana.jpeg" alt="Poluveres de lana">
-              </a>
-            </picture>
-            <ul>
-              <li>Pulover de lana</li>
-              <li>$5.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail">
-                <img src="/img/Productos/jeans.jpeg" alt="Jeans colores varios">
-              </a>
-            </picture>
-            <ul>
-              <li>Jeans</li>
-              <li>$8.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail"> 
-               <img src="/img/Productos/camisa2.jpg" alt="Camisa de Jean Azul Marino">
-              </a>
-            </picture>
-            <ul>
-              <li>Camisa de Jean</li>
-              <li>$5.000</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail">
-                <img src="/img/Productos/collar.jpeg" alt="Collar de Amatista">
-              </a>
-            </picture>
-            <ul>
-              <li>Collar de Amatista</li>
-              <li>$2.500</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-                <a href="/products/productDetail">
-                <img src="/img/Productos/mochila.jpeg" alt="Mochila de Cuero">
-                </a>
-            </picture>
-            <ul>
-              <li>Mochila de Cuero</li>
-              <li>$1.200</li>
-            </ul>       
-          </article>
-          <article>
-            <picture>
-              <a href="/products/productDetail">
-                <img src="/img/Productos/camisaJean.jpg" alt="Camisa de Jean Azul Clarito">
-              </a>
-            </picture>
-            <ul>
-              <li>Camisa de Jean</li>
-              <li>$5.000</li>
-            </ul>       
-          </article>
-          
-      </section>
-    </main>
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/header') %>
+      <main>
+        <section id="banner">
+          <picture>
+            <img src="/img/Splash/Splash-1.jpg" alt="" srcset="">
+          </picture>
+        </section>
+        <h2>Ofertas</h2>
+        <section class="main_section">
+          <% if (locals.products) { %>
+            <% products.forEach(element=> { %>
+              <% if (element.ofert==true) { %>
+                <article>
+                  <picture>
+                    <a href="/products/<%= element.id %> ">
+                      <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
+                    </a>
+                  </picture>
+                  <ul>
+                    <li><%= element.desc %> <%= element.name %></li>
+                  <article>
+                    <li>$<%= element.price %></li>
+                    <li>$<%= parseInt(element.price) * 0.8%></li>
+                  </article>
+                  </ul>
+                </article>                    
+              <% } %>
+              <% }) %>
+              <% } %>
+        </section>
+      </main>
+      <%- include('./partials/footer') %>
   </body>
+
 </html>

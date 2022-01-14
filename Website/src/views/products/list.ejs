@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/header') %> 
+    <main>
+        <main>
+            <h2>Listado de productos</h2>
+            <section class="main_section">
+                <% if (locals.products) { %>                    
+                <% products.forEach(element => { %>   
+                    <article>
+                    <picture>
+                    <a href="/products/<%= element.id %> ">
+                        <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
+                    </a>
+                    </picture>
+                    <ul>
+                        <li><span><%= element.desc %> </span> <%= element.name %> </li>
+                        <li>$<%= element.price %> </li>
+                    </ul>       
+                    </article>
+                <% }) %>
+                <% } else {%>
+                    <h2>No hay productos cargados</h2>
+                <% } %> 
+            </section>
+          </main>
+    </main>
+    <%- include('../partials/footer') %> 
+</body>
+</html>
