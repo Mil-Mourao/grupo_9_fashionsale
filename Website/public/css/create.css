@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-color: gray;
+    min-height: 75vh;
+  }
+  .form-create {
+    background: lightpink;
+    border-radius: 20px;
+    width: 350px;  
+    font-family: Roboto;
+    margin: 20px 40px;
+    text-align: center;    
+  }
+  .form-create fieldset {
+    border-radius: 5px;
+    margin-bottom: 25px;
+    display: block;
+    justify-content: right;
+    font-size: 25px;
+  }
+.Datos{
+    
+    text-align: center;
+    height: 1.2em;
+    width: 14em;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-size: 1.5em;
+}
