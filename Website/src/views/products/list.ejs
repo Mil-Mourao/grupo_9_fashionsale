@@ -18,7 +18,13 @@
                     <ul>
                         <li><span><%= element.desc %> </span> <%= element.name %> </li>
                         <li>$<%= element.price %> </li>
-                    </ul>       
+                    </ul>
+                    <form action="/products/?m=DELETE" method="post">
+                        <input type ="hidden" name="id" value="<%= element.id %>">
+                        <button type="submit">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
                     </article>
                 <% }) %>
                 <% } else {%>
