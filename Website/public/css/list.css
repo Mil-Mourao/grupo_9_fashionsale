@@ -1,32 +1,30 @@
 main h2{
     font-size: 2rem;
     font-family: 'Trebuchet MS';
-    margin: 5px 10px;    
+    margin: 10px 10px;    
 }
 
-body {
-    overflow-x: hidden;
-}
 .main_section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     max-width: 1366px;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 .main_section article{
     padding: 10px 0;
-    transition: transform 0.2s ease-in;
+    transition: transform 4s linear;
+    margin: 5px 0;
 }
 
 .main_section article img{
     width: 255px;
     height: 240px;
-    box-shadow: 3px -2px 7px #a69c94;
+    box-shadow: 3px -2px 7px #a69c94;  
 }
 
-.main_section article img:hover{
+.main_section article  img:hover{
     transform: translateY(-12px);
     box-shadow: 0 0 15px 5px #db9c68;
 }
@@ -37,21 +35,10 @@ body {
     padding: 2px 5px;
     font-family: 'Trebuchet MS';
 }
-.main_section ul article li:nth-child(1){
-   text-decoration: line-through;
-   flex-basis: 60px;
+
+.main_section ul li:nth-child(2){
+   margin: 5px 0;
 }
-
-.main_section ul article{
-    display: flex;
-    
-}
-.main_section ul article li:nth-child(2){
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
- }
-
-
-
 
 @media screen and (min-width: 768px) {
     

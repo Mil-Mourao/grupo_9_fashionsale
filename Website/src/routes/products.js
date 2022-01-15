@@ -6,12 +6,12 @@ router.get("/", products.list);
 
 router.get('/create', products.create);
 
-router.get('/:id', products.detail);
-
+router.post("/", products.save);
 router.get("/update/:id", products.update);
 router.put('/modify/:id ', products.modify);
+router.get('/:id', products.detail);
 
-router.post("/", products.save);
+
 
 
 module.exports = router;

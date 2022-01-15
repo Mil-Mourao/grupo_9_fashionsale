@@ -1,9 +1,13 @@
-//const {all,create} = require('../models/products')
-//const products = require('../modules/products');
+const products = require('../models/product');
+
 const controller = {
-    list: (req,res) => res.render('products/list', {css:'list',list: products}),
+    list: (req,res) => res.render('products/list', {
+        styles: ['list'],
+        title: 'Listado de Productos',
+        products: products.all()
+    }),
     detail: (req,res) => res.render('products/productDetail', {styles: ['product'], title: 'Detalle de producto'}),
-    create: (req, res) => res.render('products/create',{title:'crear producto'}),
+    create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
     save: (req,res) => {
         req.body.file = req.files;
         let created = products.create(req.body);
@@ -17,8 +21,15 @@ const controller = {
     modify: (req,res) => {
         let update = products.update(req.params.id, req.body);
         return res.redirect("/products/" + update.id)
+    },
+    delete: (req,res) => {
+        products.delete(req.body.id)
+        return res.redirect('/products/')
     }
-}
+
+
+    }
+
 module.exports = controller
 /*
 index: (req, res) => res.send({ products: all()}),

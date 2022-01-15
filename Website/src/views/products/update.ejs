@@ -1,16 +1,55 @@
-<form action="/products/<%= product.id %>?m=PUT" method="post">
-    <label for="name">
-        <input type="text" name="name" id="name" placeholder="Name" value="<%= product.name %> ">
-    </label>
-    <label for="price">
-        <input type="number" name="price" id="price" placeholder="Price" min="0" value="<%= product.price %>">
-    </label>
-    <label for="ofert">
-        <input type="checkbox" name="ofert" id="ofert" <%= product.ofert ? 'checked' : null %> >
-        <i class="fas fa-percentage"></i>
-    </label>
-    <fieldset>
-        <button type="submit">Update</button>
-    </fieldset>
-</form>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/header') %>
+    <main>
+    <nav id="searchBar">
+        <form action="/products/ enctype= "multipart/form-data" <%= product.id %>?m=PUT" method="post">
+           <fieldset>  
+              <label class= "nombres" for = "name">nombre</label>
+              <input type="text" name="name" id="name" placeholder="name" >
+            </fieldset>
+
+              <fieldset>
+              <label class="precios" for = "price">precio</label>
+              <input type="number" name= "price" id="price" placeholder="price" min="0" >
+         </fieldset>
+
+         <fieldset>
+          <label class="talles" for = "size">talle</label>
+          <input type="number" name= "size" id="size" placeholder="size" min="0" >
+        </fieldset>
+
+         <fieldset>
+        <label class="descripciones" for = "description"></label>
+    <textarea name="description" id="description"></textarea>
+         </fieldset>
+
+         <fieldset>
+  <label class="img" for="image"></label>
+  <input type="file" name= "image" id="image" multiple >
+</fieldset>
+
+<fieldset>
+<label for="men">Hombre</label>
+<input type="checkbox" name= "category" value="Hombre">
+<label for="women">Mujer</label>
+<input type="checkbox" name= "category" value="Mujer">
+</fieldset>
+
+<fieldset>
+<label class="ofertas" for="ofert">oferta</label>
+  <input type="checkbox" name="ofert" id="ofert">
+  <input type="number" name="discount" id="discount">
+  <i class="fas fa-percentage"></i>
+</fieldset>
+
+<fieldset>
+    <button type="submit">Update</button>
+</fieldset>
+      </form>
+  </main>
+    <%- include('../partials/footer') %> 
+</body>
+</html>

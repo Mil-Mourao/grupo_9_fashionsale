@@ -1,45 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <%- include('../partials/head') %> 
 <body>
     <%- include('../partials/header') %>
-    <main>
-    <nav id="searchBar">
+    <main id="create">
+      <section class="form-create">
       <form action="/products/" enctype="multipart/form-data" method="post">
            <fieldset>  
-              <label class= "nombres" for = "name">nombre</label>
-              <input type="text" name="name" id="name" placeholder="name" >
+              <label class= "Datos" for = "name"></label>
+              <input type="text" name="name" id="name" placeholder="Name/Nombre" >
             </fieldset>
 
               <fieldset>
-              <label class="precios" for = "price">precio</label>
-              <input type="number" description= "price" id="price" placeholder="price" min="0" >
+              <label class="Datos" for = "price"></label>
+              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" >
          </fieldset>
 
          <fieldset>
-          <label class="talles" for = "size">talle</label>
-          <input type="number" description= "size" id="size" placeholder="size" min="0" >
+          <label class="Datos" for = "size"></label>
+          <input type="text" name= "size" id="size" placeholder="Size/Talle" >
         </fieldset>
 
          <fieldset>
-        <label class="descripciones" for = "description"></label>
-    <input type="text" description= "description" id="description" >
+        <label class="Datos" for = "description"></label>
+    <input type="text" name= "description" id="description" placeholder="Descripción del producto">
          </fieldset>
 
          <fieldset>
   <label class="img" for="image"></label>
-  <input type="file" description= "image" id="image" >
+  <input type="file" name= "image" id="image" >
 </fieldset>
 
 <fieldset>
 <label for="men">Hombre</label>
-<input type="checkbox" description= "category" value="Hombre">
+<input type="checkbox" name= "category" value="Hombre">
 <label for="women">Mujer</label>
-<input type="checkbox" description= "category" value="Mujer">
+<input type="checkbox" name= "category" value="Mujer">
 </fieldset>
 
 <fieldset>
 <label class="ofertas" for="ofert"></label>
+  <input type="number" name="discount" id="discount" min=0 max=100>
   <input type="checkbox" name="ofert" id="ofert">
   <i class="fas fa-percentage"></i>
 </fieldset>
@@ -48,6 +49,7 @@
     <button type="submit">Save</button>
 </fieldset>
       </form>
+    </section>
   </main>
     <%- include('../partials/footer') %> 
 </body>
