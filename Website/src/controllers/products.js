@@ -21,8 +21,12 @@ const controller = {
     modify: (req,res) => {
         let update = products.update(req.params.id, req.body);
         return res.redirect("/products/" + update.id)
+    },
+    delete: (req,res) => res.rend(req.body)
+
+
     }
-}
+
 module.exports = controller
 /*
 index: (req, res) => res.send({ products: all()}),
