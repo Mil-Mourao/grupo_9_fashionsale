@@ -12,27 +12,16 @@
         </section>
         <section id="producto">
           <article class="pic-list">
+            <% for( let i = 0; i < product.img.length; i++ ) { %>
               <picture>
-                <img class="small-pic" src="/img/camperaWaveChica.jpg" alt="" srcset="" />
+                <img class="small-pic" src="/img/Productos/<%= product['img'][i] %> " alt="" srcset="" />
               </picture>
-             
-            <picture>
-              <img class="small-pic" src="/img/camperaWaveHombre.jpg" alt="" srcset="" />
-            </picture>
-            <picture>
-              <img class="small-pic" src="/img/camperaWaveHombre2.jpg" alt="" srcset="" />
-            </picture>
-            <picture>
-              <img class="small-pic" src="/img/camperaWaveEspaldaHombre.jpg" alt="" srcset="" />
-            </picture>
-            <picture>
-              <img class="small-pic" src="/img/camperaWaveChica2.jpg" alt="" srcset="" />
-            </picture>
+            <% } %>
           </article>
         
           <article class="main-pic">
             <picture>
-              <img id="focus-pic" src="/img/Productos/<%= product.img %>" alt="" />
+              <img id="focus-pic" src="/img/Productos/<%= product.img[0] %>" alt="<%= product.name %> " />
             </picture>
           </article>
           <section class="description">
@@ -50,12 +39,9 @@
                   <legend>Talle</legend>
                   <label for="size" class="no-show">Talle</label>
                   <select name="size" id="talle">
-                    <option value="XS"></option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
+                  <% for( let i = 0; i < product.size.length; i++ ) { %>
+                    <option value="<%= product.size[i] %> "><%= product.size[i] %></option>
+                  <% } %>
                   </select>
                 </fieldset>
                 <fieldset>
@@ -75,11 +61,29 @@
             <article id="desc-bottom">
               <h3>Descripción</h3>
               <p>
-                Campera estampada. Textil crepe de microfibra mate. Bolsillos
-                laterales. Cierre metálico central.
+              <% if (product.description == "") { %>
+               Campera estampada. Textil crepe de microfibra mate. Bolsillos
+               laterales. Cierre metálico central.
+              <% } else {%>
+                <%= product.description %> 
+                <% } %> 
               </p>
-              <p>Talle modelo mujer: XS/S</p>
-              <p>Talle modelo hombre: M/L</p>
+                
+              <% if (product.gender == 'hombre') { %>
+                <p>Talle modelo <%= product.gender %>:
+              <% } else {%>
+                <p>Talle modelo <%= product.gender %>:
+              <% } %> 
+                  <% for( let i = 0; i < product.size.length; i++ ) { %>
+                    <% if (i == product.size.length - 1) { %>
+                      <%= product.size[i] %>
+                    <% } else{%>
+                      <%= product.size[i] %> /
+                    <% } %>    
+                  <% } %>
+                </p>
+              
+              
             </article>
           </section>
         </section>

@@ -18,10 +18,12 @@
     {   
         "id": 3,
         "name": "Camisa de jean",
-        "desc": "",
+        "description": "",
+        "gender": "mujer",
+        "size": ["XS", "M", "XL"],
         "price": "2000",
         "ofert": true,
-        "img": "camisaJean.jpg"
+        "img": ["camisaJean.jpg", "camisa.jpg", "camisa2.jpg"]
     },
     {   
         "id": 4,
