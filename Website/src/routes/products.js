@@ -3,13 +3,16 @@ const products = require('../controllers/products');
 const router = express.Router();
 
 router.get("/", products.list);
-
 router.get('/create', products.create);
+router.get('/:id', products.detail);
+router.get("/update/:id", products.update);
+
+router.put('/:id ', products.modify);
 
 router.post("/", products.save);
-router.get("/update/:id", products.update);
-router.put('/modify/:id ', products.modify);
-router.get('/:id', products.detail);
+
+router.delete('/', products.delete)
+
 
 
 

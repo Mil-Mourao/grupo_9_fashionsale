@@ -71,10 +71,6 @@ fieldset {
     justify-content: space-evenly;
   }
 
-  nav {
-    overflow-y: hidden;
-  }
-
   .logo-simple {
     display: none;
   }
