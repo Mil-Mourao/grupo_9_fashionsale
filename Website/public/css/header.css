@@ -28,6 +28,10 @@ i {
 
 #barra{
   height: 20px;
+  border: none;
+  outline: none;
+  color: #555;
+  background: linear-gradient(#ddc8b7, #f3ede6);
 }
 
 .searchButton {

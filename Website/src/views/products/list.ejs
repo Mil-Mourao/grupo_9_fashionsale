@@ -12,14 +12,18 @@
                 <article>
                     <picture>
                     <a href="/products/<%= element.id %> ">
-                        <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
+                        <img src="/img/Productos/<%= element.img[0] %> " alt="<%= element.name %> ">
                     </a>
                     </picture>
                     <ul>
                         <li><%= element.name %> </li>
-                        <li>$<%= element.price %> </li>
-                    
-                    
+                        <li>$                         
+                            <% if (element.ofert) { %>
+                                <%= parseInt(element.price) * 0.8 %>
+                            <% } else {%>
+                                <%= element.price %>
+                            <% } %>
+                        </li>                    
                         <li><form action="/products/?m=DELETE" method="post">
                             <input type ="hidden" name="id" value="<%= element.id %>">
                             <button type="submit"><i class="fas fa-trash-alt"></i></button></form>
