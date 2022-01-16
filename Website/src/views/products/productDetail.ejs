@@ -27,7 +27,13 @@
           <section class="description">
             <article id="desc-top">
               <h1 id="desc-title"><%= product.name %> </h1>
-              <h2 id="desc-prize">$ <%= product.price %> </h2>
+              <h2 id="desc-prize">$
+                  <% if (product.ofert) { %>
+                    <%= parseInt(product.price) * 0.8 %>
+                  <% } else {%>
+                    <%= product.price %>
+                  <% } %>
+              </h2>
             </article>
             <article id="cuotas">
               <p>12 cuotas de $ <%=  parseInt(product.price/12) %> </p>
@@ -68,21 +74,15 @@
                 <%= product.description %> 
                 <% } %> 
               </p>
-                
-              <% if (product.gender == 'hombre') { %>
-                <p>Talle modelo <%= product.gender %>:
-              <% } else {%>
-                <p>Talle modelo <%= product.gender %>:
-              <% } %> 
-                  <% for( let i = 0; i < product.size.length; i++ ) { %>
-                    <% if (i == product.size.length - 1) { %>
-                      <%= product.size[i] %>
-                    <% } else{%>
-                      <%= product.size[i] %> /
-                    <% } %>    
-                  <% } %>
-                </p>
+               
               
+                <p>Talle modelo hombre: XS/M</p>
+                <p>Talle modelo mujer: M/L</p>
+             
+              
+                
+           
+             
               
             </article>
           </section>

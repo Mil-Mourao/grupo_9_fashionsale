@@ -2,35 +2,37 @@
     {   
         "id": 1,
         "name": "Buzo North Face",
-        "desc": "",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "3500",
         "ofert": true,
-        "img": "buzo.jpg"
+        "img": ["buzo.jpg","buzo.jpg"]
     },
     {   
         "id": 2,
         "name": "Camisa Hawaiiana",
-        "desc": "",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "1800",
         "ofert": false,
-        "img": "camisa.jpg"
+        "img": ["camisa.jpg","camisa.jpg"]
     },
     {   
         "id": 3,
         "name": "Camisa de jean",
         "description": "",
-        "gender": "mujer",
         "size": ["XS", "M", "XL"],
         "price": "2000",
         "ofert": true,
-        "img": ["camisaJean.jpg", "camisa.jpg", "camisa2.jpg"]
+        "img": ["camisaJean.jpg", "camisaJean.jpg", "camisaJean.jpg"]
     },
     {   
         "id": 4,
         "name": "Piloto Lights",
-        "desc": "",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "3150",
         "ofert": false,
-        "img": "pilotoLightsred.jpg"
+        "img": ["pilotoLightsred.jpg","pilotoLightsred.jpg"]
     }
 ]
