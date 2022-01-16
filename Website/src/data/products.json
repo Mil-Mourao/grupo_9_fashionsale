@@ -1,32 +1,32 @@
 [
     {   
         "id": 1,
-        "name": "North Face",
-        "desc": "Buzo",
+        "name": "Buzo North Face",
+        "desc": "",
         "price": "3500",
         "ofert": true,
         "img": "buzo.jpg"
     },
     {   
         "id": 2,
-        "name": "Hawaiiana",
-        "desc": "Camisa",
+        "name": "Camisa Hawaiiana",
+        "desc": "",
         "price": "1800",
         "ofert": false,
         "img": "camisa.jpg"
     },
     {   
         "id": 3,
-        "name": "de jean",
-        "desc": "Camisa",
+        "name": "Camisa de jean",
+        "desc": "",
         "price": "2000",
         "ofert": true,
         "img": "camisaJean.jpg"
     },
     {   
         "id": 4,
-        "name": "Lights",
-        "desc": "Piloto",
+        "name": "Piloto Lights",
+        "desc": "",
         "price": "3150",
         "ofert": false,
         "img": "pilotoLightsred.jpg"

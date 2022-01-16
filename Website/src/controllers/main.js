@@ -7,7 +7,6 @@ const controller = {
     products: products.all()
     }),
     about: (req,res) => res.render('about', {css:'about'}),
-    cart: (req,res) => res.render('productCart', {styles:['carrito'], title: "Mi carrito"}),
 }
 module.exports = controller
 

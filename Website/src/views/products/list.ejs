@@ -9,23 +9,25 @@
             <section class="main_section">
                 <% if (locals.products) { %>                    
                 <% products.forEach(element => { %>   
-                    <article>
+                <article>
                     <picture>
                     <a href="/products/<%= element.id %> ">
                         <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
                     </a>
                     </picture>
                     <ul>
-                        <li><span><%= element.desc %> </span> <%= element.name %> </li>
+                        <li><%= element.name %> </li>
                         <li>$<%= element.price %> </li>
+                    
+                    
+                        <li><form action="/products/?m=DELETE" method="post">
+                            <input type ="hidden" name="id" value="<%= element.id %>">
+                            <button type="submit"><i class="fas fa-trash-alt"></i></button></form>
+                        </li>
+                        <li><a href="/products/update/<%= element.id %> " rel="noopener noreferrer"><i class="fas fa-edit"></i></a></li>
                     </ul>
-                    <form action="/products/?m=DELETE" method="post">
-                        <input type ="hidden" name="id" value="<%= element.id %>">
-                        <button type="submit">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
-                    </article>
+
+                </article>
                 <% }) %>
                 <% } else {%>
                     <h2>No hay productos cargados</h2>
