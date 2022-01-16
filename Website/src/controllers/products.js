@@ -6,7 +6,14 @@ const controller = {
         title: 'Listado de Productos',
         products: products.all()
     }),
-    detail: (req,res) => res.render('products/productDetail', {styles: ['product'], title: 'Detalle de producto'}),
+    detail: (req,res) => {
+       
+       res.render('products/productDetail',{
+            styles: ['product'],
+            title: 'Detalle de producto',
+            product: products.all().find(e=>e.id == req.params.id),
+        })
+    },
     create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
     save: (req,res) => {
         req.body.file = req.files;

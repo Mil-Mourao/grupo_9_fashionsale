@@ -5,7 +5,7 @@
     <%- include('../partials/header') %>
     <main>
     <nav id="searchBar">
-        <form action="/products/ enctype= "multipart/form-data" <%= product.id %>?m=PUT" method="post">
+        <form action="/products/<%= products.id %>?m=PUT" enctype= "multipart/form-data"  method="post">
            <fieldset>  
               <label class= "nombres" for = "name">nombre</label>
               <input type="text" name="name" id="name" placeholder="name" >
@@ -23,7 +23,7 @@
 
          <fieldset>
         <label class="descripciones" for = "description"></label>
-    <textarea name="description" id="description"></textarea>
+        <textarea name="description" id="description"></textarea>
          </fieldset>
 
          <fieldset>
