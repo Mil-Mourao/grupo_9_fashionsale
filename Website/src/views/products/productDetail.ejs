@@ -12,12 +12,10 @@
         </section>
         <section id="producto">
           <article class="pic-list">
-            <% product.forEach(element => { %>
               <picture>
-                <img class="small-pic" src="/img/<%= element.img %> " alt="<%= element.name %> " srcset="" />
+                <img class="small-pic" src="/img/camperaWaveChica.jpg" alt="" srcset="" />
               </picture>
-            <% }) %>
-            
+             
             <picture>
               <img class="small-pic" src="/img/camperaWaveHombre.jpg" alt="" srcset="" />
             </picture>
@@ -31,19 +29,20 @@
               <img class="small-pic" src="/img/camperaWaveChica2.jpg" alt="" srcset="" />
             </picture>
           </article>
+        
           <article class="main-pic">
             <picture>
-              <img id="focus-pic" src="/img/<%=  %> camperaWave.jpg" alt="" />
+              <img id="focus-pic" src="/img/Productos/<%= product.img %>" alt="" />
             </picture>
           </article>
           <section class="description">
             <article id="desc-top">
-              <h1 id="desc-title">Campera Wave</h1>
-              <h2 id="desc-prize">$8.400</h2>
+              <h1 id="desc-title"><%= product.name %> </h1>
+              <h2 id="desc-prize">$ <%= product.price %> </h2>
             </article>
             <article id="cuotas">
-              <p>12 cuotas de $1.050</p>
-              <p>6 cuotas de $1.400</p>
+              <p>12 cuotas de $ <%=  parseInt(product.price/12) %> </p>
+              <p>6 cuotas de $ <%= parseInt(product.price/6) %></p>
             </article>
             <article id="size-qty">
               <form action="get" id="size-qty-form">
