@@ -23,7 +23,7 @@ const controller = {
     update:(req,res) => res.render("products/update", {
         styles: ["products/create"],
         title: "actualizar",
-        products: products.search("id", req.params.id)
+        products: products.all().find(e=>e.id == req.params.id)
     }),
     modify: (req,res) => {
         let update = products.update(req.params.id, req.body);

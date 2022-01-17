@@ -7,7 +7,7 @@ router.get('/create', products.create);
 router.get('/:id', products.detail);
 router.get("/update/:id", products.update);
 
-router.put('/:id ', products.modify);
+router.put('/:id', products.modify);
 
 router.post("/", products.save);
 
