@@ -5,6 +5,12 @@
     <%- include('../partials/header') %>
     <main id="create">
       <section class="form-create">
+        <article>
+          <picture class="logo-Create">
+            <img src="/img/logo/logoSimple.svg" alt="" id="logo-Create-top" />
+          </picture>
+        </article>
+        <h3 id="title"> Creación de Productos</h3>
       <form action="/products/" enctype="multipart/form-data" method="post">
            <fieldset>  
               <label class= "Datos" for = "name"></label>
@@ -28,7 +34,7 @@
 
          <fieldset>
   <label class="img" for="image"></label>
-  <input type="file" name= "image" id="image" >
+  <input type="file" name= "image" id="image" placeholder="Ningún archivo seleccionado" >
 </fieldset>
 
 <fieldset>
