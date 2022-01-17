@@ -3,12 +3,12 @@
   <%- include('../partials/head') %> 
 <body>
     <%- include('../partials/header') %>
-    <main>
-    <nav id="searchBar">
+    <main id="create">
+      <section class="form-create">
       <form action="/products/" enctype="multipart/form-data" method="post">
            <fieldset>  
-              <label class= "nombres" for = "name">nombre</label>
-              <input type="text" name="name" id="name" placeholder="name" >
+              <label class= "Datos" for = "name"></label>
+              <input type="text" name="name" id="name" placeholder="Name/Nombre" >
             </fieldset>
 
               <fieldset>
@@ -49,6 +49,7 @@
     <button type="submit">Save</button>
 </fieldset>
       </form>
+    </section>
   </main>
     <%- include('../partials/footer') %> 
 </body>

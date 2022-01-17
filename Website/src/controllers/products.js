@@ -6,8 +6,15 @@ const controller = {
         title: 'Listado de Productos',
         products: products.all()
     }),
-    detail: (req,res) => res.render('products/productDetail', {styles: ['product'], title: 'Detalle de producto'}),
-    create: (req, res) => res.render('products/create',{title:'crear producto'}),
+    detail: (req,res) => {
+       
+       res.render('products/productDetail',{
+            styles: ['product'],
+            title: 'Detalle de producto',
+            product: products.all().find(e=>e.id == req.params.id),
+        })
+    },
+    create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
     save: (req,res) => {
         req.body.file = req.files;
         let created = products.create(req.body);
@@ -21,8 +28,15 @@ const controller = {
     modify: (req,res) => {
         let update = products.update(req.params.id, req.body);
         return res.redirect("/products/" + update.id)
+    },
+    delete: (req,res) => {
+        products.delete(req.body.id)
+        return res.redirect('/products/')
     }
-}
+
+
+    }
+
 module.exports = controller
 /*
 index: (req, res) => res.send({ products: all()}),

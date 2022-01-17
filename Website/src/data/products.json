@@ -1,34 +1,38 @@
 [
     {   
         "id": 1,
-        "name": "North Face",
-        "desc": "Buzo",
+        "name": "Buzo North Face",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "3500",
         "ofert": true,
-        "img": "buzo.jpg"
+        "img": ["buzo.jpg","buzo.jpg"]
     },
     {   
         "id": 2,
-        "name": "Hawaiiana",
-        "desc": "Camisa",
+        "name": "Camisa Hawaiiana",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "1800",
         "ofert": false,
-        "img": "camisa.jpg"
+        "img": ["camisa.jpg","camisa.jpg"]
     },
     {   
         "id": 3,
-        "name": "de jean",
-        "desc": "Camisa",
+        "name": "Camisa de jean",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "2000",
         "ofert": true,
-        "img": "camisaJean.jpg"
+        "img": ["camisaJean.jpg", "camisaJean.jpg", "camisaJean.jpg"]
     },
     {   
         "id": 4,
-        "name": "Lights",
-        "desc": "Piloto",
+        "name": "Piloto Lights",
+        "description": "",
+        "size": ["XS", "M", "XL"],
         "price": "3150",
         "ofert": false,
-        "img": "pilotoLightsred.jpg"
+        "img": ["pilotoLightsred.jpg","pilotoLightsred.jpg"]
     }
 ]

@@ -1,6 +1,5 @@
 
 main {
-  max-width: 1360px;
   margin: 0 auto;
 }
 
@@ -21,7 +20,7 @@ i {
 
 .pic-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
