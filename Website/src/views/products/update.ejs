@@ -4,7 +4,12 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-    <nav id="searchBar">
+      <article>
+        <picture class="logo-Update">
+          <img src="/img/logo/logoSimple.svg" alt="" id="logo-Update-top" />
+        </picture>
+      </article>
+      <h3 id="title"> Formulario Update</h3>
         <form action="/products/<%= products.id %>?m=PUT" enctype= "multipart/form-data"  method="post">
            <fieldset>  
               <label class= "nombres" for = "name">nombre</label>

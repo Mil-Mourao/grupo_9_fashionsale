@@ -9,6 +9,13 @@ model = {
         price: parseInt(data.precio),
         offert: data.offert ? true : false}),
         /*imagen: data.files.map (f => file.create(f).id)}),*/
+        create: data => {
+         let newProduct = model.generate(data);
+         let all = model.all();
+         all.push(newProduct);
+         model.write(all);
+         return newProduct
+        },
     read: () => fs.readFileSync(model.file, 'utf8'),
     write: data => fs.writeFileSync(model.file, JSON.stringify(data,null,2)),
     all: () => JSON.parse(model.read()),

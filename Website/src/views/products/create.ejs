@@ -5,6 +5,12 @@
     <%- include('../partials/header') %>
     <main id="create">
       <section class="form-create">
+        <article>
+          <picture class="logo-Create">
+            <img src="/img/logo/logoSimple.svg" alt="" id="logo-Create-top" />
+          </picture>
+        </article>
+        <h3 id="title"> Creación de Productos</h3>
       <form action="/products/" enctype="multipart/form-data" method="post">
            <fieldset>  
               <label class= "Datos" for = "name"></label>
@@ -17,8 +23,8 @@
          </fieldset>
 
          <fieldset>
-          <label class="talles" for = "size">talle</label>
-          <input type="checkbox" name= "size" id="size" placeholder="size">
+          <label class="talles" for = "size"></label>
+          <input type="text" name= "size" id="size" placeholder="size">
         </fieldset>
 
          <fieldset>
@@ -46,7 +52,7 @@
 </fieldset>
 
 <fieldset>
-    <button type="submit">Save</button>
+    <button class= "boton" type="submit">Save</button>
 </fieldset>
       </form>
     </section>
