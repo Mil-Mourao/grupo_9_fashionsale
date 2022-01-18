@@ -33,6 +33,7 @@ i {
   color: #555;
   background: linear-gradient(#ddc8b7, #f3ede6);
   border-radius: 3px;
+  padding-left: 10px;
 }
 
 #searchBar form {
