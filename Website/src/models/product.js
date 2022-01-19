@@ -6,13 +6,14 @@ model = {
     generate: data => Object({
         id: model.all().length == 0 ? 1 : model.all().pop().id +1,
         name: data.name,
-        price: parseInt(data.precio),
-        offert: data.offert ? true : false}),
-        /*imagen: data.files.map (f => file.create(f).id)}),*/
+        price: parseInt(data.price),
+        ofert: data.ofert ? true : false,
+        imagen: data.files.map (f => file.create(f).id)
+    }),
         create: data => {
          let newProduct = model.generate(data);
          let all = model.all();
-         all.push(newProduct);
+         all.push(newProduct),
          model.write(all);
          return newProduct
         },
@@ -20,9 +21,9 @@ model = {
     write: data => fs.writeFileSync(model.file, JSON.stringify(data,null,2)),
     all: () => JSON.parse(model.read()),
     delete: id => model.write(model.all().filter(e => e.id != id)),
-    update: (id, data) => {
-        let all = model.all()
-        let updated = all.map(e=>{
+    update: (id,data) => {
+        let all = model.all();
+        let updated = all.map(e =>{
             if(e.id == id) {
                 e.name = data.name,
                 e.price = data.price,
@@ -35,10 +36,8 @@ model = {
             return e   
         })
         model.write(updated)
-        let product = model.search('id',id)
+        let product = model.search('id',id);
         return product
-    }
+    },
 }
-
-
-module.exports = model;
+module.exports = model

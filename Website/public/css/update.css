@@ -1,5 +1,59 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+#update{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-color: gray;
+  min-height: 75vh;
+}
+.form-Update {
+  background: #f2e5d5;
+  border-radius: 20px;
+  width: 350px;  
+  font-family: Roboto;
+  margin: 20px 40px;
+  text-align: center;    
+}
+.form-create fieldset {
+  border-radius: 20px;
+  margin-bottom: 25px;
+  display: block;
+  justify-content: right;
+  font-size: 25px;
+}
+.Datos{
+  
+  text-align: center;
+  height: 1.2em;
+  width: 14em;
+  border-radius: 20px;
+  font-family: "Roboto";
+  font-size: 1.5em;
+}
+#title {
+text-align: center;
+padding-bottom: 0.3rem;
+font-weight: 700;
+font-family: 'Trebuchet MS', sans-serif;
+}
+.logo-Update {
+width: 100vw;
+}
+
+#logo-Update-top {
+max-width: 60px;
+max-height: 70px;
+margin: 5px auto;
+display: block;
+}
+
+.boton {
+border-radius: 20px;
+padding: 10px 5px;
+margin: 3px 0;
+background-color: #a69c94;
+font-weight: 900;
+font-size: 1rem;
+font-family: 'Trebuchet MS', sans-serif;
+width: 280px;
 }
