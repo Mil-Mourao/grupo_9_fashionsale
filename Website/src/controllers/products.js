@@ -11,7 +11,7 @@ const controller = {
        res.render('products/productDetail',{
             styles: ['product'],
             title: 'Detalle de producto',
-            product: products.all().find(e=>e.id == req.params.id),
+            product: products.search('id', req.params.id)
         })
     },
     create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
@@ -25,7 +25,7 @@ const controller = {
     update:(req,res) => res.render("products/update", {
         styles: ["products/create"],
         title: "actualizar",
-        products: products.all().find(e=>e.id == req.params.id)
+        products: products.search('id', req.params.id)
     }),
     modify: (req,res) => {
         let update = products.update(req.params.id, req.body);

@@ -20,8 +20,7 @@
   },
   {
     "id": 3,
-    "name": "Camisa de jean",
-    "price": "1800",
+    "price": null,
     "ofert": false,
     "img": [
       "camisa.jpg",
@@ -40,8 +39,8 @@
   },
   {
     "id": 5,
-    "price": "2000",
-    "ofert": true,
+    "price": null,
+    "ofert": false,
     "img": [
       "camisaJean.jpg",
       "camisaJean.jpg",
@@ -66,5 +65,14 @@
       "pilotoLightsred.jpg",
       "pilotoLightsred.jpg"
     ]
+  },
+  {
+    "id": 9,
+    "name": "Roberto",
+    "size": "",
+    "description": "",
+    "price": 10000,
+    "ofert": false,
+    "discount": ""
   }
 ]
