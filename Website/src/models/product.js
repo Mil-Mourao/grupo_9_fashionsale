@@ -26,6 +26,7 @@ model = {
         return newProduct
     },    
     delete: id => model.write(model.all().filter(e => e.id != id)),
+    search: (field, value) => model.all().find(element => element[field] == value),
     update: (id, data) => {
         let all = model.all()
         let updated = all.map(e=>{
