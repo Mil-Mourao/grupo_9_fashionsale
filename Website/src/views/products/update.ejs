@@ -4,58 +4,6 @@
 
   <body>
     <%- include('../partials/header') %>
-<<<<<<< HEAD
-      <main>
-        <nav id="searchBar">
-          <form action="/products/<%= products.id %>?m=PUT" enctype="multipart/form-data" method="post">
-            <fieldset>
-              <label class="nombres" for="name">nombre</label>
-              <input type="text" name="name" id="name" placeholder="name">
-            </fieldset>
-
-            <fieldset>
-              <label class="precios" for="price">precio</label>
-              <input type="number" name="price" id="price" placeholder="price" min="0">
-            </fieldset>
-
-            <fieldset>
-              <label class="talles" for="size">talle</label>
-              <input type="number" name="size" id="size" placeholder="size" min="0">
-            </fieldset>
-
-            <fieldset>
-              <label class="descripciones" for="description"></label>
-              <textarea name="description" id="description"></textarea>
-            </fieldset>
-
-            <fieldset>
-              <label class="img" for="image"></label>
-              <input type="file" name="image" id="image" multiple>
-            </fieldset>
-
-            <fieldset>
-              <label for="men">Hombre</label>
-              <input type="checkbox" name="category" value="Hombre">
-              <label for="women">Mujer</label>
-              <input type="checkbox" name="category" value="Mujer">
-            </fieldset>
-
-            <fieldset>
-              <label class="ofertas" for="ofert">oferta</label>
-              <input type="checkbox" name="ofert" id="ofert">
-              <input type="number" name="discount" id="discount">
-              <i class="fas fa-percentage"></i>
-            </fieldset>
-
-            <fieldset>
-              <button type="submit">Update</button>
-            </fieldset>
-          </form>
-      </main>
-      <%- include('../partials/footer') %>
-  </body>
-
-=======
     <main>
       <article>
         <picture class="logo-Update">
@@ -110,5 +58,4 @@
   </main>
     <%- include('../partials/footer') %> 
 </body>
->>>>>>> 44c4af424b819a3d82d98dcce308d975bc1c1c10
 </html>

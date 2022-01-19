@@ -16,7 +16,11 @@
       "XS",
       "M",
       "XL"
-    ],
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Camisa de jean",
     "price": "1800",
     "ofert": false,
     "img": [
@@ -25,14 +29,17 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Camisa de jean",
     "description": "",
     "size": [
       "XS",
       "M",
       "XL"
-    ],
+    ]
+  },
+  {
+    "id": 5,
     "price": "2000",
     "ofert": true,
     "img": [
@@ -42,14 +49,17 @@
     ]
   },
   {
-    "id": 4,
+    "id": 6,
     "name": "Piloto Lights",
     "description": "",
     "size": [
       "XS",
       "M",
       "XL"
-    ],
+    ]
+  },
+  {
+    "id": 8,
     "price": "3150",
     "ofert": false,
     "img": [

@@ -11,25 +11,39 @@
           </article>
         </section>
         <section id="producto">
-          <article class="pic-list">
-            <% for( let i = 0; i < product.img.length; i++ ) { %>
-              <picture>
-                <img class="small-pic" src="/img/Productos/<%= product['img'][i] %> " alt="" srcset="" />
-              </picture>
-            <% } %>
-          </article>
-        
-          <article class="main-pic">
-            <picture>
-              <img id="focus-pic" src="/img/Productos/<%= product.img[0] %>" alt="<%= product.name %> " />
-            </picture>
-          </article>
+         
+            <% if (product.img) { %>
+              <article class="pic-list">
+              <% for( let i = 0; i < product.img.length; i++ ) { %>
+                <picture>
+                  <img class="small-pic" src="/img/Productos/<%=product['img'][i] %>" alt="" srcset="" />
+                </picture>
+                  <% } %> 
+                </article>
+                <article class="main-pic">
+                  <picture>
+                    <img id="focus-pic" src="/img/Productos/<%= product.img[0] %>" alt="<%= product.name %> " />
+                  </picture>
+                </article>
+              <% } else {%>
+                <article class="pic-list">
+                <picture>
+                  <img class="small-pic" src="/img/default.jpg" alt="" srcset="" />
+                </picture>
+                </article>
+                <article class="main-pic">
+                  <picture>
+                    <img id="focus-pic" src="/img/default.jpg" alt="<%= product.name %> " />
+                  </picture>
+                </article>
+              <% } %> 
+
           <section class="description">
             <article id="desc-top">
               <h1 id="desc-title"><%= product.name %> </h1>
               <h2 id="desc-prize">$
                   <% if (product.ofert) { %>
-                    <%= parseInt(product.price) * 0.8 %>
+                    <%= product.price * 0.8 %>
                   <% } else {%>
                     <%= product.price %>
                   <% } %>
@@ -40,7 +54,7 @@
               <p>6 cuotas de $ <%= parseInt(product.price/6) %></p>
             </article>
             <article id="size-qty">
-              <form action="get" id="size-qty-form">
+              <% if (product.size) { %>
                 <fieldset>
                   <legend>Talle</legend>
                   <label for="size" class="no-show">Talle</label>
@@ -50,6 +64,8 @@
                   <% } %>
                   </select>
                 </fieldset>
+              <% } %>
+              <form action="get" id="size-qty-form">
                 <fieldset>
                   <legend>Cantidad</legend>
                   <label for="qty" class="no-show">Cantidad</label>
