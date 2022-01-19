@@ -11,19 +11,21 @@ const controller = {
        res.render('products/productDetail',{
             styles: ['product'],
             title: 'Detalle de producto',
-            product: products.all().find(e=>e.id == req.params.id),
+            product: products.search('id', req.params.id)
         })
     },
     create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
     save: (req,res) => {
-        req.body.file = req.files;
+        //req.body.file = req.files;
+        //return res.send(req.body)
         let created = products.create(req.body);
-        return res.redirect("/products/" + created.id)
+        return res.redirect("/products/" + created.id);
+        
     },
     update:(req,res) => res.render("products/update", {
         styles: ["products/create"],
         title: "actualizar",
-        products: products.search("id", req.params.id)
+        products: products.search('id', req.params.id)
     }),
     modify: (req,res) => {
         let update = products.update(req.params.id, req.body);

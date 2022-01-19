@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %> 
-<body>
+<%- include('../partials/head') %>
+
+  <body>
     <%- include('../partials/header') %>
-    <main id="create">
-      <section class="form-create">
-        <article>
-          <picture class="logo-Create">
-            <img src="/img/logo/logoSimple.svg" alt="" id="logo-Create-top" />
-          </picture>
-        </article>
-        <h3 id="title"> Creación de Productos</h3>
-      <form action="/products/" enctype="multipart/form-data" method="post">
-           <fieldset>  
-              <label class= "Datos" for = "name"></label>
-              <input type="text" name="name" id="name" placeholder="Name/Nombre" >
+      <main id="create">
+        <section class="form-create">
+          <article>
+            <picture class="logo-Create">
+              <img src="/img/logo/logoSimple.svg" alt="" id="logo-Create-top" />
+            </picture>
+          </article>
+          <h3 id="title"> Creación de Productos</h3>
+          <form action="/products/" method="post">
+            <fieldset>
+              <label for="name">
+              <input type="text" name="name" id="name" placeholder="Name/Nombre">
+              </label>
             </fieldset>
 
               <fieldset>
@@ -27,36 +29,42 @@
           <input type="text" name= "size" id="size" placeholder="Size/Talle">
         </fieldset>
 
-         <fieldset>
-        <label class="descripciones" for = "description"></label>
-    <textarea name="description" id="description"></textarea>
-         </fieldset>
+            <fieldset>
+              <label class="talles" for="size">
+              <input type="text" name="size" id="size" placeholder="size">
+              </label>
+            </fieldset>
 
-         <fieldset>
-  <label class="img" for="image"></label>
-  <input type="file" name= "image" id="image" multiple >
-</fieldset>
+            <fieldset>
+              <label class="descripciones" for="description"></label>
+              <textarea name="description" id="description"></textarea>
+            </fieldset>
+ <!--
+            <fieldset>
+              <label class="img" for="image"></label>
+              <input type="file" name="image" id="image">
+            -->
+            <fieldset>
+              <label for="men">Hombre</label>
+              <input type="checkbox" name="category" value="hombre">
+              <label for="women">Mujer</label>
+              <input type="checkbox" name="category" value="mujer">
+            </fieldset>
 
-<fieldset>
-<label for="men">Hombre</label>
-<input type="checkbox" name= "category" value="Hombre">
-<label for="women">Mujer</label>
-<input type="checkbox" name= "category" value="Mujer">
-</fieldset>
+            <fieldset>
+              <label class="ofertas" for="ofert">oferta</label>
+              <input type="checkbox" name="ofert" id="ofert">
+              <input type="number" name="discount" id="discount">
+              <!-- <i class="fas fa-percentage"></i> -->
+            </fieldset>
 
-<fieldset>
-<label class="ofertas" for="ofert">oferta</label>
-  <input type="checkbox" name="ofert" id="ofert">
-  <input type="number" name="discount" id="discount">
-  <!-- <i class="fas fa-percentage"></i> -->
-</fieldset>
+            <fieldset>
+              <button class="boton" type="submit">Save</button>
+            </fieldset>
+          </form>
+        </section>
+      </main>
+      <%- include('../partials/footer') %>
+  </body>
 
-<fieldset>
-    <button class= "boton" type="submit">Save</button>
-</fieldset>
-      </form>
-    </section>
-  </main>
-    <%- include('../partials/footer') %> 
-</body>
 </html>
