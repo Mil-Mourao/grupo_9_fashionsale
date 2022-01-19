@@ -11,7 +11,12 @@
                 <article>
                     <picture>
                     <a href="/products/<%= element.id %> ">
-                        <img src="/img/Productos/<%= element.img[0] %> " alt="<%= element.name %> ">
+                        <% if (element.img) { %>
+                            <img src="/img/Productos/<%= element.img[0] %> " alt="<%= element.name %> ">
+                         
+                        <% } else {%>
+                            <img src="/img/default.jpg" alt="<%= element.name %> ">
+                        <% } %> 
                     </a>
                     </picture>
                     <ul>
