@@ -7,8 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url("/img/createFondo.jpg");
     background-size: cover;
-    background-color: gray;
     min-height: 75vh;
   }
   .form-create {
@@ -33,7 +33,7 @@
     width: 14em;
     border-radius: 20px;
     font-family: "Roboto";
-    font-size: 1.5em;
+    font-size: 1em;
 }
 #title {
   text-align: center;
