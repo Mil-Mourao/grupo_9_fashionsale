@@ -1,27 +1,31 @@
 [
   {
-    "id": 1,
+    "id":1,
+    "name": "Buzo North Face",
+    "size": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "description": "Buzo color blanco super abrigado",
+    "price": 1234,
+    "category": "hombre",
     "ofert": true,
     "img": [
       "buzo.jpg",
       "buzo.jpg"
     ],
-    "offert": false
-  },
-  {
-    "id": 2,
-    "name": "Camisa Hawaiiana",
-    "description": "",
-    "size": [
-      "XS",
-      "M",
-      "XL"
-    ]
+    "discount": "25"
+  
   },
   {
     "id": 3,
     "price": null,
+    "category": "hombre",
     "ofert": false,
+    "size": [
+      "XS"
+    ],
     "img": [
       "camisa.jpg",
       "camisa.jpg"
@@ -29,50 +33,19 @@
   },
   {
     "id": 4,
-    "name": "Camisa de jean",
-    "description": "",
+    "name": "Bernardo",
     "size": [
       "XS",
-      "M",
-      "XL"
-    ]
-  },
-  {
-    "id": 5,
-    "price": null,
-    "ofert": false,
+      "S",
+      "M"
+    ],
+    "description": "asdadsadad",
+    "price": 1234,
+    "category": "hombre",
+    "ofert": true,
     "img": [
-      "camisaJean.jpg",
-      "camisaJean.jpg",
-      "camisaJean.jpg"
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Piloto Lights",
-    "description": "",
-    "size": [
-      "XS",
-      "M",
-      "XL"
-    ]
-  },
-  {
-    "id": 8,
-    "price": "3150",
-    "ofert": false,
-    "img": [
-      "pilotoLightsred.jpg",
-      "pilotoLightsred.jpg"
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Roberto",
-    "size": "",
-    "description": "",
-    "price": 10000,
-    "ofert": false,
-    "discount": ""
+      "default.jpg"
+    ],
+    "discount": "25"
   }
 ]
