@@ -1,4 +1,5 @@
 const products = require('../models/product');
+const file = require('../models/file');
 
 const controller = {
     list: (req,res) => res.render('products/list', {
@@ -34,8 +35,19 @@ const controller = {
     delete: (req,res) => {
         products.delete(req.body.id)
         return res.redirect('/products/')
-    }
+    },
 
+    show: (req, res) => {
+        let result = search('id', req.params.id);
+        // return res.send(result)
+        return result ? res.render('products/detail', {
+          styles: ["products/detail"],
+          title: "Producto | " + result.name,
+          product: result
+        }) : res.render('error', {
+          msg: 'Producto no encontrado'
+        })
+      },
 
     }
 
