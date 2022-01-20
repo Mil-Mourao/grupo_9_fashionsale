@@ -1,24 +1,22 @@
 [
   {
-    "id": 1,
+    "id":1,
+    "name": "Buzo North Face",
+    "size": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "description": "Buzo color blanco super abrigado",
+    "price": 1234,
+    "category": "hombre",
     "ofert": true,
     "img": [
       "buzo.jpg",
       "buzo.jpg"
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Camisa Hawaiiana",
-    "description": "",
-    "size": [
-      "XS",
-      "M",
-      "XL"
     ],
-    "img": [
-      "default.jpg"
-    ]
+    "discount": "25"
+  
   },
   {
     "id": 3,
@@ -35,28 +33,19 @@
   },
   {
     "id": 4,
-    "name": "Camisa de jean",
-    "description": "",
-    "category": "mujer",
+    "name": "Bernardo",
     "size": [
       "XS",
-      "XL"
+      "S",
+      "M"
     ],
-    "img": [
-      "default.jpg"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "",
-    "size": "",
-    "description": "",
-    "price": null,
-    "category": "Mujer",
-    "ofert": false,
+    "description": "asdadsadad",
+    "price": 1234,
+    "category": "hombre",
+    "ofert": true,
     "img": [
       "default.jpg"
     ],
-    "discount": ""
+    "discount": "25"
   }
 ]
