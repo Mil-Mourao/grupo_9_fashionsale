@@ -17,7 +17,7 @@ model = {
         ofert: data.ofert ? true : false,
         //img: data.image ? data.image : ["default.jpg"],
         discount: data.discount,
-        img: data.file.map (f => file.create(f).id),
+        img: data.file.map(f => file.create(f).id),
         }),
     create: data => {
         let newProduct = model.generate(data);

@@ -9,11 +9,14 @@ const controller = {
       products: products.all(),
     }),
   detail: (req, res) => {
-    res.render("products/productDetail", {
+    let result = products.search("id", req.params.id)
+    let productShow = Object({...result, img: result.img.map(e=>file.search('id', e))})
+    return result ? res.render("products/productDetail", {
       styles: ["product"],
       title: "Detalle de producto",
-      product: products.search("id", req.params.id),
-    });
+      product: productShow
+      }) : res.render('error', {msg: 'Producto no encontrado'})
+      //res.send(productShow)
   },
   create: (req, res) =>
     res.render("products/create", {

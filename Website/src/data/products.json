@@ -59,5 +59,81 @@
       "default.jpg"
     ],
     "discount": ""
+  },
+  {
+    "id": 6,
+    "name": "Web Veterinaria",
+    "size": [
+      "XS",
+      "S"
+    ],
+    "description": "asd",
+    "price": 12345,
+    "ofert": true,
+    "discount": "10",
+    "img": [
+      1
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Bernardo",
+    "size": [
+      "S",
+      "L"
+    ],
+    "description": "asdasdadadad",
+    "price": 123154,
+    "category": "mujer",
+    "ofert": false,
+    "discount": "",
+    "img": [
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "id": 8,
+    "name": "asdad",
+    "size": "S",
+    "description": "",
+    "price": 1231,
+    "ofert": false,
+    "discount": "",
+    "img": []
+  },
+  {
+    "id": 9,
+    "name": "Karin Brondsted",
+    "size": "XL",
+    "description": "",
+    "price": 12515125,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "10",
+    "img": []
+  },
+  {
+    "id": 10,
+    "name": "Karin Brondsted",
+    "size": "XL",
+    "description": "",
+    "price": 12515125,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "10",
+    "img": []
+  },
+  {
+    "id": 11,
+    "name": "Karin Brondsted",
+    "size": "XL",
+    "description": "",
+    "price": 12515125,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "10",
+    "img": []
   }
 ]
