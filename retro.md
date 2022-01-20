@@ -1,4 +1,4 @@
-#Retro - 3er Sprint
+###Retro - 3er Sprint
 ___
 ### Comenzar a hacer:
   Coordinar mejor la actividades que tiene que realizar cada integrante.
@@ -21,7 +21,7 @@ No ser proactivos.
 Estancarse con cosas y no consultar con el grupo para resolver el problema entre todos.
 ___
 
-#Retro - 4to Sprint
+###Retro - 4to Sprint
 ___
 ### Comenzar a hacer:
   Proponer fechas previas a la de entrega para terminar a tiempo el trabajo, y poder llegar mas holgados a la fecha de entrega final con todo checkeado.
