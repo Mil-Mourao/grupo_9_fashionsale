@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const file = require('./file');
+const file = require('../models/file');
 
 model = {
     file: path.resolve(__dirname, '../data/products.json'),
@@ -15,7 +15,7 @@ model = {
         price: parseFloat(data.price),
         category: data.category,
         ofert: data.ofert ? true : false,
-        img: data.image ? data.image : ["default.jpg"],
+        //img: data.image ? data.image : ["default.jpg"],
         discount: data.discount,
         img: data.file.map (f => file.create(f).id),
         }),
