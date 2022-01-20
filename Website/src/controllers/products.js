@@ -1,57 +1,48 @@
-const products = require('../models/product');
-const file = require('../models/file');
+const products = require("../models/product");
+const file = require("../models/file");
 
 const controller = {
-    list: (req,res) => res.render('products/list', {
-        styles: ['list'],
-        title: 'Listado de Productos',
-        products: products.all()
+  list: (req, res) =>
+    res.render("products/list", {
+      styles: ["list"],
+      title: "Listado de Productos",
+      products: products.all(),
     }),
-    detail: (req,res) => {
-       
-       res.render('products/productDetail',{
-            styles: ['product'],
-            title: 'Detalle de producto',
-            product: products.search('id', req.params.id)
-        })
-    },
-    create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
-    save: (req,res) => {
-        req.body.file = req.files;
-        //return res.send(req.body)
-        let created = products.create(req.body);
-        return res.redirect("/products/" + created.id);
-        
-    },
-    update:(req,res) => res.render("products/update", {
-        styles: ["products/create"],
-        title: "actualizar",
-        products: products.search('id', req.params.id)
+  detail: (req, res) => {
+    res.render("products/productDetail", {
+      styles: ["product"],
+      title: "Detalle de producto",
+      product: products.search("id", req.params.id),
+    });
+  },
+  create: (req, res) =>
+    res.render("products/create", {
+      title: "crear producto",
+      styles: ["create"],
     }),
-    modify: (req,res) => {
-        let update = products.update(req.params.id, req.body);
-        return res.redirect("/products/" + update.id)
-    },
-    delete: (req,res) => {
-        products.delete(req.body.id)
-        return res.redirect('/products/')
-    },
+  save: (req, res) => {
+    req.body.file = req.files;
+    //return res.send(req.body)
+    let created = products.create(req.body);
+    return res.redirect("/products/" + created.id);
+  },
+  update: (req, res) =>
+    res.render("products/update", {
+      styles: ["products/create"],
+      title: "actualizar",
+      products: products.search("id", req.params.id),
+    }),
+  modify: (req, res) => {
+    let update = products.update(req.params.id, req.body);
+    return res.redirect("/products/" + update.id);
+  },
+  delete: (req, res) => {
+    products.delete(req.body.id);
+    return res.redirect("/products/");
+  },
+};
 
-    show: (req, res) => {
-        let result = search('id', req.params.id);
-        // return res.send(result)
-        return result ? res.render('products/detail', {
-          styles: ["products/detail"],
-          title: "Producto | " + result.name,
-          product: result
-        }) : res.render('error', {
-          msg: 'Producto no encontrado'
-        })
-      },
-
-    }
-
-module.exports = controller
+module.exports = controller;
 /*
 index: (req, res) => res.send({ products: all()}),
    index: (req, res) => res.render('products/list',{
