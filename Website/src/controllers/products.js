@@ -2,12 +2,15 @@ const products = require("../models/product");
 const file = require("../models/file");
 
 const controller = {
-  list: (req, res) =>
-    res.render("products/list", {
+  list: (req, res) => {
+    //res.send(products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))})))
+    
+      res.render("products/list", {
       styles: ["list"],
       title: "Listado de Productos",
-      products: products.all(),
-    }),
+      products: products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))}))
+    })
+  },
   detail: (req, res) => {
     let result = products.search("id", req.params.id)
     let productShow = Object({...result, img: result.img.map(e=>file.search('id', e))})
@@ -31,7 +34,7 @@ const controller = {
   },
   update: (req, res) =>
     res.render("products/update", {
-      styles: ["products/create"],
+      styles: ["update"],
       title: "actualizar",
       products: products.search("id", req.params.id),
     }),

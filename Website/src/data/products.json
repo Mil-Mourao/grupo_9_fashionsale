@@ -1,99 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Buzo North Face",
-    "size": [
-      "XS",
-      "S",
-      "M"
-    ],
-    "description": "Buzo color blanco super abrigado",
-    "price": 1234,
-    "category": "hombre",
-    "ofert": true,
-    "img": [
-      "buzo.jpg",
-      "buzo.jpg"
-    ],
-    "discount": "25"
-  },
-  {
-    "id": 3,
-    "price": null,
-    "category": "hombre",
-    "ofert": false,
-    "size": [
-      "XS"
-    ],
-    "img": [
-      "camisa.jpg",
-      "camisa.jpg"
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Bernardo",
-    "size": [
-      "XS",
-      "S",
-      "M"
-    ],
-    "description": "asdadsadad",
-    "price": 1234,
-    "category": "hombre",
-    "ofert": true,
-    "img": [
-      "default.jpg"
-    ],
-    "discount": "25"
-  },
-  {
-    "id": 5,
-    "name": "Test",
-    "size": "M",
-    "description": "testestseste",
-    "price": 100,
-    "category": "hombre",
-    "ofert": false,
-    "img": [
-      "default.jpg"
-    ],
-    "discount": ""
-  },
-  {
-    "id": 6,
-    "name": "Web Veterinaria",
-    "size": [
-      "XS",
-      "S"
-    ],
-    "description": "asd",
-    "price": 12345,
-    "ofert": true,
-    "discount": "10",
-    "img": [
-      1
-    ]
-  },
-  {
-    "id": 7,
-    "name": "Bernardo",
-    "size": [
-      "S",
-      "L"
-    ],
-    "description": "asdasdadadad",
-    "price": 123154,
-    "category": "mujer",
-    "ofert": false,
-    "discount": "",
-    "img": [
-      2,
-      3,
-      4
-    ]
-  },
-  {
     "id": 8,
     "name": "asdad",
     "size": "S",
@@ -101,7 +7,11 @@
     "price": 1231,
     "ofert": false,
     "discount": "",
-    "img": []
+    "img": [
+      1,
+      2,
+      3
+    ]
   },
   {
     "id": 9,
@@ -112,7 +22,9 @@
     "category": "hombre",
     "ofert": false,
     "discount": "10",
-    "img": []
+    "img": [
+      1
+    ]
   },
   {
     "id": 10,
@@ -121,19 +33,23 @@
     "description": "",
     "price": 12515125,
     "category": "hombre",
-    "ofert": false,
+    "ofert": true,
     "discount": "10",
-    "img": []
+    "img": [4]
   },
   {
     "id": 11,
-    "name": "Karin Brondsted",
-    "size": "XL",
-    "description": "",
-    "price": 12515125,
+    "name": "Bernardo Arrechea",
+    "size": "M",
+    "description": "asd",
+    "price": 123,
     "category": "hombre",
-    "ofert": false,
-    "discount": "10",
-    "img": []
+    "ofert": true,
+    "discount": "",
+    "img": [
+      5,
+      6,
+      7
+    ]
   }
 ]
