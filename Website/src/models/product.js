@@ -14,7 +14,7 @@ model = {
         price: parseInt(data.price),
         category: data.category,
         ofert: data.ofert ? true : false,
-        image: data.image,
+        img: data.image ? data.image : ["default.jpg"],
         discount: data.discount,
       /*  img: data.files.map (f => file.create(f).id),*/
         }),

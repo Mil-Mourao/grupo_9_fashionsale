@@ -14,7 +14,7 @@
         <section class="main_section">
           <% if (locals.products) { %>
             <% products.forEach(element=> { %>
-              <% if (element.ofert==true) { %>
+              <% if (element.ofert) { %>
                 <article>
                   <picture>
                     <a href="/products/<%= element.id %> ">

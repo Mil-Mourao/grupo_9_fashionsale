@@ -25,33 +25,27 @@
                     <img id="focus-pic" src="/img/Productos/<%= product.img[0] %>" alt="<%= product.name %> " />
                   </picture>
                 </article>
-              <% } else {%>
-                <article class="pic-list">
-                <picture>
-                  <img class="small-pic" src="/img/default.jpg" alt="" srcset="" />
-                </picture>
-                </article>
-                <article class="main-pic">
-                  <picture>
-                    <img id="focus-pic" src="/img/default.jpg" alt="<%= product.name %> " />
-                  </picture>
-                </article>
               <% } %> 
 
           <section class="description">
             <article id="desc-top">
+              <% if (product.ofert) { %>
+                <h1 id="desc-title"><%= product.name%> | En Oferta </h1>  
+              <% } else {%>
               <h1 id="desc-title"><%= product.name %> </h1>
+              <% } %> 
               <h2 id="desc-prize">$
                   <% if (product.ofert) { %>
-                    <%= product.price * 0.8 %>
+                    <% var newPrice = parseInt(product.price * ((100 - product.discount) / 100)) %> 
+                    <%= newPrice %>
                   <% } else {%>
                     <%= product.price %>
                   <% } %>
               </h2>
             </article>
             <article id="cuotas">
-              <p>12 cuotas de $ <%=  parseInt(product.price/12) %> </p>
-              <p>6 cuotas de $ <%= parseInt(product.price/6) %></p>
+              <p>12 cuotas de $ <%=  parseInt(newPrice / 12) %> </p>
+              <p>6 cuotas de $ <%= parseInt(newPrice / 6) %></p>
             </article>
             <article id="size-qty">
               <% if (product.size) { %>
@@ -90,11 +84,19 @@
                 <%= product.description %> 
                 <% } %> 
               </p>
-               
+
+              <p>Talle modelo <%= product.category %>:
+                <% for( let i = 0; i < product.size.length; i++ ) { %>
+                  <% if (i == product.size.length -1) { %>
+                    <%= product.size[i]%>  
+                  <% } else { %>
+                  <%= product.size[i]%> /
+                  <% }  %> 
+                <% } %>
+              </p>  
+                
               
-                <p>Talle modelo hombre: XS/M</p>
-                <p>Talle modelo mujer: M/L</p>
-             
+               
               
                 
            
