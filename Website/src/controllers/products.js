@@ -17,7 +17,7 @@ const controller = {
     },
     create: (req, res) => res.render('products/create',{title:'crear producto', styles: ['create']}),
     save: (req,res) => {
-        //req.body.file = req.files;
+        req.body.file = req.files;
         //return res.send(req.body)
         let created = products.create(req.body);
         return res.redirect("/products/" + created.id);

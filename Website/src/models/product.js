@@ -12,12 +12,12 @@ model = {
         name: data.name,
         size: data.size,
         description: data.description,
-        price: parseInt(data.price),
+        price: parseFloat(data.price),
         category: data.category,
         ofert: data.ofert ? true : false,
         img: data.image ? data.image : ["default.jpg"],
         discount: data.discount,
-        img: data.files.map (f => file.create(f).id),
+        img: data.file.map (f => file.create(f).id),
         }),
     create: data => {
         let newProduct = model.generate(data);

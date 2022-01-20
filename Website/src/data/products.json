@@ -1,6 +1,6 @@
 [
   {
-    "id":1,
+    "id": 1,
     "name": "Buzo North Face",
     "size": [
       "XS",
@@ -16,7 +16,6 @@
       "buzo.jpg"
     ],
     "discount": "25"
-  
   },
   {
     "id": 3,
@@ -47,5 +46,18 @@
       "default.jpg"
     ],
     "discount": "25"
+  },
+  {
+    "id": 5,
+    "name": "Test",
+    "size": "M",
+    "description": "testestseste",
+    "price": 100,
+    "category": "hombre",
+    "ofert": false,
+    "img": [
+      "default.jpg"
+    ],
+    "discount": ""
   }
 ]
