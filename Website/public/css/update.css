@@ -14,7 +14,7 @@
   margin: 20px 40px;
   text-align: center;    
 }
-.form-create fieldset {
+.form-update fieldset {
   border-radius: 20px;
   margin-bottom: 25px;
   display: block;
@@ -37,14 +37,14 @@ font-weight: 700;
 font-family: 'Trebuchet MS', sans-serif;
 }
 .logo-Update {
-width: 100vw;
+width: 50vw;
 }
 
 #logo-Update-top {
 max-width: 60px;
 max-height: 70px;
 margin: 5px auto;
-display: block;
+text-align:center
 }
 
 .boton {

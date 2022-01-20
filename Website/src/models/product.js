@@ -3,20 +3,6 @@ const path = require('path');
 
 model = {
     file: path.resolve(__dirname, '../data/products.json'),
-    generate: data => Object({
-        id: model.all().length == 0 ? 1 : model.all().pop().id +1,
-        name: data.name,
-        price: parseInt(data.price),
-        ofert: data.ofert ? true : false,
-        imagen: data.files.map (f => file.create(f).id)
-    }),
-        create: data => {
-         let newProduct = model.generate(data);
-         let all = model.all();
-         all.push(newProduct),
-         model.write(all);
-         return newProduct
-        },
     read: () => fs.readFileSync(model.file, 'utf8'),
     write: data => fs.writeFileSync(model.file, JSON.stringify(data,null,2)),
     all: () => JSON.parse(model.read()),
@@ -40,6 +26,7 @@ model = {
         return newProduct
     },    
     delete: id => model.write(model.all().filter(e => e.id != id)),
+    search: (field, value) => model.all().find(element => element[field] == value),
     update: (id,data) => {
         let all = model.all();
         let updated = all.map(e =>{
