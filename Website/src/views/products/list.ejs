@@ -7,18 +7,24 @@
             <h2>Listado de productos</h2>
             <section class="main_section">
                 <% if (locals.products) { %>                    
-                <% products.forEach(element => { %>   
+                <% products.forEach((element) => { %>   
                 <article>
                     <picture>
                     <a href="/products/<%= element.id %> ">
-                        <% if (element.img) { %>
-                            <img src="/img/Productos/<%= element.img[0] %> " alt="<%= element.name %> ">
-                         
+                        <% if (element.img ) { %>
+                            <% for( let i = 0; i < element.img.length; i++ ) { %>
+                                <% if (i<1) { %>
+                                    <img src="/img/Productos/<%= element.img[0]['url']%>" alt="<%= element.name %> ">    
+                                <% } %>
+                            <% } %>
+                            
                         <% } else {%>
-                            <img src="/img/default.jpg" alt="<%= element.name %> ">
+                       <!--     <img src="/img/default.jpg" alt="<//%= element.name %> ">-->
                         <% } %> 
                     </a>
-                    </picture>
+                    </picture> 
+                    
+                       
                     <ul>
                         <li><%= element.name %> </li>
                         <li>$                         

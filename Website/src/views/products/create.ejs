@@ -12,7 +12,7 @@
             </picture>
           </article>
           <h3 id="title"> Creación de Productos</h3>
-          <form action="/products/" method="post">
+          <form action="/products/" enctype="multipart/form-data" method="post" multiple>
             <fieldset>
               <label for="name">
               <input type="text" name="name" id="name" placeholder="Name/Nombre">
@@ -48,13 +48,13 @@
  
             <fieldset>
               <label class="img" for="image"></label>
-              <input type="file" name="image" id="image">
+              <input type="file" name="image" id="image" multiple required>
             
             <fieldset>
               <label for="men">Hombre</label>
-              <input type="checkbox" name="category" value="hombre">
+              <input type="radio" name="category" value="hombre">
               <label for="women">Mujer</label>
-              <input type="checkbox" name="category" value="mujer">
+              <input type="radio" name="category" value="mujer">
             </fieldset>
 
             <fieldset>

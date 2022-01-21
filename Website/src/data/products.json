@@ -1,51 +1,71 @@
 [
   {
-    "id":1,
+    "id": 1,
     "name": "Buzo North Face",
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Buzo con capucha, diseñado para el uso cotidiano. Tejido jersey en la capucha ayuda a eliminar el exceso de humedad.",
+    "price": 1500,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "",
+    "img": [
+      8
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Camisa Hawaiiana",
     "size": [
       "XS",
       "S",
       "M"
     ],
-    "description": "Buzo color blanco super abrigado",
-    "price": 1234,
+    "description": "Camisa ligera, ideal para el verano y primavera.",
+    "price": 2500,
     "category": "hombre",
-    "ofert": true,
+    "ofert": false,
+    "discount": "",
     "img": [
-      "buzo.jpg",
-      "buzo.jpg"
-    ],
-    "discount": "25"
-  
+      9
+    ]
   },
   {
     "id": 3,
-    "price": null,
-    "category": "hombre",
-    "ofert": false,
+    "name": "Campera Wave",
     "size": [
-      "XS"
+      "S",
+      "M",
+      "L"
     ],
+    "description": "Campera fachera, para salidas informales.",
+    "price": 3800,
+    "category": "hombre",
+    "ofert": true,
+    "discount": "10",
     "img": [
-      "camisa.jpg",
-      "camisa.jpg"
+      10,
+      11,
+      12
     ]
   },
   {
     "id": 4,
-    "name": "Bernardo",
+    "name": "Camisa de Jean",
     "size": [
       "XS",
-      "S",
-      "M"
+      "S"
     ],
-    "description": "asdadsadad",
-    "price": 1234,
-    "category": "hombre",
+    "description": "Camisa azul marino, elegante. ",
+    "price": 1800,
+    "category": "mujer",
     "ofert": true,
+    "discount": "15",
     "img": [
-      "default.jpg"
-    ],
-    "discount": "25"
+      13
+    ]
   }
 ]

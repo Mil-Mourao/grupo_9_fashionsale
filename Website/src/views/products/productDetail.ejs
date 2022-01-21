@@ -11,18 +11,17 @@
           </article>
         </section>
         <section id="producto">
-         
             <% if (product.img) { %>
               <article class="pic-list">
               <% for( let i = 0; i < product.img.length; i++ ) { %>
                 <picture>
-                  <img class="small-pic" src="/img/Productos/<%=product['img'][i] %>" alt="" srcset="" />
+                  <img class="small-pic" src="/img/Productos/<%=product['img'][i]['url'] %>" alt="" srcset="" />
                 </picture>
                   <% } %> 
                 </article>
                 <article class="main-pic">
                   <picture>
-                    <img id="focus-pic" src="/img/Productos/<%= product.img[0] %>" alt="<%= product.name %> " />
+                    <img id="focus-pic" src="/img/Productos/<%= product.img[0]['url'] %>" alt="<%= product.name %> " />
                   </picture>
                 </article>
               <% } %> 
@@ -44,8 +43,8 @@
               </h2>
             </article>
             <article id="cuotas">
-              <p>12 cuotas de $ <%=  parseInt(newPrice / 12) %> </p>
-              <p>6 cuotas de $ <%= parseInt(newPrice / 6) %></p>
+              <p>12 cuotas de $ <%= product.ofert ? parseInt(newPrice / 12) : parseInt(product.price / 12) %></p>
+              <p>6 cuotas de $ <%= product.ofert ? parseInt(newPrice / 6) : parseInt(product.price / 6) %></p>
             </article>
             <article id="size-qty">
               <% if (product.size) { %>
