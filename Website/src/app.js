@@ -16,4 +16,5 @@ app.listen(app.get('port'),() => console.log('running on port http://localhost:'
 
 app.use(require('./routes/main'))
 app.use('/users', require('./routes/users'))
-app.use('/products',require('./routes/products'))
+app.use('/products', require('./routes/products'))
+app.use('/cart',require('./routes/cart'))

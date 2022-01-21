@@ -3,36 +3,51 @@
 <%- include('../partials/head') %> 
 <body>
     <%- include('../partials/header') %> 
-    <main>
         <main>
             <h2>Listado de productos</h2>
             <section class="main_section">
                 <% if (locals.products) { %>                    
-                <% products.forEach(element => { %>   
-                    <article>
+                <% products.forEach((element) => { %>   
+                <article>
                     <picture>
                     <a href="/products/<%= element.id %> ">
-                        <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
+                        <% if (element.img ) { %>
+                            <% for( let i = 0; i < element.img.length; i++ ) { %>
+                                <% if (i<1) { %>
+                                    <img src="/img/Productos/<%= element.img[0]['url']%>" alt="<%= element.name %> ">    
+                                <% } %>
+                            <% } %>
+                            
+                        <% } else {%>
+                       <!--     <img src="/img/default.jpg" alt="<//%= element.name %> ">-->
+                        <% } %> 
                     </a>
-                    </picture>
+                    </picture> 
+                    
+                       
                     <ul>
-                        <li><span><%= element.desc %> </span> <%= element.name %> </li>
-                        <li>$<%= element.price %> </li>
+                        <li><%= element.name %> </li>
+                        <li>$                         
+                            <% if (element.ofert) { %>
+                                <%= parseInt(element.price) * 0.8 %>
+                            <% } else {%>
+                                <%= element.price %>
+                            <% } %>
+                        </li>                    
+                        <li><form action="/products/?m=DELETE" method="post">
+                            <input type ="hidden" name="id" value="<%= element.id %>">
+                            <button type="submit"><i class="fas fa-trash-alt"></i></button></form>
+                        </li>
+                        <li><a href="/products/update/<%= element.id %> " rel="noopener noreferrer"><i class="fas fa-edit"></i></a></li>
                     </ul>
-                    <form action="/products/?m=DELETE" method="post">
-                        <input type ="hidden" name="id" value="<%= element.id %>">
-                        <button type="submit">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
-                    </article>
+
+                </article>
                 <% }) %>
                 <% } else {%>
                     <h2>No hay productos cargados</h2>
                 <% } %> 
             </section>
           </main>
-    </main>
     <%- include('../partials/footer') %> 
 </body>
 </html>

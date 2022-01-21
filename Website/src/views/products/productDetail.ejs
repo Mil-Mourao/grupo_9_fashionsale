@@ -1,114 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
+
   <body>
-    <%- include('../partials/header') %> 
-    <main>
-      <section>
-        <article>
-          <a href="/" id="volver">Volver al listado</a>
-        </article>
-      </section>
-      <section id="producto">
-        <article class="pic-list">
-          <picture>
-            <img
-              class="small-pic"
-              src="/img/camperaWaveChica.jpg"
-              alt=""
-              srcset=""
-            />
-          </picture>
-          <picture>
-            <img
-              class="small-pic"
-              src="/img/camperaWaveHombre.jpg"
-              alt=""
-              srcset=""
-            />
-          </picture>
-          <picture>
-            <img
-              class="small-pic"
-              src="/img/camperaWaveHombre2.jpg"
-              alt=""
-              srcset=""
-            />
-          </picture>
-          <picture>
-            <img
-              class="small-pic"
-              src="/img/camperaWaveEspaldaHombre.jpg"
-              alt=""
-              srcset=""
-            />
-          </picture>
-          <picture>
-            <img
-              class="small-pic"
-              src="/img/camperaWaveChica2.jpg"
-              alt=""
-              srcset=""
-            />
-          </picture>
-        </article>
-        <article class="main-pic">
-          <picture>
-            <img id="focus-pic" src="/img/camperaWave.jpg" alt="" />
-          </picture>
-        </article>
-        <section class="description">
-          <article id="desc-top">
-            <h1 id="desc-title">Campera Wave</h1>
-            <h2 id="desc-prize">$8.400</h2>
-          </article>
-          <article id="cuotas">
-            <p>12 cuotas de $1.050</p>
-            <p>6 cuotas de $1.400</p>
-          </article>
-          <article id="size-qty">
-            <form action="get" id="size-qty-form">
-              <fieldset>
-                <legend>Talle</legend>
-                <label for="size" class="no-show">Talle</label>
-                <select name="size" id="talle">
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
-                </select>
-              </fieldset>
-              <fieldset>
-                <legend>Cantidad</legend>
-                <label for="qty" class="no-show">Cantidad</label>
-                <button>-</button>
-                <input type="number" name="qty" id="qty" min="1" max="10"
-                value="1"/>
-                <button>+</button>
-              </fieldset>
-              <fieldset>
-                <legend class="no-show">Agregar al Carrito</legend>
-                <label for="add-to-cart" class="no-show"
-                  >Agregar al Carrito</label
-                >
-                <button type="submit" id="submit">Agregar al Carrito</button>
-              </fieldset>
-            </form>
-          </article>
-          <article id="desc-bottom">
-            <h3>Descripción</h3>
-            <p>
-              Campera estampada. Textil crepe de microfibra mate. Bolsillos
-              laterales. Cierre metálico central.
-            </p>
-            <p>Talle modelo mujer: XS/S</p>
-            <p>Talle modelo hombre: M/L</p>
+    <%- include('../partials/header') %>
+      <main>
+        <section>
+          <article>
+            <a href="/" id="volver">Volver al listado</a>
           </article>
         </section>
-      </section>
-    </main>
-    <%- include('../partials/footer') %> 
+        <section id="producto">
+            <% if (product.img) { %>
+              <article class="pic-list">
+              <% for( let i = 0; i < product.img.length; i++ ) { %>
+                <picture>
+                  <img class="small-pic" src="/img/Productos/<%=product['img'][i]['url'] %>" alt="" srcset="" />
+                </picture>
+                  <% } %> 
+                </article>
+                <article class="main-pic">
+                  <picture>
+                    <img id="focus-pic" src="/img/Productos/<%= product.img[0]['url'] %>" alt="<%= product.name %> " />
+                  </picture>
+                </article>
+              <% } %> 
+
+          <section class="description">
+            <article id="desc-top">
+              <% if (product.ofert) { %>
+                <h1 id="desc-title"><%= product.name%> | En Oferta </h1>  
+              <% } else {%>
+              <h1 id="desc-title"><%= product.name %> </h1>
+              <% } %> 
+              <h2 id="desc-prize">$
+                  <% if (product.ofert) { %>
+                    <% var newPrice = parseInt(product.price * ((100 - product.discount) / 100)) %> 
+                    <%= newPrice %>
+                  <% } else {%>
+                    <%= product.price %>
+                  <% } %>
+              </h2>
+            </article>
+            <article id="cuotas">
+              <p>12 cuotas de $ <%= product.ofert ? parseInt(newPrice / 12) : parseInt(product.price / 12) %></p>
+              <p>6 cuotas de $ <%= product.ofert ? parseInt(newPrice / 6) : parseInt(product.price / 6) %></p>
+            </article>
+            <article id="size-qty">
+              <% if (product.size) { %>
+                <fieldset>
+                  <legend>Talle</legend>
+                  <label for="size" class="no-show">Talle</label>
+                  <select name="size" id="talle">
+                  <% for( let i = 0; i < product.size.length; i++ ) { %>
+                    <option value="<%= product.size[i] %> "><%= product.size[i] %></option>
+                  <% } %>
+                  </select>
+                </fieldset>
+              <% } %>
+              <form action="get" id="size-qty-form">
+                <fieldset>
+                  <legend>Cantidad</legend>
+                  <label for="qty" class="no-show">Cantidad</label>
+                  <button>-</button>
+                  <input type="number" name="qty" id="qty" min="1" max="10" value="1" />
+                  <button>+</button>
+                </fieldset>
+                <fieldset>
+                  <legend class="no-show">Agregar al Carrito</legend>
+                  <label for="add-to-cart" class="no-show">Agregar al Carrito</label>
+                  <button type="submit" id="submit">Agregar al Carrito</button>
+                </fieldset>
+              </form>
+            </article>
+            <article id="desc-bottom">
+              <h3>Descripción</h3>
+              <p>
+              <% if (product.description == "") { %>
+               Campera estampada. Textil crepe de microfibra mate. Bolsillos
+               laterales. Cierre metálico central.
+              <% } else {%>
+                <%= product.description %> 
+                <% } %> 
+              </p>
+
+              <p>Talle modelo <%= product.category %>:
+                <% for( let i = 0; i < product.size.length; i++ ) { %>
+                  <% if (i == product.size.length -1) { %>
+                    <%= product.size[i]%>  
+                  <% } else { %>
+                  <%= product.size[i]%> /
+                  <% }  %> 
+                <% } %>
+              </p>  
+                
+              
+               
+              
+                
+           
+             
+              
+            </article>
+          </section>
+        </section>
+      </main>
+      <%- include('../partials/footer') %>
   </body>
+
 </html>

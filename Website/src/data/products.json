@@ -1,34 +1,71 @@
 [
-    {   
-        "id": 1,
-        "name": "North Face",
-        "desc": "Buzo",
-        "price": "3500",
-        "ofert": true,
-        "img": "buzo.jpg"
-    },
-    {   
-        "id": 2,
-        "name": "Hawaiiana",
-        "desc": "Camisa",
-        "price": "1800",
-        "ofert": false,
-        "img": "camisa.jpg"
-    },
-    {   
-        "id": 3,
-        "name": "de jean",
-        "desc": "Camisa",
-        "price": "2000",
-        "ofert": true,
-        "img": "camisaJean.jpg"
-    },
-    {   
-        "id": 4,
-        "name": "Lights",
-        "desc": "Piloto",
-        "price": "3150",
-        "ofert": false,
-        "img": "pilotoLightsred.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Buzo North Face",
+    "size": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Buzo con capucha, diseñado para el uso cotidiano. Tejido jersey en la capucha ayuda a eliminar el exceso de humedad.",
+    "price": 1500,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "",
+    "img": [
+      8
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Camisa Hawaiiana",
+    "size": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "description": "Camisa ligera, ideal para el verano y primavera.",
+    "price": 2500,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "",
+    "img": [
+      9
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Campera Wave",
+    "size": [
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Campera fachera, para salidas informales.",
+    "price": 3800,
+    "category": "hombre",
+    "ofert": true,
+    "discount": "10",
+    "img": [
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Camisa de Jean",
+    "size": [
+      "XS",
+      "S"
+    ],
+    "description": "Camisa azul marino, elegante. ",
+    "price": 1800,
+    "category": "mujer",
+    "ofert": true,
+    "discount": "15",
+    "img": [
+      13
+    ]
+  }
 ]

@@ -14,18 +14,18 @@
         <section class="main_section">
           <% if (locals.products) { %>
             <% products.forEach(element=> { %>
-              <% if (element.ofert==true) { %>
+              <% if (element.ofert) { %>
                 <article>
                   <picture>
                     <a href="/products/<%= element.id %> ">
-                      <img src="/img/Productos/<%= element.img %> " alt="<%= element.name %> ">
+                      <img src="/img/Productos/<%= element.img[0]['url'] %> " alt="<%= element.name %> ">
                     </a>
                   </picture>
                   <ul>
-                    <li><%= element.desc %> <%= element.name %></li>
+                    <li><%= element.name %></li>
                   <article>
                     <li>$<%= element.price %></li>
-                    <li>$<%= parseInt(element.price) * 0.8%></li>
+                    <li>$<%= parseInt(element.price * 0.8)%></li>
                   </article>
                   </ul>
                 </article>                    

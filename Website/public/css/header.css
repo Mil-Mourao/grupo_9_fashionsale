@@ -27,13 +27,29 @@ i {
 }
 
 #barra{
-  height: 20px;
+  height: 1.6rem;
+  border: none;
+  outline: none;
+  color: #555;
+  background: linear-gradient(#ddc8b7, #f3ede6);
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
+#searchBar form {
+  position: relative;
 }
 
 .searchButton {
   font-size: 1rem;
-  padding: 0 0.15rem;
+  padding: 0.15rem 0.15rem; 
+  position: absolute;
+  right: 4px;
+  bottom: 2px;
+  border-left: solid 1px rgb(213 184 184);
+  background: linear-gradient(#ddc8b7, #f3ede6);
 }
+
 
 fieldset {
   border: none;
@@ -62,17 +78,13 @@ fieldset {
 
   #barra {
     width: 20vw;
-    height: 2rem;
+    
   }
 }
 
 @media screen and (min-width: 1200px) {
   header {
     justify-content: space-evenly;
-  }
-
-  nav {
-    overflow-y: hidden;
   }
 
   .logo-simple {
