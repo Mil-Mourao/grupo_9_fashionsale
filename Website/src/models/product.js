@@ -28,9 +28,9 @@ model = {
     },    
     delete: id => model.write(model.all().filter(e => e.id != id)),
     search: (field, value) => model.all().find(element => element[field] == value),
-    update: (id, data) => {
-        let all = model.all()
-        let updated = all.map(e=>{
+    update: (id,data) => {
+        let all = model.all();
+        let updated = all.map(e =>{
             if(e.id == id) {
                 e.name = data.name,
                 e.price = parseInt(data.price),
@@ -46,10 +46,8 @@ model = {
             return e   
         })
         model.write(updated)
-        let product = model.search('id',id)
+        let product = model.search('id',id);
         return product
-    }
+    },
 }
-
-
-module.exports = model;
+module.exports = model
