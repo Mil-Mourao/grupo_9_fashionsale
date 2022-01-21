@@ -14,7 +14,7 @@ router.get('/create', products.create);
 router.get('/:id', products.detail);
 router.get("/update/:id", products.update);
 
-router.put('/update/:id',[upload.any()], products.modify);
+router.put('/:id', products.modify);
 
 router.post('/', [upload.any()],products.save)
 

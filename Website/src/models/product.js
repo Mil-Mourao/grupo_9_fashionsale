@@ -39,7 +39,6 @@ model = {
                 e.category = data.category,
                 e.ofert = data.ofert ? true : false,
                 e.category = data.category,
-                e.img = data.image,
                 e.discount = data.discount
             return e
             }
