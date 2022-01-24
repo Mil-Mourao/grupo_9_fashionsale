@@ -1,22 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Buzo North Face",
-    "size": [
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "Buzo con capucha, diseñado para el uso cotidiano. Tejido jersey en la capucha ayuda a eliminar el exceso de humedad.",
-    "price": 1500,
-    "category": "hombre",
-    "ofert": false,
-    "discount": "",
-    "img": [
-      8
-    ]
-  },
-  {
     "id": 2,
     "name": "Camisa Hawaiiana",
     "size": [
@@ -30,7 +13,7 @@
     "ofert": false,
     "discount": "",
     "img": [
-      9
+      1
     ]
   },
   {
@@ -47,25 +30,41 @@
     "ofert": true,
     "discount": "10",
     "img": [
-      10,
-      11,
-      12
+      2,
+      3,
+      4
     ]
   },
   {
     "id": 4,
     "name": "Camisa de Jean",
     "size": [
+      "M",
+      "L"
+    ],
+    "description": "Camisa de jean, color azul marino. Ideal para eventos informales.",
+    "price": 1800,
+    "category": "hombre",
+    "ofert": true,
+    "discount": "20",
+    "img": [
+      5
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Piloto Lights",
+    "size": [
       "XS",
       "S"
     ],
-    "description": "Camisa azul marino, elegante. ",
-    "price": 1800,
+    "description": "Piloto para mujeres tipo sport con un diseño muy atractivo. ",
+    "price": 2500,
     "category": "mujer",
-    "ofert": true,
-    "discount": "15",
+    "ofert": false,
+    "discount": "",
     "img": [
-      13
+      6
     ]
   }
 ]

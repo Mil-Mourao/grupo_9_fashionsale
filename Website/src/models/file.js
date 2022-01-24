@@ -9,16 +9,19 @@ const model = {
   generate: (data) =>
     Object({
       id: model.all().length == 0 ? 1 : model.all().pop().id + 1,
-      url: data.filename == '' ? ["default.jpg"] : data.filename,
+      url: data == undefined ? "default.jpg" : data.filename,
     }),
-
-  create: (data) => {
+    create: (data) => {
     let newImage = model.generate(data);
     let all = model.all();
     all.push(newImage);
     model.write(all);
     return newImage;
   },
+    delete: id => {
+      fs.unlinkSync(path.resolve(__dirname, '../../public/img/Productos',model.search('id', id).url))
+      model.write(model.all().filter(e => e.id != id))
+    },
 };
 
 module.exports = model;

@@ -11,7 +11,7 @@
           </article>
         </section>
         <section id="producto">
-            <% if (product.img) { %>
+            <% if (product.img != null && product.img.length > 0) { %>
               <article class="pic-list">
               <% for( let i = 0; i < product.img.length; i++ ) { %>
                 <picture>
@@ -24,7 +24,13 @@
                     <img id="focus-pic" src="/img/Productos/<%= product.img[0]['url'] %>" alt="<%= product.name %> " />
                   </picture>
                 </article>
-              <% } %> 
+              <% } else { %> 
+                <article class="main-pic">
+                  <picture>
+                    <img id="focus-pic" src="/img/Productos/default.jpg" alt="<%= product.name %> " />
+                  </picture>
+                </article>
+                <% } %> 
 
           <section class="description">
             <article id="desc-top">

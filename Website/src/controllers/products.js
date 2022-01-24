@@ -8,12 +8,12 @@ const controller = {
       res.render("products/list", {
       styles: ["list"],
       title: "Listado de Productos",
-      products: products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))}))
+      products: products.all().map(p => Object({...p, img: p.img != null ? p.img.map(e =>file.search('id',e)) : p.img}))
     })
   },
   detail: (req, res) => {
     let result = products.search("id", req.params.id)
-    let productShow = Object({...result, img: result.img.map(e=>file.search('id', e))})
+    let productShow = Object({...result, img: result.img != null ? result.img.map(e=>file.search('id', e)) : result.img})
     return result ? res.render("products/productDetail", {
       styles: ["product"],
       title: "Detalle de producto",
@@ -39,6 +39,7 @@ const controller = {
       products: products.search("id", req.params.id),
     }),
   modify: (req, res) => {
+    req.body.file = req.files;
     let update = products.update(req.params.id, req.body);
     return res.redirect("/products/" + update.id);
   },

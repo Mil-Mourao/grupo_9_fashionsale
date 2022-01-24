@@ -11,7 +11,7 @@
                 <article>
                     <picture>
                     <a href="/products/<%= element.id %> ">
-                        <% if (element.img ) { %>
+                        <% if (element.img != null && element.img.length > 0  ) { %>
                             <% for( let i = 0; i < element.img.length; i++ ) { %>
                                 <% if (i<1) { %>
                                     <img src="/img/Productos/<%= element.img[0]['url']%>" alt="<%= element.name %> ">    
@@ -19,7 +19,7 @@
                             <% } %>
                             
                         <% } else {%>
-                       <!--     <img src="/img/default.jpg" alt="<//%= element.name %> ">-->
+                       <img src="/img/Productos/default.jpg" alt="<%= element.name %>">
                         <% } %> 
                     </a>
                     </picture> 

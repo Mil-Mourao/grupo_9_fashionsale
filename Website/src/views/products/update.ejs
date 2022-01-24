@@ -12,7 +12,7 @@
         </picture>
       </article>
       <h3 id="title"> Formulario Update</h3>
-        <form action="/products/<%= products.id %>?m=PUT" method="post">
+        <form action="/products/<%= products.id %>?m=PUT" method="post" enctype="multipart/form-data">
            <fieldset>  
               <label class= "Datos" for = "name">Nombre:</label>
               <input type="text" name="name" id="name" placeholder="Name/Nombre" >
@@ -41,6 +41,11 @@
         <label class="Datos" for = "description"></label>
         <textarea name="description" id="description" placeholder="Descripción del Producto"></textarea>
          </fieldset>
+         <fieldset>
+          <label class="img" for="image"></label>
+          <input type="file" name="image" id="image" multiple >
+        
+        <fieldset>
 
 <fieldset>
 <label for="men">Hombre</label>

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const file = require('../models/file');
 
-model = {
+const model = {
     file: path.resolve(__dirname, '../data/products.json'),
     read: () => fs.readFileSync(model.file, 'utf8'),
     write: data => fs.writeFileSync(model.file, JSON.stringify(data,null,2)),
@@ -15,9 +15,8 @@ model = {
         price: parseFloat(data.price),
         category: data.category,
         ofert: data.ofert ? true : false,
-        //img: data.image ? data.image : ["default.jpg"],
         discount: data.discount,
-        img: data.file.map(f => file.create(f).id),
+        img: data.file.length > 0 ? data.file.map(f => file.create(f).id) : null
         }),
     create: data => {
         let newProduct = model.generate(data);
@@ -26,7 +25,10 @@ model = {
         model.write(all);
         return newProduct
     },    
-    delete: id => model.write(model.all().filter(e => e.id != id)),
+    delete: id => {
+        model.search('id', id).img.map(e => file.delete(e))
+        model.write(model.all().filter(e => e.id != id))
+    },
     search: (field, value) => model.all().find(element => element[field] == value),
     update: (id,data) => {
         let all = model.all();
@@ -39,7 +41,8 @@ model = {
                 e.category = data.category,
                 e.ofert = data.ofert ? true : false,
                 e.category = data.category,
-                e.discount = data.discount
+                e.discount = data.discount,
+                e.img = data.file && data.file.length > 0 ? data.file.map(f => file.create(f).id) : null
             return e
             }
             return e   
