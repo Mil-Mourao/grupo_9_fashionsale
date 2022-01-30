@@ -8,17 +8,15 @@ const controller = {
     res.render("users/register", { styles: ["register"], title: "Registro" }),
   profile: (req, res) =>
     res.render("users/profile", { styles: ["profile"], title: "Perfil" }),
-  access: (req, res) => (req, res) => {
+  access: (req, res) => {
     const errors = validator.validationResult(req);
     if (errors.isEmpty()) {
       req.session.user = user.search("email", req.body.email);
-      req.body.remember
+       req.body.remember
         ? res.cookie("user", req.session.user.email, { maxAge: 10006060247 })
-        : null;
-      // return res.redirect("/users/profile");
-
-      return res.send(req.session.user);
-      
+        : null; 
+      return res.redirect("/users/profile");      
+    
     } else {
       res.render("user/login", {
         errors: errors.mapped(),
