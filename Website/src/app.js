@@ -2,6 +2,8 @@ const path = require('path')
 const express = require ("express")
 const app = express()
 const method = require('method-override')
+const cookie = require('cookie-parser');
+const session = require('express-session');
 
 app.set('port', process.env.PORT || 3000)
 app.set('views', path.resolve(__dirname, 'views'));
@@ -13,6 +15,16 @@ app.use(express.urlencoded({extended: true}));
 app.use(method('m')); // ?m=PUT || ?m=DELETE
 
 app.listen(app.get('port'),() => console.log('running on port http://localhost:' + app.get('port')))
+
+app.use(express.urlencoded({ extended: true }));
+app.use(cookie());
+app.use(
+  session({
+    secret: "winning",
+    saveUninitialized: true,
+    resave: false,
+  })
+);
 
 app.use(require('./routes/main'))
 app.use('/users', require('./routes/users'))

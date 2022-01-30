@@ -1,15 +1,30 @@
 [
-    {
-      "name": "One",
-      "lastName": "Two",
-      "email": "OneTwo@onetwo.com",
-      "password":"passwrod1"
-    },
-    {
-      "name": "Three",
-      "lastName": "Four",
-      "email": "ThreeFour@onetwo.com",
-      "password":"T1me2F1sh"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "One",
+    "lastName": "Two",
+    "email": "OneTwo@onetwo.com",
+    "password": "passwrod1"
+  },
+  {
+    "id": 2,
+    "name": "Three",
+    "lastName": "Four",
+    "email": "ThreeFour@onetwo.com",
+    "password": "T1me2F1sh"
+  },
+  {
+    "id": 3,
+    "email": "miltonmourao@gmail.com",
+    "password": "$2b$10$6IMMQXrDT8qifSxlb7F5VOVHrHC.y0gxRMI1aEBMrfYyFzcWXmxwm",
+    "isAdmin": false,
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "email": "hola@fashionsale.com",
+    "password": "$2b$10$Bp4uMHFEL96rujPaNUbqLu8SSiLKv2JPytbJTEwXqfCPMb4wu3mOO",
+    "isAdmin": true,
+    "isActive": true
+  }
+]
