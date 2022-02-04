@@ -1,5 +1,7 @@
 const validator = require('express-validator');
 const user = require('../models/user');
+const bcrypt = require('bcrypt');
+
 const validations = [
     validator.body('email').isEmail().withMessage('Email invalid').custom(value => {
         let search = user.search('email', value);
@@ -11,8 +13,15 @@ const validations = [
     .withMessage('Mínimo 6 caracteres, 1 letra, 1 número e 1 character especial')
     .custom((value,{req}) => {
         let search = user.search('email', req.body.email);
-        return search && search.password == value ? Promise.resolve() : Promise.reject('Password invalid');
+        return bcrypt.compareSync(value, search.password)
+        ? Promise.resolve()
+        : Promise.reject('Password invalid');
     })
 ]
 
 module.exports = validations;
+
+/*
+let search = user.search('email', req.body.email);
+        return search && search.password == value ? Promise.resolve() : Promise.reject('Password invalid');
+*/

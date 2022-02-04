@@ -1,6 +1,7 @@
 const validator = require("express-validator");
 const path = require("path");
 const user = require("../models/user");
+const bcrypt = require('bcrypt');
 const controller = {
   login: (req, res) =>
     res.render("users/login", { styles: ["login"], title: "Log in" }),
@@ -10,19 +11,35 @@ const controller = {
     res.render("users/profile", { styles: ["profile"], title: "Perfil" }),
   access: (req, res) => {
     const errors = validator.validationResult(req);
+    let usuarioExiste = user.search("email", req.body.email);
+
+      /* if(!bcrypt.compareSync(req.body.password, usuarioExiste.password)){
+        return res.render('users/login',{
+        title: 'Log in',
+        styles: ["login"],
+        errors: errors.mapped(),
+        user: req.body,
+      })*/
+    
+
     if (errors.isEmpty()) {
-      req.session.user = user.search("email", req.body.email);
-       req.body.remember
-        ? res.cookie("user", req.session.user.email, { maxAge: 10006060247 })
-        : null; 
-      return res.redirect("/users/profile");      
+      req.session.user = usuarioExiste
+      req.body.remember
+        ? res.cookie("user", req.session.user.email, {maxAge:  1000*60*60*24*7})
+        : null;    
+      //return res.redirect("/");      
     
     } else {
-      res.render("user/login", {
+      res.render("users/login", {
+        title: 'Log in',
+        styles: ["login"],
         errors: errors.mapped(),
         user: req.body,
       });
     }
+
+    return res.redirect("/users/profile");      
+
   },
   save: (req, res) => {
     const errors = validator.validationResult(req);

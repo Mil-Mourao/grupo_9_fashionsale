@@ -9,6 +9,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo-desktop {
@@ -56,6 +57,11 @@ fieldset {
   outline: none;
   display: flex;
   flex-wrap: nowrap;
+}
+
+.userLogin{
+  padding: 0 0.25rem 0.5rem 0.25rem;
+  letter-spacing: 0.05rem;
 }
 
 @media (min-width: 768px) {

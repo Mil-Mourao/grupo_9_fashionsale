@@ -2,6 +2,10 @@
 <html lang="es">
   <%- include('../partials/head') %>
   <body>
-      <h1>A VER SI ANDA</h1>
+    <%- include('../partials/header') %> 
+      <main>
+        <h2>El usuario logueado es: <%= user.email %> </h2>
+      </main>
+      <%- include('../partials/footer') %> 
   </body>
 </html>

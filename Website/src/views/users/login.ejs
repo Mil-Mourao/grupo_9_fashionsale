@@ -38,6 +38,14 @@
           </form>
         </article>
       </section>
+      <% if (locals.errors) { %>
+        <% if (errors.email) { %>
+            <p><%= errors.email.msg %></p>
+        <% } %>
+        <% if (errors.password) { %>
+            <p><%= errors.password.msg %></p>
+        <% } %>
+    <% } %>
     </main>
     <%- include('../partials/footer') %> 
   </body>

@@ -74,9 +74,6 @@ button {
     border-radius: 20px;
     width: 60vw;
   }
-}
-
-@media screen and (min-width: 1200px) {
   main {
     background-image: url(../img/loginFondo.jpg);
     height: 80vh;
@@ -84,7 +81,10 @@ button {
     justify-content: center;
     align-items: center;
   }
+}
 
+@media screen and (min-width: 1200px) {
+  
   h1 {
     font-size: 2rem;
   }
