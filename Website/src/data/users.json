@@ -26,5 +26,12 @@
     "password": "$2b$10$Bp4uMHFEL96rujPaNUbqLu8SSiLKv2JPytbJTEwXqfCPMb4wu3mOO",
     "isAdmin": true,
     "isActive": true
+  },
+  {
+    "id": 5,
+    "email": "berna@mail.com",
+    "password": "$2b$10$NIHyBlaYGHR1ttvYf2yX4OcEUTccZ1ak1u/4I.t/0fTaiMrEu/hXi",
+    "isAdmin": false,
+    "isActive": true
   }
 ]

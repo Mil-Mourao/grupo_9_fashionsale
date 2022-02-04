@@ -11,7 +11,7 @@ ul{
 }
 
 main section h2{
-    margin: 10px 15px;
+    margin: 1.5rem 3rem;
     font-family: Lora;
     text-shadow: -1px 2px 0px rgba(166, 156, 148, 0.45);
     font-size: 2rem;
@@ -297,11 +297,6 @@ main section h2{
         #col-header, .item_product, .item-border{
            max-width: 1360px;
         }
-
-        main section h2{
-            margin: 1rem 10rem;
-        }
-
     }
         
 }

@@ -13,7 +13,6 @@ const publicPath = path.resolve(__dirname, "../public")
 app.use(express.static(publicPath))
 app.use(express.urlencoded({extended: true}));
 app.use(method('m')); // ?m=PUT || ?m=DELETE
-app.use(require("./middlewares/user"))
 
 app.listen(app.get('port'),() => console.log('running on port http://localhost:' + app.get('port')))
 
@@ -24,8 +23,9 @@ app.use(
     secret: "winning",
     saveUninitialized: true,
     resave: false,
-  })
-);
+  }));
+
+app.use(require("./middlewares/user"))
 
 app.use(require('./routes/main'))
 app.use('/users', require('./routes/users'))
