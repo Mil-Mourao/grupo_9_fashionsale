@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %> 
+  <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header') %> 
+    <%- include('../partials/header') %>
     <main id="register">
       <section class="form-register">
         <article>
@@ -12,6 +12,12 @@
         </article>
         <h3 id="form-title">¡Bienvenid@ a fashion sale!</h3>
         <form action="/users/save" method="post" id="form">
+          <fieldset>
+            <input class="controls" type="text" name="name" id="name" placeholder="Primer Nombre/s"/>
+          </fieldset>
+          <fieldset>
+            <input class="controls" type="text" name="lastName" id="lastName" placeholder="Apellido"/>
+          </fieldset>
           <fieldset>
             <input
               class="controls"
@@ -43,16 +49,16 @@
             <button class="button" type="submit">Continuar</button>
           </fieldset>
           <article>
-          <fieldset>
-            <input type="button" id="access_google" value="Google" />
-          </fieldset>
-          <fieldset>
-            <input type="button" id="access_facebook" value="Facebook" />
-          </fieldset>
+            <fieldset>
+              <input type="button" id="access_google" value="Google" />
+            </fieldset>
+            <fieldset>
+              <input type="button" id="access_facebook" value="Facebook" />
+            </fieldset>
           </article>
         </form>
       </section>
     </main>
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/footer') %>
   </body>
 </html>

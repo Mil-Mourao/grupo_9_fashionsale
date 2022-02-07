@@ -2,10 +2,19 @@
 <html lang="es">
   <%- include('../partials/head') %>
   <body>
-    <%- include('../partials/header') %> 
-      <main>
-        <h2>El usuario logueado es: <%= user.email %> </h2>
-      </main>
-      <%- include('../partials/footer') %> 
+    <%- include('../partials/header') %>
+    <main>
+      <h2>
+        Hola, soy <%= user.email %> <% if (user.isAdmin === true) { %> y soy
+        admin <i class="fa-solid fa-face-sunglasses"></i> <% } %>
+      </h2>
+      <picture>
+        <img src="/img/genericUser.jpg" alt="" />
+      </picture>
+      <form action="/users/logout" method="post">
+        <button type="submit">Logout</button>
+      </form>
+    </main>
+    <%- include('../partials/footer') %>
   </body>
 </html>

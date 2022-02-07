@@ -33,5 +33,21 @@
     "password": "$2b$10$NIHyBlaYGHR1ttvYf2yX4OcEUTccZ1ak1u/4I.t/0fTaiMrEu/hXi",
     "isAdmin": false,
     "isActive": true
+  },
+  {
+    "id": 6,
+    "email": "mail@mail.com",
+    "password": "$2b$10$RSduTiGfiO4snWHpwpRCBed5MaYh5AxBtAdMuysTqDvErRERJoc1i",
+    "isAdmin": true,
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "Wilton",
+    "lastName": "Wourao",
+    "email": "milton@milton.com",
+    "password": "$2b$10$7.DgHnC/MFbbeOLoUdU7Xewdh6TfqxcLI9ms3Vetti3.PLUelzNVW",
+    "isAdmin": false,
+    "isActive": true
   }
 ]
