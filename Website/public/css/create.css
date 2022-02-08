@@ -9,7 +9,6 @@
     align-items: center;
     background: url("/img/createFondo.jpg");
     background-size: cover;
-    min-height: 75vh;
   }
   .form-create {
     background: #f2e5d5;
