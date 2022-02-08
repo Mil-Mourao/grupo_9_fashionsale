@@ -5,7 +5,7 @@
     <%- include('../partials/header') %>
     <main>
       <h2>Listado de productos</h2>
-      <!-- <h2>Buenos días <%= user.email %> </h2> -->
+      <!-- <h2>Buenos días <%= //user.email %> </h2> -->
       <section class="main_section">
         <% if (locals.products) { %> <% products.forEach((element) => { %>
         <article>
@@ -29,7 +29,7 @@
               $ <% if (element.ofert) { %> <%= parseInt(element.price) * 0.8 %>
               <% } else {%> <%= element.price %> <% } %>
             </li>
-            <% if (user.isAdmin === false) { %> <% } else { %>
+            <% if (user && user.isAdmin) { %>
             <li>
               <form action="/products/?m=DELETE" method="post">
                 <input type="hidden" name="id" value="<%= element.id %>" />
@@ -39,14 +39,15 @@
             <li>
               <a
                 href="/products/update/<%= element.id %> "
-                rel="noopener noreferrer"
-                ><i class="fas fa-edit"></i
-              ></a>
+                rel="noopener noreferrer">
+                <i class="fas fa-edit"></i>
+              </a>
             </li>
             <% } %>
           </ul>
         </article>
-        <% }) %> <% } else {%>
+        <% }) %>
+         <% } else {%>
         <h2>No hay productos cargados</h2>
         <% } %>
       </section>

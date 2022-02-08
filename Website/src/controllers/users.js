@@ -10,36 +10,24 @@ const controller = {
   profile: (req, res) =>
     res.render("users/profile", { styles: ["profile"], title: "Perfil" }),
   access: (req, res) => {
-    const errors = validator.validationResult(req);
-    let usuarioExiste = user.search("email", req.body.email);
-
-      /* if(!bcrypt.compareSync(req.body.password, usuarioExiste.password)){
-        return res.render('users/login',{
-        title: 'Log in',
-        styles: ["login"],
-        errors: errors.mapped(),
-        user: req.body,
-      })*/
     
-
+    const errors = validator.validationResult(req);
+    
     if (errors.isEmpty()) {
-      req.session.user = usuarioExiste
+      req.session.user = user.search("email", req.body.email);
       req.body.remember
         ? res.cookie("user", req.session.user.email, {maxAge:  1000*60*60*24*7})
         : null;    
-      //return res.redirect("/");      
+      res.redirect("/users/profile");      
     
     } else {
-      res.render("users/login", {
+       return res.render("users/login", {
         title: 'Log in',
         styles: ["login"],
         errors: errors.mapped(),
         user: req.body,
       });
-    }
-
-    return res.redirect("/users/profile");      
-
+    }      
   },
   save: (req, res) => {
     const errors = validator.validationResult(req);
@@ -51,12 +39,13 @@ const controller = {
         errors: errors.mapped(),
         user: req.body,
       });
-    }
+    } 
+    
     //return errors.isEmpty() ? res.send(user.create(req.body)) : res.send(errors.mapped()) ;
   },
   logout: (req, res) => {
     delete req.session.user;
-    res.cookie("email", null, { maxAge: -1 });
+    res.cookie("user", null, { maxAge: -1 });
     return res.redirect("/");
   },
 };
