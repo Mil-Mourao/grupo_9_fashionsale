@@ -49,5 +49,14 @@
     "password": "$2b$10$7.DgHnC/MFbbeOLoUdU7Xewdh6TfqxcLI9ms3Vetti3.PLUelzNVW",
     "isAdmin": false,
     "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "Bernardo",
+    "lastName": "Arrechea",
+    "email": "matias@fashionsale.com",
+    "password": "$2b$10$39UVb3QTBbsLrGAjdqqy6OUgq0/oPGvXQjAwJezbRUpJWbJLuSlg2",
+    "isAdmin": true,
+    "isActive": true
   }
 ]
