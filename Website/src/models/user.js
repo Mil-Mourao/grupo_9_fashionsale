@@ -12,8 +12,8 @@ const model = {
   generate: (data) =>
     Object({
       id: model.all().length == 0 ? 1 : model.all().pop().id + 1,
-      // name: data.name,
-      // lastName: data.lastName,
+      name: data.name,
+      lastName: data.lastName,
       email: data.email,
       password: bcrypt.hashSync(data.password, 10),
       isAdmin: String(data.email).includes("@fashionsale.com"),
