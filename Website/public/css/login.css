@@ -1,7 +1,6 @@
 main {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  margin: 0 auto;
 }
 
 h1 {
@@ -76,7 +75,7 @@ button {
   }
   main {
     background-image: url(../img/loginFondo.jpg);
-    height: 80vh;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;

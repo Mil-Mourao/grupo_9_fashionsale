@@ -28,10 +28,19 @@
           </button>
       </form>   
     </nav>
-    <a href="/users/login">
-      <i class="fa-solid fa-user"></i>
-    </a>
-    <a href="/products/create"><i class="fa-solid fa-plus"></i></a>
+    <% if (user) { %>
+      <a href="/users/profile">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    <% } else { %>
+      <a href="/users/login">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    <% } %>
+    
+    <% if (user && user.isAdmin) { %>
+      <a href="/products/create"><i class="fa-solid fa-plus"></i></a>
+    <% } %>
     <nav id="navbar-login">
       <form action="/" method="post">
         <fieldset>
@@ -60,15 +69,21 @@
       </form>
       <a href="">Olvidé mi contraseña</a>
     </nav>
-    <a href="/cart/productCart">
-      <i class="fa-solid fa-cart-shopping"></i>
-    </a>
+    <% if (user) { %>
+      <a href="/cart/productCart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    <% } %>
     <nav id="navbar-Compra">
       <form action="">
         <button>Finalizar Compra</button>
       </form>
     </nav>
-   
-
+      <% if (user && !locals.errors) { %>
+        <article class="userLogin">
+          <a href="/users/profile"><span>Bienvenido <%= user.name %></span></a>
+        </article>
+        <% } %>
+  
     
   </header>

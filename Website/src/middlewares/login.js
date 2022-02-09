@@ -17,8 +17,7 @@ const validations = [
         ? Promise.resolve()
         : Promise.reject('Password invalid');
     })
-]
-
+] 
 module.exports = validations;
 
 /*

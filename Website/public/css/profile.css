@@ -1,0 +1,13 @@
+main{
+    margin: 2rem;
+}
+
+main h2{
+    margin: 1.5rem 0;
+}
+
+main picture img{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 1rem;
+}
