@@ -1,7 +1,7 @@
 const validator = require("express-validator");
-const path = require("path");
+
 const user = require("../models/user");
-const bcrypt = require('bcrypt');
+
 const controller = {
   login: (req, res) =>
     res.render("users/login", { styles: ["login"], title: "Log in" }),
@@ -35,13 +35,21 @@ const controller = {
       const create = user.create(req.body);
       return res.redirect("/users/login");
     } else {
-      return res.render("user/register", {
+      return res.render("users/register", {
         errors: errors.mapped(),
         user: req.body,
+        title: 'Registro',
+        styles: ["register"]
       });
     } 
     
     //return errors.isEmpty() ? res.send(user.create(req.body)) : res.send(errors.mapped()) ;
+  },
+  uploadAvatar: (req, res) => {
+    let update = user.update(req.session.user.id, {
+      avatar: req.files ? req.files[0].filename : null});
+      req.session.user = update;
+      return res.redirect('/users/profile')
   },
   logout: (req, res) => {
     delete req.session.user;

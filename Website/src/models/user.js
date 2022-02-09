@@ -16,6 +16,7 @@ const model = {
       lastName: data.lastName,
       email: data.email,
       password: bcrypt.hashSync(data.password, 10),
+      avatar: data.avatar ? data.avatar : null,
       isAdmin: String(data.email).includes("@fashionsale.com"),
       isActive: true,
     }),
@@ -26,6 +27,14 @@ const model = {
         model.write(all);
         return user;
     },
+    update: (id,data) => {
+      let users = model.all();
+      const updated = users.map(user => user.id === id ? {
+          ...user, ...data} : user)
+      model.write(updated)
+      return model.search('id', id)
+    }
+    
 };
 
 module.exports = model
