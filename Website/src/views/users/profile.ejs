@@ -8,9 +8,25 @@
         Hola, soy <%= user.email %> <% if (user.isAdmin === true) { %> y soy
         admin <i class="fa-solid fa-face-sunglasses"></i> <% } %>
       </h2>
-      <picture>
-        <img src="/img/genericUser.jpg" alt="" />
-      </picture>
+      <% if (user.avatar != null) { %>
+        <picture>
+          <img src="/img/Usuarios/<%= user.avatar %> " alt="Avatar <%= user.email %> " />
+        </picture>
+      <% } else {%>
+        <picture>
+          <img src="/img/Usuarios/genericUser.jpeg" alt="Imagen Genérica" />
+        </picture>
+        <% } %> 
+        <p>
+          Si lo deseas puedes subir una nueva imagen y modicar tu avatar.
+        </p>
+        <form action="/users/profile?m=PUT" method="post" enctype="multipart/form-data">
+          <input type="file" name="avatar" id="avatar">
+          <fieldset>
+            <button type="submit">Actualizar Avatar</button>
+
+          </fieldset>
+        </form>
       <form action="/users/logout" method="post">
         <button type="submit">Logout</button>
       </form>

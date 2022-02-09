@@ -57,6 +57,17 @@
     "email": "matias@fashionsale.com",
     "password": "$2b$10$39UVb3QTBbsLrGAjdqqy6OUgq0/oPGvXQjAwJezbRUpJWbJLuSlg2",
     "isAdmin": true,
+    "isActive": true,
+    "avatar": "avatar-1644370662991.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Carlucho",
+    "lastName": "Pepperoni",
+    "email": "yoquese@mail.com",
+    "password": "$2b$10$K.EOsPmgf8A54OY0EdfSEuN088/GiCsPVb/1Ml/NHDY0ypoQYbi.S",
+    "avatar": "avatar-1644370988432.jpg",
+    "isAdmin": false,
     "isActive": true
   }
 ]
