@@ -36,4 +36,8 @@ html{
 #banner img{
     width: 100vw;
 }
+
+.no-show {
+    display: none;
+}
   

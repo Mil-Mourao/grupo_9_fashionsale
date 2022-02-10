@@ -60,9 +60,9 @@ body {
         height: 245px;
     }
 }
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
     
     #banner img{
         height: 35vh;
     }
-}
+} */

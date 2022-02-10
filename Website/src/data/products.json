@@ -2,38 +2,26 @@
   {
     "id": 2,
     "name": "Camisa Hawaiiana",
-    "size": [
-      "XS",
-      "S",
-      "M"
-    ],
-    "description": "Camisa ligera, ideal para el verano y primavera.",
-    "price": 2500,
+    "description": "fdsafdasfdsa",
+    "price": 341,
     "category": "hombre",
-    "ofert": false,
-    "discount": "",
-    "img": [
-      1
-    ]
+    "ofert": true,
+    "discount": "50",
+    "img": [1],
+    "size": "S"
   },
   {
     "id": 3,
-    "name": "Campera Wave",
+    "name": "",
     "size": [
-      "S",
       "M",
       "L"
     ],
-    "description": "Campera fachera, para salidas informales.",
-    "price": 3800,
-    "category": "hombre",
-    "ofert": true,
-    "discount": "10",
-    "img": [
-      2,
-      3,
-      4
-    ]
+    "description": "AMOGUS",
+    "price": null,
+    "ofert": false,
+    "discount": "",
+    "img": [2]
   },
   {
     "id": 4,
@@ -47,9 +35,7 @@
     "category": "hombre",
     "ofert": true,
     "discount": "20",
-    "img": [
-      5
-    ]
+    "img": [3]
   },
   {
     "id": 5,
