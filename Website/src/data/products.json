@@ -1,20 +1,17 @@
 [
   {
     "id": 2,
-    "name": "Camisa Hawaiiana",
+    "name": "Bernardo Arrechea",
     "size": [
-      "XS",
       "S",
       "M"
     ],
-    "description": "Camisa ligera, ideal para el verano y primavera.",
-    "price": 2500,
+    "description": "asdadad",
+    "price": 123,
     "category": "hombre",
-    "ofert": false,
-    "discount": "",
-    "img": [
-      1
-    ]
+    "ofert": true,
+    "discount": "10",
+    "img": null
   },
   {
     "id": 3,
