@@ -99,25 +99,39 @@ fieldset {
 
 @media (min-width: 768px) {
   
-  .hamburgesa {
-    color: transparent;
+  .hamburgesa, .hamburgesa_close {
+    display: none;
+  }
+
+  .hamburgesa, .hamburgesa_close {
+    background-color: transparent;
   }
 
   .navbar-content {
-    display: block;
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    height: auto;
+    width: 50vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transition: none;
+    outline: none;
+    border: none;
+    justify-content: space-around;
   }
-
-  .navbar-content a {
-    text-decoration: none;
+  .navbar-content a{
+    margin: 5px;
     color: black;
+    text-decoration: none;
     font-family: roboto;
-    padding: 1rem 0.5rem;
+    font-size: 1rem;
     font-weight: 500;
   }
-
   #barra {
     width: 20vw;
-    
   }
 }
 
@@ -138,7 +152,7 @@ fieldset {
     max-width: 200px;
   }
 
-  #navbar-content a {
+  .navbar-content a {
     font-size: 1.2rem;
   }
 
