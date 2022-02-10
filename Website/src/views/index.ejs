@@ -10,7 +10,7 @@
             <img src="/img/Splash/Splash-1.jpg" alt="" srcset="">
           </picture>
         </section>
-        <h2>Ofertas</h2>
+        <h2 class="title-oferta">Ofertas</h2>
         <section class="main_section">
           <% if (locals.products) { %>
             <% products.forEach(element=> { %>
@@ -30,7 +30,7 @@
                     <li><%= element.name %></li>
                   <article>
                     <li>$<%= element.price %></li>
-                    <li>$<%= parseInt(element.price * 0.8)%></li>
+                    <li>$<%= element.price * ((100 - element.discount) / 100) %> </li>
                   </article>
                   </ul>
                 </article>                    
