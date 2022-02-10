@@ -17,12 +17,21 @@ main h2{
     padding: 10px 0;
     transition: transform 4s linear;
     margin: 5px 0;
+    /* border: solid 1px #403831; */
 }
+
+/* .main_section article img{
+    width: 15vw;
+    height: 15vw;
+    box-shadow: 3px -2px 7px #a69c94;  
+    object-fit: cover;
+} */
 
 .main_section article img{
     width: 255px;
     height: 240px;
-    box-shadow: 3px -2px 7px #a69c94;  
+    object-fit: cover;
+    /* box-shadow: 3px -2px 7px #a69c94;   */
 }
 
 .main_section article  img:hover{

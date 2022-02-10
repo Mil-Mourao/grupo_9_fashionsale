@@ -69,5 +69,15 @@
     "avatar": "avatar-1644370988432.jpg",
     "isAdmin": false,
     "isActive": true
+  },
+  {
+    "id": 10,
+    "name": "Wilton",
+    "lastName": "Wourao",
+    "email": "wilton@fashionsale.com",
+    "password": "$2b$10$aTW1N2BeM6CLebe3B5R/yeV7jJy/AMaja5hHRiizP8synr.trM0j6",
+    "avatar": null,
+    "isAdmin": true,
+    "isActive": true
   }
 ]
