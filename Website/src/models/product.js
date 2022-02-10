@@ -31,33 +31,38 @@ const model = {
     model.search("id", id).img.map((e) => file.delete(e));
     model.write(model.all().filter((e) => e.id != id));
   },
-  search: (field, value) => model.all().find(element => element[field] == value),
-//   search: (field, value) => {
-//     console.log("--------------------------",field, value);
-//     model.all().find((element) => element[field] == value);
-//     let all = model.all();
-//     let found = all.find((element) => element[field] == value);
-//     value.name = found.name;
-//     console.log(found)
-//   },
+  search: (field, value) =>
+    model.all().find((element) => element[field] == value),
+  //   search: (field, value) => {
+  //     console.log("--------------------------",field, value);
+  //     model.all().find((element) => element[field] == value);
+  //     let all = model.all();
+  //     let found = all.find((element) => element[field] == value);
+  //     value.name = found.name;
+  //     console.log(found)
+  //   },
   update: (id, data) => {
     let all = model.all();
     let updated = all.map((e) => {
       if (e.id == id) {
-          (e.name != "") ? data.name : e.name,
-          (e.price != "") ? parseInt(data.price) : e.price,
-          (e.size != "") ? data.size : e.size,
-        //   e.size = data.size,
-          (e.description != "") ? data.description : e.description,
-          (e.category != "") ? data.category : e.category,
-          data.ofert ? true : false,
-        //   e.ofert = data.ofert ? true : false,
-          (e.category != "") ? data.category : e.category,
-          (e.discount != "") ? data.discount : e.discount,
-          e.img =
+        e.name != "" ? e.name = data.name : e.name,
+          e.price != "" ? e.price = parseInt(data.price) : e.price,
+          e.size != "" ? e.size = data.size : e.size,
+          //   e.size = data.size,
+          e.description != "" ? e.description = data.description : e.description,
+          e.category != "" ? e.category = data.category : e.category,
+          e.ofert = data.ofert ? true : false,
+          //   e.ofert = data.ofert ? true : false,
+          e.category != "" ? e.category = data.category : e.category,
+          e.discount != "" ? e.discount = data.discount : e.discount,
+          (e.img =
             data.file && data.file.length > 0
               ? data.file.map((f) => file.create(f).id)
-              : null;
+              : null);
+        console.log("data:", data);
+        console.log("-----------------------------------------------------");
+        console.log("e:", e);
+        console.log("-----------------------------------------------------");
         return e;
       }
       return e;

@@ -20,9 +20,11 @@ main h2{
 }
 
 .main_section article img{
-    width: 255px;
-    height: 240px;
+    width: 20vw;
+    height: 20vw;
+    /* overflow: hidden; */
     box-shadow: 3px -2px 7px #a69c94;  
+    object-fit: cover;
 }
 
 .main_section article  img:hover{

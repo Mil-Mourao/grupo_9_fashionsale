@@ -5,27 +5,27 @@
     "description": "fdsafdasfdsa",
     "price": 341,
     "category": "hombre",
-    "ofert": true,
-    "discount": "50",
-    "img": [1],
+    "ofert": false,
+    "discount": "",
+    "img": null,
     "size": "S"
   },
   {
     "id": 3,
     "name": "",
-    "size": [
-      "M",
-      "L"
-    ],
-    "description": "AMOGUS",
-    "price": null,
-    "ofert": false,
+    "size": "S",
+    "description": "TESTEETSTEESTETTS",
+    "price": 1000,
+    "ofert": true,
     "discount": "",
-    "img": [2]
+    "img": [
+      21
+    ],
+    "category": "hombre"
   },
   {
     "id": 4,
-    "name": "Camisa de Jean",
+    "name": "Camisa de John",
     "size": [
       "M",
       "L"
@@ -33,9 +33,9 @@
     "description": "Camisa de jean, color azul marino. Ideal para eventos informales.",
     "price": 1800,
     "category": "hombre",
-    "ofert": true,
+    "ofert": false,
     "discount": "20",
-    "img": [3]
+    "img": null
   },
   {
     "id": 5,
@@ -47,8 +47,8 @@
     "description": "Piloto para mujeres tipo sport con un diseño muy atractivo. ",
     "price": 2500,
     "category": "mujer",
-    "ofert": false,
-    "discount": "",
+    "ofert": true,
+    "discount": "10",
     "img": [
       6
     ]
