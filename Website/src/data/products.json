@@ -1,56 +1,73 @@
 [
   {
+    "id": 1,
+    "name": "Campera de Jean",
+    "size": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex varius, consequat nibh in, ullamcorper purus. Proin bibendum elit in dolor pharetra rutrum. Donec congue commodo metus, sed pharetra lorem tempus at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae dapibus eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus quam arcu. Morbi consequat vestibulum ex, et pulvinar felis aliquet id. Suspendisse potenti. Vestibulum eu convallis mi. Morbi eleifend, tortor et hendrerit sodales, ipsum felis imperdiet erat, sed aliquam felis massa vel odio. Maecenas congue est et congue hendrerit. Nunc pretium sit amet neque sit amet pellentesque. Maecenas ut egestas nisi, fermentum venenatis ex. Nulla facilisi.\r\n\r\nPraesent sodales at nisi ac gravida. Mauris rutrum, enim id maximus mollis, sapien neque fermentum erat, et dapibus eros odio sit amet lorem. Nam nec rutrum mauris. Fusce turpis mauris, euismod ut feugiat sit amet, ornare id eros. Morbi aliquam lacinia enim. Quisque id cursus leo, eu sodales ligula. Duis quis porttitor velit, eget rutrum justo. Sed mauris libero, dictum non ornare a, sagittis sit amet odio. Sed blandit sagittis leo, vel accumsan quam convallis non. Cras eu orci vulputate, porta nulla id, hendrerit odio. Nulla lacinia ultricies elit sit amet faucibus. Morbi ut hendrerit arcu.",
+    "price": 50000,
+    "category": "hombre",
+    "ofert": true,
+    "discount": "15",
+    "img": [
+      74,
+      75
+    ]
+  },
+  {
     "id": 2,
-    "name": "Camisa Hawaiiana",
-    "description": "fdsafdasfdsa",
-    "price": 341,
+    "name": "Campera Dragons",
+    "size": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex varius, consequat nibh in, ullamcorper purus. Proin bibendum elit in dolor pharetra rutrum. Donec congue commodo metus, sed pharetra lorem tempus at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae dapibus eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus quam arcu. Morbi consequat vestibulum ex, et pulvinar felis aliquet id. Suspendisse potenti. Vestibulum eu convallis mi. Morbi eleifend, tortor et hendrerit sodales, ipsum felis imperdiet erat, sed aliquam felis massa vel odio. Maecenas congue est et congue hendrerit. Nunc pretium sit amet neque sit amet pellentesque. Maecenas ut egestas nisi, fermentum venenatis ex. Nulla facilisi.\r\n\r\nPraesent sodales at nisi ac gravida. Mauris rutrum, enim id maximus mollis, sapien neque fermentum erat, et dapibus eros odio sit amet lorem. Nam nec rutrum mauris. Fusce turpis mauris, euismod ut feugiat sit amet, ornare id eros. Morbi aliquam lacinia enim. Quisque id cursus leo, eu sodales ligula. Duis quis porttitor velit, eget rutrum justo. Sed mauris libero, dictum non ornare a, sagittis sit amet odio. Sed blandit sagittis leo, vel accumsan quam convallis non. Cras eu orci vulputate, porta nulla id, hendrerit odio. Nulla lacinia ultricies elit sit amet faucibus. Morbi ut hendrerit arcu.",
+    "price": 9000,
     "category": "hombre",
     "ofert": false,
-    "discount": "",
-    "img": null,
-    "size": "S"
+    "discount": "10",
+    "img": [
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103
+    ]
   },
   {
     "id": 3,
-    "name": "",
-    "size": "S",
-    "description": "TESTEETSTEESTETTS",
-    "price": 1000,
+    "name": "Collar de Amatista",
+    "size": "XS",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex varius, consequat nibh in, ullamcorper purus. Proin bibendum elit in dolor pharetra rutrum. Donec congue commodo metus, sed pharetra lorem tempus at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae dapibus eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus quam arcu. Morbi consequat vestibulum ex, et pulvinar felis aliquet id. Suspendisse potenti. Vestibulum eu convallis mi. Morbi eleifend, tortor et hendrerit sodales, ipsum felis imperdiet erat, sed aliquam felis massa vel odio. Maecenas congue est et congue hendrerit. Nunc pretium sit amet neque sit amet pellentesque. Maecenas ut egestas nisi, fermentum venenatis ex. Nulla facilisi.\r\n\r\nPraesent sodales at nisi ac gravida. Mauris rutrum, enim id maximus mollis, sapien neque fermentum erat, et dapibus eros odio sit amet lorem. Nam nec rutrum mauris. Fusce turpis mauris, euismod ut feugiat sit amet, ornare id eros. Morbi aliquam lacinia enim. Quisque id cursus leo, eu sodales ligula. Duis quis porttitor velit, eget rutrum justo. Sed mauris libero, dictum non ornare a, sagittis sit amet odio. Sed blandit sagittis leo, vel accumsan quam convallis non. Cras eu orci vulputate, porta nulla id, hendrerit odio. Nulla lacinia ultricies elit sit amet faucibus. Morbi ut hendrerit arcu.",
+    "price": 10000,
+    "category": "mujer",
     "ofert": true,
-    "discount": "",
+    "discount": "100",
     "img": [
-      21
-    ],
-    "category": "hombre"
+      104
+    ]
   },
   {
     "id": 4,
-    "name": "Camisa de John",
-    "size": [
-      "M",
-      "L"
-    ],
-    "description": "Camisa de jean, color azul marino. Ideal para eventos informales.",
-    "price": 1800,
+    "name": "Test",
+    "size": "M",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex varius, consequat nibh in, ullamcorper purus. Proin bibendum elit in dolor pharetra rutrum. Donec congue commodo metus, sed pharetra lorem tempus at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae dapibus eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus quam arcu. Morbi consequat vestibulum ex, et pulvinar felis aliquet id. Suspendisse potenti. Vestibulum eu convallis mi. Morbi eleifend, tortor et hendrerit sodales, ipsum felis imperdiet erat, sed aliquam felis massa vel odio. Maecenas congue est et congue hendrerit. Nunc pretium sit amet neque sit amet pellentesque. Maecenas ut egestas nisi, fermentum venenatis ex. Nulla facilisi.\r\n\r\nPraesent sodales at nisi ac gravida. Mauris rutrum, enim id maximus mollis, sapien neque fermentum erat, et dapibus eros odio sit amet lorem. Nam nec rutrum mauris. Fusce turpis mauris, euismod ut feugiat sit amet, ornare id eros. Morbi aliquam lacinia enim. Quisque id cursus leo, eu sodales ligula. Duis quis porttitor velit, eget rutrum justo. Sed mauris libero, dictum non ornare a, sagittis sit amet odio. Sed blandit sagittis leo, vel accumsan quam convallis non. Cras eu orci vulputate, porta nulla id, hendrerit odio. Nulla lacinia ultricies elit sit amet faucibus. Morbi ut hendrerit arcu.",
+    "price": 1,
     "category": "hombre",
-    "ofert": false,
-    "discount": "20",
-    "img": null
-  },
-  {
-    "id": 5,
-    "name": "Piloto Lights",
-    "size": [
-      "XS",
-      "S"
-    ],
-    "description": "Piloto para mujeres tipo sport con un diseño muy atractivo. ",
-    "price": 2500,
-    "category": "mujer",
     "ofert": true,
-    "discount": "10",
+    "discount": "80",
     "img": [
-      6
+      105
     ]
   }
 ]

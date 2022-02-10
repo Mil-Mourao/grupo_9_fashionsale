@@ -50,7 +50,10 @@ body {
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
  }
 
-
+.title-oferta {
+    text-align: center;
+    font-size: 1.5rem;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -58,6 +61,10 @@ body {
     .main_section article img{
         width: 280px;
         height: 245px;
+    }
+
+    .title-oferta {
+        padding: 0 10vw ;
     }
 }
 /* @media screen and (min-width: 1200px) {

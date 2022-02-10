@@ -45,24 +45,24 @@ const model = {
     let all = model.all();
     let updated = all.map((e) => {
       if (e.id == id) {
-        e.name != "" ? e.name = data.name : e.name,
-          e.price != "" ? e.price = parseInt(data.price) : e.price,
-          e.size != "" ? e.size = data.size : e.size,
+        (e.name != "") ? data.name = e.name : e.name,
+          (e.price != "") ? data.price = parseInt(e.price) : e.price,
+          (e.size != "") ? data.size = e.size : e.size,
           //   e.size = data.size,
-          e.description != "" ? e.description = data.description : e.description,
-          e.category != "" ? e.category = data.category : e.category,
+          (e.description != "") ? data.description = e.description : e.description,
           e.ofert = data.ofert ? true : false,
           //   e.ofert = data.ofert ? true : false,
-          e.category != "" ? e.category = data.category : e.category,
-          e.discount != "" ? e.discount = data.discount : e.discount,
+          (e.category != "") ? data.category = e.category : e.category,
+          (e.discount != "") ? data.discount = e.discount : e.discount,
           (e.img =
             data.file && data.file.length > 0
               ? data.file.map((f) => file.create(f).id)
               : null);
-        console.log("data:", data);
-        console.log("-----------------------------------------------------");
-        console.log("e:", e);
-        console.log("-----------------------------------------------------");
+              console.log("----------------------------------")
+              console.log("e:", e)
+              console.log("----------------------------------")
+              console.log("data:", data)
+              console.log("----------------------------------")
         return e;
       }
       return e;

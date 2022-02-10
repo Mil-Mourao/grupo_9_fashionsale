@@ -17,8 +17,11 @@ i {
 .pic-list {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  height: 60vw;
+  overflow: scroll;
 }
 
 .small-pic {
@@ -28,6 +31,8 @@ i {
 
 #focus-pic {
   width: 100vw;
+  height: 60vw;
+  object-fit: cover;
 }
 
 #producto {
