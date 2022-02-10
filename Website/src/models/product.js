@@ -57,12 +57,7 @@ const model = {
           (e.img =
             data.file && data.file.length > 0
               ? data.file.map((f) => file.create(f).id)
-              : null);
-              console.log("----------------------------------")
-              console.log("e:", e)
-              console.log("----------------------------------")
-              console.log("data:", data)
-              console.log("----------------------------------")
+              : null)
         return e;
       }
       return e;

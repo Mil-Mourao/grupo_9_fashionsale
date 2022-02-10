@@ -1,48 +1,19 @@
 [
   {
-    "id": 1,
-    "name": "Campera de Jean",
+    "id": 2,
+    "name": "Bernardo Arrechea",
     "size": [
-      "XS",
       "S",
       "M",
       "L",
       "XL"
     ],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex varius, consequat nibh in, ullamcorper purus. Proin bibendum elit in dolor pharetra rutrum. Donec congue commodo metus, sed pharetra lorem tempus at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae dapibus eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus quam arcu. Morbi consequat vestibulum ex, et pulvinar felis aliquet id. Suspendisse potenti. Vestibulum eu convallis mi. Morbi eleifend, tortor et hendrerit sodales, ipsum felis imperdiet erat, sed aliquam felis massa vel odio. Maecenas congue est et congue hendrerit. Nunc pretium sit amet neque sit amet pellentesque. Maecenas ut egestas nisi, fermentum venenatis ex. Nulla facilisi.\r\n\r\nPraesent sodales at nisi ac gravida. Mauris rutrum, enim id maximus mollis, sapien neque fermentum erat, et dapibus eros odio sit amet lorem. Nam nec rutrum mauris. Fusce turpis mauris, euismod ut feugiat sit amet, ornare id eros. Morbi aliquam lacinia enim. Quisque id cursus leo, eu sodales ligula. Duis quis porttitor velit, eget rutrum justo. Sed mauris libero, dictum non ornare a, sagittis sit amet odio. Sed blandit sagittis leo, vel accumsan quam convallis non. Cras eu orci vulputate, porta nulla id, hendrerit odio. Nulla lacinia ultricies elit sit amet faucibus. Morbi ut hendrerit arcu.",
-    "price": 50000,
+    "description": "asdadad",
+    "price": 123,
     "category": "hombre",
     "ofert": true,
-    "discount": "15",
-    "img": [
-      74,
-      75
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Campera Dragons",
-    "size": [
-      "XS",
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex varius, consequat nibh in, ullamcorper purus. Proin bibendum elit in dolor pharetra rutrum. Donec congue commodo metus, sed pharetra lorem tempus at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vitae dapibus eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus dapibus quam arcu. Morbi consequat vestibulum ex, et pulvinar felis aliquet id. Suspendisse potenti. Vestibulum eu convallis mi. Morbi eleifend, tortor et hendrerit sodales, ipsum felis imperdiet erat, sed aliquam felis massa vel odio. Maecenas congue est et congue hendrerit. Nunc pretium sit amet neque sit amet pellentesque. Maecenas ut egestas nisi, fermentum venenatis ex. Nulla facilisi.\r\n\r\nPraesent sodales at nisi ac gravida. Mauris rutrum, enim id maximus mollis, sapien neque fermentum erat, et dapibus eros odio sit amet lorem. Nam nec rutrum mauris. Fusce turpis mauris, euismod ut feugiat sit amet, ornare id eros. Morbi aliquam lacinia enim. Quisque id cursus leo, eu sodales ligula. Duis quis porttitor velit, eget rutrum justo. Sed mauris libero, dictum non ornare a, sagittis sit amet odio. Sed blandit sagittis leo, vel accumsan quam convallis non. Cras eu orci vulputate, porta nulla id, hendrerit odio. Nulla lacinia ultricies elit sit amet faucibus. Morbi ut hendrerit arcu.",
-    "price": 9000,
-    "category": "hombre",
-    "ofert": false,
     "discount": "10",
-    "img": [
-      97,
-      98,
-      99,
-      100,
-      101,
-      102,
-      103
-    ]
+    "img": null
   },
   {
     "id": 3,
