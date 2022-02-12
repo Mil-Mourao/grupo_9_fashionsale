@@ -3,9 +3,9 @@ const file = require("../models/file");
 
 const controller = {
   list: (req, res) => {
-    //res.send(products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))})))
+  //res.send(products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))})))
     
-      res.render("products/list", {
+    res.render("products/list", {
       styles: ["list"],
       title: "Listado de Productos",
       products: products.all().map(p => Object({...p, img: p.img != null ? p.img.map(e =>file.search('id',e)) : p.img}))
