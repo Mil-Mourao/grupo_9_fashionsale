@@ -17,7 +17,7 @@
             <h2 class="title-oferta">Ofertas</h2>
             <% products.forEach(element=> { %>
               <% if (element.ofert) { %>
-                <article>
+                <article class="card"> 
                   <picture>
                     <a href="/products/<%= element.id %> ">
                       <% if (element.img != null && element.img.length > 0) { %>

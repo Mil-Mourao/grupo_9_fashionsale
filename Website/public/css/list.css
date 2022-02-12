@@ -7,10 +7,15 @@
 }
 
 .main_section article{
-    padding: 10px 0;
     transition: transform 4s linear;
     margin: 5px 0;
+    background-color: white;
+    border: 1px solid #D9C9BA;
     /* border: solid 1px #403831; */
+}
+
+.main_section article ul{
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* .main_section article img{
@@ -88,16 +93,8 @@
 
 @media screen and (min-width: 768px) {
      
-    .main_section article{
-        flex-basis: 35%;
-    }
     .main_section article ul{
         max-width: 260px;
     }
 }
 
-@media screen and (min-width: 1200px){
-    .main_section article{
-        flex-basis: 0;
-    }
-}
