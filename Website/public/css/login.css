@@ -51,6 +51,7 @@ button {
   font-size: 1rem;
   font-family: "Trebuchet MS", sans-serif;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 #register-link {

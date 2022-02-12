@@ -85,9 +85,9 @@
     </nav>
       <% if (user && !locals.errors) { %>
         <article class="userLogin">
-          <a href="/users/profile"><span>Bienvenido <%= user.name %></span></a>
+          <a href="/users/profile"><span><%= user.name %>, bienvenido a Fashion Sale</span></a>
         </article>
         <% } %>
   
-    <script src="/js/dropDown.js"></script>
+    <script src="/js/burgerMenu.js"></script>
   </header>

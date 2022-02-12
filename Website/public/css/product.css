@@ -21,7 +21,7 @@ i {
   align-items: center;
   flex-wrap: wrap;
   height: 60vw;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .small-pic {
@@ -101,7 +101,9 @@ legend {
 @media (min-width: 768px) {
   .pic-list {
     flex-direction: column;
+    flex-wrap: nowrap;
     margin-left: 10px;
+    height: 45vh;
   }
 
   #producto {

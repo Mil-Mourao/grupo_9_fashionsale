@@ -1,10 +1,3 @@
-
-main h2{
-    font-size: 2rem;
-    font-family: 'Trebuchet MS';
-    margin: 20px 15px;    
-}
-
 .main_section{
     display: flex;
     flex-wrap: wrap;
@@ -33,10 +26,24 @@ main h2{
     object-fit: cover;
     /* box-shadow: 3px -2px 7px #a69c94;   */
 }
+.title-oferta{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    margin: 20px 15px;   
+}
+
+.main_section p {
+    text-align: center;
+    padding: 0.025rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
 
 .main_section article  img:hover{
     transform: translateY(-12px);
-    box-shadow: 0 0 15px 5px #db9c68;
+    box-shadow: 0 0 15px 5px #f8c398;
 }
 
 .main_section ul{

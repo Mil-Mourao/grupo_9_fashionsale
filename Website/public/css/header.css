@@ -87,6 +87,8 @@ fieldset {
 .userLogin{
   padding: 0 0.25rem 0.5rem 0.25rem;
   letter-spacing: 0.05rem;
+  width: 100%;
+  text-align: center;
 }
 
 .userLogin a {

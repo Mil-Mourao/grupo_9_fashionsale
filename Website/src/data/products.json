@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Camisa",
+    "size": [
+      "M",
+      "L"
+    ],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vestibulum venenatis tellus. Suspendisse potenti. Ut ac finibus mauris.",
+    "price": 2500,
+    "category": "hombre",
+    "ofert": true,
+    "discount": "15",
+    "img": [
+      1,
+      2,
+      3
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Campera",
+    "size": [
+      "S",
+      "M"
+    ],
+    "description": "uspendisse vel orci in tortor aliquet semper in at est. Morbi bibendum tincidunt sapien at mattis.",
+    "price": 1800,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "",
+    "img": [
+      4
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Campera Wave",
+    "size": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "description": "Praesent bibendum placerat vestibulum. Integer ex tellus, dictum in blandit eget, accumsan ac augue.",
+    "price": 2250,
+    "category": "hombre",
+    "ofert": false,
+    "discount": "",
+    "img": [
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Piloto Lights",
+    "size": [
+      "XS",
+      "S"
+    ],
+    "description": "Cras sit amet sem hendrerit, posuere nisi in, malesuada ante. Maecenas convallis sapien sit amet libero fermentum vestibulum.",
+    "price": 3250,
+    "category": "mujer",
+    "ofert": true,
+    "discount": "25",
+    "img": [
+      8,
+      9,
+      10
+    ]
+  }
+]

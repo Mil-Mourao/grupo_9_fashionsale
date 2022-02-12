@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Bernardo",
+    "lastName": "Arrechea",
+    "email": "bernardo@fashionsale.com",
+    "password": "$2b$10$QQwgCfgPyRC72bEVEySIkemVILGdgz7T.Z4jzVXlYHJW74RkTNxjS",
+    "avatar": null,
+    "isAdmin": true,
+    "isActive": true
+  }
+]
