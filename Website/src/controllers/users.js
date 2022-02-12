@@ -37,7 +37,7 @@ const controller = {
     } else {
       return res.render("users/register", {
         errors: errors.mapped(),
-        user: req.body,
+        old: req.body,
         title: 'Registro',
         styles: ["register"]
       });

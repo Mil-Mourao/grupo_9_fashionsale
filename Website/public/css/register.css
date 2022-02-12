@@ -114,7 +114,7 @@
     #register{
     display: flex;
     justify-content: flex-end;
-    background: url("/img/registerFondo.jpg");
+    background: url("/img/FondoRegistro.jpg");
     background-size: cover;
   }
   .form-register {
