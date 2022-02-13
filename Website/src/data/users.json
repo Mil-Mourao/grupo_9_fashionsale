@@ -8,5 +8,15 @@
     "avatar": "avatar-1644768587994.jpg",
     "isAdmin": true,
     "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Milton",
+    "lastName": "Mourao",
+    "email": "milton@fashionsale.com",
+    "password": "$2b$10$ooLGQtLsyZRTPh78QyhUAOQTnXUrogagTARU.kgBFqJu3DDP2Y4Su",
+    "avatar": "avatar-1644780519282.jpg",
+    "isAdmin": true,
+    "isActive": true
   }
 ]
