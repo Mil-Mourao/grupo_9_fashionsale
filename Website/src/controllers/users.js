@@ -25,7 +25,7 @@ const controller = {
         title: 'Log in',
         styles: ["login"],
         errors: errors.mapped(),
-        user: req.body,
+        old: req.body,
       });
     }      
   },

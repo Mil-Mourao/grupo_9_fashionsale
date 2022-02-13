@@ -79,14 +79,21 @@
 /* boton de continuar*/
 .button {
   border-radius: 20px;
-  padding: 10px 5px;
-  margin: 3px 0;
-  background-color: #a69c94;
+  padding: 10px 70px;
+  margin: 0 auto;
+  background-color: #F2E5D5;
   font-weight: 900;
   font-size: 1rem;
-  font-family: 'Trebuchet MS', sans-serif;
-  width: 280px;
+  border: 2px solid #ccc;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-top: 1rem;
   cursor: pointer;
+  transition: background-color 1s;
+  transition: color 0.2s;
+}
+.button:hover {
+  background-color: #a69c94;
+  color: #F2E5D5;
 }
 
 /* esto es la linea*/

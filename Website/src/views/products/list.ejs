@@ -14,7 +14,7 @@
           <% if (locals.products && locals.products.length> 0) { %>
             <h2 class="title-oferta">Listado de productos</h2>
             <% products.forEach((element)=> { %>
-              <article>
+              <article class="card"> 
                 <picture>
                   <a href="/products/<%= element.id %> ">
                     <% if (element.img !=null && element.img.length> 0 )

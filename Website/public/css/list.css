@@ -6,31 +6,27 @@
     margin: 2.85rem auto;
 }
 
-.main_section article{
-    transition: transform 4s linear;
-    margin: 5px 0;
+.card{
+    margin: 0.7rem auto;
     background-color: white;
+    transition: transform 0.2s ease-in;
     border: 1px solid #D9C9BA;
-    /* border: solid 1px #403831; */
+    box-shadow: 3px -2px 7px #a69c94;
+    border-radius: 3%;
 }
 
-.main_section article ul{
+.card ul{
     border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
-
-/* .main_section article img{
-    width: 15vw;
-    height: 15vw;
-    box-shadow: 3px -2px 7px #a69c94;  
-    object-fit: cover;
-} */
 
 .main_section article img{
     width: 255px;
     height: 240px;
+    margin: 3px 3px 0 3px;
     object-fit: cover;
-    /* box-shadow: 3px -2px 7px #a69c94;   */
+    border-radius: 3%;
 }
+
 .title-oferta{
     font-size: 2rem;
     width: 100%;
