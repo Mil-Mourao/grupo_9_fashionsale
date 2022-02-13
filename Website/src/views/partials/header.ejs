@@ -32,9 +32,11 @@
           </button>
       </form>   
     </nav>
-    <% if (user) { %>
+    <% if (user && !locals.errors) { %>
       <a href="/users/profile">
-        <i class="fa-solid fa-user"></i>
+        <picture>
+          <img src="/img/Usuarios/<%= user.avatar != null ? user.avatar : "genericUser.jpeg" %>" alt="<%= user.email %> ">
+        </picture>
       </a>
     <% } else { %>
       <a href="/users/login">
@@ -50,12 +52,12 @@
         <fieldset>
           <legend>Iniciar Sesión</legend>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="emailTwo" />
         </fieldset>
         <fieldset>
           <legend>Iniciar Sesión</legend>
           <label for="email">Contraseña</label>
-          <input type="pass" name="pass" id="pass" />
+          <input type="pass" name="pass" id="passTwo" />
         </fieldset>
         <fieldset>
           <button type="submit">Iniciar Sesión</button>
@@ -66,14 +68,14 @@
             ><input
               type="checkbox"
               name="remember"
-              id="remember"
+              id="rememberTwo"
             />Recuerdame</label
           >
         </fieldset>
       </form>
       <a href="">Olvidé mi contraseña</a>
     </nav>
-    <% if (user) { %>
+    <% if (user && !locals.errors) { %>
       <a href="/cart/productCart">
         <i class="fa-solid fa-cart-shopping"></i>
       </a>

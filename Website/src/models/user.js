@@ -12,9 +12,9 @@ const model = {
   generate: (data) =>
     Object({
       id: model.all().length == 0 ? 1 : model.all().pop().id + 1,
-      name: data.name,
-      lastName: data.lastName,
-      email: data.email,
+      name: data.name.trim(),
+      lastName: data.lastName.trim(),
+      email: data.email.trim(),
       password: bcrypt.hashSync(data.password, 10),
       avatar: data.avatar ? data.avatar : null,
       isAdmin: String(data.email).includes("@fashionsale.com"),
