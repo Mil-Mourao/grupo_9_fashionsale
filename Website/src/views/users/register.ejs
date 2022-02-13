@@ -46,7 +46,7 @@
                     <p><%= errors.email.msg %></p>
                 <% } %>
                 <% if (errors.password) { %>
-                    <p><%= errors.password.msg %></p>
+                    <p><%- errors.password.msg %></p>
                 <% } %>
             <% } %>
               <fieldset>
