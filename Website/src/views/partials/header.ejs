@@ -9,41 +9,55 @@
         <img src="/img/logo/logoSimple.svg" alt="" id="logo" />
       </a>
     </picture>
-      <span class="hamburgesa">
+      <span id="hamburgesa">
       <i class="fa-solid fa-bars hamburgesa"></i>
       </span>
-    <nav id="navbar-content">
-      <a href="/products/">Productos</a>
-      <a href="/products/">Hombre</a>
-      <a href="/products/">Mujer</a>
-      <a href="/products/">Accesorios</a>
-      <a href="#">Acerca</a>
-    </nav>
-
+    
+      <nav class="navbar-content">
+        <span class="hamburgesa_close">
+          <i class="fa-solid fa-bars hamburgesa"></i>
+          </span>
+        <a href="/products/">Productos</a>
+        <a href="/products/">Hombre</a>
+        <a href="/products/">Mujer</a>
+        <a href="/products/">Accesorios</a>
+        <a href="#">Acerca</a>
+      </nav>    
+      
     <nav id="searchBar">
       <form action="">
         <input type="text" name="barra" id="barra" placeholder="Buscar..." />
           <button>
             <i class="fa-solid fa-magnifying-glass searchButton"></i>
           </button>
-      </form>
-          
+      </form>   
     </nav>
-    <a href="/users/login">
-      <i class="fa-solid fa-user"></i>
-    </a>
-    <a href="/products/create"><i class="fa-solid fa-plus"></i></a>
+    <% if (user && !locals.errors) { %>
+      <a href="/users/profile">
+        <picture>
+          <img src="/img/Usuarios/<%= user.avatar != null ? user.avatar : "genericUser.jpeg" %>" alt="<%= user.email %> ">
+        </picture>
+      </a>
+    <% } else { %>
+      <a href="/users/login">
+        <i class="fa-solid fa-user"></i>
+      </a>
+    <% } %>
+    
+    <% if (user && user.isAdmin) { %>
+      <a href="/products/create"><i class="fa-solid fa-plus"></i></a>
+    <% } %>
     <nav id="navbar-login">
       <form action="/" method="post">
         <fieldset>
           <legend>Iniciar Sesión</legend>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="emailTwo" />
         </fieldset>
         <fieldset>
           <legend>Iniciar Sesión</legend>
           <label for="email">Contraseña</label>
-          <input type="pass" name="pass" id="pass" />
+          <input type="pass" name="pass" id="passTwo" />
         </fieldset>
         <fieldset>
           <button type="submit">Iniciar Sesión</button>
@@ -54,19 +68,28 @@
             ><input
               type="checkbox"
               name="remember"
-              id="remember"
+              id="rememberTwo"
             />Recuerdame</label
           >
         </fieldset>
       </form>
       <a href="">Olvidé mi contraseña</a>
     </nav>
-    <a href="/cart/productCart">
-      <i class="fa-solid fa-cart-shopping"></i>
-    </a>
+    <% if (user && !locals.errors) { %>
+      <a href="/cart/productCart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </a>
+    <% } %>
     <nav id="navbar-Compra">
       <form action="">
         <button>Finalizar Compra</button>
       </form>
     </nav>
+      <% if (user && !locals.errors) { %>
+        <article class="userLogin">
+          <a href="/users/profile"><span><%= user.name %>, bienvenido a Fashion Sale</span></a>
+        </article>
+        <% } %>
+  
+    <script src="/js/burgerMenu.js"></script>
   </header>

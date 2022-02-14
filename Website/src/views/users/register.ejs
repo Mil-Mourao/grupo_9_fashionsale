@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %> 
+<%- include('../partials/head') %>
+
   <body>
-    <%- include('../partials/header') %> 
-    <main id="register">
-      <section class="form-register">
-        <article>
-          <picture class="logo-form">
-            <img src="/img/logo/logoSimple.svg" alt="" id="logo-form-top" />
-          </picture>
-        </article>
-        <h3 id="form-title">¡Bienvenid@ a fashion sale!</h3>
-        <form action="" method="post" id="form">
-          <fieldset>
-            <input
-              class="controls"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              class="controls"
-              type="password"
-              name="clave"
-              id="clave"
-              placeholder="Contraseña"
-            />
-          </fieldset>
-          <fieldset>
-            <input
-              class="controls"
-              type="password"
-              name="confirmacion"
-              id="confirmacion"
-              placeholder="Confirmar Contraseña"
-            />
-          </fieldset>
-          <fieldset>
-            <button class="button" type="submit">Continuar</button>
-          </fieldset>
+    <%- include('../partials/header') %>
+      <main id="register">
+        <section class="form-register">
           <article>
-          <fieldset>
-            <input type="button" id="access_google" value="Google" />
-          </fieldset>
-          <fieldset>
-            <input type="button" id="access_facebook" value="Facebook" />
-          </fieldset>
+            <picture class="logo-form">
+              <img src="/img/logo/logoSimple.svg" alt="" id="logo-form-top" />
+            </picture>
           </article>
-        </form>
-      </section>
-    </main>
-    <%- include('../partials/footer') %> 
+          <h3 id="form-title">¡Bienvenid@ a fashion sale!</h3>
+          <form action="/users/save" method="post" id="form">
+            <fieldset>
+              <input class="controls" type="text" name="name" id="name" 
+              <% if (locals.old && old.name) { %>
+               value="<%= old.name.trim() %>"
+              <% } else {%>
+              placeholder="Nombre" 
+              <% }%>
+              required/>
+            </fieldset>
+            <fieldset>
+              <input class="controls" type="text" name="lastName" id="lastName"
+              <% if (locals.old && old.lastName) { %>
+               value="<%= old.lastName.trim("") %>" 
+              <% } else { %>
+                placeholder="Apellido" 
+              <% } %>   
+              required />
+            </fieldset>
+            <fieldset>
+              <input class="controls" type="email" name="email" id="email" placeholder="Email" />
+            </fieldset>
+            <fieldset>
+              <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" />
+            </fieldset>
+            <fieldset>
+              <button class="button" type="submit">Continuar</button>
+            </fieldset>
+            <article>
+              <% if (locals.errors) { %>
+                <% if (errors.email) { %>
+                    <p><%= errors.email.msg %></p>
+                <% } %>
+                <% if (errors.password) { %>
+                    <p><%- errors.password.msg %></p>
+                <% } %>
+            <% } %>
+              <fieldset>
+                <input type="button" id="access_google" value="Google" />
+              </fieldset>
+              <fieldset>
+                <input type="button" id="access_facebook" value="Facebook" />
+              </fieldset>
+            </article>
+          </form>
+        </section>
+      </main>
+      <%- include('../partials/footer') %>
   </body>
+
 </html>

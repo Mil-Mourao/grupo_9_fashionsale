@@ -11,22 +11,23 @@
           <img src="/img/logo/logoSimple.svg" alt="" id="logo-Update-top" />
         </picture>
       </article>
-      <h3 id="title"> Formulario Update</h3>
+      <h3 class="no-show"> Formulario Update</h3>
         <form action="/products/<%= products.id %>?m=PUT" method="post" enctype="multipart/form-data">
            <fieldset>  
-              <label class= "Datos" for = "name">Nombre:</label>
-              <input type="text" name="name" id="name" placeholder="Name/Nombre" >
+              <label class= "no-show" for = "name">Nombre:</label>
+              <input type="text" name="name" id="name"  >
+              
             </fieldset>
 
               <fieldset>
-              <label class="Datos" for = "price">Precio:</label>
+              <label class="no-show" for = "price">Precio:</label>
               <input type="number" name= "price" id="Price/Precio" placeholder="Price/Precio" min="0" >
          </fieldset>
-
+    
          <fieldset>
           <legend>Talles</legend>
-          <input type="checkbox" name="size" id="" value="XS">
-          <label for=>XS</label>
+          <input type="checkbox" name="size" id="" value="XS">   
+          <label>XS</label>
           <input type="checkbox" name="size" id="" value="S">
           <label for=>S</label>
           <input type="checkbox" name="size" id="" value="M">
@@ -43,7 +44,7 @@
          </fieldset>
          <fieldset>
           <label class="img" for="image"></label>
-          <input type="file" name="image" id="image" multiple >
+          <input type="file" name="image" id="image" multiple required>
         
         <fieldset>
 

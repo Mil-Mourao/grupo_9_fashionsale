@@ -9,7 +9,7 @@ const model = {
   generate: (data) =>
     Object({
       id: model.all().length == 0 ? 1 : model.all().pop().id + 1,
-      url: data == undefined ? "default.jpg" : data.filename,
+      url: data.filename,
     }),
     create: (data) => {
     let newImage = model.generate(data);

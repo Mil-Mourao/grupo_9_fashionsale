@@ -9,16 +9,22 @@
       <section >
         <article id="login-form-complete">
           <h1>Login</h1>
-          <form action="/" method="post" id="login-form">
+          <form action="/users/access" method="post" id="login-form">
             <fieldset>
               <legend class="no-show">Iniciar Sesión</legend>
               <label for="email" class="no-show">Email</label>
-              <input type="email" name="email" id="email" placeholder="email"/>
+              <input type="email" name="email" id="email"
+              <% if (locals.old && old.email) { %>
+               value="<%= old.email %>"
+              <% } else {%>
+               placeholder="email" 
+              <% } %> 
+               required/>
             </fieldset>
             <fieldset>
               <legend class="no-show">Iniciar Sesión</legend>
-              <label class="no-show" for="pass">Contraseña</label>
-              <input type="pass" name="pass" id="pass" placeholder="contraseña"/>
+              <label class="no-show" for="password">Contraseña</label>
+              <input type="password" name="password" id="pass" placeholder="contraseña" required/>
             </fieldset>
             <fieldset>
               <button type="submit" id="login-button">Iniciar Sesión</button>
@@ -27,17 +33,22 @@
               <a href="/users/register" id="register-link">Registrarse</a>
             </fieldset>
             <fieldset>
-              <label class="remember" for="remember"
-                ><input
-                  type="checkbox"
-                  name="remember"
-                  id="remember"
-                />Recuerdame</label
-              >
+              <label class="remember" for="remember">
+                <input type="checkbox" name="remember" id="remember" />Recuerdame
+              </label>
             </fieldset>
           </form>
+          <% if (locals.errors) { %>
+            <% if (errors.email) { %>
+                <p><%= errors.email.msg %></p>
+            <% } %>
+            <% if (errors.password) { %>
+                <p><%= errors.password.msg %></p>
+            <% } %>
+        <% } %>
         </article>
       </section>
+      
     </main>
     <%- include('../partials/footer') %> 
   </body>

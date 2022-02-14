@@ -15,13 +15,13 @@
           <form action="/products/" enctype="multipart/form-data" method="post" multiple>
             <fieldset>
               <label for="name">
-              <input type="text" name="name" id="name" placeholder="Name/Nombre">
+              <input type="text" name="name" id="name" placeholder="Name/Nombre" required>
               </label>
             </fieldset>
 
               <fieldset>
               <label class="precios" for = "price"></label>
-              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" >
+              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" required>
          </fieldset>
 
                <fieldset>
@@ -45,11 +45,11 @@
  
             <fieldset>
               <label class="img" for="image"></label>
-              <input type="file" name="image" id="image" multiple >
+              <input type="file" name="image" id="image" multiple required>
             
             <fieldset>
               <label for="men">Hombre</label>
-              <input type="radio" name="category" value="hombre">
+              <input type="radio" name="category" value="hombre" >
               <label for="women">Mujer</label>
               <input type="radio" name="category" value="mujer">
             </fieldset>
@@ -58,8 +58,8 @@
               <label for="discount">Descuento</label>
               <label class="ofertas" for="ofert"></label>
               <input type="checkbox" name="ofert" id="ofert">
-              <input type="number" name="discount" id="discount">
-              
+              <input type="number" name="discount" id="discount"> 
+                      
               <!-- <i class="fas fa-percentage"></i> -->
             </fieldset>
 
@@ -69,6 +69,7 @@
           </form>
         </section>
       </main>
+     
       <%- include('../partials/footer') %>
   </body>
 
