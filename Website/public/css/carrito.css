@@ -63,8 +63,9 @@ main section h2{
 }
 
 .item_product img{
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .description h3{
