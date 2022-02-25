@@ -29,6 +29,10 @@
   left: 0;
 }
 
+.hamburgesa, .hamburgesa_close {
+  cursor: pointer;
+}
+
 header {
   background-color: #a69c94;
   display: flex;
