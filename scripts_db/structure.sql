@@ -6,6 +6,9 @@
 -- Tiempo de generación: 25-02-2022 a las 06:25:23
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
+DROP DATABASE IF EXISTS fs_db;
+CREATE DATABASE fs_db;
+USE fs_db;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
