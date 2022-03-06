@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/app.js -e js,mjs,ejs,css",
-    "db:init":"sequelize init"
+    "db:init": "sequelize init"
   },
   "keywords": [],
   "author": "Milton Franco Mourão, Bernardo Arrechea Bröndsted y Matías Juaquín",
