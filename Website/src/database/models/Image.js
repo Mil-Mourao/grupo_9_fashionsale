@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         url: {
             type: DataTypes.STRING,
@@ -27,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
         }),
 
         Image.belongsTo(models.User, {
-            as:"user_pic_url",
-            foreignKey: "user_id",
+            as:"images",
+            foreignKey: "avatar",
         })
     }
 
