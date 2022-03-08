@@ -13,10 +13,11 @@ const publicPath = path.resolve(__dirname, "../public")
 app.use(express.static(publicPath))
 app.use(express.urlencoded({extended: true}));
 app.use(method('m')); // ?m=PUT || ?m=DELETE
+app.use(express.json());
 
 app.listen(app.get('port'),() => console.log('running on port http://localhost:' + app.get('port')))
 
-app.use(express.urlencoded({ extended: true }));
+
 app.use(cookie());
 app.use(
   session({
