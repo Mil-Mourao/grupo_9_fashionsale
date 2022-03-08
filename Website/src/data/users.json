@@ -11,11 +11,11 @@
   },
   {
     "id": 2,
-    "name": "Milton",
+    "name": "Milton Mourao",
     "lastName": "Mourao",
     "email": "milton@fashionsale.com",
-    "password": "$2b$10$ooLGQtLsyZRTPh78QyhUAOQTnXUrogagTARU.kgBFqJu3DDP2Y4Su",
-    "avatar": "avatar-1644780519282.jpg",
+    "password": "$2b$10$mUBgVwxK8jVf8up2nQXAZ.pCnb9Bu7i1N1i2Jb2aeoiKKZnOVezp6",
+    "avatar": "avatar-1646603006966.png",
     "isAdmin": true,
     "isActive": true
   }

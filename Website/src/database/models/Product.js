@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name: {
             type: DataTypes.STRING,
@@ -37,5 +38,24 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
     const Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function(models) {
+        Product.belongsToMany(models.Size, {
+            as: "sizes",
+            through: "product_sizes",
+            foreignKey: "product_id",
+            otherKey: "size_id",
+            timestamps: false
+        }),
+
+        Product.belongsToMany(models.Image, {
+            as: "images",
+            through: "imagesproduct",
+            foreignKey: "product_id",
+            otherKey: "image_id",
+            timestamps: false
+        })
+    }
+
     return Product
 }

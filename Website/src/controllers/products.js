@@ -1,15 +1,20 @@
 const products = require("../models/product");
 const file = require("../models/file");
+const db = require('../database/models');
 
 const controller = {
   list: (req, res) => {
-  //res.send(products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))})))
+    //prueba para ver si trae la BD y renderiza la vista.
+    db.Product.findAll()
+      .then(products => {
+        res.render('products/list', {styles: ['list'], title: "Listado de productos", products})
+      })
     
-    res.render("products/list", {
+    /* res.render("products/list", {
       styles: ["list"],
       title: "Listado de Productos",
       products: products.all().map(p => Object({...p, img: p.img != null ? p.img.map(e =>file.search('id',e)) : p.img}))
-    })
+    }) */
   },
   detail: (req, res) => {
     let result = products.search("id", req.params.id)
@@ -27,6 +32,9 @@ const controller = {
       styles: ["create"],
     }),
   save: (req, res) => {
+     // orden para hacer el create
+     //create: 1 image 2 product 3 product_size     
+
     req.body.file = req.files;
     //return res.send(req.body)
     let created = products.create(req.body);
