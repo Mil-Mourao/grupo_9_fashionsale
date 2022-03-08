@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         discount: {
             type: DataTypes.INTEGER,
             allowNull: true
+        },
+        category: {
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     };
 
