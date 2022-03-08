@@ -59,7 +59,8 @@ CREATE TABLE `product` (
   `price` int(11) NOT NULL,
   `description` text DEFAULT NULL,
   `ofert` tinyint(1) DEFAULT 0,
-  `discount` int(11) DEFAULT NULL
+  `discount` int(11) DEFAULT NULL,
+  `category` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
