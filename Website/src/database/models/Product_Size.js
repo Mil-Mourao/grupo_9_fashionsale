@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
 
-        id_size: {
+        size_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
 
-        id_product: {
+        product_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },

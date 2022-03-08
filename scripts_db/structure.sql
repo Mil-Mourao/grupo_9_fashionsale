@@ -3,9 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-02-2022 a las 06:25:23
+-- Tiempo de generación: 08-03-2022 a las 17:41:47
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
+
 DROP DATABASE IF EXISTS fs_db;
 CREATE DATABASE fs_db;
 USE fs_db;
@@ -70,8 +71,8 @@ CREATE TABLE `product` (
 
 CREATE TABLE `product_sizes` (
   `id` int(11) NOT NULL,
-  `id_size` int(11) NOT NULL,
-  `id_product` int(11) NOT NULL,
+  `size_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `units` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -100,7 +101,7 @@ CREATE TABLE `user` (
   `password` text NOT NULL,
   `isAdmin` tinyint(1) NOT NULL DEFAULT 0,
   `isActive` tinyint(1) NOT NULL DEFAULT 1,
-  `avatar` int(11) DEFAULT NULL
+  `image_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -132,8 +133,8 @@ ALTER TABLE `product`
 --
 ALTER TABLE `product_sizes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `size` (`id_size`),
-  ADD KEY `product` (`id_product`);
+  ADD KEY `size` (`size_id`),
+  ADD KEY `product` (`product_id`);
 
 --
 -- Indices de la tabla `size`
@@ -146,7 +147,7 @@ ALTER TABLE `size`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `avatar` (`avatar`) USING BTREE;
+  ADD KEY `image_id` (`image_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -203,14 +204,14 @@ ALTER TABLE `imagesproduct`
 -- Filtros para la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  ADD CONSTRAINT `product_sizes_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`),
-  ADD CONSTRAINT `product_sizes_ibfk_2` FOREIGN KEY (`id_size`) REFERENCES `size` (`id`);
+  ADD CONSTRAINT `product_sizes_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  ADD CONSTRAINT `product_sizes_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`);
 
 --
 -- Filtros para la tabla `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`avatar`) REFERENCES `images` (`id`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

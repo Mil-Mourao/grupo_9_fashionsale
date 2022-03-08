@@ -27,9 +27,9 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         }),
 
-        Image.belongsTo(models.User, {
+        Image.hasOne(models.User, {
             as:"images",
-            foreignKey: "avatar",
+            foreignKey: "image_id",
         })
     }
 

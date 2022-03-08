@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     Size.associate = function (models) {
         Size.hasMany(models.Product_Size, {
             as: "size_stock",
-            foreignKey: "id_size"
+            foreignKey: "size_id"
         })
     }
     return Size
