@@ -4,6 +4,7 @@ const db = require('../database/models');
 
 const controller = {
   list: (req, res) => {
+    //prueba para ver si trae la BD y renderiza la vista.
     db.Product.findAll()
       .then(products => {
         res.render('products/list', {styles: ['list'], title: "Listado de productos", products})
@@ -31,6 +32,9 @@ const controller = {
       styles: ["create"],
     }),
   save: (req, res) => {
+     // orden para hacer el create
+     //create: 1 image 2 product 3 product_size     
+
     req.body.file = req.files;
     //return res.send(req.body)
     let created = products.create(req.body);

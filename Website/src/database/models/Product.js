@@ -36,13 +36,16 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
-        Product.hasMany(models.Product_Size, {
-            as: "product_stock",
-            foreignKey: "product_id"
+        Product.belongsToMany(models.Size, {
+            as: "sizes",
+            through: "product_sizes",
+            foreignKey: "product_id",
+            otherKey: "size_id",
+            timestamps: false
         }),
 
         Product.belongsToMany(models.Image, {
-            as: "product_pic",
+            as: "images",
             through: "imagesproduct",
             foreignKey: "product_id",
             otherKey: "image_id",

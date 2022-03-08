@@ -46,6 +46,10 @@ const controller = {
     //return errors.isEmpty() ? res.send(user.create(req.body)) : res.send(errors.mapped()) ;
   },
   uploadAvatar: (req, res) => {
+
+    // Orden para cargar la imagen del usuario//avatar
+    // create image(obtengo el id), 2 update de user (image_id = id -> ese id es el q se crea con la imagen)
+
     let update = user.update(req.session.user.id, {
       avatar: req.files ? req.files[0].filename : null});
       req.session.user = update;
