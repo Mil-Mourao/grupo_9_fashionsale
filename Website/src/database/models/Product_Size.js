@@ -4,26 +4,27 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
 
         id_size: {
             type: DataTypes.INTEGER,
-            autoIncrement: true
+            allowNull: false
         },
 
         id_product: {
             type: DataTypes.INTEGER,
-            autoIncrement: true
+            allowNull: false
         },
 
         units: {
             type: DataTypes.INTEGER,
-            autoIncrement: true
+            allowNull: false
         }
     };
     let config = {
-        tableName: 'size',
+        tableName: 'product_sizes',
         timestamps: false
     };
     const Product_Size = sequelize.define(alias, cols, config)
