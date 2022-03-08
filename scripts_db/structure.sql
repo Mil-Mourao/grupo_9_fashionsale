@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2022 a las 17:41:47
+-- Tiempo de generación: 08-03-2022 a las 21:24:51
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -86,6 +86,17 @@ CREATE TABLE `size` (
   `id` int(11) NOT NULL,
   `sizes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `size`
+--
+
+INSERT INTO `size` (`id`, `sizes`) VALUES
+(1, 'extra small'),
+(2, 'small'),
+(3, 'medium'),
+(4, 'large'),
+(5, 'extra large');
 
 -- --------------------------------------------------------
 
@@ -181,7 +192,7 @@ ALTER TABLE `product_sizes`
 -- AUTO_INCREMENT de la tabla `size`
 --
 ALTER TABLE `size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
