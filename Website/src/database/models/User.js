@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
 
       User.associate = function (models) {
         User.belongsTo(models.Image, {
-            as:"avatar",
+            as:"images",
             foreignKey: "image_id"
         })
     }
