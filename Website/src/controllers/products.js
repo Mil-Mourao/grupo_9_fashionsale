@@ -21,16 +21,29 @@ const controller = {
       }) : res.render('error', {msg: 'Producto no encontrado'})
       //res.send(productShow)
   },
-  create: (req, res) =>
+  create: (req, res) => {
     res.render("products/create", {
       title: "crear producto",
       styles: ["create"],
-    }),
+    })
+  },
   save: (req, res) => {
-    req.body.file = req.files;
+    if (req.body.file) {
+      db.Image.create({url:req.files.filename})
+      .then((img) => db.Product.create({
+        name: req.body.name,
+      description: req.body.description,
+      price: parseInt(data.price),
+      category: data.category,
+      ofert: data.ofert ? true : false,
+      discount: data.discount,
+      })
+      .then(Product.addImages(img)))
+    }
+    //req.body.file = req.files;
     //return res.send(req.body)
-    let created = products.create(req.body);
-    return res.redirect("/products/" + created.id);
+    //let created = products.create(req.body);
+    //return res.redirect("/products/" + created.id);
   },
   update: (req, res) =>
     res.render("products/update", {
