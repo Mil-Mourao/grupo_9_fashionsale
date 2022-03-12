@@ -8,9 +8,9 @@
         Hola, soy <%= user.email %> <% if (user.isAdmin === true) { %> y soy
         admin <i class="fa-solid fa-face-sunglasses"></i> <% } %>
       </h2>
-      <% if (user.avatar != null) { %>
+      <% if (user.image_id != null) { %>
         <picture>
-          <img src="/img/Usuarios/<%= user.avatar %> " alt="Avatar <%= user.email %> " />
+          <img src="/img/Usuarios/<%= user.image_id.url %> " alt="Avatar <%= user.email %> " />
         </picture>
       <% } else {%>
         <picture>

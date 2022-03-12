@@ -35,7 +35,7 @@
   <% if (user && !locals.errors) { %>
   <a href="/users/profile">
     <picture>
-      <img src="/img/Usuarios/<%= user.avatar != null ? user.avatar :
+      <img src="/img/Usuarios/<%= user.image_id != null ? user.image_id :
       "genericUser.jpeg" %>" alt="<%= user.email %> ">
     </picture>
   </a>
@@ -90,7 +90,7 @@
   <% if (user && !locals.errors) { %>
   <article class="userLogin">
     <a href="/users/profile"
-      ><span><%= user.name %>, bienvenido a Fashion Sale</span></a
+      ><span><%= user.firstName %>, bienvenido a Fashion Sale</span></a
     >
   </article>
   <% } %>

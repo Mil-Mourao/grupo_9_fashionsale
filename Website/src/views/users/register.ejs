@@ -14,9 +14,9 @@
           <h3 id="form-title">¡Bienvenid@ a fashion sale!</h3>
           <form action="/users/save" method="post" id="form">
             <fieldset>
-              <input class="controls" type="text" name="name" id="name" 
-              <% if (locals.old && old.name) { %>
-               value="<%= old.name.trim() %>"
+              <input class="controls" type="text" name="firstName" id="name" 
+              <% if (locals.old && old.firstName) { %>
+               value="<%= old.firstName.trim() %>"
               <% } else {%>
               placeholder="Nombre" 
               <% }%>
@@ -25,7 +25,7 @@
             <fieldset>
               <input class="controls" type="text" name="lastName" id="lastName"
               <% if (locals.old && old.lastName) { %>
-               value="<%= old.lastName.trim("") %>" 
+               value="<%= old.lastName.trim() %>" 
               <% } else { %>
                 placeholder="Apellido" 
               <% } %>   
@@ -40,7 +40,7 @@
             <fieldset>
               <button class="button" type="submit">Continuar</button>
             </fieldset>
-            <article>
+            <article>               
               <% if (locals.errors) { %>
                 <% if (errors.email) { %>
                     <p><%= errors.email.msg %></p>
