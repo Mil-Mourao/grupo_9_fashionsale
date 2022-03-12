@@ -2,11 +2,15 @@ const products = require("../models/product");
 const file = require("../models/file");
 const db = require('../database/models');
 const validator = require('express-validator');
+const path = require('path');
+const Op = require('sequelize');
 
 const controller = {
   list: (req, res) => {
     //prueba para ver si trae la BD y renderiza la vista.
-    db.Product.findAll()
+    db.Product.findAll({
+      include: [ {association: 'images'} ]
+    })
       .then(products => {
         res.render('products/list', { styles: ['list'], title: "Listado de productos", products })
       })
@@ -41,7 +45,7 @@ const controller = {
     // let created = products.create(req.body);
     // return res.redirect("/products/" + created.id);
     const errors = validator.validationResult(req);
-    const sizes = db.Size.findAll()
+    
 
     if (errors.isEmpty()) {
       db.Product.create({
@@ -49,10 +53,12 @@ const controller = {
         price: req.body.price,
         description: req.body.description,
         category: req.body.category,
-        ofert: req.body.ofert,
+        ofert: req.body.ofert == "on" ? true : false,
         discount: req.body.discount,
       })
         .then(product => {
+          // hay que hacer el control de borrado de subir una imagen,
+          // si hay errores en la creacion del producto
           if (req.files.length >= 1) {
             let productImages = req.files.map(image => {
               let item = {
