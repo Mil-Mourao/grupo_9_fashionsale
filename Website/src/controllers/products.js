@@ -70,8 +70,8 @@ const controller = {
               .then(() => console.log(product))
           }
         })
-        .then((products)=>{res.json(products)})
-        .catch(error => console.log(error))
+        .then(products=>res.send(products))
+        .catch(error => res.send(error))
     }
   },
   update: (req, res) =>

@@ -19,7 +19,7 @@ router.get("/register", users.register);
 router.get("/profile", [access],users.profile);
 
 router.post("/save",[save], users.save);
-router.post("/access",[login], users.access);
+router.post("/access", users.access);
 router.post("/logout",users.logout);
 
 router.put("/profile",[upload.any()], users.uploadAvatar)

@@ -1,6 +1,7 @@
 const validator = require("express-validator");
 const db = require('../database/models');
 //const user = require("../models/user");
+const bcrypt = require('bcrypt');
 
 
 
@@ -15,11 +16,11 @@ const controller = {
         email: req.session.user.email
       }
       
-      }, {include: ["avatar"]})
+      }, {include: ["images"]})
       .then(user => {
         return res.render("users/profile",{
           styles: ["profile"],
-          title: `Perfil | {req.body.nombre}`,
+          title: "Perfil | " + user.firstName,
           user
         })
       })
@@ -36,10 +37,11 @@ const controller = {
           email: req.body.email
         }
       })
-      .then(() => {
+      .then(user => {
           req.body.remember ?
-          res.cookie("email", req.session.user.email, {maxAge: 1000*60*60*24*7})
+          res.cookie("email", req.session.user, {maxAge: 1000*60*60*24*7})
           : null;
+          req.session.user = user;
         res.redirect('/users/profile');
       })
       .catch(error => res.send(error));
@@ -75,15 +77,15 @@ const controller = {
     const errors = validator.validationResult(req);
     if (errors.isEmpty()) {
       db.User.create({
-        firstName: req.body.name.trim(),
+        firstName: req.body.firstName.trim(),
         lastName: req.body.lastName.trim(),
         email: req.body.email.trim(),
-        password: bcrypt.hashSync(req.body.password, 10),
-        image_id: req.body.avatar ? req.body.avatar : null,
-        isAdmin: String(req.body.email).includes("@fashionsale.com"),
+        password: bcrypt.hashSync(req.body.password.trim(), 10),
+        image_id: null,
+        isAdmin: req.body.email.includes("@fashionsale.com") ? true : false,
         isActive: true,
       })
-      .then(()=> res.redirect('/users/login'))
+      .then(user => res.redirect('/users/login'))
       .catch(error => res.send(error))
       /* const create = user.create(req.body);
       return res.redirect("/users/login"); */
@@ -113,6 +115,7 @@ const controller = {
             }
           })
       })
+    .then(update => req.session.user.id)
     .then(user => {
       req.session.user = user;
     })
