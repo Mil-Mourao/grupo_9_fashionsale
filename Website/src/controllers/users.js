@@ -11,20 +11,28 @@ const controller = {
   register: (req, res) =>
     res.render("users/register", { styles: ["register"], title: "Registro" }),
   profile: (req, res) => {
-    db.User.findOne({
+    const usuario = db.User.findOne({
       where: {
         email: req.session.user.email
       }
       
-      }, {include: ["images"]})
-      .then(user => {
-        return res.render("users/profile",{
+      }, {include: ["images"]});
+    const avatar = db.Image.findOne({
+      where: {
+        id: req.session.user.image_id
+      }
+    });
+    Promise
+      .all([usuario, avatar])
+      .then(([user, img]) => {
+          return res.render("users/profile",{
           styles: ["profile"],
           title: "Perfil | " + user.firstName,
-          user
-        })
+          user,
+          img
+        }) 
       })
-      .catch(error => res.send(error));  
+      .catch(error => res.send(error));
   
     //res.render("users/profile", { styles: ["profile"], title: "Perfil" })
   },
@@ -114,12 +122,12 @@ const controller = {
               id: req.session.user.id
             }
           })
-      })
-    .then(update => req.session.user.id)
-    .then(user => {
-      req.session.user = user;
+          .then(user => {
+          req.session.user = user;
+        })
+      res.redirect('/users/profile')
     })
-    res.redirect('/users/profile')
+    .catch(err => res.send(err))
   },
 /* 
     let update = user.update(req.session.user.id, {
