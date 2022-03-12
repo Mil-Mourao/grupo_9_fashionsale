@@ -41,6 +41,7 @@ const controller = {
     // let created = products.create(req.body);
     // return res.redirect("/products/" + created.id);
     const errors = validator.validationResult(req);
+    const sizes = db.Size.findAll()
 
     if (errors.isEmpty()) {
       db.Product.create({
