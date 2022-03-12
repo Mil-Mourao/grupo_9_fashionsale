@@ -35,7 +35,7 @@
   <% if (user && !locals.errors) { %>
   <a href="/users/profile">
     <picture>
-      <img src="/img/Usuarios/<%= user.image_id != null ? user.image_id :
+      <img src="/img/Usuarios/<%= user.image_id != null ? img.url :
       "genericUser.jpeg" %>" alt="<%= user.email %> ">
     </picture>
   </a>
