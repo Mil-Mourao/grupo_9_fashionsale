@@ -2,7 +2,8 @@ const validator = require("express-validator");
 const db = require('../database/models');
 //const user = require("../models/user");
 const bcrypt = require('bcrypt');
-
+const fs = require('fs');
+const path = require('path');
 
 
 const controller = {
@@ -11,6 +12,19 @@ const controller = {
   register: (req, res) =>
     res.render("users/register", { styles: ["register"], title: "Registro" }),
   profile: (req, res) => {
+    db.User.findByPk(req.session.user.id,{
+      include: ["images"]
+     })
+      .then(user => {
+        res.render("users/profile",{
+        styles: ["profile"],
+        title: "Perfil | " + user.firstName,
+        user,
+      })
+    })
+    .catch(error => res.send(error));
+
+    /* 
     const usuario = db.User.findOne({
       where: {
         email: req.session.user.email
@@ -33,7 +47,7 @@ const controller = {
         }) 
       })
       .catch(error => res.send(error));
-  
+   */
     //res.render("users/profile", { styles: ["profile"], title: "Perfil" })
   },
   access: (req, res) => {
@@ -47,7 +61,7 @@ const controller = {
       })
       .then(user => {
           req.body.remember ?
-          res.cookie("email", req.session.user, {maxAge: 1000*60*60*24*7})
+          res.cookie("email", req.body.email, {maxAge: 1000*60*60*24*7})
           : null;
           req.session.user = user;
         res.redirect('/users/profile');
@@ -89,7 +103,7 @@ const controller = {
         lastName: req.body.lastName.trim(),
         email: req.body.email.trim(),
         password: bcrypt.hashSync(req.body.password.trim(), 10),
-        image_id: null,
+        image_id: 1,
         isAdmin: req.body.email.includes("@fashionsale.com") ? true : false,
         isActive: true,
       })
@@ -109,25 +123,36 @@ const controller = {
     //return errors.isEmpty() ? res.send(user.create(req.body)) : res.send(errors.mapped()) ;
   },
   uploadAvatar: (req, res) => {
-
     // Orden para cargar la imagen del usuario//avatar
     // create image(obtengo el id), 2 update de user (image_id = id -> ese id es el q se crea con la imagen)
-    db.Image.create({
-      url: req.files ? req.files[0].filename : null
+    let searchUser = db.User.findByPk(req.session.user.id, {
+      include: ['images']
+    });
+
+    let crearAvatarNuevo = db.Image.create({
+      url: req.file ? req.file.filename : null
     })
-    .then(img => {
-      db.User.update({image_id: img.id},
+    Promise
+    .all([searchUser, crearAvatarNuevo])
+    .then(([viejo, avatarNuevo]) => {
+      if(req.session.user.image_id !== 1){
+        if (fs.existsSync(path.resolve(__dirname, '../../public/img/Usuarios', viejo.images.url))){
+          fs.unlinkSync(path.resolve(__dirname, '../../public/img/Usuarios', viejo.images.url))
+        }
+      }      
+      db.User.update({image_id: avatarNuevo.id},
           {
             where: {
               id: req.session.user.id
             }
           })
-          .then(user => {
+      
+      .then(user => {
           req.session.user = user;
         })
       res.redirect('/users/profile')
     })
-    .catch(err => res.send(err))
+    .catch(err => console.log(err))
   },
 /* 
     let update = user.update(req.session.user.id, {
@@ -136,7 +161,7 @@ const controller = {
       return res.redirect('/users/profile') */
   logout: (req, res) => {
     delete req.session.user;
-    res.cookie("user", null, { maxAge: -1 });
+    res.cookie("email", null, { maxAge: -1 });
     return res.redirect("/");
   },
 };
