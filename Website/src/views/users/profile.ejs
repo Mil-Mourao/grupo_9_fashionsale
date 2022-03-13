@@ -10,7 +10,7 @@
       </h2>
       <% if (user.image_id != null) { %>
         <picture>
-          <img src="/img/Usuarios/<%=img.url%> " alt="Avatar <%= user.email %> " />
+          <img src="/img/Usuarios/<%=user.images.url%> " alt="Avatar <%= user.email %> " />
         </picture>
       <% } else {%>
         <picture>

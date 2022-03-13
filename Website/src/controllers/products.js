@@ -4,12 +4,13 @@ const db = require('../database/models');
 const validator = require('express-validator');
 const path = require('path');
 const Op = require('sequelize');
+const fs = require("fs");
 
 const controller = {
   list: (req, res) => {
-    //prueba para ver si trae la BD y renderiza la vista.
+    //prueba para ver si trae la BD y renderiza la vista.    
     db.Product.findAll({
-      include: [ {association: 'images'} ]
+      include: ['images']
     })
       .then(products => {
         res.render('products/list', { styles: ['list'], title: "Listado de productos", products })
@@ -48,30 +49,31 @@ const controller = {
     
 
     if (errors.isEmpty()) {
-      db.Product.create({
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        category: req.body.category,
-        ofert: req.body.ofert == "on" ? true : false,
-        discount: req.body.discount,
-      })
-        .then(product => {
-          // hay que hacer el control de borrado de subir una imagen,
-          // si hay errores en la creacion del producto
-          if (req.files.length >= 1) {
-            let productImages = req.files.map(image => {
-              let item = {
-                url: image.filename
-              }
-              return item
-            })
-            db.Image.bulkCreate(productImages)
-              .then(() => console.log(product))
+      if (req.files.length >= 1) {
+        let productImages = req.files.map(image => {
+          let item = {
+            url: image.filename
           }
+          return item
         })
-        .then(products=>res.send(products))
-        .catch(error => res.send(error))
+      db.Image.bulkCreate(productImages)
+      Promise
+      .all([productImages])
+      .then(([images]) =>{
+        db.Product.create({
+          name: req.body.name,
+          price: req.body.price,
+          description: req.body.description,
+          category: req.body.category,
+          ofert: req.body.ofert == "on" ? true : false,
+          discount: req.body.discount,
+          })        
+        //db.Product.addImage(images)
+        return res.redirect('/');
+      })
+      .catch(error => res.send(error))
+    }
+    
     }
   },
   update: (req, res) =>
@@ -86,8 +88,22 @@ const controller = {
     return res.redirect("/products/" + update.id);
   },
   delete: (req, res) => {
-    products.delete(req.body.id);
-    return res.redirect("/products/");
+    db.Product.findByPk(req.body.id, {
+      include: ["images"]
+    })
+    .then(producto => {
+      producto.images.forEach(img => {
+        if(fs.existsSync(path.resolve(__dirname, '../../public/img/Productos', img.file))){
+          fs.unlinkSync(path.resolve(__dirname, '../../public/img/Productos', img.file))
+        }
+      });
+    db.Product.destroy({
+      where: [{id: req.body.id}]
+    })
+    .then(() => res.redirect("/products/"))
+    .catch(err => console.log(err))
+    //products.delete(req.body.id);
+  })
   },
 };
 

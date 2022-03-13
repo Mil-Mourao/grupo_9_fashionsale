@@ -3,10 +3,8 @@ const file = require('../models/file')
 const db = require('../database/models')
 
 const controller = {
-    index: (req,res) =>
-        db.Product.findAll({
-            include: ['images']
-        })
+    index: (req,res) =>{
+        db.Product.findAll({})
         .then(products => {
         res.render('index',
             {styles:['index'],
@@ -14,7 +12,7 @@ const controller = {
             products})
         })
         .catch(err => res.send(err))
-
+}
     ,
     about: (req,res) => res.render('about', {css:'about'}),
 }

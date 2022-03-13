@@ -48,11 +48,12 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         }),
 
+        
         Product.belongsToMany(models.Image, {
             as: "images",
             through: "imagesproduct",
             foreignKey: "productId",
-            otherKey: "imageId",
+            otherKey: "imagesId",
             timestamps: false
         })
     }
