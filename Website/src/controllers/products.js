@@ -23,13 +23,25 @@ const controller = {
     }) */
   },
   detail: (req, res) => {
-    let result = products.search("id", req.params.id)
+    db.Product.findByPk(req.params.id, {include: ['images']})
+      .then(product => {
+          res.render('products/productDetail', {
+          styles: ["product"],
+          title: "Detalle de producto",
+          product 
+        })
+      })
+      .catch(error => res.send(error))
+
+
+
+    /* let result = products.search("id", req.params.id)
     let productShow = Object({ ...result, img: result.img != null ? result.img.map(e => file.search('id', e)) : result.img })
     return result ? res.render("products/productDetail", {
       styles: ["product"],
       title: "Detalle de producto",
       product: productShow
-    }) : res.render('error', { msg: 'Producto no encontrado' })
+    }) : res.render('error', { msg: 'Producto no encontrado' }) */
     //res.send(productShow)
   },
   create: (req, res) =>
@@ -46,9 +58,7 @@ const controller = {
     // let created = products.create(req.body);
     // return res.redirect("/products/" + created.id);
     const errors = validator.validationResult(req);
-    
-    let arrayImages;
-    
+        
       if (req.files.length >= 1) {
       let productImages = req.files.map(image => {
           let item = {
@@ -56,9 +66,10 @@ const controller = {
           }
           return item
         })
-      db.Image.bulkCreate(productImages)
+      let arrayImagenes = db.Image.bulkCreate(productImages);
+
       
-      let crearProduct = db.Product.create({
+       let crearProduct = db.Product.create({
         name: req.body.name,
         price: req.body.price,
         description: req.body.description,
@@ -68,25 +79,30 @@ const controller = {
         });
       
       Promise
-      .all([productImages, crearProduct])
+      .all([arrayImagenes, crearProduct])
       .then(([images, producto]) =>{
          producto.addImages(images)        
         })
         .then(()=>{
-          res.redirect('/');
+          res.redirect('/product/' + producto.id);
         })    
       
       .catch(error => res.send(error))
-    }
+        
+    } 
     
     
   },
-  update: (req, res) =>
-    res.render("products/update", {
-      styles: ["update"],
-      title: "actualizar",
-      products: products.search("id", req.params.id),
-    }),
+  update: (req, res) =>{
+    db.Product.findByPk(req.params.id)
+    .then(product => {
+      res.render("products/update", {
+        styles: ["update"],
+        title: "Actualizar",
+        product
+      })
+    })
+  },
   modify: (req, res) => {
     req.body.file = req.files;
     let update = products.update(req.params.id, req.body);
@@ -98,8 +114,8 @@ const controller = {
     })
     .then(producto => {
       producto.images.forEach(img => {
-        if(fs.existsSync(path.resolve(__dirname, '../../public/img/Productos', img.file))){
-          fs.unlinkSync(path.resolve(__dirname, '../../public/img/Productos', img.file))
+        if(fs.existsSync(path.resolve(__dirname, '../../public/img/Productos', img.url))){
+          fs.unlinkSync(path.resolve(__dirname, '../../public/img/Productos', img.url))
         }
       });
     db.Product.destroy({
