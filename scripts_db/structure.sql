@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2022 a las 16:59:21
+-- Tiempo de generación: 15-03-2022 a las 19:11:44
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -43,7 +43,9 @@ CREATE TABLE `images` (
 INSERT INTO `images` (`id`, `url`) VALUES
 (1, 'genericUser.jpeg'),
 (90, 'avatar-1647214206933.jpg'),
-(91, 'avatar-1647214235583.jpg');
+(91, 'avatar-1647214235583.jpg'),
+(239, 'image-1647366703677.jpg'),
+(240, 'image-1647366703678.jpg');
 
 -- --------------------------------------------------------
 
@@ -56,6 +58,14 @@ CREATE TABLE `imagesproduct` (
   `imageId` int(11) NOT NULL,
   `productId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `imagesproduct`
+--
+
+INSERT INTO `imagesproduct` (`id`, `imageId`, `productId`) VALUES
+(33, 239, 90),
+(34, 240, 90);
 
 -- --------------------------------------------------------
 
@@ -72,6 +82,13 @@ CREATE TABLE `product` (
   `discount` int(11) DEFAULT NULL,
   `category` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `price`, `description`, `ofert`, `discount`, `category`) VALUES
+(90, 'Test2', 12313, 'asdasd', 1, 10, 'hombre');
 
 -- --------------------------------------------------------
 
@@ -186,19 +203,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
@@ -226,7 +243,8 @@ ALTER TABLE `user`
 -- Filtros para la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  ADD CONSTRAINT `imagesproduct_ibfk_2` FOREIGN KEY (`productId`) REFERENCES `product` (`id`);
+  ADD CONSTRAINT `imagesproduct_ibfk_2` FOREIGN KEY (`productId`) REFERENCES `product` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `imagesproduct_ibfk_3` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `product_sizes`

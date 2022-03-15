@@ -4,7 +4,9 @@ const db = require('../database/models')
 
 const controller = {
     index: (req,res) =>{
-        db.Product.findAll({})
+        db.Product.findAll({
+            include: ['images']
+        })
         .then(products => {
         res.render('index',
             {styles:['index'],

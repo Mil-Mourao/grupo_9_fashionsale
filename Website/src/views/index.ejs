@@ -21,7 +21,7 @@
                   <picture>
                     <a href="/products/<%= element.id %> ">
                       <% if (element.images != null && element.images.length > 0) { %>
-                        <img src="/img/Productos/<%= element.images.url %> " alt="<%= element.name %> ">
+                        <img src="/img/Productos/<%= element.images[0]['url'] %> " alt="<%= element.name %> ">
                         
                       <% } else {%>
                         <img src="/img/Productos/default.jpg" alt="<%= element.name %>">

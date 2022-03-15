@@ -11,17 +11,17 @@
           </article>
         </section>
         <section id="producto">
-            <% if (product.img != null && product.img.length > 0) { %>
+            <% if (product.images != null && product.images.length > 0) { %>
               <article class="pic-list">
-              <% for( let i = 0; i < product.img.length; i++ ) { %>
+              <% for( let i = 0; i < product.images.length; i++ ) { %>
                 <picture>
-                  <img class="small-pic" src="/img/Productos/<%=product['img'][i]['url'] %>" alt="" srcset="" />
+                  <img class="small-pic" src="/img/Productos/<%=product['images'][i]['url'] %>" alt="" srcset="" />
                 </picture>
                   <% } %> 
                 </article>
                 <article class="main-pic">
                   <picture>
-                    <img id="focus-pic" src="/img/Productos/<%= product.img[0]['url'] %>" alt="<%= product.name %> " />
+                    <img id="focus-pic" src="/img/Productos/<%= product.images[0]['url'] %>" alt="<%= product.name %> " />
                   </picture>
                 </article>
               <% } else { %> 
@@ -82,22 +82,23 @@
             <article id="desc-bottom">
               <h3>Descripción</h3>
               <p>
-              <% if (product.description == "") { %>
-               Campera estampada. Textil crepe de microfibra mate. Bolsillos
-               laterales. Cierre metálico central.
-              <% } else {%>
-                <%= product.description %> 
-                <% } %> 
-              </p>
+              <% if (product.description=="" ) { %>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi blanditiis aspernatur dolore eum recusandae laborum
+                quis molestias fugit. Suscipit modi unde vel itaque ut necessitatibus iste asperiores ex quaerat ea!
+                <% } else {%>
+                  <%= product.description %>
+                    <% } %>
+                      </p>
 
               <p>Talle modelo <%= product.category %>:
-                <% for( let i = 0; i < product.size.length; i++ ) { %>
-                  <% if (i == product.size.length -1) { %>
-                    <%= product.size[i]%>  
-                  <% } else { %>
-                  <%= product.size[i]%> /
-                  <% }  %> 
-                <% } %>
+                Resta crear las cantidad y los sizes
+                <!-- <%// for( let i = 0; i < product.size.length; i++ ) { %>
+                  <% //if (i == product.size.length -1) { %>
+                    <%= //product.size[i]%>  
+                  <% //} else { %>
+                  <%=// product.size[i]%> /
+                  <% //}  %> 
+                <% //} %> -->
               </p>  
                 
               
