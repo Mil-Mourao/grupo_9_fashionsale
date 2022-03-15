@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-03-2022 a las 00:08:45
+-- Tiempo de generación: 15-03-2022 a las 16:59:21
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -35,6 +35,15 @@ CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `images`
+--
+
+INSERT INTO `images` (`id`, `url`) VALUES
+(1, 'genericUser.jpeg'),
+(90, 'avatar-1647214206933.jpg'),
+(91, 'avatar-1647214235583.jpg');
 
 -- --------------------------------------------------------
 
@@ -117,6 +126,14 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin`, `isActive`, `image_id`) VALUES
+(6, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 91),
+(7, 'Bernardo', 'Arrechea', 'berna@mail.com', '$2b$10$B33BfnWXKWF1PVDY91wg/eAvy.Xpky6.yxALpMVVNA1uVf0sMiIY2', 0, 1, 90);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -131,8 +148,8 @@ ALTER TABLE `images`
 --
 ALTER TABLE `imagesproduct`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `image` (`imageId`),
-  ADD KEY `product` (`productId`);
+  ADD KEY `product` (`productId`),
+  ADD KEY `image` (`imageId`) USING BTREE;
 
 --
 -- Indices de la tabla `product`
@@ -169,19 +186,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
@@ -199,7 +216,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
@@ -209,7 +226,6 @@ ALTER TABLE `user`
 -- Filtros para la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  ADD CONSTRAINT `imagesproduct_ibfk_1` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`),
   ADD CONSTRAINT `imagesproduct_ibfk_2` FOREIGN KEY (`productId`) REFERENCES `product` (`id`);
 
 --

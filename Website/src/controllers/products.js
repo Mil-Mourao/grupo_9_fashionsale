@@ -47,34 +47,39 @@ const controller = {
     // return res.redirect("/products/" + created.id);
     const errors = validator.validationResult(req);
     
-
-    if (errors.isEmpty()) {
+    let arrayImages;
+    
       if (req.files.length >= 1) {
-        let productImages = req.files.map(image => {
+      let productImages = req.files.map(image => {
           let item = {
             url: image.filename
           }
           return item
         })
       db.Image.bulkCreate(productImages)
+      
+      let crearProduct = db.Product.create({
+        name: req.body.name,
+        price: req.body.price,
+        description: req.body.description,
+        category: req.body.category,
+        ofert: req.body.ofert == "on" ? true : false,
+        discount: req.body.discount,
+        });
+      
       Promise
-      .all([productImages])
-      .then(([images]) =>{
-        db.Product.create({
-          name: req.body.name,
-          price: req.body.price,
-          description: req.body.description,
-          category: req.body.category,
-          ofert: req.body.ofert == "on" ? true : false,
-          discount: req.body.discount,
-          })        
-        //db.Product.addImage(images)
-        return res.redirect('/');
-      })
+      .all([productImages, crearProduct])
+      .then(([images, producto]) =>{
+         producto.addImages(images)        
+        })
+        .then(()=>{
+          res.redirect('/');
+        })    
+      
       .catch(error => res.send(error))
     }
     
-    }
+    
   },
   update: (req, res) =>
     res.render("products/update", {
