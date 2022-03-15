@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        fistName: {
+        firstName: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        avatar: {
+        image_id: {
             type: DataTypes.INTEGER,
             allowNull: true
         }
@@ -42,10 +42,10 @@ module.exports = (sequelize, DataTypes) => {
     };
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = function (models) {
+      User.associate = function (models) {
         User.belongsTo(models.Image, {
-            as:"images",
-            foreignKey: "avatar"
+            as: "images",
+            foreignKey: "image_id"
         })
     }
 

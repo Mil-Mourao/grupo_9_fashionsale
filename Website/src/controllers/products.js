@@ -1,25 +1,35 @@
 const products = require("../models/product");
 const file = require("../models/file");
+const db = require('../database/models');
+const validator = require('express-validator');
+const path = require('path');
+const Op = require('sequelize');
 
 const controller = {
   list: (req, res) => {
-  //res.send(products.all().map(p => Object({...p, img: p.img.map(e =>file.search('id',e))})))
-    
-    res.render("products/list", {
+    //prueba para ver si trae la BD y renderiza la vista.
+    db.Product.findAll({
+      include: [ {association: 'images'} ]
+    })
+      .then(products => {
+        res.render('products/list', { styles: ['list'], title: "Listado de productos", products })
+      })
+
+    /* res.render("products/list", {
       styles: ["list"],
       title: "Listado de Productos",
       products: products.all().map(p => Object({...p, img: p.img != null ? p.img.map(e =>file.search('id',e)) : p.img}))
-    })
+    }) */
   },
   detail: (req, res) => {
     let result = products.search("id", req.params.id)
-    let productShow = Object({...result, img: result.img != null ? result.img.map(e=>file.search('id', e)) : result.img})
+    let productShow = Object({ ...result, img: result.img != null ? result.img.map(e => file.search('id', e)) : result.img })
     return result ? res.render("products/productDetail", {
       styles: ["product"],
       title: "Detalle de producto",
       product: productShow
-      }) : res.render('error', {msg: 'Producto no encontrado'})
-      //res.send(productShow)
+    }) : res.render('error', { msg: 'Producto no encontrado' })
+    //res.send(productShow)
   },
   create: (req, res) => {
     res.render("products/create", {

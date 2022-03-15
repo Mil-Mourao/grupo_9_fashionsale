@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
 
-        id_size: {
+        size_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
 
-        id_product: {
+        product_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -32,13 +32,13 @@ module.exports = (sequelize, DataTypes) => {
     Product_Size.associate = function (models) {
         Product_Size.belongsTo(models.Size, {
             as: "size",
-            foreignKey: "id"
+            foreignKey: "size_id"
         }),
 
         Product_Size.belongsTo(models.Product, {
-            as: "product_stock_qty",
-            foreignKey: "id"
+            as: "product",
+            foreignKey: "product_id"
         })
     }
-    return Size
+    return Product_Size
 }

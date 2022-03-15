@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
         discount: {
             type: DataTypes.INTEGER,
             allowNull: true
+        },
+        category: {
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     };
 
@@ -36,16 +40,19 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
-        Product.hasMany(models.Product_Size, {
-            as: "product_stock",
-            foreignKey: "id_product"
+        Product.belongsToMany(models.Size, {
+            as: "sizes",
+            through: "product_sizes",
+            foreignKey: "product_id",
+            otherKey: "size_id",
+            timestamps: false
         }),
 
         Product.belongsToMany(models.Image, {
-            as: "product_pic",
-            through: "Product_Image",
-            foreignKey: "product_id",
-            otherKey: "image_id",
+            as: "images",
+            through: "imagesproduct",
+            foreignKey: "productId",
+            otherKey: "imageId",
             timestamps: false
         })
     }
