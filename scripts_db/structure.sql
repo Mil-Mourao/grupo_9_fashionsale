@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2022 a las 19:11:44
+-- Tiempo de generación: 16-03-2022 a las 02:04:37
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -45,7 +45,11 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (90, 'avatar-1647214206933.jpg'),
 (91, 'avatar-1647214235583.jpg'),
 (239, 'image-1647366703677.jpg'),
-(240, 'image-1647366703678.jpg');
+(240, 'image-1647366703678.jpg'),
+(241, 'avatar-1647387002665.jpg'),
+(242, 'avatar-1647387555432.jpg'),
+(243, 'avatar-1647387767768.jpg'),
+(244, 'avatar-1647387828634.jpg');
 
 -- --------------------------------------------------------
 
@@ -148,7 +152,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin`, `isActive`, `image_id`) VALUES
 (6, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 91),
-(7, 'Bernardo', 'Arrechea', 'berna@mail.com', '$2b$10$B33BfnWXKWF1PVDY91wg/eAvy.Xpky6.yxALpMVVNA1uVf0sMiIY2', 0, 1, 90);
+(7, 'Bernardo', 'Arrechea', 'berna@mail.com', '$2b$10$B33BfnWXKWF1PVDY91wg/eAvy.Xpky6.yxALpMVVNA1uVf0sMiIY2', 0, 1, 90),
+(8, 'asd', 'dsa', 'mail@mail.com', '$2b$10$GYLbpgoE6hIRR8YakvWdFu1FvOBWVWYXJaWLcKuCMeySvPDyaxuWq', 0, 1, 244);
 
 --
 -- Índices para tablas volcadas
@@ -203,7 +208,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=241;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
@@ -233,7 +238,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas

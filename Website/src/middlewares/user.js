@@ -4,10 +4,10 @@ const middleware = (req, res, next) => {
    
     
    db.User.findOne({
-        include: ['images'],
         where: {
-            email: req.cookies && req.cookies.user ? req.cookies.user : null
-        },  
+            email: req.cookies && req.cookies.email  ? req.cookies.email : null
+        },
+        include: ['images']
     })
     .then(user => {
         let logged = user;
@@ -15,6 +15,7 @@ const middleware = (req, res, next) => {
             logged = req.session.user;
         }
         res.locals.user = logged;
+        
         next();    
     
     })
