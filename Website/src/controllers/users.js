@@ -57,7 +57,7 @@ const controller = {
       db.User.findOne({
         where: {
           email: req.body.email
-        }
+        }, include: ['images']
       })
       .then(user => {
           req.body.remember ?
@@ -144,13 +144,13 @@ const controller = {
           {
             where: {
               id: req.session.user.id
-            }
+            },
+            include: ['images']
           })
-      
       .then(user => {
           req.session.user = user;
+          res.redirect('/users/profile')
         })
-      res.redirect('/users/profile')
     })
     .catch(err => console.log(err))
   },

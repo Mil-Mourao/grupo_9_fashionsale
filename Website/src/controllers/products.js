@@ -67,7 +67,11 @@ const controller = {
           return item
         })
       let arrayImagenes = db.Image.bulkCreate(productImages);
-
+      
+      let arraySizes = db.Size.findAll({
+        where: {id: [Op.in] } // req.body unidades
+      })
+      //let algo = arraySizes.map(size => {size.units})
       
        let crearProduct = db.Product.create({
         name: req.body.name,
@@ -81,7 +85,8 @@ const controller = {
       Promise
       .all([arrayImagenes, crearProduct])
       .then(([images, producto]) =>{
-         producto.addImages(images)        
+         producto.addImages(images) 
+        // producto.addSizes(algo)
         })
         .then(()=>{
           res.redirect('/product/' + producto.id);
