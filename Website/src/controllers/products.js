@@ -3,7 +3,7 @@ const file = require("../models/file");
 const db = require('../database/models');
 const validator = require('express-validator');
 const path = require('path');
-const Op = require('sequelize');
+const {Op} = require('sequelize');
 const fs = require("fs");
 
 const controller = {
@@ -50,15 +50,13 @@ const controller = {
       styles: ["create"],
     }),
   save: (req, res) => {
-    //  orden para hacer el create
-    //  create: 1 image 2 product 3 product_size     
 
     // req.body.file = req.files;
     // return res.send(req.body)
     // let created = products.create(req.body);
     // return res.redirect("/products/" + created.id);
     const errors = validator.validationResult(req);
-        
+     // Inicio crear Imagenes de productos
       if (req.files.length >= 1) {
       let productImages = req.files.map(image => {
           let item = {
@@ -67,36 +65,61 @@ const controller = {
           return item
         })
       let arrayImagenes = db.Image.bulkCreate(productImages);
-      
-      let arraySizes = db.Size.findAll({
-        where: {id: [Op.in] } // req.body unidades
-      })
-      //let algo = arraySizes.map(size => {size.units})
-      
-       let crearProduct = db.Product.create({
-        name: req.body.name,
-        price: req.body.price,
-        description: req.body.description,
-        category: req.body.category,
-        ofert: req.body.ofert == "on" ? true : false,
-        discount: req.body.discount,
-        });
-      
+      // Final crear Imagenes de productos
+    
+      // Sirve para saber si hay unidades cargadas o no 
+    let control = req.body.units.reduce((anterior, nuevo) => Number(anterior) + Number(nuevo), 0);
+
+     // Traigo el array de talles
+    let sizes = db.Size.findAll();
+        
+     // Inicio crear Producto
+    let crearProducto = db.Product.create({
+    name: req.body.name,
+    price: req.body.price,
+    description: req.body.description,
+    category: req.body.category,
+    ofert: req.body.ofert == "on" ? true : false,
+    discount: req.body.discount,
+    });
+    // Final crear Producto
+  
+    // Acá hago un promise.all para poder asociar el producto y las imagenes, y el producto con los talles y las unidades
       Promise
-      .all([arrayImagenes, crearProduct])
-      .then(([images, producto]) =>{
-         producto.addImages(images) 
-        // producto.addSizes(algo)
+      .all([arrayImagenes, crearProducto, sizes])
+      .then(([images, producto, sizes]) =>{
+        producto.addImages(images);
+        let unidadesSizeProduct = req.body.units.map((e,i) => {
+          e = parseInt(e);
+         if(e != 0 && !isNaN(e) && control != 0){
+            return {
+              size_id: sizes[i].id,
+              product_id: producto.id,
+              units: e,
+            }
+          }
         })
-        .then(()=>{
-          res.redirect('/product/' + producto.id);
-        })    
-      
-      .catch(error => res.send(error))
+        
+    let unidadesFiltradas = unidadesSizeProduct.filter(e => e != undefined)
+      db.Product_Size.bulkCreate(unidadesFiltradas)
+        .then(() => {
+          res.redirect('/products/' + producto.id)
+        });            
+   })
+   .catch(error => {
+    console.log("-----------");
+    console.log(error);
+    console.log("-----------");
+     })
         
     } 
-    
-    
+    /*    let idTallesFiltrados = unidadesFiltradas.map(e=>e.size_id)
+     
+    let tallesFiltradosNuevo = db.Size.findAll({
+      where: {
+        id: {[Op.in]: idTallesFiltrados}
+      },
+    }); */
   },
   update: (req, res) =>{
     db.Product.findByPk(req.params.id)
