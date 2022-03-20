@@ -98,6 +98,10 @@ legend {
   margin: 0.8rem;
 }
 
+.listaTalles {
+  list-style: none;
+}
+
 @media (min-width: 768px) {
   .pic-list {
     flex-direction: column;
@@ -118,8 +122,9 @@ legend {
   }
 
   #focus-pic {
-    max-width: 40vw;
-    margin-left: 10px;
+    max-width: 480px;
+    max-height: 980px;
+    margin-left: 1.5rem;
   }
 
   .description {
