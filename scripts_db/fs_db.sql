@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2022 a las 02:04:37
+-- Tiempo de generación: 20-03-2022 a las 01:02:59
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -44,12 +44,9 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (1, 'genericUser.jpeg'),
 (90, 'avatar-1647214206933.jpg'),
 (91, 'avatar-1647214235583.jpg'),
-(239, 'image-1647366703677.jpg'),
-(240, 'image-1647366703678.jpg'),
-(241, 'avatar-1647387002665.jpg'),
-(242, 'avatar-1647387555432.jpg'),
-(243, 'avatar-1647387767768.jpg'),
-(244, 'avatar-1647387828634.jpg');
+(244, 'avatar-1647387828634.jpg'),
+(487, 'image-1647734178750.jpg'),
+(488, 'image-1647734179258.jpg');
 
 -- --------------------------------------------------------
 
@@ -68,8 +65,8 @@ CREATE TABLE `imagesproduct` (
 --
 
 INSERT INTO `imagesproduct` (`id`, `imageId`, `productId`) VALUES
-(33, 239, 90),
-(34, 240, 90);
+(182, 487, 304),
+(183, 488, 304);
 
 -- --------------------------------------------------------
 
@@ -92,7 +89,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `description`, `ofert`, `discount`, `category`) VALUES
-(90, 'Test2', 12313, 'asdasd', 1, 10, 'hombre');
+(304, 'Campera Wave', 1850, 'Campera azul, muy fachera.', 1, 10, 'hombre');
 
 -- --------------------------------------------------------
 
@@ -104,8 +101,17 @@ CREATE TABLE `product_sizes` (
   `id` int(11) NOT NULL,
   `size_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `units` int(11) NOT NULL
+  `units` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `product_sizes`
+--
+
+INSERT INTO `product_sizes` (`id`, `size_id`, `product_id`, `units`) VALUES
+(495, 1, 304, 5),
+(496, 2, 304, 8),
+(497, 3, 304, 1);
 
 -- --------------------------------------------------------
 
@@ -208,25 +214,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=489;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=498;
 
 --
 -- AUTO_INCREMENT de la tabla `size`
