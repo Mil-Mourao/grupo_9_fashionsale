@@ -23,12 +23,24 @@ const controller = {
     }) */
   },
   detail: (req, res) => {
-    db.Product.findByPk(req.params.id, {include: ['images']})
-      .then(product => {
-          res.render('products/productDetail', {
+    let product = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']})
+     /* .then(product => {
+        res.send(product.sizes)
+        res.render('products/productDetail', {
           styles: ["product"],
           title: "Detalle de producto",
-          product 
+          product  
+        })
+      })*/
+      //let productoEncontrado = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']});
+      let unidades = db.Product_Size.findAll({where: {product_id: req.params.id}})
+      Promise.all([product, unidades])
+      .then(([product, unidades]) => {
+        res.render('products/productDetail',{
+          styles: ["product"],
+          title: "Detalle de producto",
+          product,
+          unidades
         })
       })
       .catch(error => res.send(error))

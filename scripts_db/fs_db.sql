@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2022 a las 01:02:59
+-- Tiempo de generación: 20-03-2022 a las 02:11:13
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -101,7 +101,7 @@ CREATE TABLE `product_sizes` (
   `id` int(11) NOT NULL,
   `size_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `units` int(11) DEFAULT NULL
+  `units` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -214,25 +214,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=489;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=502;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=498;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=504;
 
 --
 -- AUTO_INCREMENT de la tabla `size`

@@ -53,13 +53,13 @@
               <p>6 cuotas de $ <%= product.ofert ? parseInt(newPrice / 6) : parseInt(product.price / 6) %></p>
             </article>
             <article id="size-qty">
-              <% if (product.size) { %>
+              <% if (product.sizes) { %>
                 <fieldset>
                   <legend>Talle</legend>
                   <label for="size" class="no-show">Talle</label>
                   <select name="size" id="talle">
-                  <% for( let i = 0; i < product.size.length; i++ ) { %>
-                    <option value="<%= product.size[i] %> "><%= product.size[i] %></option>
+                  <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+                    <option value="<%= product.sizes[i].sizes %> "><%= product.sizes[i].sizes%></option>
                   <% } %>
                   </select>
                 </fieldset>
@@ -91,23 +91,18 @@
                       </p>
 
               <p>Talle modelo <%= product.category %>:
-                Resta crear las cantidad y los sizes
-                <!-- <%// for( let i = 0; i < product.size.length; i++ ) { %>
-                  <% //if (i == product.size.length -1) { %>
-                    <%= //product.size[i]%>  
-                  <% //} else { %>
-                  <%=// product.size[i]%> /
-                  <% //}  %> 
-                <% //} %> -->
+                <ul class="listaTalles">
+                 <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+                  <li>Talle <strong><%= product.sizes[i].sizes %></strong> hay un total de <%= unidades[i].units %>
+                    <% if (unidades[i].units == 1) { %>
+                     unidad.
+                    <% } else{%>
+                      unidades.</li>  
+                      <% } %> 
+                <% } %> 
+                </ul>
               </p>  
-                
-              
-               
-              
-                
-           
-             
-              
+                        
             </article>
           </section>
         </section>
