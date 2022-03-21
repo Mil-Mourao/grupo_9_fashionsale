@@ -10,9 +10,9 @@ const upload = multer({storage: multer.diskStorage({
 })})
 
 router.get("/", products.list);
-router.get('/create', products.create);
+router.get('/create',[access], products.create);
 router.get('/:id', products.detail);
-router.get("/update/:id", products.update);
+router.get("/update/:id", [access], products.update);
 
 router.put('/:id', [upload.any()],products.modify);
 
