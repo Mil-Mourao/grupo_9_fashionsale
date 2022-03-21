@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-
+<form action="/products/<%= product.id %>?m=PUT" method="post" enctype="multipart/form-data">
   <body>
     <%- include('../partials/header') %>
     <main id="update">
-      <section class="form-update">
-      <article>
-        <picture class="logo-Update">
-          <img src="/img/logo/logoSimple.svg" alt="" id="logo-Update-top" />
-        </picture>
-      </article>
-      <h3 class="no-show"> Formulario Update</h3>
-        <form action="/products/<%= product.id %>?m=PUT" method="post" enctype="multipart/form-data">
-           <fieldset>  
-              <label class= "no-show" for = "name">Nombre:</label>
-              <input type="text" name="name" id="name"  >
-              
-            </fieldset>
-
-              <fieldset>
-              <label class="no-show" for = "price">Precio:</label>
-              <input type="number" name= "price" id="Price/Precio" placeholder="Price/Precio" min="0" >
-         </fieldset>
-    
-         <fieldset id="sizes">
-          <legend>Talles</legend>
-          
-          <label for="xs_qty">XS</label>
-          <input type="number" name="xs_qty" id="" value="XS">
-          
-          <label for="s_qty">S</label>
-          <input type="number" name="s_qty" id="" value="S">
-          
-          <label for="m_qty">M</label>
-          <input type="number" name="m_qty" id="" value="M">
-          
-          <label for="l_qty">L</label>
-          <input type="number" name="l_qty" id="" value="L">
-          
-          <label for="xl_qty">XL</label>
-          <input type="number" name="xl_qty" id="" value="XL">
-
-         </fieldset>
-
-         <fieldset>
-        <label class="Datos" for = "description"></label>
-        <textarea name="description" id="description" placeholder="Descripción del Producto"></textarea>
-         </fieldset>
-         <fieldset>
-          <label class="img" for="image"></label>
-          <input type="file" name="image" id="image" multiple required>
+      <section class="form-create">
+        <article>
+          <picture class="logo-Create">
+            <img src="/img/logo/logoSimple.svg" alt="" id="logo-Create-top" />
+          </picture>
+        </article>
+        <h3 id="title"> Formulario de edición de Producto </h3>
         
-        <fieldset>
+        <% if (product && unidades) { %>
+        <form action="/products/<%= product.id %>?m=PUT" method="post" enctype="multipart/form-data">
+         
+          <fieldset>
+            <label for="name">
+            <input type="text" name="name" id="name" value="<%= product.name %> " required>
+            </label>
+          </fieldset>
 
-<fieldset>
-<label for="men">Hombre</label>
-<input type="checkbox" name= "category" value="hombre">
-<label for="women">Mujer</label>
-<input type="checkbox" name= "category" value="mujer">
-</fieldset>
+            <fieldset>
+            <label class="precios" for = "price">
+            <input type="number" name= "price" id="price" value="<%= product.price %>" min="1" required>
+          </label>
+       </fieldset>
 
-<fieldset>
-<label class="ofertas" for="ofert">Descuento</label>
-  <input type="checkbox" name="ofert" id="ofert">
-  <input type="number" name="discount" id="discount">
-  <i class="fas fa-percentage"></i>
-</fieldset>
+          <fieldset id="sizes">
+            <legend>Talles</legend>
+            <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+              <label><%= product.sizes[i].sizes_short %> </label>
+              <input type="text" name="units" minlength="1" maxlength="2" value="<%= unidades[i].units %>">  
+            <% } %>                    
+          </fieldset> 
 
-<fieldset>
-    <button class="boton" type="submit">Update</button>
-</fieldset>
-      </form>
-    </section>
-  </main>
+          <fieldset>
+            <label class="descripciones" for="description"></label>
+            <textarea name="description" id="description" ><%=product.description%></textarea>
+          </fieldset>
+
+          <fieldset>
+            <label class="img" for="image"></label>
+            <input type="file" name="image" id="image" multiple>
+          
+          <fieldset>
+            <label for="men">Hombre</label>
+            <input type="radio" name="category" value="hombre" 
+              <% if (product.category == "hombre") { %> checked > <% } else { %> > <% } %> 
+                         
+            <label for="women">Mujer</label>          
+            <input type="radio" name="category" value="mujer"
+             <% if (product.category == "mujer") { %> checked > <% } else{ %> > <% } %>    
+          </fieldset>
+
+          <fieldset>
+            <label for="discount">Descuento</label>
+            <label class="ofertas" for="ofert"></label>
+            <input type="checkbox" name="ofert" id="ofert" 
+              <% if (product.ofert) { %> checked > <% }else {%> > <% } %> 
+  
+            <input type="number" name="discount" id="discount" value="<%= product.discount %>"> 
+          </fieldset>
+          
+          <fieldset>
+            <button class="boton" type="submit">Update</button>
+          </fieldset>
+        </form>
+      <% } else { %>
+          <p>Por algún motivo el producto seleccionado no existe.</p>
+        <% } %>  
+      </section>
+    </main>
     <%- include('../partials/footer') %> 
 </body>
 </html>
