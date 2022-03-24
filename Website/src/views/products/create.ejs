@@ -12,7 +12,8 @@
             </picture>
           </article>
           <h3 id="title"> Creación de Productos</h3>
-          <form action="/products/" enctype="multipart/form-data" method="post" multiple>
+           <form action="/products/" enctype="multipart/form-data" method="post" multiple>
+           
             <fieldset>
               <label for="name">
               <input type="text" name="name" id="name" placeholder="Name/Nombre" required>
@@ -24,25 +25,25 @@
               <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" required>
          </fieldset>
 
-               <!-- <fieldset id="sizes">
+               <fieldset id="sizes">
               <legend>Talles</legend>
               
-              <label for="xs_qty">XS</label>
-              <input type="number" name="xs_qty" min="1" max="25">
+              <label for="">XS</label>
+              <input type="text" name="units" minlength="1" maxlength="2">
+               
+              <label for="">S</label>
+              <input type="text" name="units"minlength="1" maxlength="2">
               
-              <label for="s_qty">S</label>
-              <input type="number" name="s_qty"min="1" max="25">
+              <label for="">M</label>
+              <input type="text" name="units"minlength="1" maxlength="2">
               
-              <label for="m_qty">M</label>
-              <input type="number" name="m_qty"min="1" max="25">
+              <label for="">L</label>
+              <input type="text" name="units"minlength="1" maxlength="2">
               
-              <label for="l_qty">L</label>
-              <input type="number" name="l_qty"min="1" max="25">
-              
-              <label for="xl_qty">XL</label>
-              <input type="number" name="xl_qty" min="1" max="25">
-
-             </fieldset> -->
+              <label for="">XL</label>
+              <input type="text" name="units" minlength="1" maxlength="2">
+         
+             </fieldset> 
 
             <fieldset>
               <label class="descripciones" for="description"></label>
@@ -66,7 +67,7 @@
               <input type="checkbox" name="ofert" id="ofert">
               <input type="number" name="discount" id="discount"> 
             </fieldset>
-
+            
             <fieldset>
               <button class="boton" type="submit">Save</button>
             </fieldset>
