@@ -25,6 +25,7 @@
     margin: 3px 3px 0 3px;
     object-fit: cover;
     border-radius: 3%;
+    box-shadow:  0 0 2px 0 rgba(0,0,0, 0.6);
 }
 
 .title-oferta{
@@ -51,7 +52,7 @@
     font-size: 1rem;
     list-style: none;
     font-family: 'Trebuchet MS';
-    padding: 3px 0;
+    padding: 10px 0 3px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -84,7 +85,7 @@
 }
 
 .main_section ul li:nth-child(2){
-   margin: 5px 0;
+   margin: 7px 3px;
 }
 
 @media screen and (min-width: 768px) {

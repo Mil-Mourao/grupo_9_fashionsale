@@ -10,10 +10,10 @@
   display: flex;
   padding: 100px 50px;
   text-align: center;
-  width: 100%;
+  width: 40%;
   height: 100vh;
-  background: #A69C94;
-  transition: 0.5s;
+  background: #a69c94;
+  transition: all 0.6s ease-out;
   z-index: 999;
   border-top: 1px solid rgba(0,0,0,0.2);
   flex-direction: column;
@@ -27,6 +27,7 @@
 
 .navbar-content.active{
   left: 0;
+  background: rgb(64, 56, 49);
 }
 
 .hamburgesa, .hamburgesa_close {
