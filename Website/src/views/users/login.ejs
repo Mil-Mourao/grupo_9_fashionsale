@@ -1,5 +1,3 @@
-<!-- ACLARACIÓN: ESTO ES TEMPORAL, ES MERA Y EXCLUSIVAMENTE PARA DEMOSTRAR QUE SABEMOS COMO CREAR UN LOGIN, PERO EN EL FUTURO LO VAMOS A TENER EN EL MENÚ COLAPSABLE EN EL HEADER (VEASE BOCETO) -->
-
 <!DOCTYPE html>
 <html lang="es">
   <%- include('../partials/head') %> 
@@ -18,13 +16,12 @@
                value="<%= old.email %>"
               <% } else {%>
                placeholder="email" 
-              <% } %> 
-               required/>
+              <% } %> />
             </fieldset>
             <fieldset>
               <legend class="no-show">Iniciar Sesión</legend>
               <label class="no-show" for="password">Contraseña</label>
-              <input type="password" name="password" id="pass" placeholder="contraseña" required/>
+              <input type="password" name="password" id="pass" placeholder="contraseña" />
             </fieldset>
             <fieldset>
               <button type="submit" id="login-button">Iniciar Sesión</button>
@@ -38,6 +35,7 @@
               </label>
             </fieldset>
           </form>
+          <ul id="errorsList"></ul>
           <% if (locals.errors) { %>
             <% if (errors.email) { %>
                 <p><%= errors.email.msg %></p>
@@ -48,7 +46,7 @@
         <% } %>
         </article>
       </section>
-      
+      <script src="/js/login.js"></script>
     </main>
     <%- include('../partials/footer') %> 
   </body>

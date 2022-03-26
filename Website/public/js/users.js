@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-    console.log("according to laws of aviation")
+    console.log("according to all laws of aviation")
     let formulario = document.querySelector("#form")
     let button = document.querySelector(".button")
 
