@@ -14,16 +14,12 @@
   </span>
 
   <nav class="navbar-content">
-    <span class="hamburgesa_close">
-      <i class="fa-solid fa-bars hamburgesa"></i>
-    </span>
     <a href="/products/">Productos</a>
     <a href="/products/">Hombre</a>
     <a href="/products/">Mujer</a>
     <a href="/products/">Accesorios</a>
     <a href="#">Acerca</a>
   </nav>
-
   <nav id="searchBar">
     <form action="">
       <input type="text" name="barra" id="barra" placeholder="Buscar..." />
@@ -33,17 +29,17 @@
     </form>
   </nav>
   <% if (user && !locals.errors) { %>
-  <a href="/users/profile">
+   <a href="/users/profile">
     <picture>
-      <img src="/img/Usuarios/<%= user.image_id != null ? img.url :
-      "genericUser.jpeg" %>" alt="<%= user.email %> ">
+      <img src="/img/Usuarios/<%= user.image_id != null ? user.images.url : genericUser.jpeg %>" alt="<%= user.email %> ">
     </picture>
-  </a>
+  </a> 
   <% } else { %>
-  <a href="/users/login">
+  <a href="/users/profile">
     <i class="fa-solid fa-user"></i>
   </a>
-  <% } %> <% if (user && user.isAdmin) { %>
+  <% } %>
+  <% if (user && user.isAdmin) { %>
   <a href="/products/create"><i class="fa-solid fa-plus"></i></a>
   <% } %>
   <nav id="navbar-login">

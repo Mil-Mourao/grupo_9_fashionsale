@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 
         units: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         }
     };
     let config = {
