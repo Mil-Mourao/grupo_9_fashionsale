@@ -23,24 +23,31 @@ const controller = {
     }) */
   },
   detail: (req, res) => {
-    let product = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']})
-     /* .then(product => {
-        res.send(product.sizes)
-        res.render('products/productDetail', {
-          styles: ["product"],
-          title: "Detalle de producto",
-          product  
+    let producto = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']})
+    //let productoEncontrado = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']});
+    let unidades = db.Product_Size.findAll({where: {product_id: req.params.id}})
+      Promise.all([producto, unidades])
+      .then(([producto, unidades]) => {
+        let product = Object({
+          name: producto.name,
+          price: producto.price,
+          description: producto.description,
+          category: producto.category,
+          ofert: producto.ofert == "on" ? true : false,
+          discount: producto.discount,
+          images: producto.images,
+          sizes: producto.sizes.map(talles => Object({
+            id: talles.id,
+            size: talles.sizes,
+            units: unidades.find((e, index) => e.size_id == talles.id).units
+          })),
         })
-      })*/
-      //let productoEncontrado = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']});
-      let unidades = db.Product_Size.findAll({where: {product_id: req.params.id}})
-      Promise.all([product, unidades])
-      .then(([product, unidades]) => {
-        res.render('products/productDetail',{
+        //res.send(product);
+         res.render('products/productDetail',{
           styles: ["product"],
           title: "Detalle de producto",
           product,
-          unidades
+      
         })
       })
       .catch(error => res.send(error))
