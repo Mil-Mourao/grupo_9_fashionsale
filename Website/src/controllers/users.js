@@ -50,20 +50,6 @@ const controller = {
    */
     //res.render("users/profile", { styles: ["profile"], title: "Perfil" })
   },
-  updateProfile: (req, res) => {
-    db.User.findByPk(req.session.user.id,{
-      include: ["images"]
-     })
-      .then(user => {
-        res.render("users/updateProfile",{
-        styles: ["profile"],
-        title: "Perfil | " + user.firstName,
-        user,
-      })
-    })
-    .catch(error => res.send(error));
-  },
-
   access: (req, res) => {
     const errors = validator.validationResult(req);
     if (errors.isEmpty()){
