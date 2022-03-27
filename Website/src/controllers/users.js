@@ -65,7 +65,6 @@ const controller = {
           : null;
           req.session.user = user;
         res.redirect('/users/profile');
-       
       })
       .catch(error => res.send(error));
     }else{
@@ -126,8 +125,6 @@ const controller = {
   uploadAvatar: (req, res) => {
     // Orden para cargar la imagen del usuario//avatar
     // create image(obtengo el id), 2 update de user (image_id = id -> ese id es el q se crea con la imagen)
-      
-    if(req.file){    
     let searchUser = db.User.findByPk(req.session.user.id, {
       include: ['images']
     });
@@ -147,35 +144,15 @@ const controller = {
           {
             where: {
               id: req.session.user.id
-            }           
+            },
+            include: ['images']
           })
-      .then(() =>{
-        db.User.findByPk(req.session.user.id,
-          {include: ['images']})
-        .then(user => {
+      .then(user => {
           req.session.user = user;
-          if(viejo.image_id !== 1){
-          db.Image.destroy({where: [{id: viejo.image_id}]})
-          .then(()=>{
-            res.redirect('/users/profile');
-          })
-          .catch(err => console.log(err))
-          }
-          res.redirect('/users/profile');
+          res.redirect('/users/profile')
         })
-        .catch(err => console.log(err))
-      })     
     })
     .catch(err => console.log(err))
-  }else {
-    res.render("users/profile",{
-      styles: ["profile"],
-      title: "Perfil | " + req.session.user.firstName,
-      user: req.session.user,
-      error: "Debes seleccionar un archivo",
-      
-    })
-    }
   },
 /* 
     let update = user.update(req.session.user.id, {

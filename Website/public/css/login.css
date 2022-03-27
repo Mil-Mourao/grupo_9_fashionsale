@@ -85,13 +85,6 @@ button {
   margin-left: 2rem;
 }
 
-.is-valid{
-  box-shadow: 0 0 10px 0 #34e611;
-}
-.is-invalid{
-  box-shadow: 0 0 6px 0 #eb0707;
-}
-
 @media screen and (min-width: 768px) {
   #login-form-complete {
     background-color: #f2e5d5;

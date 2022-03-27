@@ -24,11 +24,9 @@
           <input type="file" name="avatar" id="avatar">
           <fieldset>
             <button type="submit">Actualizar Avatar</button>
+
           </fieldset>
         </form>
-        <% if (locals.error) { %>
-              <p><%= error %></p>
-          <% } %>
       <form action="/users/logout" method="post">
         <button type="submit">Logout</button>
       </form>
