@@ -154,11 +154,14 @@ const controller = {
           {include: ['images']})
         .then(user => {
           req.session.user = user;
+          if(viejo.image_id !== 1){
           db.Image.destroy({where: [{id: viejo.image_id}]})
           .then(()=>{
             res.redirect('/users/profile');
           })
           .catch(err => console.log(err))
+          }
+          res.redirect('/users/profile');
         })
         .catch(err => console.log(err))
       })     

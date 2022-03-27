@@ -3,13 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2022 a las 16:37:38
+-- Tiempo de generación: 27-03-2022 a las 16:46:36
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
 DROP DATABASE IF EXISTS fs_db;
 CREATE DATABASE fs_db;
 USE fs_db;
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,10 +49,11 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (516, 'image-1647811549452.jpg'),
 (517, 'image-1647832716175.jpg'),
 (518, 'image-1647832716202.jpg'),
-(553, 'avatar-1648390896649.jpg'),
 (554, 'image-1648391330097.jpg'),
 (555, 'image-1648391299661.jpg'),
-(556, 'image-1648391299662.jpeg');
+(556, 'image-1648391299662.jpeg'),
+(557, 'avatar-1648392292566.jpg'),
+(558, 'avatar-1648392344357.jpg');
 
 -- --------------------------------------------------------
 
@@ -178,7 +180,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin`, `isActive`, `image_id`) VALUES
 (6, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 91),
 (7, 'Bernardo', 'Arrechea', 'berna@mail.com', '$2b$10$B33BfnWXKWF1PVDY91wg/eAvy.Xpky6.yxALpMVVNA1uVf0sMiIY2', 0, 1, 90),
-(9, 'test', 'test', 'mail@mail.com', '$2b$10$CWJIb5FYmv6AS4MCk7BFaOAHUNGaQgF3jgQ/ElVJEAxWPKwFVsirW', 0, 1, 553);
+(9, 'test', 'test', 'mail@mail.com', '$2b$10$CWJIb5FYmv6AS4MCk7BFaOAHUNGaQgF3jgQ/ElVJEAxWPKwFVsirW', 0, 1, 557),
+(10, 'Test2', 'Test2', 'test2@mail.com', '$2b$10$Ulc74hI7YuJIqPqduwqT2.rvTPiCOzKiRUJq5QkBbN4VkNbqfeUV6', 0, 1, 558);
 
 --
 -- Índices para tablas volcadas
@@ -233,7 +236,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=557;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=559;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
@@ -263,7 +266,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
