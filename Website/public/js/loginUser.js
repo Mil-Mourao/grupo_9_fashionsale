@@ -9,16 +9,15 @@ window.addEventListener('load', () => {
     const regex = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&?@"]).*$/
     email.focus();
 
+    let errores = [];
+    errorsList.innerText = "";
 
-    
     email.addEventListener('blur', () =>{
         if(email.value == ""){
             email.classList.add('is-invalid');
-            email.placeholder = "Por favor completá tu email!";
             error = true;
            
         }else if(!regExEmail.test(email.value)){
-            email.placeholder = "Por favor ingresá un email válido!";
             email.classList.add('is-invalid');
             error = true;
         }else{
@@ -30,7 +29,6 @@ window.addEventListener('load', () => {
 
     password.addEventListener('blur', ()=> {
         if (password.value == "") {
-            password.placeholder = "Por favor completá tu contraseña!";
             password.classList.add('is-invalid');
             error = true;
         }else if(!regex.test(password.value)){
@@ -49,17 +47,17 @@ window.addEventListener('load', () => {
         
     })
     
-    
     form.addEventListener('submit', (e) => {
       let error = false;
-        
+        errores = [];
+        errorsList.innerText = "";
             if(email.value == ""){
                 email.classList.add('is-invalid');
-                email.placeholder = "Por favor completá tu email!";
+                errores.push("Por favor completá tu email!");
                 error = true;
                
             }else if(!regExEmail.test(email.value)){
-                email.placeholder = "Por favor ingresá un email válido!";
+                errores.push("Por favor ingresá un email válido!");
                 email.classList.add('is-invalid');
                 error = true;
             }else{
@@ -68,22 +66,21 @@ window.addEventListener('load', () => {
             }
     
             if (password.value == "") {
-                password.placeholder = "Por favor completá tu contraseña!";
+                errores.push("Por favor completá tu contraseña!");
                 password.classList.add('is-invalid');
                 error = true;
             }else if(!regex.test(password.value)){
-                password.placeholder = "Por favor ingresá una contraseña válida";
+                errores.push("Por favor ingresá una contraseña válida");
                 password.classList.add('is-invalid');
                 error = true;
             }else{
                 password.classList.remove('is-invalid');
                 password.classList.add('is-valid');
             }   
-            
-        
-      
+                 
     if(error) {
         e.preventDefault();
+        errores.forEach(error => errorsList.innerHTML += `${error}<br>`);
     }else {
         e.preventDefault()
         Swal.fire({

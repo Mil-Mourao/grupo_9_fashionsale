@@ -7,8 +7,13 @@ window.addEventListener("load", function () {
     const regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i
     let errors = []
 
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let errorsList = document.querySelector("#errorsList")
+        errorsList.innerText = "";
     let inputName = document.querySelector("#name")
-
+    
     if (inputName.value == "") {
         errors.push("Por favor completá tu nombre!")
     } else if (inputName.value.length < 2) {
@@ -34,17 +39,28 @@ window.addEventListener("load", function () {
         errors.push("Por favor completá tu contraseña!")
     } else if (password.value.length < 8) {
         errors.push("Tu contraseña tiene que tener al menos 8 caractéres!")
-    } else if (regex.test != (password.value)) {
+    } else if (!regex.test(password.value)) {
         errors.push("La contraseña debe contener una mayúscula, una minúscula, un símbolo, un número y un carácter especial")
     }
-
-    button.addEventListener("click", function (e) {
+        
         if (errors.length > 0) {
-            e.preventDefault()
-            let errorsList = document.querySelector("#errorsList")
+            debugger
+            e.preventDefault();
             for (let i = 0; i < errors.length; i++) {
                 errorsList.innerHTML += "<li>" + errors[i] + "</li>"
             }
+            errors = [];
+        }else{
+            e.preventDefault()
+        Swal.fire({
+            icon: 'success',
+            title: 'Te has registrado con éxito en Fashion Sale',
+            showConfirmButton: false
+        })
+        setTimeout(() => {
+            formulario.submit()
+        }, 1000);
         }
     })
 })
+    

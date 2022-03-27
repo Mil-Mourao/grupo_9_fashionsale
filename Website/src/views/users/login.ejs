@@ -35,7 +35,7 @@
               </label>
             </fieldset>
           </form>
-          <ul id="errorsList"></ul>
+          <p id="errorsList"></p>
           <% if (locals.errors) { %>
             <% if (errors.email) { %>
                 <p><%= errors.email.msg %></p>
@@ -46,7 +46,7 @@
         <% } %>
         </article>
       </section>
-      <script src="/js/login.js"></script>
+      <script src="/js/loginUser.js"></script>
     </main>
     <%- include('../partials/footer') %> 
   </body>
