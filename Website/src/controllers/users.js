@@ -172,7 +172,7 @@ const controller = {
       styles: ["profile"],
       title: "Perfil | " + req.session.user.firstName,
       user: req.session.user,
-      error: "Debes seleccionar un archivo",
+      error: "Debes seleccionar un archivo.",
       
     })
     }
