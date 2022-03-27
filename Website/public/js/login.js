@@ -1,35 +1,103 @@
-window.addEventListener("load", function () {
-    console.log("according to all laws of aviation")
-    let button = document.querySelector("#login-button")
-    let form = document.querySelector("#login-form")
+window.addEventListener('load', () => {
+    let button = document.querySelector("#login-button");
+    let form = document.querySelector("#login-form");
+    let email = document.querySelector("#email");
+    let password = document.querySelector("#pass");
+    let errorsList = document.querySelector("#errorsList")
+
     const regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i
-    let errors = []
+    const regex = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&?@"]).*$/
+    email.focus();
 
-    let email = document.querySelector("#email")
-    if (email.value == "") {
-        errors.push("Por favor completá tu email!")
-        console.log("email")
-    } else if (!regExEmail.test(email.value)) {
-        errors.push("Por favor ingresá un email válido!")
-    }
 
-    let password = document.querySelector("#pass")
-    password.addEventListener('blur', () =>{
-        if (password.value == "") {
-            errors.push("Por favor completá tu contraseña!")
-            console.log("password")
+    
+    email.addEventListener('blur', () =>{
+        if(email.value == ""){
+            email.classList.add('is-invalid');
+            email.placeholder = "Por favor completá tu email!";
+            error = true;
+           
+        }else if(!regExEmail.test(email.value)){
+            email.placeholder = "Por favor ingresá un email válido!";
+            email.classList.add('is-invalid');
+            error = true;
+        }else{
+            email.classList.remove('is-invalid');
+            email.classList.add('is-valid');
         }
+
+    })
+
+    password.addEventListener('blur', ()=> {
+        if (password.value == "") {
+            password.placeholder = "Por favor completá tu contraseña!";
+            password.classList.add('is-invalid');
+            error = true;
+        }else if(!regex.test(password.value)){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops....',
+                text: 'Recuerda que la contraseña debe contar con una mayúscula, un caracter especial y un número.',
+                showConfirmButton: true
+            })
+            password.classList.add('is-invalid');
+            error = true;
+        }else{
+            password.classList.remove('is-invalid');
+            password.classList.add('is-valid');
+        }   
+        
     })
     
-    let errorsList = document.querySelector("#errorsList")
-    button.addEventListener("click", function (e) {
-        if (errors.length >= 1) {
-            e.preventDefault()
-            for (let i = 0; i < errors.length; i++) {
-                
-                errorsList.innerHTML = "<li>" + errors[i] + "</li>"
+    
+    form.addEventListener('submit', (e) => {
+      let error = false;
+        
+            if(email.value == ""){
+                email.classList.add('is-invalid');
+                email.placeholder = "Por favor completá tu email!";
+                error = true;
+               
+            }else if(!regExEmail.test(email.value)){
+                email.placeholder = "Por favor ingresá un email válido!";
+                email.classList.add('is-invalid');
+                error = true;
+            }else{
+                email.classList.remove('is-invalid');
+                email.classList.add('is-valid');
             }
-            console.log(email.value + "  " + password.value);
-        }
-    })
+    
+            if (password.value == "") {
+                password.placeholder = "Por favor completá tu contraseña!";
+                password.classList.add('is-invalid');
+                error = true;
+            }else if(!regex.test(password.value)){
+                password.placeholder = "Por favor ingresá una contraseña válida";
+                password.classList.add('is-invalid');
+                error = true;
+            }else{
+                password.classList.remove('is-invalid');
+                password.classList.add('is-valid');
+            }   
+            
+        
+      
+    if(error) {
+        e.preventDefault();
+    }else {
+        e.preventDefault()
+        Swal.fire({
+            icon: 'success',
+            title: 'Te has logueado con éxito',
+            showConfirmButton: false
+        })
+        
+        setTimeout(() => {
+            form.submit()
+        }, 1000);
+    }
+   
+})
+    
+ 
 })

@@ -1,13 +1,8 @@
 const express = require('express');
 const products = require('../controllers/products');
 const router = express.Router();
-const path = require('path');
 const access = require('../middlewares/access');
-const multer = require('multer');
-const upload = multer({storage: multer.diskStorage({
-    destination: (req, file, cb) => cb(null,path.resolve(__dirname, '../../public/img/Productos')),
-    filename: (req,file,cb) => cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)),
-})})
+const upload = require('../middlewares/uploadProductImg');
 
 router.get("/", products.list);
 router.get('/create',[access], products.create);
