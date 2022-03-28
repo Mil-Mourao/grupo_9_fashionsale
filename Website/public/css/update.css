@@ -10,10 +10,11 @@
 .form-create {
   background: #f2e5d5;
   border-radius: 20px;
-  width: 350px;
+  min-width: 21rem;
   font-family: Roboto;
   margin: 40px 40px;
   text-align: center;
+  min-height: 600px;
 }
 
 #title {
@@ -35,26 +36,85 @@
 }
 
 .form-create fieldset {
-  margin-bottom: 2rem;
+  margin: 1.2rem;
   display: block;
   justify-content: right;
 }
 
-#sizes {
-  max-width: 75%;
-  margin: 0 auto;
+#name{
+  padding-left: 4px;
+  width: 15rem;
+  height: 1.7rem;
+  border-radius: 3px;
 }
 
-#sizes label {
+#price{
+  padding-left: 4px;
+  width: 15rem;
+  height: 1.7rem;
+  border-radius: 3px;
+}
+
+#sizes {
+  max-width: 88%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -15px;
+}
+
+#labelSizes{
+  padding-top: 10px;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 #sizes input {
   max-width: 2rem;
+  border-radius: 3px;
+  padding-right: 5px;
+  text-align: right;
 }
 
 #description {
+  padding-top: 4px;
+  padding-left: 4px;
   margin-top: 2rem;
+  width: 90%;
+  height: 5rem;
+  border-radius: 3px;
+}
+
+#radioBtn{
+  display: flex;
+  justify-content: space-around;
+  padding-right: 12px;
+  margin-top: -6px;
+}
+
+#labelRadio{
+  display: flex;
+  justify-content: space-around;
+}
+
+#descOfert{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+#descOfert label{
+  padding-right: 5px;
+}
+
+#discount{
+  max-width: 3rem;
+  min-height: 1.1rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  text-align: right;
 }
 
 .boton {

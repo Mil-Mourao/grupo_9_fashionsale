@@ -16,7 +16,7 @@
            
             <fieldset>
               <label for="name">
-              <input type="text" name="name" id="name" placeholder="Name/Nombre" required>
+              <input type="text" name="name" id="name" placeholder="Name/Nombre" >
               </label>
             </fieldset>
 
@@ -25,47 +25,48 @@
               <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" required>
          </fieldset>
 
-               <fieldset id="sizes">
-              <legend>Talles</legend>
-              
-              <label for="">XS</label>
-              <input type="text" name="units" minlength="1" maxlength="2">
-               
-              <label for="">S</label>
-              <input type="text" name="units"minlength="1" maxlength="2">
-              
-              <label for="">M</label>
-              <input type="text" name="units"minlength="1" maxlength="2">
-              
-              <label for="">L</label>
-              <input type="text" name="units"minlength="1" maxlength="2">
-              
-              <label for="">XL</label>
-              <input type="text" name="units" minlength="1" maxlength="2">
-         
-             </fieldset> 
+            <fieldset id="labelSizes">
+            <legend>Talles</legend>
+              <label for="xs">XS</label>              
+              <label for="s">S</label>
+              <label for="m">M</label>
+              <label for="l">L</label>
+              <label for="xl">XL</label>
+            </fieldset> 
+
+             <fieldset id="sizes">
+              <input type="text" name="units" minlength="1" maxlength="2" id="xs">
+              <input type="text" name="units" minlength="1" maxlength="2" id="s">
+              <input type="text" name="units" minlength="1" maxlength="2" id="m">
+              <input type="text" name="units" minlength="1" maxlength="2" id="l">
+              <input type="text" name="units" minlength="1" maxlength="2" id="xl">
+             </fieldset>
 
             <fieldset>
               <label class="descripciones" for="description"></label>
-              <textarea name="description" id="description"></textarea>
+              <textarea name="description" id="description" placeholder="Puedes escribir una descripción del producto si gustas"></textarea>
             </fieldset>
  
             <fieldset>
               <label class="img" for="image"></label>
               <input type="file" name="image" id="image" multiple required>
-            
-            <fieldset>
+              
+            <fieldset id="labelRadio">
               <label for="men">Hombre</label>
-              <input type="radio" name="category" value="hombre" >
               <label for="women">Mujer</label>
-              <input type="radio" name="category" value="mujer">
+              <label for="accesorio">Accesorio</label>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="radioBtn">  
+              <input type="radio" id="men" name="category" value="hombre" >
+              <input type="radio" id="women" name="category" value="mujer">
+              <input type="radio" id="accesorio" name="category" value="accesorio">
+            </fieldset>
+
+            <fieldset id="descOfert">
               <label for="discount">Descuento</label>
-              <label class="ofertas" for="ofert"></label>
               <input type="checkbox" name="ofert" id="ofert">
-              <input type="number" name="discount" id="discount"> 
+              <input type="number" name="discount" id="discount" min="0" max="90"> 
             </fieldset>
             
             <fieldset>
@@ -74,7 +75,7 @@
           </form>
         </section>
       </main>
-     
+     <script src="/js/productCreate.js"></script>
       <%- include('../partials/footer') %>
   </body>
 
