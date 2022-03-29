@@ -12,7 +12,7 @@
             </picture>
           </article>
           <h3 id="title"> Creación de Productos</h3>
-           <form action="/products/" enctype="multipart/form-data" method="post" multiple>
+           <form action="/products/" id="form-create" enctype="multipart/form-data" method="post" multiple>
            
             <fieldset>
               <label for="name">
@@ -22,7 +22,7 @@
 
               <fieldset>
               <label class="precios" for = "price"></label>
-              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" required>
+              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" >
          </fieldset>
 
             <fieldset id="labelSizes">
@@ -35,9 +35,9 @@
             </fieldset> 
 
              <fieldset id="sizes">
-              <input type="text" name="units" minlength="1" maxlength="2" id="xs">
+              <input type="text" name="units" minlength="1" maxlength="2" id="xs" >
               <input type="text" name="units" minlength="1" maxlength="2" id="s">
-              <input type="text" name="units" minlength="1" maxlength="2" id="m">
+              <input type="text" name="units" minlength="1" maxlength="2" id="m" >
               <input type="text" name="units" minlength="1" maxlength="2" id="l">
               <input type="text" name="units" minlength="1" maxlength="2" id="xl">
              </fieldset>
@@ -49,7 +49,7 @@
  
             <fieldset>
               <label class="img" for="image"></label>
-              <input type="file" name="image" id="image" multiple required>
+              <input type="file" name="image" id="image" multiple>
               
             <fieldset id="labelRadio">
               <label for="men">Hombre</label>

@@ -46,6 +46,8 @@
   width: 15rem;
   height: 1.7rem;
   border-radius: 3px;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #price{
@@ -53,6 +55,8 @@
   width: 15rem;
   height: 1.7rem;
   border-radius: 3px;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #sizes {
@@ -75,6 +79,8 @@
   border-radius: 3px;
   padding-right: 5px;
   text-align: right;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #description {
@@ -115,6 +121,8 @@
   border-radius: 3px;
   margin-left: 0.5rem;
   text-align: right;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .boton {
@@ -126,9 +134,18 @@
   font-size: 1rem;
   font-family: "Trebuchet MS", sans-serif;
   width: 280px;
-  /* width: 20rem; */
   cursor: pointer;
 }
+
+.is-invalid{
+  border: 2px solid #f2796e !important;
+  box-shadow: 0 0 6px 0 rgb(235, 7, 7) !important;
+}
+
+.is-valid{
+  border: 2px solid #7df26e !important;
+}
+
 
 @media screen and (min-width: 768px) {
   #update {

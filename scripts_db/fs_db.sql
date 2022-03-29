@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2022 a las 16:46:36
+-- Tiempo de generación: 29-03-2022 a las 07:34:01
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
 DROP DATABASE IF EXISTS fs_db;
 CREATE DATABASE fs_db;
 USE fs_db;
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,9 +48,6 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (516, 'image-1647811549452.jpg'),
 (517, 'image-1647832716175.jpg'),
 (518, 'image-1647832716202.jpg'),
-(554, 'image-1648391330097.jpg'),
-(555, 'image-1648391299661.jpg'),
-(556, 'image-1648391299662.jpeg'),
 (557, 'avatar-1648392292566.jpg'),
 (558, 'avatar-1648392344357.jpg');
 
@@ -75,10 +71,7 @@ INSERT INTO `imagesproduct` (`id`, `imageId`, `productId`) VALUES
 (210, 515, 320),
 (211, 516, 320),
 (212, 517, 321),
-(213, 518, 321),
-(219, 554, 343),
-(220, 555, 343),
-(221, 556, 343);
+(213, 518, 321);
 
 -- --------------------------------------------------------
 
@@ -102,8 +95,7 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `price`, `description`, `ofert`, `discount`, `category`) VALUES
 (320, 'Test2', 1500, 'hahahadfasdfdsafsdafsadfsdfsadfadfdssadfdsafafsdfsadfsadf', 1, 15, 'hombre'),
-(321, 'Test  ', 2500, 'Probando update con imagenes.', 1, 25, 'hombre'),
-(343, 'Prueba ', 2500, 'asdadadssad', 1, 10, 'hombre');
+(321, 'Test  ', 2500, 'Probando update con imagenes.', 1, 25, 'hombre');
 
 -- --------------------------------------------------------
 
@@ -128,10 +120,7 @@ INSERT INTO `product_sizes` (`id`, `size_id`, `product_id`, `units`) VALUES
 (515, 5, 320, 28),
 (516, 2, 321, 25),
 (517, 3, 321, 15),
-(518, 4, 321, 20),
-(538, 1, 343, 5),
-(539, 2, 343, 6),
-(540, 3, 343, 8);
+(518, 4, 321, 20);
 
 -- --------------------------------------------------------
 
@@ -236,25 +225,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=559;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=562;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=344;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=541;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=546;
 
 --
 -- AUTO_INCREMENT de la tabla `size`

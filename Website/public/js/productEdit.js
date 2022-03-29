@@ -3,7 +3,7 @@ let numbersRegex = /^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/;
 let imageRegex = /([a-zA-Z0-9\s_\\.\-:])+(png|jpg|gif|jpeg)$/;
 window.addEventListener('load', ()=>{
 
-let formulario = id('form-create');
+let formulario = id('form-edit');
 
 let inputName = id('name');
 let inputPrice = id('price');
@@ -167,16 +167,6 @@ formulario.addEventListener('submit', (e)=>{
     controlSubmit = true;
     }
 
-
-    if(!inputsFormulario[14].value){
-        Swal.fire({
-            icon: 'question',
-            title: 'Imagen',
-            text: 'Ingresa al menos una imagen del producto',
-            showConfirmButton: true,
-        })
-        controlSubmit = true;
-    }
 
     for (let index = 0; index < inputsFormulario.length; index++) {
         if(inputsFormulario[index].classList.contains('is-invalid')){
