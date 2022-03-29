@@ -1,9 +1,4 @@
 
-main {
-  margin: 0 auto;
-}
-
-
 .no-show {
   display: none;
 }
@@ -22,8 +17,11 @@ i {
 .pic-list {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  height: 60vw;
+  overflow-y: scroll;
 }
 
 .small-pic {
@@ -33,6 +31,8 @@ i {
 
 #focus-pic {
   width: 100vw;
+  height: 60vw;
+  object-fit: cover;
 }
 
 #producto {
@@ -98,10 +98,16 @@ legend {
   margin: 0.8rem;
 }
 
+.listaTalles {
+  list-style: none;
+}
+
 @media (min-width: 768px) {
   .pic-list {
     flex-direction: column;
+    flex-wrap: nowrap;
     margin-left: 10px;
+    height: 45vh;
   }
 
   #producto {
@@ -116,8 +122,9 @@ legend {
   }
 
   #focus-pic {
-    max-width: 40vw;
-    margin-left: 10px;
+    max-width: 480px;
+    max-height: 980px;
+    margin-left: 1.5rem;
   }
 
   .description {

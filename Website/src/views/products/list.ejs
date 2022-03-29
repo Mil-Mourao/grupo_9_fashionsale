@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head') %> 
-<body>
-    <%- include('../partials/header') %> 
-        <main>
-            <h2>Listado de productos</h2>
-            <section class="main_section">
-                <% if (locals.products) { %>                    
-                <% products.forEach((element) => { %>   
-                <article>
-                    <picture>
-                    <a href="/products/<%= element.id %> ">
-                        <% if (element.img != null && element.img.length > 0  ) { %>
-                            <% for( let i = 0; i < element.img.length; i++ ) { %>
-                                <% if (i<1) { %>
-                                    <img src="/img/Productos/<%= element.img[0]['url']%>" alt="<%= element.name %> ">    
-                                <% } %>
-                            <% } %>
-                            
-                        <% } else {%>
-                       <img src="/img/Productos/default.jpg" alt="<%= element.name %>">
-                        <% } %> 
-                    </a>
-                    </picture> 
-                    
-                       
-                    <ul>
-                        <li><%= element.name %> </li>
-                        <li>$                         
-                            <% if (element.ofert) { %>
-                                <%= parseInt(element.price) * 0.8 %>
-                            <% } else {%>
-                                <%= element.price %>
-                            <% } %>
-                        </li>                    
-                        <li><form action="/products/?m=DELETE" method="post">
-                            <input type ="hidden" name="id" value="<%= element.id %>">
-                            <button type="submit"><i class="fas fa-trash-alt"></i></button></form>
-                        </li>
-                        <li><a href="/products/update/<%= element.id %> " rel="noopener noreferrer"><i class="fas fa-edit"></i></a></li>
-                    </ul>
+<%- include('../partials/head') %>
 
-                </article>
-                <% }) %>
+  <body>
+    <%- include('../partials/header') %>
+      <main>
+        <section id="banner">
+          <picture>
+            <img src="/img/Splash/Splash-1.jpg" alt="banner">
+          </picture>
+        </section>
+        <section class="main_section">
+          <% if (locals.products && locals.products.length> 0) { %>
+            <h2 class="title-oferta">Listado de productos</h2>
+            <% products.forEach((element)=> { %>
+              <article class="card"> 
+                <picture>
+                  <a href="/products/<%= element.id %> ">
+                    <% if (element.images !=null && element.images.length> 0 )
+                      { %> <% for( let i=0; i < element.images.length; i++ ) { %>
+                        <% if (i<1) { %>
+                          <img src="/img/Productos/<%= element.images[0]['url']%>" alt="<%= element.name %> " />
+                          <% } %>
+                            <% } %>
+                              <% } else {%>
+                                <img src="/img/Productos/default.jpg" alt="<%= element.name %>" />
+                                <% } %>
+                  </a>
+                </picture>
+                <ul>
+                  <li>
+                    <%= element.name %>
+                  </li>
+                  <li>
+                    $ <% if (element.ofert) { %>
+                      <%= parseInt(element.price) * 0.8 %>
+                        <% } else {%>
+                          <%= element.price %>
+                            <% } %>
+                  </li>
+                  <% if (user && user.isAdmin) { %>
+                    <li>
+                      <form action="/products/?m=DELETE" method="post">
+                        <input type="hidden" name="id" value="<%= element.id %>" />
+                        <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                      </form>
+                    </li>
+                    <li>
+                      <a href="/products/update/<%= element.id %> " rel="noopener noreferrer">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                    </li>
+                    <% } %>
+                </ul>
+              </article>
+              <% }) %>
                 <% } else {%>
-                    <h2>No hay productos cargados</h2>
-                <% } %> 
-            </section>
-          </main>
-    <%- include('../partials/footer') %> 
-</body>
+                  <h2 class="title-oferta">Atención!!</h2>
+                  <p>En estos momentos no contamos con productos,
+                    pruebe mas tarde.</p>
+                  <% } %>
+        </section>
+      </main>
+      <%- include('../partials/footer') %>
+  </body>
+
 </html>

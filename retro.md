@@ -42,3 +42,25 @@ No manejar bien los tiempos entre que terminamos una tarea y subirla a github, e
 ### Dejar de hacer:
 Procastinar las actividades que nos compete a cada uno.
 ___
+
+# Retro - 5to Sprint
+___
+### Comenzar a hacer:
+Pulir el css  
+  
+
+### Hacer más:
+Revisar las cosas que se van añadiendo por otro compañero al integrador, buscar la forma e ir puliendo el css aunque no sea requerido o pedido por alguno de los integrantes.
+
+
+
+### Hacer igual:
+El buen trato y la cordialidad al comunicarnos.
+
+### Hacer menos:
+Ver las cosas en poca profundidad.
+
+
+### Dejar de hacer:
+
+___

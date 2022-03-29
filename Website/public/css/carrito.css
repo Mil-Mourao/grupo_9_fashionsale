@@ -11,7 +11,7 @@ ul{
 }
 
 main section h2{
-    margin: 10px 15px;
+    margin: 1.5rem 3rem;
     font-family: Lora;
     text-shadow: -1px 2px 0px rgba(166, 156, 148, 0.45);
     font-size: 2rem;
@@ -63,8 +63,9 @@ main section h2{
 }
 
 .item_product img{
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
 .description h3{
@@ -272,6 +273,7 @@ main section h2{
 
     #btn-compra{
         margin: 5px 20px;
+        max-width: 1340px;
     }
 
     #btn-compra article{
@@ -297,11 +299,6 @@ main section h2{
         #col-header, .item_product, .item-border{
            max-width: 1360px;
         }
-
-        main section h2{
-            margin: 1rem 10rem;
-        }
-
     }
         
 }

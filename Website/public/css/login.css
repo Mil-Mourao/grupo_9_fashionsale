@@ -1,19 +1,18 @@
 main {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  margin: 0 auto;
 }
 
 h1 {
   text-align: center;
   font-family: lora;
   font-weight: 100;
+  margin-bottom: 1rem;
 }
 
 #login-form-complete {
-  /* border: #403831 solid 1px; */
-  /* max-width: 75vw; */
-  margin: 0 auto;
+  margin: 1.5rem auto;
+  padding: 1rem 0;
 }
 input,
 button {
@@ -40,18 +39,27 @@ button {
 }
 
 .remember {
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 #login-button {
   border-radius: 20px;
   padding: 10px 5px;
   margin: 0 auto;
-  background-color: #a69c94;
+  background-color: #F2E5D5;
   font-weight: 900;
   font-size: 1rem;
+  border: 2px solid #ccc;
   font-family: "Trebuchet MS", sans-serif;
   margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 1s;
+  transition: color 0.2s;
+}
+
+#login-button:hover {
+  background-color: #a69c94;
+  color: #F2E5D5;
 }
 
 #register-link {
@@ -61,6 +69,11 @@ button {
   padding: 0.5rem;
 }
 
+#register-link:hover{
+  text-decoration: underline;
+  color: #a89688;
+}
+
 #login-form {
   max-width: 600px;
   margin: 0 auto;
@@ -68,23 +81,28 @@ button {
   border-radius: 20px;
 }
 
+#login-form-complete p {
+  margin-left: 2rem;
+}
+
 @media screen and (min-width: 768px) {
   #login-form-complete {
     background-color: #f2e5d5;
     border-radius: 20px;
     width: 60vw;
+    height: 50vh;
   }
-}
-
-@media screen and (min-width: 1200px) {
   main {
     background-image: url(../img/loginFondo.jpg);
-    height: 80vh;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+}
 
+@media screen and (min-width: 1200px) {
+  
   h1 {
     font-size: 2rem;
   }

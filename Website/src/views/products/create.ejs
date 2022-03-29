@@ -12,31 +12,38 @@
             </picture>
           </article>
           <h3 id="title"> Creación de Productos</h3>
-          <form action="/products/" enctype="multipart/form-data" method="post" multiple>
+           <form action="/products/" enctype="multipart/form-data" method="post" multiple>
+           
             <fieldset>
               <label for="name">
-              <input type="text" name="name" id="name" placeholder="Name/Nombre">
+              <input type="text" name="name" id="name" placeholder="Name/Nombre" required>
               </label>
             </fieldset>
 
               <fieldset>
               <label class="precios" for = "price"></label>
-              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" >
+              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" required>
          </fieldset>
 
-               <fieldset>
+               <fieldset id="sizes">
               <legend>Talles</legend>
-              <input type="checkbox" name="size" id="" value="XS">
-              <label for=>XS</label>
-              <input type="checkbox" name="size" id="" value="S">
-              <label for=>S</label>
-              <input type="checkbox" name="size" id="" value="M">
-              <label for=>M</label>
-              <input type="checkbox" name="size" id="" value="L">
-              <label for=>L</label>
-              <input type="checkbox" name="size" id="" value="XL">
-              <label for=>XL</label>
-             </fieldset>
+              
+              <label for="">XS</label>
+              <input type="text" name="units" minlength="1" maxlength="2">
+               
+              <label for="">S</label>
+              <input type="text" name="units"minlength="1" maxlength="2">
+              
+              <label for="">M</label>
+              <input type="text" name="units"minlength="1" maxlength="2">
+              
+              <label for="">L</label>
+              <input type="text" name="units"minlength="1" maxlength="2">
+              
+              <label for="">XL</label>
+              <input type="text" name="units" minlength="1" maxlength="2">
+         
+             </fieldset> 
 
             <fieldset>
               <label class="descripciones" for="description"></label>
@@ -45,11 +52,11 @@
  
             <fieldset>
               <label class="img" for="image"></label>
-              <input type="file" name="image" id="image" multiple >
+              <input type="file" name="image" id="image" multiple required>
             
             <fieldset>
               <label for="men">Hombre</label>
-              <input type="radio" name="category" value="hombre">
+              <input type="radio" name="category" value="hombre" >
               <label for="women">Mujer</label>
               <input type="radio" name="category" value="mujer">
             </fieldset>
@@ -58,17 +65,16 @@
               <label for="discount">Descuento</label>
               <label class="ofertas" for="ofert"></label>
               <input type="checkbox" name="ofert" id="ofert">
-              <input type="number" name="discount" id="discount">
-              
-              <!-- <i class="fas fa-percentage"></i> -->
+              <input type="number" name="discount" id="discount"> 
             </fieldset>
-
+            
             <fieldset>
               <button class="boton" type="submit">Save</button>
             </fieldset>
           </form>
         </section>
       </main>
+     
       <%- include('../partials/footer') %>
   </body>
 

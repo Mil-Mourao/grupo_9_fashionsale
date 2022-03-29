@@ -7,19 +7,21 @@
       <main>
         <section id="banner">
           <picture>
-            <img src="/img/Splash/Splash-1.jpg" alt="" srcset="">
+            <img src="/img/Splash/Splash-1.jpg" alt="banner">
           </picture>
         </section>
-        <h2>Ofertas</h2>
+        
         <section class="main_section">
-          <% if (locals.products) { %>
+          <%= locals.products.ofert %> 
+          <% if (locals.products && products.length > 0) { %>
+            <h2 class="title-oferta">Ofertas</h2>
             <% products.forEach(element=> { %>
               <% if (element.ofert) { %>
-                <article>
+                <article class="card"> 
                   <picture>
                     <a href="/products/<%= element.id %> ">
-                      <% if (element.img != null && element.img.length > 0) { %>
-                        <img src="/img/Productos/<%= element.img[0]['url'] %> " alt="<%= element.name %> ">
+                      <% if (element.images != null && element.images.length > 0) { %>
+                        <img src="/img/Productos/<%= element.images[0]['url'] %> " alt="<%= element.name %> ">
                         
                       <% } else {%>
                         <img src="/img/Productos/default.jpg" alt="<%= element.name %>">
@@ -30,13 +32,20 @@
                     <li><%= element.name %></li>
                   <article>
                     <li>$<%= element.price %></li>
-                    <li>$<%= parseInt(element.price * 0.8)%></li>
+                    <li>$<%= parseInt(element.price * ((100 - element.discount) / 100)) %> </li>
                   </article>
                   </ul>
                 </article>                    
-              <% } %>
+              <% }%>
+               
               <% }) %>
-              <% } %>
+              <% } else {%>
+                <h2 class="title-oferta">Atención!!</h2>
+                <p>
+                  En estos momentos no contamos con productos en oferta,
+                  pruebe mas tarde.
+                </p>
+                <% } %> 
         </section>
       </main>
       <%- include('./partials/footer') %>
