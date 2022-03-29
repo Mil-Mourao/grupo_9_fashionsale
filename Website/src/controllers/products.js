@@ -95,12 +95,12 @@ const controller = {
         
      // Inicio crear Producto
     let crearProducto = db.Product.create({
-    name: req.body.name,
-    price: req.body.price,
+    name: req.body.name.trim(),
+    price: req.body.price.trim(),
     description: req.body.description,
     category: req.body.category,
     ofert: req.body.ofert == "on" ? true : false,
-    discount: req.body.discount,
+    discount: req.body.discount.trim(),
     });
     // Final crear Producto
   
@@ -176,12 +176,12 @@ const controller = {
     
     let control = req.body.units.reduce((anterior, nuevo) => Number(anterior) + Number(nuevo), 0);
     let updateProducto = {
-      name: req.body.name,
-      price: req.body.price,
+      name: req.body.name.trim(),
+      price: req.body.price.trim(),
       description: req.body.description,
       category: req.body.category,
       ofert: req.body.ofert == "on" ? true : false,
-      discount: req.body.discount
+      discount: req.body.discount.trim()
     };
     
     let updateUnidades = req.body.units.map(e => {
@@ -269,19 +269,24 @@ const controller = {
       include: ["images", "sizes"]
     })
     .then(producto => {
-      producto.images.forEach(img => {
+
+      Promise.all([producto.images.forEach(img => {
         if(fs.existsSync(path.resolve(__dirname, '../../public/img/Productos', img.url))){
           fs.unlinkSync(path.resolve(__dirname, '../../public/img/Productos', img.url))
         }
         db.Image.destroy({where: [{id: img.id}]})
-      });
-    db.Product.destroy({
-      where: [{id: req.body.id}]
-    })
+      }), producto])
+      .then(()=>{
+        db.Product.destroy({
+          where: [{id: req.body.id}]
+        })
+        .catch(err => console.log(err));
+      }) 
     .then(() => res.redirect("/products/"))
     .catch(err => res.send(err))
     //products.delete(req.body.id);
   })
+  .catch(err => console.log(err))
   },
 };
 

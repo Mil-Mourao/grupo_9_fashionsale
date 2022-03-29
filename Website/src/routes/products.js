@@ -5,7 +5,7 @@ const access = require('../middlewares/access');
 const upload = require('../middlewares/uploadProductImg');
 
 router.get("/", products.list);
-router.get('/create',[access], products.create);
+router.get('/create', [access], products.create);
 router.get('/:id', products.detail);
 router.get("/update/:id", [access], products.update);
 

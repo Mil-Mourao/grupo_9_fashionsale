@@ -42,9 +42,7 @@ window.addEventListener("load", function () {
     } else if (!regex.test(password.value)) {
         errors.push("La contraseña debe contener una mayúscula, una minúscula, un símbolo, un número y un carácter especial")
     }
-        
         if (errors.length > 0) {
-            debugger
             e.preventDefault();
             for (let i = 0; i < errors.length; i++) {
                 errorsList.innerHTML += "<li>" + errors[i] + "</li>"
@@ -54,7 +52,7 @@ window.addEventListener("load", function () {
             e.preventDefault()
         Swal.fire({
             icon: 'success',
-            title: 'Te has registrado con éxito en Fashion Sale',
+            title: 'Te has registrado con éxito en Fashion Sale, a continuación serás redirigido al login.',
             showConfirmButton: false
         })
         setTimeout(() => {
