@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2022 a las 04:23:01
+-- Tiempo de generación: 29-03-2022 a las 07:34:01
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -48,7 +48,9 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (515, 'image-1647811549449.jpg'),
 (516, 'image-1647811549452.jpg'),
 (517, 'image-1647832716175.jpg'),
-(518, 'image-1647832716202.jpg');
+(518, 'image-1647832716202.jpg'),
+(557, 'avatar-1648392292566.jpg'),
+(558, 'avatar-1648392344357.jpg');
 
 -- --------------------------------------------------------
 
@@ -223,25 +225,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=521;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=562;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=323;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=522;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=546;
 
 --
 -- AUTO_INCREMENT de la tabla `size`

@@ -1,4 +1,3 @@
-
 const controller = {
     cart: (req,res) => res.render('cart/productCart',
      {styles:['carrito'],
