@@ -2,7 +2,7 @@ const express = require("express");
 const users = require("../controllers/users");
 const router = express.Router();
 const login = require('../middlewares/login');
-const save = require('../middlewares/save')
+const save = require('../middlewares/userRegisterValid')
 const access = require('../middlewares/access')
 const upload = require('../middlewares/uploadUserImg');
 

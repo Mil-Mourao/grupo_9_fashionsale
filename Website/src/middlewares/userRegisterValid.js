@@ -1,5 +1,4 @@
 const validator = require('express-validator');
-//const user = require('../models/user');
 const db = require('../database/models');
 
 const validations = [
@@ -16,6 +15,3 @@ const validations = [
 ]
 
 module.exports = validations;
-
-
-//let search = user.search('email', value);
