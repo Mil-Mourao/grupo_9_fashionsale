@@ -17,27 +17,6 @@ const controller = {
     });
   },
   detail: (req, res) => {
-<<<<<<< HEAD
-    let product = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']})
-     /* .then(product => {
-        res.send(product.sizes)
-        res.render('products/productDetail', {
-          styles: ["product"],
-          title: "Detalle de producto",
-          product  
-        })
-      })*/
-      //let productoEncontrado = db.Product.findByPk(req.params.id, {include: ['images', 'sizes']});
-      let unidades = db.Product_Size.findAll({where: {product_id: req.params.id}})
-      Promise.all([product, unidades])
-      .then(([product, unidades]) => {
-        res.render('products/productDetail',{
-          styles: ["product"],
-          title: "Detalle de producto",
-          product,
-          unidades
-        })
-=======
     let producto = db.Product.findByPk(req.params.id, {
       include: ["images", "sizes"],
     });
@@ -68,7 +47,6 @@ const controller = {
           title: "Detalle de producto",
           product,
         });
->>>>>>> 0e1babc649a6f065aded21f36a24edd866387470
       })
       .catch((error) => res.send(error));
   },
