@@ -86,7 +86,7 @@ button {
 }
 
 .is-valid{
-  box-shadow: 0 0 10px 0 #34e611;
+  box-shadow: 0 0 5px 0 #34e611;
 }
 .is-invalid{
   box-shadow: 0 0 6px 0 #eb0707;

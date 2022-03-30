@@ -77,8 +77,6 @@ const controller = {
       })
         .then((user) => res.redirect("/users/login"))
         .catch((error) => res.send(error));
-      /* const create = user.create(req.body);
-      return res.redirect("/users/login"); */
     } else {
       return res.render("users/register", {
         errors: errors.mapped(),
