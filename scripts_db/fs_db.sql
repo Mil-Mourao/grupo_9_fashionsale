@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-03-2022 a las 07:34:01
+-- Tiempo de generación: 30-03-2022 a las 02:19:32
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -44,13 +44,11 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (1, 'genericUser.jpeg'),
 (90, 'avatar-1647214206933.jpg'),
 (91, 'avatar-1647214235583.jpg'),
-(244, 'avatar-1647387828634.jpg'),
 (515, 'image-1647811549449.jpg'),
 (516, 'image-1647811549452.jpg'),
 (517, 'image-1647832716175.jpg'),
 (518, 'image-1647832716202.jpg'),
-(557, 'avatar-1648392292566.jpg'),
-(558, 'avatar-1648392344357.jpg');
+(564, 'avatar-1648599216970.jpg');
 
 -- --------------------------------------------------------
 
@@ -170,7 +168,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin`, `isActive`, `image_id`) VALUES
 (6, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 91),
 (7, 'Bernardo', 'Arrechea', 'berna@mail.com', '$2b$10$B33BfnWXKWF1PVDY91wg/eAvy.Xpky6.yxALpMVVNA1uVf0sMiIY2', 0, 1, 90),
-(8, 'asd', 'dsa', 'mail@mail.com', '$2b$10$GYLbpgoE6hIRR8YakvWdFu1FvOBWVWYXJaWLcKuCMeySvPDyaxuWq', 0, 1, 244);
+(9, 'test', 'test', 'mail@mail.com', '$2b$10$CWJIb5FYmv6AS4MCk7BFaOAHUNGaQgF3jgQ/ElVJEAxWPKwFVsirW', 0, 1, 564);
 
 --
 -- Índices para tablas volcadas
@@ -225,25 +223,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=562;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=565;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=346;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=546;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
 
 --
 -- AUTO_INCREMENT de la tabla `size`
@@ -255,7 +253,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas

@@ -51,33 +51,9 @@ const controller = {
               })
             : null;
           req.session.user = user;
-<<<<<<< HEAD
-        res.redirect('/users/profile');
-      })
-      .catch(error => res.send(error));
-    }else{
-      return res.render("users/login", {
-        title: 'Log in',
-        styles: ["login"],
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    }      
-    
- /*    if (errors.isEmpty()) {
-      
-      req.session.user = user.search("email", req.body.email);
-    
-      req.body.remember
-        ? res.cookie("user", req.session.user.email, {maxAge:  1000*60*60*24*7})
-        : null;    
-      res.redirect("/users/profile");      
-    
-=======
           res.redirect("/users/profile");
         })
         .catch((error) => res.send(error));
->>>>>>> 0e1babc649a6f065aded21f36a24edd866387470
     } else {
       return res.render("users/login", {
         title: "Log in",
@@ -101,8 +77,6 @@ const controller = {
       })
         .then((user) => res.redirect("/users/login"))
         .catch((error) => res.send(error));
-      /* const create = user.create(req.body);
-      return res.redirect("/users/login"); */
     } else {
       return res.render("users/register", {
         errors: errors.mapped(),
@@ -113,38 +87,6 @@ const controller = {
     }
   },
   uploadAvatar: (req, res) => {
-<<<<<<< HEAD
-    // Orden para cargar la imagen del usuario//avatar
-    // create image(obtengo el id), 2 update de user (image_id = id -> ese id es el q se crea con la imagen)
-    let searchUser = db.User.findByPk(req.session.user.id, {
-      include: ['images']
-    });
-
-    let crearAvatarNuevo = db.Image.create({
-      url: req.file ? req.file.filename : null
-    })
-    Promise
-    .all([searchUser, crearAvatarNuevo])
-    .then(([viejo, avatarNuevo]) => {
-      if(req.session.user.image_id !== 1){
-        if (fs.existsSync(path.resolve(__dirname, '../../public/img/Usuarios', viejo.images.url))){
-          fs.unlinkSync(path.resolve(__dirname, '../../public/img/Usuarios', viejo.images.url))
-        }
-      }      
-      db.User.update({image_id: avatarNuevo.id},
-          {
-            where: {
-              id: req.session.user.id
-            },
-            include: ['images']
-          })
-      .then(user => {
-          req.session.user = user;
-          res.redirect('/users/profile')
-        })
-    })
-    .catch(err => console.log(err))
-=======
     if (req.file) {
       let searchUser = db.User.findByPk(req.session.user.id, {
         include: ["images"],
@@ -206,7 +148,6 @@ const controller = {
         error: "Debes seleccionar un archivo.",
       });
     }
->>>>>>> 0e1babc649a6f065aded21f36a24edd866387470
   },
   logout: (req, res) => {
     delete req.session.user;
