@@ -138,11 +138,11 @@
 }
 
 .errorPara{
-  width: 65%;
-  font-size: 0.7rem;
+  width: 80%;
+  font-size: 0.85rem;
   color: #f2796e;
   text-align: center;
-  margin: 6px 0 0 5px;
+  margin: 6px 0 0 0;
 }
 
 .is-invalid{
