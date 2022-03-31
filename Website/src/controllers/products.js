@@ -110,7 +110,7 @@ const controller = {
       res.render("products/create", {
         title: "crear producto",
         styles: ["create"],
-        errors,
+        errors: errors.mapped(),
       });
     }
   },
