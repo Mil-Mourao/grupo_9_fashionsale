@@ -107,10 +107,15 @@ const controller = {
           .catch((error) => console.log(error));
       }
     } else {
+      if (req.files){
+        req.files.forEach(image => {
+        fs.unlinkSync(path.resolve(__dirname,"../../public/img/Productos",image.filename));
+        })
+      }      
       res.render("products/create", {
         title: "crear producto",
         styles: ["create"],
-        errors,
+        errors: errors.mapped(),
       });
     }
   },
