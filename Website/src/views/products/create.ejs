@@ -18,11 +18,13 @@
               <label for="name">
               <input type="text" name="name" id="name" placeholder="Name/Nombre" >
               </label>
+              <p class="errorPara"><%= locals.errors && errors.name ? errors.name.msg : null %></p>
             </fieldset>
 
               <fieldset>
               <label class="precios" for = "price"></label>
               <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" >
+              <p class="errorPara"><%= locals.errors && errors.price ? errors.price.msg : null %></p>
          </fieldset>
 
             <fieldset id="labelSizes">
@@ -45,11 +47,13 @@
             <fieldset>
               <label class="descripciones" for="description"></label>
               <textarea name="description" id="description" placeholder="Puedes escribir una descripción del producto si gustas"></textarea>
+              <p class="errorPara"><%= locals.errors && errors.description ? errors.description.msg : null %></p>
             </fieldset>
  
             <fieldset>
               <label class="img" for="image"></label>
               <input type="file" name="image" id="image" multiple>
+              <p class="errorPara"><%= locals.errors && errors.image ? errors.image.msg : null %></p>
               
             <fieldset id="labelRadio">
               <label for="men">Hombre</label>
@@ -74,6 +78,8 @@
             </fieldset>
           </form>
         </section>
+        <section class="error">
+    </section>
       </main>
      <script src="/js/productCreate.js"></script>
       <%- include('../partials/footer') %>

@@ -137,6 +137,14 @@
   cursor: pointer;
 }
 
+.errorPara{
+  width: 80%;
+  font-size: 0.85rem;
+  color: #f2796e;
+  text-align: center;
+  margin: 6px 0 0 0;
+}
+
 .is-invalid{
   border: 2px solid #f2796e !important;
   box-shadow: 0 0 6px 0 rgb(235, 7, 7) !important;
