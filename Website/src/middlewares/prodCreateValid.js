@@ -15,5 +15,11 @@ module.exports = [
     .isLength({min: 20}).withMessage('Ingresa una descripción que contenga al menos 20 caracteres'),
 
     check('image')
-    .custom(({req}) => req.files.length > 0 ? true : false).withMessage('Ingresa al menos una imagen')
+    .custom(({req}) => {
+        if(req.files.length > 0){
+            return Promise.resolve();
+        }else{
+            return false
+        }
+    }).withMessage('Ingresa al menos una imagen') 
 ]
