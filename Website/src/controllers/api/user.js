@@ -38,5 +38,32 @@ module.exports = {
         db.User.findByPk(req.params.id,
              {include: ['images']},
              {attributes: ['id', 'firstName', 'lastName', 'email']})
+        .then(user => {
+        if(user){                
+                let response = {
+                    meta: {
+                        status: 200
+                    },
+                    data: {
+                        id: user.id,
+                        fistName: user.firstName,
+                        lastName: user.lastName,
+                        email: user.email,
+                        urlImg: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+                        urlUser: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+                    }
+                }
+            return res.json(response);
+        }else{
+            req.status(404).json({
+                error: 'usuario no encontrado'
+            })
+        }
+        })
+        .catch(error => {
+            return res.status(500).json({
+                error: 'Sin conexión con la base'
+            })
+        })
     }
 }
