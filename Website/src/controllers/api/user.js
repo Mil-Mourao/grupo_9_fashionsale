@@ -2,29 +2,29 @@ const db = require('../../database/models');
 
 module.exports = {
     listAll: (req, res) => {
-        
-        db.User.findAll({
-            include: ['images']}, {attributes: ['id', 'firstName', 'lastName', 'email']})
+        db.User.findAll()
         .then(users => {
             if(users.length > 0){
-                let response = {
+                 let response = {
                     meta: {
                         status: 200,
-                        countUsers: users.length
+                        totalUsers: users.length,
+                        url: "api/users"
                     },
-                    data: []
-                }
+                    data: [],
+                } 
                 
             users.forEach(user => {
-                response.data.push({
-                    id: user.id,
-                    fistName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email,
-                    urlUser: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
-
-                })
+             response.data.push({
+                id: user.id,
+                fistName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                img_id: user.image_id,
+                detail: `${req.protocol}://${req.get('host')}${req.originalUrl}/${user.id}`,
+             })
             });
+
             return res.status(200).json(response);
 
             }else{
@@ -36,33 +36,49 @@ module.exports = {
     },
     listOne: (req, res) => {
         db.User.findByPk(req.params.id,
-             {include: ['images']},
-             {attributes: ['id', 'firstName', 'lastName', 'email']})
-        .then(user => {
-        if(user){                
+             {include: ['images']})
+        .then(user => {             
                 let response = {
                     meta: {
-                        status: 200
+                        status: 200,
+                        url: `api/users/${user.id}`
                     },
                     data: {
                         id: user.id,
-                        fistName: user.firstName,
+                        firstName: user.firstName,
                         lastName: user.lastName,
                         email: user.email,
-                        urlImg: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
-                        urlUser: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+                        avatar: `${req.protocol}://${req.get('host')}/img/Usuarios/${user.images.url}`,   
                     }
                 }
             return res.json(response);
-        }else{
-            req.status(404).json({
-                error: 'usuario no encontrado'
-            })
-        }
         })
         .catch(error => {
-            return res.status(500).json({
-                error: 'Sin conexión con la base'
+            return res.status(404).json({
+                status: 404,
+                msg: error.message
+            })
+        })
+    },
+    lastUser: (req, res) =>{
+        db.User.findOne({order: [['id', 'DESC']]})
+        .then(user => {
+            let response = {
+                meta: {
+                    status: 200,
+                    url: `${req.protocol}://${req.get('host')}/api/users/${user.id}`
+                },
+                data: {
+                    id: user.id,
+                    email: user.email,
+                }
+            }
+            return res.json(response);
+        })
+        .catch(error=> {
+            return res.status(404).json({
+                status: 404,
+                msg: error.message
             })
         })
     }
