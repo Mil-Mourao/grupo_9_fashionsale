@@ -11,6 +11,4 @@ module.exports = [
     .notEmpty().withMessage('Campo precio obligatorio')
     .isNumeric().withMessage('Ingrese solamente números'),
 
-    check('description')
-    .isLength({min: 20}).withMessage('Ingresa una descripción que contenga al menos 20 caracteres'),
 ]
