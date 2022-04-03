@@ -69,9 +69,7 @@ const controller = {
 
         // Sirve para saber si hay unidades cargadas o no
         let control = req.body.units.reduce(
-          (anterior, nuevo) => Number(anterior) + Number(nuevo),
-          0
-        );
+          (anterior, nuevo) => Number(anterior) + Number(nuevo),0);
 
         let sizes = db.Size.findAll();
 
@@ -101,7 +99,7 @@ const controller = {
               .filter((e) => e != undefined);
 
             db.Product_Size.bulkCreate(unidadesSizeProduct).then(() => {
-              res.redirect("/products/" + producto.id);
+              res.redirect("/products/");
             });
           })
           .catch((error) => console.log(error));
@@ -111,10 +109,11 @@ const controller = {
         req.files.forEach(image => {
         fs.unlinkSync(path.resolve(__dirname,"../../public/img/Productos",image.filename));
         })
-      }      
+      }     
       res.render("products/create", {
         title: "crear producto",
         styles: ["create"],
+        old: req.body,
         errors: errors.mapped(),
       });
     }
@@ -146,12 +145,13 @@ const controller = {
         include: ["images", "sizes"],
       });
       let productSizes = db.Product_Size.findAll();
+ 
+      let unidades = Array.isArray(req.body.units) ? req.body.units : new Array(req.body.units);
+      
+      let control = unidades.reduce(
+        (anterior, nuevo) => Number(anterior) + Number(nuevo),0);
 
-      let control = req.body.units.reduce(
-        (anterior, nuevo) => Number(anterior) + Number(nuevo),
-        0
-      );
-      let updateProducto = {
+        let updateProducto = {
         name: req.body.name.trim(),
         price: req.body.price.trim(),
         description: req.body.description,
@@ -160,7 +160,7 @@ const controller = {
         discount: req.body.discount.trim(),
       };
 
-      let updateUnidades = req.body.units
+      let updateUnidades = unidades
         .map((e) => {
           e = parseInt(e);
           if (e != 0 && !isNaN(e) && control != 0) {
@@ -281,32 +281,24 @@ const controller = {
     db.Product.findByPk(req.body.id, {
       include: ["images", "sizes"],
     })
-      .then((producto) => {
-        Promise.all([
+    .then(producto => {
           producto.images.forEach((img) => {
-            if (
-              fs.existsSync(
-                path.resolve(__dirname, "../../public/img/Productos", img.url)
-              )
-            ) {
-              fs.unlinkSync(
-                path.resolve(__dirname, "../../public/img/Productos", img.url)
-              );
-            }
-            db.Image.destroy({ where: [{ id: img.id }] });
-          }),
-          producto,
-        ])
+            if (fs.existsSync(path.resolve(__dirname, "../../public/img/Productos", img.url))) {
+              fs.unlinkSync(path.resolve(__dirname, "../../public/img/Productos", img.url))}
+            })
+
+      let deleteImages = producto.images.forEach(img => db.Image.destroy({ where:{ id: img.id }}));
+
+      Promise.all([deleteImages])
           .then(() => {
-            db.Product.destroy({
-              where: [{ id: req.body.id }],
-            }).catch((err) => console.log(err));
+            db.Product.destroy({where: {id: req.body.id}})
+            .then(()=>{
+              res.redirect("/products/")
+            })
           })
-          .then(() => res.redirect("/products/"))
-          .catch((err) => res.send(err));
-        //products.delete(req.body.id);
+          .catch(err => console.log(err));
       })
-      .catch((err) => console.log(err));
+    .catch((err) => console.log(err));
   },
 };
 

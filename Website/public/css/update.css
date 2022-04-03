@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("/img/createFondo.jpg");
+  background: url("/img/fondoUpdate.jpg");
   background-size: cover;
 }
 
@@ -115,7 +115,12 @@
   padding-right: 5px;
 }
 
+#ofert:checked ~ #discount{
+  display: block;
+}
+
 #discount{
+  display: none;
   max-width: 3rem;
   min-height: 1.1rem;
   border-radius: 3px;

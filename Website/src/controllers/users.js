@@ -46,10 +46,7 @@ const controller = {
       })
         .then((user) => {
           req.body.remember
-            ? res.cookie("email", req.body.email, {
-                maxAge: 1000 * 60 * 60 * 24 * 7,
-              })
-            : null;
+            ? res.cookie("email", req.body.email, {maxAge: 1000 * 60 * 60 * 24 * 7,}) : null;
           req.session.user = user;
           res.redirect("/users/profile");
         })
