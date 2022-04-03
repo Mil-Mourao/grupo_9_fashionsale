@@ -4,6 +4,7 @@ const app = express()
 const method = require('method-override')
 const cookie = require('cookie-parser');
 const session = require('express-session');
+const cors = require('cors');
 
 app.set('port', process.env.PORT || 3000)
 app.set('views', path.resolve(__dirname, 'views'));
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.listen(app.get('port'),() => console.log('running on port http://localhost:' + app.get('port')))
 
+app.use(cors());
 
 app.use(cookie());
 app.use(

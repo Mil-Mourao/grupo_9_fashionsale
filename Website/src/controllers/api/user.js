@@ -17,7 +17,7 @@ module.exports = {
             users.forEach(user => {
              response.data.push({
                 id: user.id,
-                fistName: user.firstName,
+                firstName: user.firstName,
                 lastName: user.lastName,
                 email: user.email,
                 img_id: user.image_id,
@@ -71,6 +71,7 @@ module.exports = {
                 data: {
                     id: user.id,
                     email: user.email,
+                    detail:`${req.protocol}://${req.get('host')}/api/users/${user.id}`
                 }
             }
             return res.json(response);
