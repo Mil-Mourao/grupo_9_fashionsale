@@ -23,10 +23,16 @@
         <form action="/users/profile?m=PUT" method="post" enctype="multipart/form-data">
           <input type="file" name="avatar" id="avatar">
           <fieldset>
-            <button type="submit">Actualizar Avatar</button>
-
+            <button type="submit">Actualizar Imágen</button>
           </fieldset>
         </form>
+        <% if (locals.error) { %>
+              <p><%= error %></p>
+          <% } %>
+            <form action="/users/updateProfile?m=PUT" method="post" enctype="multipart/form-data"></form>
+            <fieldset>
+              <a href="/users/updateProfile"> Editar perfil </a>
+            </fieldset>
       <form action="/users/logout" method="post">
         <button type="submit">Logout</button>
       </form>
