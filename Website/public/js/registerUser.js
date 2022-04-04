@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-    console.log("according to all laws of aviation")
     let formulario = document.querySelector("#form")
     let button = document.querySelector(".button")
 
@@ -9,7 +8,6 @@ window.addEventListener("load", function () {
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-        
         let errorsList = document.querySelector("#errorsList")
         errorsList.innerText = "";
     let inputName = document.querySelector("#name")
