@@ -6,16 +6,8 @@ const controller = {
       include: ["images"],
     })
       .then((products) => {
-        if (products.length == 1) {
-          console.log("-----entre por if");
+        if (products.length >= 1) {
           checkOfert = products.find((e) => e.dataValues.ofert != undefined ? true : false).ofert;
-          console.log(checkOfert);
-          console.log("---------");
-        } else if(products.length > 1){
-          console.log("-----entre por else");
-          checkOfert = products.find((e) => e.dataValues.ofert != undefined ? true : false).ofert;
-          console.log(checkOfert);
-          console.log("---------");
         }
         res.render("index", {
           styles: ["index"],
