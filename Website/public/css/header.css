@@ -25,6 +25,11 @@
   font-size: 1.5rem;
 }
 
+.navbar-content a:hover{
+  border-bottom: 1px solid #F2E5D5;
+  border-top: 1px solid #F2E5D5;
+}
+
 .navbar-content.active{
   left: 0;
   background: rgb(64, 56, 49);
@@ -126,22 +131,23 @@ header a picture img{
     top: 0;
     left: 0;
     padding: 0;
-    height: auto;
+    height: 60px;
     width: 50vw;
-    flex-direction: row;
-    flex-wrap: wrap;
     transition: none;
+    flex-wrap: wrap;
+    align-items: center;
     outline: none;
     border: none;
     justify-content: space-around;
   }
   .navbar-content a{
     margin: 5px;
-    color: black;
+    color: #F2E5D5;
     text-decoration: none;
     font-family: roboto;
     font-size: 1rem;
     font-weight: 500;
+    padding: 5px;
   }
   #barra {
     width: 20vw;

@@ -46,7 +46,7 @@ inputPrice.addEventListener('blur', ()=>{
         inputPrice.classList.add('is-valid');
     }
 })
-let charCount;
+/* let charCount;
 inputDescription.addEventListener('keypress', (e) =>{
 
 charCount += e.key;
@@ -56,7 +56,7 @@ charCount += e.key;
         inputDescription.classList.add('is-valid');
         inputDescription.classList.remove('is-invalid');
     }
-})
+}) 
 
 inputDescription.addEventListener('blur', () =>{
     charCount= ""
@@ -68,7 +68,7 @@ inputDescription.addEventListener('blur', () =>{
             inputDescription.classList.remove('is-invalid');
         }
     })
-
+*/
 inputFile.addEventListener('change', ()=>{
     let aux = 0;
     let pruebaImagen = inputFile.files;    
@@ -104,7 +104,18 @@ inputDiscount.addEventListener('change', ()=>{
 })
 
 inputOfert.addEventListener('click', () =>{
-    inputDiscount.classList.add('is-invalid')
+    if(inputOfert.checked && inputDiscount.value == 0){
+        inputDiscount.classList.add('is-invalid')
+    }else if(inputDiscount.value > 0){
+        inputDiscount.classList.remove('is-invalid')
+    }else{
+        inputDiscount.classList.add('is-invalid')
+    }
+    
+    if(!inputOfert.checked && inputDiscount != 0){
+        inputDiscount.value = 0;
+        inputDiscount.classList.remove('is-invalid')
+    }
 })
 
 inputSizes.forEach(e => {

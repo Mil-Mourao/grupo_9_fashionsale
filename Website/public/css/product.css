@@ -102,6 +102,10 @@ legend {
   list-style: none;
 }
 
+.listaTalles li{
+  margin: 0.8rem;
+}
+
 @media (min-width: 768px) {
   .pic-list {
     flex-direction: column;

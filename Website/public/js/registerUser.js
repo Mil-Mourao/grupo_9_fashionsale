@@ -1,7 +1,5 @@
 window.addEventListener("load", function () {
-    console.log("according to all laws of aviation")
     let formulario = document.querySelector("#form")
-    let button = document.querySelector(".button")
 
     const regex = /^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&?@"]).*$/
     const regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i
@@ -9,7 +7,6 @@ window.addEventListener("load", function () {
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-        
         let errorsList = document.querySelector("#errorsList")
         errorsList.innerText = "";
     let inputName = document.querySelector("#name")
