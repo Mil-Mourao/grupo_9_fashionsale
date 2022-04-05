@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './App.css';
-// import Avatar from '@mui/material/Avatar';
 import { Avatar, Switch, Button } from '@mui/material/';
+
 
 //label para el switch
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
@@ -55,19 +55,19 @@ class Users extends Component {
         <h1>{this.props.title}</h1>
         <p>page: {this.state.page}</p>
         <Switch {...label} defaultChecked onClick={() => this.changeTheme()} />
-        <Button variant="contained" onClick={() => this.previousPage()}>Anterior</Button>
-        <Button variant="contained" onClick={() => this.nextPage()}>Siguiente</Button>
-
         <ul className={'userBox'}>
           {this.state.characters && this.state.characters.map(character => (
             <li key={character.id} className={'userRow'}>
-              <Avatar alt={character.name} src={character.image} />
-              {/* <img src={character.image} alt={character.name} className={'userImg'}/> */}
+              <Avatar className={'userName'} alt={character.name} src={character.image} />
               <p className={'userName'}>{character.name}</p>
-              <p>{character.species}</p>
+              <p className={'userName'}>{character.species}</p>
+              <p className={'userName'}>{character.status}</p>
+              <a href={character.origin.url} className={'userName'}>Origin</a>
             </li>
           ))}
         </ul>
+        <Button variant="contained" onClick={() => this.previousPage()}>Anterior</Button>
+        <Button variant="contained" onClick={() => this.nextPage()}>Siguiente</Button>
       </div>
     </>);
   }

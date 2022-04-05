@@ -1,6 +1,7 @@
-import { Component } from 'react';
-import './App.css';
+import { React, Component } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
+import SideBar from './SideBar'
+import './App.css';
 import Home from './Home'
 import Users from './Users'
 import User from './User'
@@ -13,14 +14,10 @@ class App extends Component {
 
   render() {
     return (<>
-      <Link to="/">Home</Link>
-      <Link to="/users">Usuarios</Link>
-      <Link to="/user/1">Usuario</Link>
-      <Switch>
-        <Route path="/" element={<Home />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/users/:id" element={<User />} />
-      </Switch>
+      <div id="wrapper">
+
+        <SideBar />
+      </div>
     </>);
   }
 }

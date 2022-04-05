@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { useParams } from 'react-router-dom'
+
 
 class User extends Component {
 
@@ -9,9 +9,12 @@ class User extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <>
-                <h1>User {id}</h1>
+                <h1>User {
+                    this.props.matches.params.id
+                }</h1>
             </>
         )
     }
