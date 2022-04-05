@@ -1,4 +1,3 @@
-//const user = require('../models/user');
 const db = require('../database/models');
 const middleware = (req, res, next) => {
    

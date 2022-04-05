@@ -12,60 +12,81 @@
             </picture>
           </article>
           <h3 id="title"> Creación de Productos</h3>
-           <form action="/products/" enctype="multipart/form-data" method="post" multiple>
+           <form action="/products/" id="form-create" enctype="multipart/form-data" method="post" multiple>
            
             <fieldset>
               <label for="name">
-              <input type="text" name="name" id="name" placeholder="Name/Nombre" required>
+              <input type="text" name="name" id="name" 
+                <% if (locals.old && old.name) { %>
+                value="<%= old.name %> "
+                <% }else { %>
+                placeholder="Name/Nombre"
+                <% } %> 
+              />
               </label>
+              <p class="errorPara"><%= locals.errors && errors.name ? errors.name.msg : null %></p>
             </fieldset>
 
-              <fieldset>
+            <fieldset>
               <label class="precios" for = "price"></label>
-              <input type="number" name= "price" id="price" placeholder="Price/Precio" min="0" required>
-         </fieldset>
+              <input type="number" name= "price" id="price" min="1" 
+              <% if (locals.old && old.price) { %>
+                value="<%= old.price %> "
+                <% }else { %>
+                placeholder="Price/Precio"
+                <% } %> 
+              />
+              <p class="errorPara"><%= locals.errors && errors.price ? errors.price.msg : null %></p>
+            </fieldset>
 
-               <fieldset id="sizes">
-              <legend>Talles</legend>
-              
-              <label for="">XS</label>
-              <input type="text" name="units" minlength="1" maxlength="2">
-               
-              <label for="">S</label>
-              <input type="text" name="units"minlength="1" maxlength="2">
-              
-              <label for="">M</label>
-              <input type="text" name="units"minlength="1" maxlength="2">
-              
-              <label for="">L</label>
-              <input type="text" name="units"minlength="1" maxlength="2">
-              
-              <label for="">XL</label>
-              <input type="text" name="units" minlength="1" maxlength="2">
-         
-             </fieldset> 
+            <fieldset id="labelSizes">
+            <legend>Talles</legend>
+              <label for="xs">XS</label>              
+              <label for="s">S</label>
+              <label for="m">M</label>
+              <label for="l">L</label>
+              <label for="xl">XL</label>
+            </fieldset> 
+
+             <fieldset id="sizes">
+              <input type="text" name="units" minlength="1" maxlength="2" id="xs" value="<%= locals.old && old.units ? old.units[0] : null%>">
+              <input type="text" name="units" minlength="1" maxlength="2" id="s" value="<%= locals.old && old.units ? old.units[1] : null%>">
+              <input type="text" name="units" minlength="1" maxlength="2" id="m" value="<%= locals.old && old.units ? old.units[2] : null%>">
+              <input type="text" name="units" minlength="1" maxlength="2" id="l" value="<%= locals.old && old.units ? old.units[3] : null%>">
+              <input type="text" name="units" minlength="1" maxlength="2" id="xl" value="<%= locals.old && old.units ? old.units[4] : null%>">
+             </fieldset>
 
             <fieldset>
               <label class="descripciones" for="description"></label>
-              <textarea name="description" id="description"></textarea>
+              <textarea name="description" id="description" placeholder="Puedes escribir una descripción del producto si gustas"><% if (locals.old && old.description){%><%= old.description %><%}%></textarea>  
+              <p class="errorPara"><%= locals.errors && errors.description ? errors.description.msg : null %></p>
             </fieldset>
  
             <fieldset>
               <label class="img" for="image"></label>
-              <input type="file" name="image" id="image" multiple required>
-            
-            <fieldset>
+              <input type="file" name="image" id="image" multiple>
+              <p class="errorPara"><%= locals.errors && errors.image ? errors.image.msg : null %></p>
+              
+            <fieldset id="labelRadio">
               <label for="men">Hombre</label>
-              <input type="radio" name="category" value="hombre" >
               <label for="women">Mujer</label>
-              <input type="radio" name="category" value="mujer">
+              <label for="accesorio">Accesorio</label>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="radioBtn">  
+              <input type="radio" id="men" name="category" value="hombre" <%= locals.old && (old.category == "hombre") ? "checked" : null%>>
+              <input type="radio" id="women" name="category" value="mujer" <%= locals.old && (old.category == "mujer") ? "checked" : null%>>
+              <input type="radio" id="accesorio" name="category" value="accesorio" <%= locals.old && (old.category == "accesorio") ? "checked" : null%>>
+            </fieldset>
+
+            <fieldset id="descOfert">
               <label for="discount">Descuento</label>
-              <label class="ofertas" for="ofert"></label>
-              <input type="checkbox" name="ofert" id="ofert">
-              <input type="number" name="discount" id="discount"> 
+              <input type="checkbox" name="ofert" id="ofert" <%= locals.old && (old.ofert == "on") ? "checked" : null%>>
+              <input type="number" name="discount" id="discount" min="0" max="90" 
+              <% if (locals.old && old.discount) { %>
+               value="<%= old.discount %>"
+              <% } %>
+              > 
             </fieldset>
             
             <fieldset>
@@ -73,8 +94,10 @@
             </fieldset>
           </form>
         </section>
+        <section class="error">
+    </section>
       </main>
-     
+     <script src="/js/productCreate.js"></script>
       <%- include('../partials/footer') %>
   </body>
 

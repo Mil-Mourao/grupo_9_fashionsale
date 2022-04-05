@@ -15,8 +15,3 @@ const validations = [
     })
 ] 
 module.exports = validations;
-
-/*
-let search = user.search('email', req.body.email);
-        return search && search.password == value ? Promise.resolve() : Promise.reject('Password invalid');
-*/

@@ -20,7 +20,7 @@
               <% } else {%>
               placeholder="Nombre" 
               <% }%>
-              required/>
+              />
             </fieldset>
             <fieldset>
               <input class="controls" type="text" name="lastName" id="lastName"
@@ -29,7 +29,7 @@
               <% } else { %>
                 placeholder="Apellido" 
               <% } %>   
-              required />
+               />
             </fieldset>
             <fieldset>
               <input class="controls" type="email" name="email" id="email" placeholder="Email" />
@@ -40,7 +40,8 @@
             <fieldset>
               <button class="button" type="submit">Continuar</button>
             </fieldset>
-            <article>               
+            <article>  
+              <p id="errorsList"></p>             
               <% if (locals.errors) { %>
                 <% if (errors.email) { %>
                     <p><%= errors.email.msg %></p>
@@ -58,6 +59,7 @@
             </article>
           </form>
         </section>
+      <script src="/js/registerUser.js"></script>
       </main>
       <%- include('../partials/footer') %>
   </body>

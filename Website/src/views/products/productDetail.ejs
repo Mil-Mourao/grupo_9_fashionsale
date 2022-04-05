@@ -90,11 +90,11 @@
                     <% } %>
                       </p>
 
-              <p>Talle modelo <%= product.category %>:
+              <p>Categoría: <%= product.category %>
                 <ul class="listaTalles">
                  <% for( let i = 0; i < product.sizes.length; i++ ) { %>
-                  <li>Talle <strong><%= product.sizes[i].sizes %></strong> hay un total de <%= product.units[i] %>
-                    <% if (product.units[i] == 1) { %>
+                  <li>Talle <strong><%= product.sizes[i].size %></strong> hay un total de <%= product.sizes[i].units %>
+                    <% if (product.sizes[i].units == 1) { %>
                      unidad.
                     <% } else{%>
                       unidades.</li>  

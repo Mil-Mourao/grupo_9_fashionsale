@@ -29,7 +29,6 @@ body {
     margin: 3px 3px 0 3px;
     object-fit: cover;
     border-radius: 3%;
-    box-shadow:  0 0 2px 0 rgba(0,0,0, 0.6);
 }
 
 .main_section article img:hover{

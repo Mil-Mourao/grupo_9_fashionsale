@@ -34,12 +34,12 @@
                   </li>
                   <li>
                     $ <% if (element.ofert) { %>
-                      <%= parseInt(element.price) * 0.8 %>
+                      <%= parseInt(element.price * ((100 - element.discount) / 100)) %>
                         <% } else {%>
                           <%= element.price %>
                             <% } %>
                   </li>
-                  <% if (user && user.isAdmin) { %>
+                  <% //if (user && user.isAdmin) { %>
                     <li>
                       <form action="/products/?m=DELETE" method="post">
                         <input type="hidden" name="id" value="<%= element.id %>" />
@@ -51,7 +51,7 @@
                         <i class="fas fa-edit"></i>
                       </a>
                     </li>
-                    <% } %>
+                    <% //} %>
                 </ul>
               </article>
               <% }) %>

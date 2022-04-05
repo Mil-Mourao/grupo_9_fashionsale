@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 #create {
   display: flex;
   justify-content: center;
@@ -15,15 +9,16 @@
 .form-create {
   background: #f2e5d5;
   border-radius: 20px;
-  width: 350px;
+  min-width: 21rem;
   font-family: Roboto;
   margin: 40px 40px;
   text-align: center;
+  min-height: 600px;
 }
 
 #title {
   text-align: center;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.6rem;
   font-weight: 700;
   font-family: "Trebuchet MS", sans-serif;
 }
@@ -40,26 +35,99 @@
 }
 
 .form-create fieldset {
-  margin-bottom: 2rem;
+  margin: 1.2rem;
   display: block;
   justify-content: right;
 }
 
-#sizes {
-  max-width: 75%;
-  margin: 0 auto;
+#name{
+  padding-left: 4px;
+  width: 15rem;
+  height: 1.7rem;
+  border-radius: 3px;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#sizes label {
+#price{
+  padding-left: 4px;
+  width: 15rem;
+  height: 1.7rem;
+  border-radius: 3px;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#sizes {
+  max-width: 88%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -15px;
+}
+
+
+#labelSizes{
+  padding-top: 10px;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 #sizes input {
   max-width: 2rem;
+  border-radius: 3px;
+  padding-right: 5px;
+  text-align: right;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #description {
+  padding-top: 4px;
+  padding-left: 4px;
   margin-top: 2rem;
+  width: 90%;
+  height: 5rem;
+  border-radius: 3px;
+}
+
+#radioBtn{
+  display: flex;
+  justify-content: space-around;
+  padding-right: 12px;
+  margin-top: -6px;
+}
+
+#labelRadio{
+  display: flex;
+  justify-content: space-around;
+}
+
+#descOfert{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+#descOfert label{
+  padding-right: 5px;
+}
+
+#ofert:checked ~ #discount{
+  display: block;
+}
+
+#discount{
+  display: none;
+  max-width: 3rem;
+  min-height: 1.1rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  text-align: right;
+  border: 2px solid #c4c4c4;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .boton {
@@ -71,6 +139,23 @@
   font-size: 1rem;
   font-family: "Trebuchet MS", sans-serif;
   width: 280px;
-  /* width: 20rem; */
   cursor: pointer;
 }
+
+.errorPara{
+  width: 80%;
+  font-size: 0.85rem;
+  color: #f2796e;
+  text-align: center;
+  margin: 6px 0 0 0;
+}
+
+.is-invalid{
+  border: 2px solid #f2796e !important;
+  box-shadow: 0 0 6px 0 rgb(235, 7, 7) !important;
+}
+
+.is-valid{
+  border: 2px solid #7df26e !important;
+}
+

@@ -17,14 +17,14 @@
               <% if (locals.old && old.email) { %>
                value="<%= old.email %>"
               <% } else {%>
-               placeholder="email" 
+               placeholder="Ingresa tu email" 
               <% } %> 
-               required/>
+               />
             </fieldset>
             <fieldset>
               <legend class="no-show">Iniciar Sesión</legend>
               <label class="no-show" for="password">Contraseña</label>
-              <input type="password" name="password" id="pass" placeholder="contraseña" required/>
+              <input type="password" name="password" id="pass" placeholder="Ingresa tu contraseña" />
             </fieldset>
             <fieldset>
               <button type="submit" id="login-button">Iniciar Sesión</button>
@@ -38,6 +38,7 @@
               </label>
             </fieldset>
           </form>
+          <p id="errorsList"></p>
           <% if (locals.errors) { %>
             <% if (errors.email) { %>
                 <p><%= errors.email.msg %></p>
@@ -48,7 +49,7 @@
         <% } %>
         </article>
       </section>
-      
+      <script src="/js/loginUser.js"></script>
     </main>
     <%- include('../partials/footer') %> 
   </body>

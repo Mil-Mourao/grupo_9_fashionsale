@@ -14,27 +14,32 @@
         <h3 id="title"> Formulario de edición de Producto </h3>
         
         <% if (product && unidades) { %>
-        <form action="/products/<%= product.id %>?m=PUT" method="post" enctype="multipart/form-data">
+        <form action="/products/<%= product.id %>?m=PUT" id="form-edit" method="post" enctype="multipart/form-data">
          
           <fieldset>
             <label for="name">
-            <input type="text" name="name" id="name" value="<%= product.name %> " required>
+            <input type="text" name="name" id="name" value="<%= product.name %> ">
             </label>
           </fieldset>
 
             <fieldset>
             <label class="precios" for = "price">
-            <input type="number" name= "price" id="price" value="<%= product.price %>" min="1" required>
+            <input type="number" name= "price" id="price" value="<%= product.price %>" min="1" >
           </label>
        </fieldset>
 
-          <fieldset id="sizes">
+          <fieldset id="labelSizes">
             <legend>Talles</legend>
             <% for( let i = 0; i < product.sizes.length; i++ ) { %>
-              <label><%= product.sizes[i].sizes_short %> </label>
-              <input type="text" name="units" minlength="1" maxlength="2" value="<%= unidades[i].units %>">  
+              <label for="<%= product.sizes[i].sizes_short %> "><%= product.sizes[i].sizes_short %> </label>
             <% } %>                    
           </fieldset> 
+          
+          <fieldset id="sizes">
+            <% for( let i = 0; i < product.sizes.length; i++ ) { %>
+              <input type="text" name="units" minlength="1" maxlength="2" value="<%= unidades[i].units %>" id="<%= product.sizes[i].sizes_short %> ">  
+            <% } %>                    
+           </fieldset>
 
           <fieldset>
             <label class="descripciones" for="description"></label>
@@ -45,19 +50,24 @@
             <label class="img" for="image"></label>
             <input type="file" name="image" id="image" multiple>
           
-          <fieldset>
-            <label for="men">Hombre</label>
-            <input type="radio" name="category" value="hombre" 
+            <fieldset id="labelRadio">
+              <label for="men">Hombre</label>
+              <label for="women">Mujer</label>
+              <label for="accesorio">Accesorio</label>
+            </fieldset>
+          <fieldset id="radioBtn">
+            <input type="radio" id="men" name="category" value="hombre" 
               <% if (product.category == "hombre") { %> checked > <% } else { %> > <% } %> 
-                         
-            <label for="women">Mujer</label>          
-            <input type="radio" name="category" value="mujer"
+                             
+            <input type="radio" id="women" name="category" value="mujer"
              <% if (product.category == "mujer") { %> checked > <% } else{ %> > <% } %>    
+
+             <input type="radio" id="accesorio" name="category" value="accesorio"
+             <% if (product.category == "accesorio") { %> checked > <% } else{ %> > <% } %>    
           </fieldset>
 
-          <fieldset>
+          <fieldset id="descOfert">
             <label for="discount">Descuento</label>
-            <label class="ofertas" for="ofert"></label>
             <input type="checkbox" name="ofert" id="ofert" 
               <% if (product.ofert) { %> checked > <% }else {%> > <% } %> 
   
@@ -74,5 +84,6 @@
       </section>
     </main>
     <%- include('../partials/footer') %> 
+    <script src="/js/productEdit.js"></script>
 </body>
 </html>
