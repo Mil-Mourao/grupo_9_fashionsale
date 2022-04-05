@@ -4,7 +4,6 @@ import SideBar from './SideBar'
 import './App.css';
 import Home from './Home'
 import Users from './Users'
-import User from './User'
 
 class App extends Component {
   constructor(props) {

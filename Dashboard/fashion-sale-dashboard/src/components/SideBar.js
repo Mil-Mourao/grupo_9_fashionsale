@@ -4,7 +4,6 @@ import { Link, Switch, Route } from 'react-router-dom';
 import { Box, Drawer, CssBaseline, AppBar, Toolbar, List, Typography, Divider } from '@mui/material/';
 import Home from './Home'
 import Users from './Users'
-import User from './User'
 
 const drawerWidth = 240;
 
@@ -40,7 +39,6 @@ class SideBar extends Component {
                     <List>
                         <Link to="/">Home</Link>
                         <Link to="/users">Usuarios</Link>
-                        <Link to="/user/1">Usuario</Link>
                     </List>
                     <Divider />
                 </Drawer>
@@ -51,7 +49,6 @@ class SideBar extends Component {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/users" axact component={Users} />
-                        <Route path="/users/:id" axact component={User} />
                     </Switch>
                     <Toolbar />
                 </Box>

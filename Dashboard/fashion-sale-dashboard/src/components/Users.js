@@ -23,16 +23,17 @@ class Users extends Component {
 
   //Invocamos a la api
   componentDidMount = () => {
-    fetch(`https://rickandmortyapi.com/api/character/?page=${this.state.page}`)
+    fetch(`http://localhost:3000/api/users`)
       .then(res => res.json())
       .then(data => {
-        this.setState({ characters: data.results, maxPage: data.info.pages })
+        // this.setState({ characters: data.results, maxPage: data.info.pages })
+        console.log(data);
       })
       .catch(err => console.log(err))
   }
 
   componentDidUpdate = () => {
-    fetch(`https://rickandmortyapi.com/api/character/?page=${this.state.page}`)
+    fetch(`http://localhost:3000/api/users`)
       .then(res => res.json())
       .then(data => {
         this.setState({ characters: data.results })
@@ -66,8 +67,10 @@ class Users extends Component {
             </li>
           ))}
         </ul>
-        <Button variant="contained" onClick={() => this.previousPage()}>Anterior</Button>
-        <Button variant="contained" onClick={() => this.nextPage()}>Siguiente</Button>
+        <div className={'paginator'}>
+          <Button variant="contained" onClick={() => this.previousPage()}>Anterior</Button>
+          <Button variant="contained" onClick={() => this.nextPage()}>Siguiente</Button>
+        </div>
       </div>
     </>);
   }
