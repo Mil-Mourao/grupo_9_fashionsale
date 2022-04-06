@@ -35,6 +35,41 @@ const controller = {
       })
       .catch((error) => res.send(error));
   },
+  editProfile: (req, res) => {
+    let errors = validator.validationResult(req);
+    if(errors.isEmpty()){
+      let datosUser = {
+        firstName: req.body.firstName.trim(),
+        lastName: req.body.lastName.trim(),
+        email: req.body.email.trim(),
+      };
+      db.User.update(datosUser,{
+        where: {id: req.session.user.id}
+      })
+      .then(() => {
+        db.User.findByPk(req.session.user.id, { include: ["images"] })
+              .then(user => {
+                req.session.user = user;
+                res.redirect("/users/profile");
+              })
+              .catch((err) => console.log(err));
+      })
+      .then(()=>{
+        res.render("users/profile", {
+          styles: ["profile"],
+          title: "Perfil | " + user.firstName,
+          user,
+        });
+      }) 
+      .catch(error => console.log(error));
+    }else{
+      res.render('updateProfile',{
+        title: `Editar perfil | ${req.session.user.firstName}`,
+        errors,
+        styles: ['updateProfile']
+      })
+    }
+  },
   access: (req, res) => {
     const errors = validator.validationResult(req);
     if (errors.isEmpty()) {
