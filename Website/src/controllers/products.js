@@ -296,6 +296,22 @@ const controller = {
     })
     .catch((err) => console.log(err));
   },
+  category: (req, res) =>{
+    db.Product.findAll({
+      include: ['images'],
+      where: {
+        category: req.query.q
+      }
+    })
+    .then(products => {
+        res.render("products/list", {
+        styles: ["list"],
+        title: "Productos Filtrados",
+        products,
+      });
+    })
+    .catch(err => console.log(err))
+  }
 };
 
 module.exports = controller;
