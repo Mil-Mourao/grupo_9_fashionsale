@@ -7,8 +7,10 @@ const save = require('../middlewares/prodCreateValid');
 
 router.get("/", products.list);
 router.get('/create', [access], products.create);
+router.get('/categories', products.category);
 router.get('/:id', products.detail);
 router.get("/update/:id", [access], products.update);
+
 
 router.put('/:id', [upload.any()],products.modify);
 

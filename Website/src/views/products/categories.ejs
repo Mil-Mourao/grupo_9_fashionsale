@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+      <main>
+        <section id="banner">
+          <picture>
+            <img src="/img/Splash/Splash-1.jpg" alt="banner">
+          </picture>
+        </section>
+        <section class="main_section">
+          <% if (locals.products && locals.products.length> 0) { %>
+            <h2 class="title-oferta">Listado de productos</h2>
+            <% products.forEach((element)=> { %>
+              <article class="card"> 
+                <picture>
+                  <a href="/products/<%= element.id %> ">
+                    <% if (element.images !=null && element.images.length> 0 )
+                      { %> <% for( let i=0; i < element.images.length; i++ ) { %>
+                        <% if (i<1) { %>
+                          <img src="/img/Productos/<%= element.images[0]['url']%>" alt="<%= element.name %> " />
+                          <% } %>
+                            <% } %>
+                              <% } else {%>
+                                <img src="/img/Productos/default.jpg" alt="<%= element.name %>" />
+                                <% } %>
+                  </a>
+                </picture>
+                <ul>
+                  <li>
+                    <%= element.name %>
+                  </li>
+                  <li>
+                    $ <% if (element.ofert) { %>
+                      <%= parseInt(element.price * ((100 - element.discount) / 100)) %>
+                        <% } else {%>
+                          <%= element.price %>
+                            <% } %>
+                  </li>
+                </ul>
+              </article>
+              <% }) %>
+                <% } else {%>
+                  <h2 class="title-oferta">Atención!!</h2>
+                  <p>En estos momentos no contamos con productos,
+                    pruebe mas tarde.</p>
+                  <% } %>
+        </section>
+      </main>
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>
