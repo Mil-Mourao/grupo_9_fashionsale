@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head') %>
+<%- include('./partials/head') %>
 
   <body>
-    <%- include('../partials/header') %>
+    <%- include('./partials/header') %>
       <main>
         <section id="banner">
           <picture>
@@ -12,7 +12,7 @@
         </section>
         <section class="main_section">
           <% if (locals.products && locals.products.length> 0) { %>
-            <h2 class="title-oferta">Listado de productos</h2>
+            <h2 class="title-oferta">Resultados en base a tu búsqueda: <%=search%> </h2>
             <% products.forEach((element)=> { %>
               <article class="card"> 
                 <picture>
@@ -38,31 +38,18 @@
                         <% } else {%>
                           <%= element.price %>
                             <% } %>
-                  </li>
-                  <% if (user && user.isAdmin) { %>
-                    <li>
-                      <form action="/products/?m=DELETE" method="post">
-                        <input type="hidden" name="id" value="<%= element.id %>" />
-                        <button type="submit"><i class="fas fa-trash-alt"></i></button>
-                      </form>
-                    </li>
-                    <li>
-                      <a href="/products/update/<%= element.id %> " rel="noopener noreferrer">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                    </li>
-                    <% } %>
+                  </li>            
                 </ul>
               </article>
               <% }) %>
                 <% } else {%>
                   <h2 class="title-oferta">Atención!!</h2>
-                  <p>En estos momentos no contamos con productos,
-                    pruebe mas tarde.</p>
-                  <% } %>
+                  <p>No se encuentran productos en base a tu búsqueda.</p>                
+                  <p>Prueba con otro artículo por ejemplo "campera".</p>                 
+                <% } %>
         </section>
       </main>
-      <%- include('../partials/footer') %>
+      <%- include('./partials/footer') %>
   </body>
 
 </html>

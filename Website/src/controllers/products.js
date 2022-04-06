@@ -42,7 +42,7 @@ const controller = {
             })
           ),
         });
-        //res.send(product);
+        
         res.render("products/productDetail", {
           styles: ["product"],
           title: "Detalle de producto",

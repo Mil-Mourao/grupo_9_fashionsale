@@ -10,7 +10,7 @@
   display: flex;
   padding: 100px 50px;
   text-align: center;
-  width: 40%;
+  width: 70%;
   height: 100vh;
   background: #a69c94;
   transition: all 0.6s ease-out;
@@ -84,6 +84,7 @@ i {
   bottom: 2px;
   border-left: solid 1px rgb(213 184 184);
   background: linear-gradient(#ddc8b7, #f3ede6);
+  cursor: pointer;
 }
 
 
