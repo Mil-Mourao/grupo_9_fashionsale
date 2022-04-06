@@ -33,7 +33,7 @@ export default function UserList() {
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
-      />1
+      />
     </div>
   )
 }
