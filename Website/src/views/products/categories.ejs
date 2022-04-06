@@ -39,19 +39,6 @@
                           <%= element.price %>
                             <% } %>
                   </li>
-                  <% if (user && user.isAdmin) { %>
-                    <li>
-                      <form action="/products/?m=DELETE" method="post">
-                        <input type="hidden" name="id" value="<%= element.id %>" />
-                        <button type="submit"><i class="fas fa-trash-alt"></i></button>
-                      </form>
-                    </li>
-                    <li>
-                      <a href="/products/update/<%= element.id %> " rel="noopener noreferrer">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                    </li>
-                    <% } %>
                 </ul>
               </article>
               <% }) %>

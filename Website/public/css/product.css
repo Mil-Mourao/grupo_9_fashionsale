@@ -29,9 +29,13 @@ i {
   height: auto;
 }
 
+.main-pic{
+  margin: 0 auto;
+}
+
 #focus-pic {
-  width: 100vw;
-  height: 60vw;
+  width: 100%;
+  height: 60%;
   object-fit: cover;
 }
 
