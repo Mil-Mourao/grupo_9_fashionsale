@@ -1,7 +1,8 @@
-import React from 'react'
+import { Component } from 'react'
 import './userList.css'
 import { DataGrid } from '@mui/x-data-grid';
 import Pfp from "../../assets/pfp.png"
+import { ThirtyFpsSelect } from '@mui/icons-material';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -18,13 +19,39 @@ const columns = [
   { field: 'admin', headerName: 'Admin', width: 130 },
 ];
 
+
+
 const rows = [
   { id: 1, avatar: Pfp, lastName: 'Mourao', firstName: 'Milton', email: 'Milton@fashionsale.com', admin: true},
   { id: 2, avatar: Pfp, lastName: 'Wourao', firstName: 'Wilton', email: 'Wilton@elasnoihsaf.com', admin: false},
 ];
 
-export default function UserList() {
-  return (
+class UserList extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  componentDidMount = () => {
+    fetch(`http://localhost:3000/api/users`)
+      .then(res => res.json())
+      .then(data => {
+        // this.setState({ characters: data.results, maxPage: data.info.pages })
+        console.log(data);
+      })
+      .catch(err => console.log(err))
+  }
+
+  componentDidUpdate = () => {
+    fetch(`http://localhost:3000/api/users`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ characters: data.results })
+      })
+      .catch(err => console.log(err))
+  }
+  render(){
+  return (<>
     <div className='userList'>
       <DataGrid
         rows={rows}
@@ -34,6 +61,10 @@ export default function UserList() {
         checkboxSelection
         disableSelectionOnClick
       />
+      {this.data}
     </div>
-  )
+  </>)
+  }
 }
+
+export default UserList;
