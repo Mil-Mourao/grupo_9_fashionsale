@@ -1,9 +1,7 @@
-body {
-    background-image: url(../img/fondoUpdate.jpg);
-    background-size: cover;
-}
 main{
     margin: 2rem;
+    background-image: url(../img/fondoUpdate.jpg);
+    background-size: cover;
 }
 
 main h2{

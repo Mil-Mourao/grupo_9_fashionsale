@@ -92,5 +92,9 @@
     .main_section article ul{
         max-width: 260px;
     }
+
+    .main_section p{
+        width: 100%;
+    }
 }
 
