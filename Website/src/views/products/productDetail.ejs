@@ -13,11 +13,13 @@
         <section id="producto">
             <% if (product.images != null && product.images.length > 0) { %>
               <article class="pic-list">
-              <% for( let i = 0; i < product.images.length; i++ ) { %>
-                <picture>
-                  <img class="small-pic" src="/img/Productos/<%=product['images'][i]['url'] %>" alt="" srcset="" />
-                </picture>
-                  <% } %> 
+                <% if (product.images.length > 1) { %>
+                  <% for( let i = 0; i < product.images.length; i++ ) { %>
+                    <picture>
+                      <img class="small-pic" src="/img/Productos/<%=product['images'][i]['url'] %>" alt="" srcset="" />
+                    </picture>
+                      <% } %>    
+                <% } %>
                 </article>
                 <article class="main-pic">
                   <picture>
@@ -107,6 +109,7 @@
           </section>
         </section>
       </main>
+      <script src="/js/pruebaImg.js"></script>
       <%- include('../partials/footer') %>
   </body>
 
