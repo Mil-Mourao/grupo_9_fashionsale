@@ -18,17 +18,19 @@
         
       
         <% } %>
-        <main>
+        <!-- <main> -->
             <section>
-                <article id="update-form-complete">
+                <div class="form-update">
+                    
+                <article>
                     <picture class="logo-form">
-                        <img src="/img/logo/logoSimple.svg" alt="" id="update-form">
+                        <img src="/img/logo/logoSimple.svg" alt="">
                     </picture>
                 </article>
-
+                <div class="form-update2">
                 <form action="/updateProfile>?_method=PUT" method="POST" id="form" enctype="multipart/form-data">
                     <fieldset>
-                        <h3 id="form-title">¡Modifica tus datos!</h3>
+                        <h3>¡Modifica tus datos!</h3>
                         <div class="errors" style="color: red;">
                             <ul></ul>
                         </div>
@@ -61,8 +63,11 @@
                         </div>
                         <% } %>
                     </fieldset>
+                
                     <input type="submit" value="Enviar" id="button-enviar">
         </main>
+                </div>
+                </div>
         </section>
         </form>
         

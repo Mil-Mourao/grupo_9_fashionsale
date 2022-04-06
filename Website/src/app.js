@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require ("express")
 const app = express()
-const method = require('method-override')
+const method = require('method-override');
 const cookie = require('cookie-parser');
 const session = require('express-session');
 const cors = require('cors');

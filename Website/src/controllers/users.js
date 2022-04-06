@@ -28,7 +28,7 @@ const controller = {
     })
       .then((user) => {
         res.render("users/updateProfile", {
-          styles: ["profile"],
+          styles: ["updateProfile"],
           title: "Perfil | " + user.firstName,
           user,
         });
