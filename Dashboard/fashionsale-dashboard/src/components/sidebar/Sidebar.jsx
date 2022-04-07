@@ -10,13 +10,13 @@ export default function Sidebar() {
                 <h3 className="sidebarTitle">Dashboard</h3>
                 <ul className="sidebarList">
                     <li className="sidebarListItem">
-                        Inicio
+                        <Link to="/">Home</Link>
                     </li>
                     <li className="sidebarListItem">
-                        Usuarios
+                        <Link to="/users">Usuarios</Link>
                     </li>
                     <li className="sidebarListItem">
-                        Productos
+                        <Link to="/products">Productos</Link>
                     </li>
                 </ul>
             </div>

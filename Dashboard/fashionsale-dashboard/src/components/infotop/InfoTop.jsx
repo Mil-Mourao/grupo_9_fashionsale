@@ -9,13 +9,13 @@ export default function UserTotal() {
     useEffect(() => {
         fetch('http://localhost:3000/api/products')
         .then(res => res.json())
-        .then(data => setProducts(data.meta))        
+        .then(data => setProducts(data))        
     },[])
 
     useEffect(() => {
         fetch('http://localhost:3000/api/users')
         .then(res => res.json())
-        .then(data => setUsers(data.meta))        
+        .then(data => setUsers(data))        
         
       },[])
     
