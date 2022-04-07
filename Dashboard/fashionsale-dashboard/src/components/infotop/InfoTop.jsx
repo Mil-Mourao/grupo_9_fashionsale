@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react'
 import "./infotop.css"
-import {PeopleOutlineRounded, ArrowUpwardOutlined, CategoryOutlined} from '@material-ui/icons';
+import {PeopleOutlineRounded, ArrowUpwardOutlined, CategoryOutlined} from '@material-ui';
 
 export default function UserTotal() {
     const [products ,setProducts] = useState([]);

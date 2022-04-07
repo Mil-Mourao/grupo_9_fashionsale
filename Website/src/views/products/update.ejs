@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %>
-<form action="/products/<%= product.id %>?m=PUT" method="post" enctype="multipart/form-data">
   <body>
     <%- include('../partials/header') %>
     <main id="update">
@@ -26,7 +25,7 @@
             <label class="precios" for = "price">
             <input type="number" name= "price" id="price" value="<%= product.price %>" min="1" >
           </label>
-       </fieldset>
+          </fieldset>
 
           <fieldset id="labelSizes">
             <legend>Talles</legend>
