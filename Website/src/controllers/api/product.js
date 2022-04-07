@@ -10,6 +10,7 @@ module.exports = {
                         status: 200,
                         totalProducts: products.length,
                         countByCategory: {
+                            hombre: 1,
                             hombre: products.map(e => e.category == "hombre").reduce((ant, total)=> ant + total,0),
                             mujer: products.map(e => e.category == "mujer").reduce((ant, total)=> ant + total,0),
                             accesorio: products.map(e => e.category == "accesorio").reduce((ant, total)=> ant + total,0),

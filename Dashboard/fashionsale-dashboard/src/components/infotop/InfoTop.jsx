@@ -1,15 +1,16 @@
 import { useState,useEffect } from 'react'
 import "./infotop.css"
-import {PeopleOutlineRounded, ArrowUpwardOutlined, CategoryOutlined} from '@material-ui';
+import {PeopleOutlineRounded, ArrowUpwardOutlined, CategoryOutlined} from '@mui/icons-material';
 
 export default function UserTotal() {
     const [products ,setProducts] = useState([]);
     const [users ,setUsers] = useState([]);
+    const [reload, setReload] = useState();
+
     useEffect(() => {
         fetch('http://localhost:3000/api/products')
         .then(res => res.json())
         .then(data => setProducts(data.meta))        
-        ;
     },[])
 
     useEffect(() => {
@@ -21,32 +22,40 @@ export default function UserTotal() {
     
   return (
     <div className="infoTop">
+        {users ? 
         <div className="infoItem">
             <span className="infoTitulo">Cantidad de Usuarios</span>
             <div className="containerNumero">
-                <span className="infoNumero"> {users.meta.totalUsers} <PeopleOutlineRounded/></span>
+                <span className="infoNumero"> {users.totalUsers} <PeopleOutlineRounded/></span>
             </div>
-        </div>
+        </div> : null}
+
+        {products ?  
+          
         <div className="infoItem">
             <span className="infoTitulo">Cantidad de Productos</span>
             <div className="containerNumero">
-                <span className="infoNumero">{products.meta.totalProducts} <ArrowUpwardOutlined/></span>
+                <span className="infoNumero">{products.totalProducts} <ArrowUpwardOutlined/></span>
             </div>
         </div>
-        <div className="infoItem">
+        : null}
+
+        {products.countByCategory ? 
+         <div className="infoItem">
             <span className="infoTitulo">Cantidad por Categorías</span>
             <div className="containerNumero">
-                <span className="infoNumero">Hombre {products.meta.countByCategory.hombre} <CategoryOutlined/></span>
+                <span className="infoNumero">Hombre {products.countByCategory.hombre} <CategoryOutlined/></span>
                 
             </div>
             <div className="containerNumero">
-            <span className="infoNumero">Mujer {products.meta.countByCategory.mujer}<CategoryOutlined/></span>
+            <span className="infoNumero">Mujer {products.countByCategory.mujer}<CategoryOutlined/></span>
                 
             </div>
             <div className="containerNumero">
-            <span className="infoNumero">Accesorios {products.meta.countByCategory.accesorio}<CategoryOutlined/></span>
+            <span className="infoNumero">Accesorios {products.countByCategory.accesorio}<CategoryOutlined/></span>
             </div>
-        </div>        
-    </div>
+        </div> : null }
+        
+    </div> 
   )
 }
