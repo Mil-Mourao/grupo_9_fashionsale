@@ -5,7 +5,7 @@
     <%- include('../partials/header') %>
     <main>
       <h2>
-        Perfil de <%= user.firstName %> <% if (user.isAdmin === true) { %> aministrador. <i class="fa-solid fa-face-sunglasses"></i> <% } %>
+        Perfil de <%= user.firstName %> <% if (user.isAdmin === true) { %> administrador. <i class="fa-solid fa-face-sunglasses"></i> <% } %>
       </h2>
       <% if (user.image_id != null) { %>
         <picture>
