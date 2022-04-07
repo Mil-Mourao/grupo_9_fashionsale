@@ -22,7 +22,7 @@ export default function ProductList() {
                 <span className='userLN'> {user.lastName} </span>
                 <span className='userFN'> {user.firstName} </span>
                 <span className='userEmail'> {user.email} </span>
-                <span><a href='{user.detail}' className='userDetail'> Detalle </a></span>
+                <span><a href={user.detail} className='userDetail'> Detalle </a></span>
             </li>
               )}  
         </ul> 
