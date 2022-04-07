@@ -2,7 +2,7 @@ const db = require('../../database/models');
 
 module.exports = {
     listAll: (req, res) => {
-        db.User.findAll()
+        db.User.findAll({include: ['images']})
         .then(users => {
             if(users.length > 0){
                  let response = {
@@ -21,7 +21,8 @@ module.exports = {
                 lastName: user.lastName,
                 email: user.email,
                 img_id: user.image_id,
-                detail: `${req.protocol}://${req.get('host')}${req.originalUrl}/${user.id}`,
+                detail: `${req.protocol}://${req.get('host')}${req.originalUrl}${user.id}`,
+                avatar: `${req.protocol}://${req.get('host')}/img/Usuarios/${user.images.url}`
              })
             });
 
@@ -61,7 +62,7 @@ module.exports = {
         })
     },
     lastUser: (req, res) =>{
-        db.User.findOne({order: [['id', 'DESC']]})
+        db.User.findOne({order: [['id', 'DESC']], include: ['images']})
         .then(user => {
             let response = {
                 meta: {
@@ -70,8 +71,11 @@ module.exports = {
                 },
                 data: {
                     id: user.id,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
                     email: user.email,
-                    detail:`${req.protocol}://${req.get('host')}/api/users/${user.id}`
+                    detail:`${req.protocol}://${req.get('host')}/api/users/${user.id}`,
+                    avatar: `${req.protocol}://${req.get('host')}/img/Usuarios/${user.images.url}`
                 }
             }
             return res.json(response);

@@ -7,7 +7,6 @@ export default function Widgetprodlast() {
     fetch('http://localhost:3000/api/products/lastOne')
     .then(res => res.json())
     .then(data => setProducts(data.data))        
-    ;
   },[])
 
   return (
