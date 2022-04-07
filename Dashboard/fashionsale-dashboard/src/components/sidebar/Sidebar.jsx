@@ -1,4 +1,6 @@
 import './sidebar.css'
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
+import Home from '../../pages/home/Home'
 
 export default function Sidebar() {
   return (
