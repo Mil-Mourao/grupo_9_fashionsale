@@ -14,3 +14,7 @@ main picture img{
     border-radius: 50%;
     object-fit: cover;
 }
+.update-link{
+    text-decoration: none;
+    
+}

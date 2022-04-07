@@ -4,16 +4,18 @@
 
     <body>
         <%- include('../partials/header') %>
-            <main>
+            <main id="update">
                 <section>
-                    <div class="form-update">
-                        <article>
-                            <picture class="logo-form">
-                                <img src="/img/logo/logoSimple.svg" alt="">
-                            </picture>
-                        </article>
+                    <div class="form-update" >
+                        
                         <div class="form-update2">
                             <form action="/users/edit?m=PUT" method="POST" id="form">
+                            <div class="global">
+                                <article>
+                                    <picture class="logo-form">
+                                        <img src="/img/logo/logoSimple.svg" alt="">
+                                    </picture>
+                                </article>
                                 <fieldset>
                                     <h3>¡Modifica tus datos!</h3>
                                     <div class="errors" style="color: red;">
@@ -22,8 +24,8 @@
                                     <br>
                                 </fieldset>
                                 <fieldset>
-                                    <label for="firstName">Nombre</label>
-                                    <input type="text" name= "firstName" value="<%=user.firstName%>" id="name">
+                                    <label class="datos" for="firstName">Nombre</label>
+                                    <input class= "datos2"type="text" name= "firstName" value="<%=user.firstName%>" id="name">
                                     <!-- agregar value para capturar los datos de la base en el input -->
                                     <% if (locals.errors && errors.name) { %>
                                         <div class="text-danger">
@@ -33,8 +35,8 @@
                                 </fieldset>
 
                                 <fieldset>
-                                    <label for="lastName">Apellido</label>
-                                    <input name="lastName" value="<%=user.lastName%>" id="lastName"></input>
+                                    <label class="datos" for="lastName">Apellido</label>
+                                    <input class= "datos2" name="lastName" value="<%=user.lastName%>" id="lastName"></input>
                                     <% if (locals.errors && errors.lastName) { %>
                                         <div class="text-danger">
                                             <%= errors.lastName.msg %>
@@ -43,8 +45,8 @@
                                 </fieldset>
 
                                 <fieldset>
-                                    <label for="email">Email</label>
-                                    <input type="text" name="email" id="email" value="<%=user.email%>">
+                                    <label class="datos" for="email">E-mail</label>
+                                    <input class= "datos2" type="text" name="email" id="email" value="<%=user.email%>">
                                     <% if (locals.errors && errors.email) { %>
                                         <div class="text-danger">
                                             <%= errors.email.msg %>
@@ -53,7 +55,7 @@
                                 </fieldset>
 
                                 <input type="submit" value="Enviar" id="button-enviar">
-
+                            </div>
                         </div>
                     </div>
                 </section>
