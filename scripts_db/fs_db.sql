@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-04-2022 a las 04:36:02
+-- Tiempo de generación: 07-04-2022 a las 05:33:22
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -43,8 +43,6 @@ CREATE TABLE `images` (
 INSERT INTO `images` (`id`, `url`) VALUES
 (1, 'genericUser.jpeg'),
 (2, 'avatar-1647214235583.jpg'),
-(3, 'image-1649038656997.jpg'),
-(4, 'image-1649038657000.jpg'),
 (5, 'image-1649038728916.jpg'),
 (6, 'image-1649038728917.jpg'),
 (7, 'image-1649038786417.jpeg'),
@@ -54,7 +52,10 @@ INSERT INTO `images` (`id`, `url`) VALUES
 (11, 'image-1649039004794.jpeg'),
 (12, 'avatar-1649039613831.jpg'),
 (13, 'avatar-1649039673518.jpg'),
-(14, 'avatar-1649039738295.jpeg');
+(14, 'avatar-1649039738295.jpeg'),
+(15, 'image-1649299816138.jpg'),
+(16, 'image-1649299816139.jpg'),
+(17, 'image-1649299816142.jpg');
 
 -- --------------------------------------------------------
 
@@ -73,15 +74,16 @@ CREATE TABLE `imagesproduct` (
 --
 
 INSERT INTO `imagesproduct` (`id`, `imageId`, `productId`) VALUES
-(1, 3, 1),
-(2, 4, 1),
 (3, 5, 2),
 (4, 6, 2),
 (5, 7, 3),
 (6, 8, 4),
 (7, 9, 4),
 (8, 10, 5),
-(9, 11, 6);
+(9, 11, 6),
+(10, 15, 1),
+(11, 16, 1),
+(12, 17, 1);
 
 -- --------------------------------------------------------
 
@@ -104,7 +106,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `description`, `ofert`, `discount`, `category`) VALUES
-(1, 'Campera Wave', 2850, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.', 1, 15, 'hombre'),
+(1, 'Campera Wave', 2850, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.', 1, 25, 'hombre'),
 (2, 'Campera', 3500, 'Molestias unde facilis quis qui sed dolorem animi accusamus fugiat.', 0, 0, 'mujer'),
 (3, 'Jeans', 890, 'Aliquid tempora iure eius ducimus voluptatum.', 1, 10, 'hombre'),
 (4, 'Piloto Lights', 5650, 'Nemo dolorum, aut ea mollitia quis odit pariatur vitae alias.', 0, 0, 'mujer'),
@@ -189,7 +191,8 @@ INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin
 (1, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 2),
 (2, 'Milton', 'Mourao', 'milton@fashionsale.com', '$2b$10$MDRXsZIL4fW5Cc606cwRI.JonPQdfcwHqjlZ6SrVYWEy/MCZWy5lS', 1, 1, 12),
 (3, 'Nicolas', 'Cid', 'nico@fashionsale.com', '$2b$10$By4ZKekls674plf9ZmIUoOzbeTNC8VsgO61cCyvwFpsyuEgSm0g0S', 1, 1, 13),
-(4, 'Matias', 'Juaquin', 'matias@fashionsale.com', '$2b$10$svxMqloi8GB0Vx.yZXZSM.LSygbT8YQyWhU2C5yMaKvSZxJDTezYW', 1, 1, 14);
+(4, 'Matias', 'Juaquin', 'matias@fashionsale.com', '$2b$10$svxMqloi8GB0Vx.yZXZSM.LSygbT8YQyWhU2C5yMaKvSZxJDTezYW', 1, 1, 14),
+(5, 'Prueba2', 'Horacio', 'horacio@fashionsale.com', '$2b$10$z0I8epQzS5SCfUT.3Pp5ou6Z2ZBbnyNAbq2Ga64.lRu82duYs88vW', 0, 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -244,25 +247,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `size`
@@ -274,7 +277,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

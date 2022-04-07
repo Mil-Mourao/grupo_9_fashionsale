@@ -61,7 +61,7 @@
                   <label for="size" class="no-show">Talle</label>
                   <select name="size" id="talle">
                   <% for( let i = 0; i < product.sizes.length; i++ ) { %>
-                    <option value="<%= product.sizes[i].sizes %> "><%= product.sizes[i].sizes%></option>
+                    <option value="<%= product.sizes[i].id %> "><%= product.sizes[i].size%></option>
                   <% } %>
                   </select>
                 </fieldset>
