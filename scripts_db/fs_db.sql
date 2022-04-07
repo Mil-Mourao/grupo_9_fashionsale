@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2022 a las 05:33:22
+-- Tiempo de generación: 07-04-2022 a las 19:48:01
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -191,8 +191,7 @@ INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin
 (1, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 2),
 (2, 'Milton', 'Mourao', 'milton@fashionsale.com', '$2b$10$MDRXsZIL4fW5Cc606cwRI.JonPQdfcwHqjlZ6SrVYWEy/MCZWy5lS', 1, 1, 12),
 (3, 'Nicolas', 'Cid', 'nico@fashionsale.com', '$2b$10$By4ZKekls674plf9ZmIUoOzbeTNC8VsgO61cCyvwFpsyuEgSm0g0S', 1, 1, 13),
-(4, 'Matias', 'Juaquin', 'matias@fashionsale.com', '$2b$10$svxMqloi8GB0Vx.yZXZSM.LSygbT8YQyWhU2C5yMaKvSZxJDTezYW', 1, 1, 14),
-(5, 'Prueba2', 'Horacio', 'horacio@fashionsale.com', '$2b$10$z0I8epQzS5SCfUT.3Pp5ou6Z2ZBbnyNAbq2Ga64.lRu82duYs88vW', 0, 1, 1);
+(4, 'Matias', 'Juaquin', 'matias@fashionsale.com', '$2b$10$svxMqloi8GB0Vx.yZXZSM.LSygbT8YQyWhU2C5yMaKvSZxJDTezYW', 1, 1, 14);
 
 --
 -- Índices para tablas volcadas
@@ -247,7 +246,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`

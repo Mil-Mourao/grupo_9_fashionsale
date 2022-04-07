@@ -5,7 +5,6 @@ import {PeopleOutlineRounded, ArrowUpwardOutlined, CategoryOutlined} from '@mui/
 export default function UserTotal() {
     const [products ,setProducts] = useState([]);
     const [users ,setUsers] = useState([]);
-    const [reload, setReload] = useState();
 
     useEffect(() => {
         fetch('http://localhost:3000/api/products')

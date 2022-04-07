@@ -29,7 +29,7 @@ module.exports = {
                         discount: product.discount ? product.discount : null,
                         category: product.category,
                         sizes: product.sizes.map(e=> e.sizes_short),
-                        detail: `${req.protocol}://${req.get('host')}${req.originalUrl}/${product.id}`
+                        detail: `${req.protocol}://${req.get('host')}${req.originalUrl}${product.id}`
                     })
                 });
 
@@ -85,7 +85,7 @@ module.exports = {
         .catch(error => {res.status(500).json({error: error.message})})
     },
     lastProduct: (req, res) =>{
-        db.Product.findOne({order: [['id', 'DESC']]})
+        db.Product.findOne({order: [['id', 'DESC']], include: ['images', 'sizes']})
         .then(producto => {
             if(producto){
                 let response = {
@@ -96,6 +96,9 @@ module.exports = {
                     data: {
                         id: producto.id,
                         name: producto.name,
+                        price: producto.price,
+                        images: producto.images.map((e) => 
+                            `${req.protocol}://${req.get('host')}/img/Productos/${e.url}`)
                     }
                 }
                 return res.status(200).json(response)
