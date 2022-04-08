@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2022 a las 02:19:32
+-- Tiempo de generación: 07-04-2022 a las 19:48:01
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -42,13 +42,20 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`id`, `url`) VALUES
 (1, 'genericUser.jpeg'),
-(90, 'avatar-1647214206933.jpg'),
-(91, 'avatar-1647214235583.jpg'),
-(515, 'image-1647811549449.jpg'),
-(516, 'image-1647811549452.jpg'),
-(517, 'image-1647832716175.jpg'),
-(518, 'image-1647832716202.jpg'),
-(564, 'avatar-1648599216970.jpg');
+(2, 'avatar-1647214235583.jpg'),
+(5, 'image-1649038728916.jpg'),
+(6, 'image-1649038728917.jpg'),
+(7, 'image-1649038786417.jpeg'),
+(8, 'image-1649038879695.jpg'),
+(9, 'image-1649038879741.jpg'),
+(10, 'image-1649038959408.jpeg'),
+(11, 'image-1649039004794.jpeg'),
+(12, 'avatar-1649039613831.jpg'),
+(13, 'avatar-1649039673518.jpg'),
+(14, 'avatar-1649039738295.jpeg'),
+(15, 'image-1649299816138.jpg'),
+(16, 'image-1649299816139.jpg'),
+(17, 'image-1649299816142.jpg');
 
 -- --------------------------------------------------------
 
@@ -67,10 +74,16 @@ CREATE TABLE `imagesproduct` (
 --
 
 INSERT INTO `imagesproduct` (`id`, `imageId`, `productId`) VALUES
-(210, 515, 320),
-(211, 516, 320),
-(212, 517, 321),
-(213, 518, 321);
+(3, 5, 2),
+(4, 6, 2),
+(5, 7, 3),
+(6, 8, 4),
+(7, 9, 4),
+(8, 10, 5),
+(9, 11, 6),
+(10, 15, 1),
+(11, 16, 1),
+(12, 17, 1);
 
 -- --------------------------------------------------------
 
@@ -93,8 +106,12 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `description`, `ofert`, `discount`, `category`) VALUES
-(320, 'Test2', 1500, 'hahahadfasdfdsafsdafsadfsdfsadfadfdssadfdsafafsdfsadfsadf', 1, 15, 'hombre'),
-(321, 'Test  ', 2500, 'Probando update con imagenes.', 1, 25, 'hombre');
+(1, 'Campera Wave', 2850, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.', 1, 25, 'hombre'),
+(2, 'Campera', 3500, 'Molestias unde facilis quis qui sed dolorem animi accusamus fugiat.', 0, 0, 'mujer'),
+(3, 'Jeans', 890, 'Aliquid tempora iure eius ducimus voluptatum.', 1, 10, 'hombre'),
+(4, 'Piloto Lights', 5650, 'Nemo dolorum, aut ea mollitia quis odit pariatur vitae alias.', 0, 0, 'mujer'),
+(5, 'Collar Prisma', 2800, 'Temporibus enim, molestiae eaque, nobis labore vel iusto ut!', 0, 0, 'accesorio'),
+(6, 'Mochila', 6300, 'Amet consectetur adipisicing elit temporibus, iure nulla id totam dicta.', 1, 35, 'accesorio');
 
 -- --------------------------------------------------------
 
@@ -114,12 +131,17 @@ CREATE TABLE `product_sizes` (
 --
 
 INSERT INTO `product_sizes` (`id`, `size_id`, `product_id`, `units`) VALUES
-(513, 1, 320, 35),
-(514, 3, 320, 15),
-(515, 5, 320, 28),
-(516, 2, 321, 25),
-(517, 3, 321, 15),
-(518, 4, 321, 20);
+(1, 2, 1, 4),
+(2, 3, 1, 6),
+(3, 4, 1, 8),
+(4, 1, 2, 15),
+(5, 2, 2, 10),
+(6, 3, 3, 15),
+(7, 4, 3, 10),
+(8, 1, 4, 15),
+(9, 2, 4, 4),
+(10, 1, 5, 10),
+(11, 3, 6, 12);
 
 -- --------------------------------------------------------
 
@@ -166,9 +188,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `password`, `isAdmin`, `isActive`, `image_id`) VALUES
-(6, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 91),
-(7, 'Bernardo', 'Arrechea', 'berna@mail.com', '$2b$10$B33BfnWXKWF1PVDY91wg/eAvy.Xpky6.yxALpMVVNA1uVf0sMiIY2', 0, 1, 90),
-(9, 'test', 'test', 'mail@mail.com', '$2b$10$CWJIb5FYmv6AS4MCk7BFaOAHUNGaQgF3jgQ/ElVJEAxWPKwFVsirW', 0, 1, 564);
+(1, 'Bernardo', 'Arrechea', 'bernardo@fashionsale.com', '$2b$10$9f8fpZmwUPdX4DaMjhzVaOLZXWSLh3kSlFkvcRiwaTAA8JRLg7RFa', 1, 1, 2),
+(2, 'Milton', 'Mourao', 'milton@fashionsale.com', '$2b$10$MDRXsZIL4fW5Cc606cwRI.JonPQdfcwHqjlZ6SrVYWEy/MCZWy5lS', 1, 1, 12),
+(3, 'Nicolas', 'Cid', 'nico@fashionsale.com', '$2b$10$By4ZKekls674plf9ZmIUoOzbeTNC8VsgO61cCyvwFpsyuEgSm0g0S', 1, 1, 13),
+(4, 'Matias', 'Juaquin', 'matias@fashionsale.com', '$2b$10$svxMqloi8GB0Vx.yZXZSM.LSygbT8YQyWhU2C5yMaKvSZxJDTezYW', 1, 1, 14);
 
 --
 -- Índices para tablas volcadas
@@ -223,25 +246,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=565;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT de la tabla `imagesproduct`
 --
 ALTER TABLE `imagesproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=347;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `size`
@@ -253,7 +276,7 @@ ALTER TABLE `size`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -270,8 +293,8 @@ ALTER TABLE `imagesproduct`
 -- Filtros para la tabla `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  ADD CONSTRAINT `product_sizes_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `product_sizes_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `product_sizes_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `product_sizes_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `size` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `user`

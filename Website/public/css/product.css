@@ -7,6 +7,10 @@ i {
   overflow-x: visible;
 }
 
+main {
+  min-height: 80vh;
+}
+
 #volver {
   color: black;
   text-decoration: none;
@@ -17,21 +21,27 @@ i {
 .pic-list {
   display: flex;
   justify-content: space-evenly;
-  flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  height: 60vw;
-  overflow-y: scroll;
+  max-height: 746px;
+  min-width: 115px;
+  margin: 0 auto;
+  overflow-y: auto;
+  cursor: pointer;
 }
 
 .small-pic {
-  width: 10vw;
-  height: auto;
+  width: 96px;
+  height: 145px;
+}
+
+.main-pic{
+  margin: 0 auto;
 }
 
 #focus-pic {
-  width: 100vw;
-  height: 60vw;
+  width: 100%;
+  max-height: 700px;
   object-fit: cover;
 }
 
@@ -102,14 +112,23 @@ legend {
   list-style: none;
 }
 
+.listaTalles li{
+  margin: 0.8rem;
+}
+
 @media (min-width: 768px) {
   .pic-list {
     flex-direction: column;
     flex-wrap: nowrap;
-    margin-left: 10px;
-    height: 45vh;
+    margin: 10px auto;
+    max-height: 746px;
   }
 
+  .small-pic {
+    max-width: 30rem;
+    max-height: 15rem;
+  }
+  
   #producto {
     display: flex;
     justify-content: space-around;
@@ -119,12 +138,6 @@ legend {
 
   #desc-title {
     border-bottom: solid 1px #403831;
-  }
-
-  #focus-pic {
-    max-width: 480px;
-    max-height: 980px;
-    margin-left: 1.5rem;
   }
 
   .description {

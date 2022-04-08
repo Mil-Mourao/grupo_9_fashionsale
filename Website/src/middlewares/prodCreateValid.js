@@ -1,5 +1,7 @@
 const {body, check} = require('express-validator');
 
+
+
 module.exports = [
     
     check('name')
@@ -11,15 +13,12 @@ module.exports = [
     .notEmpty().withMessage('Campo precio obligatorio')
     .isNumeric().withMessage('Ingrese solamente números'),
 
-    check('description')
-    .isLength({min: 20}).withMessage('Ingresa una descripción que contenga al menos 20 caracteres'),
-
     check('image')
-    .custom(({req}) => {
+    .custom((value, {req}) => {
         if(req.files.length > 0){
             return Promise.resolve();
         }else{
-            return false
+            return Promise.reject();
         }
     }).withMessage('Ingresa al menos una imagen') 
 ]

@@ -13,11 +13,13 @@
         <section id="producto">
             <% if (product.images != null && product.images.length > 0) { %>
               <article class="pic-list">
-              <% for( let i = 0; i < product.images.length; i++ ) { %>
-                <picture>
-                  <img class="small-pic" src="/img/Productos/<%=product['images'][i]['url'] %>" alt="" srcset="" />
-                </picture>
-                  <% } %> 
+                <% if (product.images.length > 1) { %>
+                  <% for( let i = 0; i < product.images.length; i++ ) { %>
+                    <picture>
+                      <img class="small-pic" src="/img/Productos/<%=product['images'][i]['url'] %>" alt="" srcset="" />
+                    </picture>
+                      <% } %>    
+                <% } %>
                 </article>
                 <article class="main-pic">
                   <picture>
@@ -59,7 +61,7 @@
                   <label for="size" class="no-show">Talle</label>
                   <select name="size" id="talle">
                   <% for( let i = 0; i < product.sizes.length; i++ ) { %>
-                    <option value="<%= product.sizes[i].sizes %> "><%= product.sizes[i].sizes%></option>
+                    <option value="<%= product.sizes[i].id %> "><%= product.sizes[i].size%></option>
                   <% } %>
                   </select>
                 </fieldset>
@@ -90,7 +92,7 @@
                     <% } %>
                       </p>
 
-              <p>Talle modelo <%= product.category %>:
+              <p>Categoría: <%= product.category %>
                 <ul class="listaTalles">
                  <% for( let i = 0; i < product.sizes.length; i++ ) { %>
                   <li>Talle <strong><%= product.sizes[i].size %></strong> hay un total de <%= product.sizes[i].units %>
@@ -107,6 +109,7 @@
           </section>
         </section>
       </main>
+      <script src="/js/pruebaImg.js"></script>
       <%- include('../partials/footer') %>
   </body>
 

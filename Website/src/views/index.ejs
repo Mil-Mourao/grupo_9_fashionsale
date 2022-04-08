@@ -12,8 +12,8 @@
         </section>
         
         <section class="main_section">
-          <%= locals.products.ofert %> 
-          <% if (locals.products && products.length > 0) { %>
+          
+          <% if (locals.products && products.length > 0 && checkOfert == true) { %>            
             <h2 class="title-oferta">Ofertas</h2>
             <% products.forEach(element=> { %>
               <% if (element.ofert) { %>

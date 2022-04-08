@@ -1,0 +1,133 @@
+/* main{
+    /* margin: auto;
+    background-image: url(../img/fondoUpdate.jpg);
+    background-size: cover;
+    padding: 10px; */
+
+
+main h2{
+    margin: 1.5rem 0;
+}
+
+main picture img{
+    width: 300px;
+    height: 300px;
+    margin: 1rem;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    /* border-radius: 50%; */
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*tablet*/
+@media screen and (min-width: 768px){
+    
+        #update{
+        margin: auto;
+        background-image: url(../img/fondoUpdate.jpg);
+        background-size: cover;
+        padding: 10px;
+    }
+.form-update{
+    background-color: #F2E5D5;
+    position: relative;
+    /* left: 32%;
+    border: none;
+    margin-top: 13%; */
+    border-radius: 20px;
+    width: 25vw;
+    height: 75vh;
+
+}
+main  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-update2 {
+    position: relative;
+    left: 32%;
+    margin-top: 1rem;
+}
+
+
+#name{
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    width: 10.5rem
+}
+#lastName{
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    width: 10.5rem
+}
+#email{
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    width: 10.5rem;
+    margin-left: 1rem;
+}
+
+#button-enviar {
+    border-radius: 15px;
+    padding: 10px 5px;
+    /* margin: 0 auto; */
+    background-color: #F2E5D5;
+    font-weight: 900;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    font-family: "Trebuchet MS", sans-serif;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background-color 1s;
+    transition: color 0.2s;
+    align-items: center;
+    /* min-width: 30%; */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 230px;
+    margin-right: 3rem;
+  }
+
+.logo-form img{
+    width: 7rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-bottom: 2.5rem;
+    margin-right: 3rem;
+
+} 
+
+#button-enviar:hover {
+    background-color: #a69c94;
+    
+}}
+fieldset .datos {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: -4rem;
+    display: flex;
+    justify-content:center;
+    
+}
+.datos2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.global{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 13rem;
+    padding-top: 4rem;
+
+}

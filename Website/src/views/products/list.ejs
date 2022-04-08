@@ -34,7 +34,7 @@
                   </li>
                   <li>
                     $ <% if (element.ofert) { %>
-                      <%= parseInt(element.price) * 0.8 %>
+                      <%= parseInt(element.price * ((100 - element.discount) / 100)) %>
                         <% } else {%>
                           <%= element.price %>
                             <% } %>

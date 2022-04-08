@@ -1,0 +1,9 @@
+body {
+  background-color: rebeccapurple;
+}
+
+.container {
+  display: flex;
+  margin-top: .7rem;
+  background-color: aliceblue;
+}

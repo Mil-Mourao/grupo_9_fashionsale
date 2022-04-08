@@ -12,6 +12,7 @@ router.get("/profile", [access],users.profile);
 router.get("/updateProfile", [access],users.updateProfile);
 
 router.post("/save",[save], users.save);
+router.put('/edit', users.editProfile);
 router.post("/access", [login], users.access);
 router.post("/logout",users.logout);
 
